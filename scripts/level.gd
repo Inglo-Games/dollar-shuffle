@@ -16,7 +16,7 @@ onready var graph
 const LIGHT_GREEN = Color("#F000FF00")
 const LIGHT_RED = Color("#F0FF0000")
 const LIGHT_GREY = Color("#F0A0A0A0")
-const BLACK = Color("#FFFFFFFF")
+const BLACK = Color("#FF000000")
 
 # Sizes for node UI
 var outer_radius = 100.0
@@ -99,16 +99,17 @@ func draw_node(num):
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
 	# Draw line between given nodes
-	var loc1 = Vector2(graph.graph_data[str(n1)]["loc"][0], graph.graph_data[str(n1)]["loc"][1])
-	var loc2 = Vector2(graph.graph_data[str(n2)]["loc"][0], graph.graph_data[str(n2)]["loc"][1])
-	draw_line(
-			loc1,
-			loc2,
-			BLACK,
-			3.0,
-			true)
-	# Force update to draw the node on screen
-	update()
+	var loc1x = graph.graph_data[str(n1)]["loc"][0] * get_viewport().size.x
+	var loc1y = graph.graph_data[str(n1)]["loc"][1] * get_viewport().size.y
+	var loc1 = Vector2(loc1x, loc1y)
+	var loc2x = graph.graph_data[str(n2)]["loc"][0] * get_viewport().size.x
+	var loc2y = graph.graph_data[str(n2)]["loc"][1] * get_viewport().size.y
+	var loc2 = Vector2(loc2x, loc2y)
+	var line = Line2D.new()
+	line.add_point(loc1)
+	line.add_point(loc2)
+	line.default_color = BLACK
+	get_parent().call_deferred("add_child", line)
 
 # Callback for tapping on node
 func node_tap(node):
