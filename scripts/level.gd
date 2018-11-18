@@ -6,8 +6,9 @@ onready var score = get_node("score")
 onready var undo_btn = get_node("undo_btn")
 onready var pause_btn = get_node("pause_btn")
 
-# Load the GameGraph class
+# Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
+const GameNode = preload("res://scripts/graph_node.gd")
 
 # GameGraph object for this level
 onready var graph
@@ -18,9 +19,8 @@ const LIGHT_RED = Color("#F0FF0000")
 const LIGHT_GREY = Color("#F0A0A0A0")
 const BLACK = Color("#FF000000")
 
-# Sizes for node UI
-var outer_radius = 100.0
-var inner_radius = 87.0
+# Size for node UI
+var radius = 100.0
 
 # Time elapsed in milliseconds
 var secs = 0.0
@@ -41,7 +41,7 @@ func _ready():
 	# Load in level from file
 	graph = GameGraph.new()
 	# Set size of nodes on screen
-	calc_radii()
+	calc_radius()
 	# Draw everything on screen
 	display_graph()
 	score.text = "0"
@@ -53,11 +53,9 @@ func _process(delta):
 	timer.text = str("%.3f" % secs)
 
 # Set node radii sizes based on number of nodes
-func calc_radii():
+func calc_radius():
 	# Calculate outer_radius
-	outer_radius = 80.0 / log(len(graph.graph_data))
-	# inner_radius is only a little smaller
-	inner_radius = outer_radius * 0.87
+	radius = 80.0 / log(len(graph.graph_data))
 
 # Draw entire graph on screen
 func display_graph():
@@ -83,18 +81,11 @@ func draw_node(num):
 	location.y = graph.graph_data[str(num)]["loc"][1] * get_viewport().size.y
 	# DEBUG
 	print("Drawing circle at %s" % str(location))
-	# Draw an outer black circle
-	node.draw_circle(
-			location,
-			outer_radius,
-			BLACK)
-	# Draw inner circle
-	node.draw_circle(
-			location,
-			inner_radius,
-			LIGHT_GREEN)
-	# Force update to draw the node on screen
-	update()
+	# Create GameNode object to add to screen
+	var game_node = GameNode.new()
+	game_node.initialize(self, num, radius)
+	game_node.position = location
+	get_parent().call_deferred("add_child", game_node)
 
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
