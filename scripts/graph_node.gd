@@ -21,6 +21,7 @@ onready var label
 
 func _ready():
 	label = Label.new()
+	call_deferred("add_child", label)
 
 # Custom draw function
 func _draw():
@@ -41,6 +42,10 @@ func _draw():
 			color)
 	# Set text of label to value
 	label.text = "$%d" % value
+	label.align = Label.ALIGN_CENTER
+	# Position label in center of circle
+	var label_size = label.get_minimum_size()
+	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0)
 
 # Custom init function
 func initialize(parent, num, size):
