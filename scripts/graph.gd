@@ -40,7 +40,7 @@ func _init():
 func take_points(node):
 	# Take one from each neighbor
 	for neighbor in graph_data[str(node)]["conns"]:
-		graph_data[neighbor]["value"] -= 1
+		graph_data[str(neighbor)]["value"] -= 1
 	# Add that many to node
 	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
 
@@ -50,4 +50,4 @@ func give_points(node):
 	graph_data[str(node)]["value"] -= len(graph_data[str(node)]["conns"])
 	# Add one to each neighbor
 	for neighbor in graph_data[str(node)]["conns"]:
-		graph_data[neighbor]["value"] += 1
+		graph_data[str(neighbor)]["value"] += 1

@@ -102,8 +102,8 @@ func draw_conn_line(n1, n2):
 	line.default_color = BLACK
 	get_parent().call_deferred("add_child", line)
 
-# Callback for tapping on node
-func node_tap(node):
+# Function that gives points
+func node_give_points(node):
 	# Give points to all neighbors
 	graph.give_points(node)
 	# Record move
@@ -112,9 +112,9 @@ func node_tap(node):
 	score.text = str(len(moves))
 
 # Callback for long pressing on node
-func node_longpress(node):
+func node_take_points(node):
 	# Take points from all neighbors
-	graph.give_points(node)
+	graph.take_points(node)
 	# Record move
 	moves.append(Vector2(node, -1))
 	# Update moves label

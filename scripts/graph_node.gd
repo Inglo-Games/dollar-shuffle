@@ -47,6 +47,16 @@ func _draw():
 	var label_size = label.get_minimum_size()
 	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0)
 
+# Handle inputs
+func _input(event):
+	# Only consider input inside this circle
+	if self.position.distance_to(event.position) <= outer_radius:
+		# Only inputs are give action and take action
+		if event.is_action_released("give_action"):
+			parent_node.node_give_points(node_num)
+		elif event.is_action_released("take_action"):
+			parent_node.node_take_points(node_num)
+
 # Custom init function
 func initialize(parent, num, size):
 	# Save parent node to access GameGraph object
