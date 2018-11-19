@@ -29,9 +29,6 @@ var secs = 0.0
 # 1 means gave points, -1 means took points
 var moves = []
 
-# List of each node's Area2D representation
-var node_areas = []
-
 # Puzzle number to load in
 var puzzle = 1
 
@@ -67,25 +64,22 @@ func display_graph():
 			draw_conn_line(connection, node)
 	# For each node in the graph...
 	for index in range(len(graph.graph_data)):
-		# Create an Area2D to hold sprite and collision shape
-		node_areas.append(Area2D.new())
 		draw_node(index)
 
 # Draw a single node on the screen
 func draw_node(num):
-	# Get node from GameGraph
-	var node = node_areas[num]
 	# Convert location to pixel coords
 	var location = Vector2(0,0)
 	location.x = graph.graph_data[str(num)]["loc"][0] * get_viewport().size.x
 	location.y = graph.graph_data[str(num)]["loc"][1] * get_viewport().size.y
-	# DEBUG
-	print("Drawing circle at %s" % str(location))
 	# Create GameNode object to add to screen
 	var game_node = GameNode.new()
 	game_node.initialize(self, num, radius)
 	game_node.position = location
+	# Add node as child of viewport once loading is finished
 	get_parent().call_deferred("add_child", game_node)
+	# Add node to group
+	game_node.add_to_group("ui_nodes")
 
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
