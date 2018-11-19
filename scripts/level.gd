@@ -96,23 +96,32 @@ func draw_conn_line(n1, n2):
 	line.default_color = BLACK
 	get_parent().call_deferred("add_child", line)
 
-# Function that gives points
+# Callback to give points to neighbors
 func node_give_points(node):
 	# Give points to all neighbors
 	graph.give_points(node)
 	# Record move
 	moves.append(Vector2(node, 1))
-	# Update moves label
-	score.text = str(len(moves))
+	# Update nodes UI
+	update_nodes_and_score()
 
-# Callback for long pressing on node
+# Callback for taking points
 func node_take_points(node):
 	# Take points from all neighbors
 	graph.take_points(node)
 	# Record move
 	moves.append(Vector2(node, -1))
-	# Update moves label
+	# Update nodes UI
+	update_nodes_and_score()
+
+# Function to update all nodes' labels, colors, and score
+func update_nodes_and_score():
+	# Update the moves label
 	score.text = str(len(moves))
+	# Force redraw of all node's UI
+	var ui_nodes = get_tree().get_nodes_in_group("ui_nodes")
+	for ui in ui_nodes:
+		ui.update()
 
 # Undo last move
 func undo():
