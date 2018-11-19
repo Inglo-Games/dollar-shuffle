@@ -93,5 +93,6 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
+_sections_unfolded = [ "Pause" ]
 
 

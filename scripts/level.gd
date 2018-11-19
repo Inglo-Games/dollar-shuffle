@@ -104,6 +104,8 @@ func node_give_points(node):
 	moves.append(Vector2(node, 1))
 	# Update nodes UI
 	update_nodes_and_score()
+	# Check if player has solved puzzle
+	check_win_condition()
 
 # Callback for taking points
 func node_take_points(node):
@@ -113,6 +115,8 @@ func node_take_points(node):
 	moves.append(Vector2(node, -1))
 	# Update nodes UI
 	update_nodes_and_score()
+	# Check if player has solved puzzle
+	check_win_condition()
 
 # Function to update all nodes' labels, colors, and score
 func update_nodes_and_score():
@@ -122,6 +126,16 @@ func update_nodes_and_score():
 	var ui_nodes = get_tree().get_nodes_in_group("ui_nodes")
 	for ui in ui_nodes:
 		ui.update()
+
+# Check whether the player has solved the puzzle
+func check_win_condition():
+	# Check the value of each node, should be non-negative
+	for node in graph.graph_data.keys():
+		if graph.graph_data[node]["value"] < 0:
+			return false
+	# If the function hasn't returned yet, all nodes passed check
+	get_tree().quit()
+	return true
 
 # Undo last move
 func undo():
