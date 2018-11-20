@@ -139,16 +139,20 @@ func check_win_condition():
 
 # Undo last move
 func undo():
-	# Take last move from list
-	var move = moves[-1]
-	# Do opposite of last move to same node
-	if (move.y == -1):
-		graph.give_points(abs(move.x))
-	else:
-		graph.take_points(move.x)
-	# Remove last 2 moves (since we just added another one)
-	moves.remove(-1)
-	moves.remove(-1)
+	# Only do if moves have been done
+	if len(moves) > 0:
+		# Take last move from list
+		var move = moves[-1]
+		# Do opposite of last move to same node
+		if (move.y == -1):
+			node_give_points(move.x)
+		else:
+			node_take_points(move.x)
+		# Remove last 2 moves (since we just added another one)
+		moves.remove(len(moves)-1)
+		moves.remove(len(moves)-1)
+		# Update score label
+		score.text = str(len(moves))
 
 # Toggle pause state
 func toggle_pause():
