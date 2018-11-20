@@ -149,3 +149,7 @@ func undo():
 	# Remove last 2 moves (since we just added another one)
 	moves.remove(-1)
 	moves.remove(-1)
+
+# Toggle pause state
+func toggle_pause():
+	get_tree().set_pause(!get_tree().is_paused())
