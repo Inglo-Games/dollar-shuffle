@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
+[ext_resource path="res://assets/undo_btn.png" type="Texture" id=2]
+[ext_resource path="res://assets/pause_btn.png" type="Texture" id=3]
 
 [node name="base" type="Node2D" index="0"]
 
@@ -71,7 +73,8 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custo
 [node name="undo_btn" type="TouchScreenButton" parent="." index="3"]
 
 position = Vector2( 450, 20 )
-normal = null
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 2 )
 pressed = null
 bitmask = null
 shape = null
@@ -80,11 +83,13 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="pause_btn" type="TouchScreenButton" parent="." index="4"]
 
-position = Vector2( 510, 20 )
-normal = null
+position = Vector2( 514, 25 )
+scale = Vector2( 0.08, 0.08 )
+normal = ExtResource( 3 )
 pressed = null
 bitmask = null
 shape = null
@@ -93,6 +98,6 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 
