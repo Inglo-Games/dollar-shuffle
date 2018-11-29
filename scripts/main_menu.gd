@@ -25,8 +25,7 @@ func choose_level():
 
 # Open the options menu
 func open_options():
-	# TODO: Implement options menu
-	pass
+	get_tree().change_scene("res://scenes/opts_menu.tscn")
 
 # Close the game
 func quit_game():
