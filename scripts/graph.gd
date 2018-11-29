@@ -1,6 +1,9 @@
 # This represents the graph (nodes and connections) for each puzzle
 extends Node
 
+# Get file IO functions
+const FileIO = preload("res://scripts/file_io.gd")
+
 # Dictionary containing all graph data
 var graph_data = {}
 
@@ -11,30 +14,8 @@ func _init():
 	var lvl_num = 1
 	
 	# Open the file describing the level
-	var lvl_file = File.new()
 	var filepath = "res://levels/%03d.json" % lvl_num
-	print("Loading file %s" % filepath)
-	
-	# Error checking -- ensure file exists and can be opened
-	if !lvl_file.file_exists(filepath):
-		# TODO: Implement popup message for nonexistent file
-		print("File doesn't exist...")
-		return
-	if lvl_file.open(filepath, lvl_file.READ) != OK:
-		# TODO: Implement popup message for bad read
-		print("Could not read file...")
-		return
-	
-	# Read in the file contents and parse it
-	var parsed_json = JSON.parse(lvl_file.get_as_text())
-	lvl_file.close()
-	if parsed_json.error != OK:
-		# TODO: Implement popup message for bad JSON parse
-		print("Could not parse JSON...")
-		return
-	
-	# Save parsed data
-	graph_data = parsed_json.result
+	graph_data = FileIO.read_json_file(filepath)
 
 # Take one point from each neighbor of a given node and add that many to it
 func take_points(node):
