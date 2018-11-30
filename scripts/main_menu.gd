@@ -15,13 +15,11 @@ func _ready():
 
 # Return to last unsolved puzzle
 func return_level():
-	# TODO: Implement this
-	pass
+	get_tree().change_scene("res://scenes/game.tscn")
 
 # Choose level number from list
 func choose_level():
-	# TODO: Implement level picking menu
-	pass
+	get_tree().change_scene("res://scenes/lvl_menu.tscn")
 
 # Open the options menu
 func open_options():
