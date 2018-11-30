@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="Dollar Shuffle"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global_vars="*res://scripts/global_vars.gd"
 
 [display]
 
