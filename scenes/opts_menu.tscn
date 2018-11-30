@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/opts_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/back_btn.png" type="Texture" id=2]
 
 [node name="base" type="Control" index="0"]
 
@@ -40,8 +41,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 536.0
+margin_bottom = 536.0
+rect_scale = Vector2( 0.12, 0.12 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -53,6 +57,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="opts_menu_container" type="VBoxContainer" parent="." index="2"]
 
@@ -96,7 +102,6 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Difficulty"
 flat = false
 align = 1
 items = [  ]
