@@ -13,14 +13,12 @@ func _ready():
 	populate_list()
 	# Connect list to function that opens levels
 	lvl_list.connect("item_selected", self, "open_level", []) 
-	# Connect back button to return funcction
+	# Connect back button to return function
 	back_btn.connect("pressed", self, "close_menu", [])
 
 func populate_list():
-	# Get number of level files in directory
-	var num_levels = FileIO.read_json_file("res://levels/count.json")["count"]
 	# Create an item in the list for each one
-	for index in range(num_levels):
+	for index in range(global_vars.number_of_levels):
 		lvl_list.add_item(str(index+1))
 
 func open_level(num):

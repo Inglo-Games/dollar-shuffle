@@ -1,5 +1,8 @@
 extends Node
 
+# Load file operations class
+const FileIO = preload("res://scripts/file_io.gd")
+
 # Button objects
 onready var cont_btn = get_node("menu_container/cont_button")
 onready var level_btn = get_node("menu_container/level_button")
@@ -12,6 +15,8 @@ func _ready():
 	level_btn.connect("pressed", self, "choose_level", [])
 	opt_btn.connect("pressed", self, "open_options", [])
 	quit_btn.connect("pressed", self, "quit_game", [])
+	# Get number of levels in res://levels directory
+	global_vars.number_of_levels = FileIO.read_json_file("res://levels/count.json")["count"]
 
 # Return to last unsolved puzzle
 func return_level():
