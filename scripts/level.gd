@@ -10,6 +10,9 @@ onready var pause_btn = get_node("pause_btn")
 const GameGraph = preload("res://scripts/graph.gd")
 const GameNode = preload("res://scripts/graph_node.gd")
 
+# Load pause menu
+const PausePopup = preload("res://scripts/pause_popup.gd")
+
 # GameGraph object for this level
 onready var graph
 
@@ -39,6 +42,9 @@ func _ready():
 	# Draw everything on screen
 	display_graph()
 	score.text = "0"
+	# Connect buttons to functions
+	undo_btn.connect("pressed", self, "undo")
+	pause_btn.connect("pressed", self, "toggle_pause")
 
 # Called every frame
 func _process(delta):
@@ -158,4 +164,7 @@ func undo():
 
 # Toggle pause state
 func toggle_pause():
-	get_tree().set_pause(!get_tree().is_paused())
+	var popup = PausePopup.new()
+	add_child(popup)
+	popup.popup_centered_minsize(Vector2(100,150))
+	get_tree().set_pause(true)
