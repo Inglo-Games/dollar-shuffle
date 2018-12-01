@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # UI Elements
 onready var timer = get_node("timer")
