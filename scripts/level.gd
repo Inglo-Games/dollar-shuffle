@@ -162,8 +162,11 @@ func undo():
 		# Update score label
 		score.text = str(len(moves))
 
-# Toggle pause state
+# Pause game
 func toggle_pause():
+	# Make the obscuring background layer visible
+	get_node("pause_background").visible = true
+	# Create and show pause menu
 	var popup = PausePopup.new()
 	add_child(popup)
 	popup.popup_centered_minsize(Vector2(100,150))

@@ -21,7 +21,8 @@ func handle_input(id):
 	get_parent().get_tree().set_pause(false)
 	# If pressed resume...
 	if id == 0:
-		# Just disapper, nothing else
+		# Make the obscuring background disappear
+		get_parent().get_node("pause_background").visible = false
 		pass
 	# If pressed quit...
 	elif id == 1:
