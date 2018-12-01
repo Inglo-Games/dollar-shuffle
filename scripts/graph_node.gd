@@ -13,9 +13,6 @@ var inner_radius = 87.0
 # Node number this instance represents
 var node_num = -1
 
-# Level base node
-var parent_node
-
 # UI element
 onready var label
 
@@ -26,7 +23,7 @@ func _ready():
 # Custom draw function
 func _draw():
 	# Determine color of inner circle based on value
-	var value = parent_node.graph.graph_data[str(node_num)]["value"]
+	var value = get_parent().graph.graph_data[str(node_num)]["value"]
 	var color = LIGHT_GREEN
 	if value < 0:
 		color = LIGHT_RED
@@ -53,14 +50,12 @@ func _input(event):
 	if self.position.distance_to(event.position) <= outer_radius:
 		# Only inputs are give action and take action
 		if event.is_action_released("give_action"):
-			parent_node.node_give_points(node_num)
+			get_parent().node_give_points(node_num)
 		elif event.is_action_released("take_action"):
-			parent_node.node_take_points(node_num)
+			get_parent().node_take_points(node_num)
 
 # Custom init function
-func initialize(parent, num, size):
-	# Save parent node to access GameGraph object
-	parent_node = parent
+func initialize(num, size):
 	# Save node number being represented
 	node_num = num
 	# Set radii sizes

@@ -71,7 +71,7 @@ func draw_node(num):
 	location.y = graph.graph_data[str(num)]["loc"][1] * get_viewport().size.y
 	# Create GameNode object to add to screen
 	var game_node = GameNode.new()
-	game_node.initialize(self, num, radius)
+	game_node.initialize(num, radius)
 	game_node.position = location
 	# Add node as child once loading is finished
 	call_deferred("add_child", game_node)
