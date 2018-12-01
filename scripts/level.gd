@@ -29,9 +29,6 @@ var secs = 0.0
 # 1 means gave points, -1 means took points
 var moves = []
 
-# Puzzle number to load in
-var puzzle = 1
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Entering level._ready function...")
@@ -76,8 +73,8 @@ func draw_node(num):
 	var game_node = GameNode.new()
 	game_node.initialize(self, num, radius)
 	game_node.position = location
-	# Add node as child of viewport once loading is finished
-	get_parent().call_deferred("add_child", game_node)
+	# Add node as child once loading is finished
+	call_deferred("add_child", game_node)
 	# Add node to group
 	game_node.add_to_group("ui_nodes")
 
@@ -134,8 +131,13 @@ func check_win_condition():
 		if graph.graph_data[node]["value"] < 0:
 			return false
 	# If the function hasn't returned yet, all nodes passed check
-	get_tree().quit()
-	return true
+	record_win()
+	global_vars.open_next_puzzle(self)
+
+# Check if current win beats previous best, and save it if so
+func record_win():
+	# TODO: Implement score and time records
+	pass
 
 # Undo last move
 func undo():
