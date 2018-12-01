@@ -91,7 +91,7 @@ func draw_conn_line(n1, n2):
 	line.add_point(loc1)
 	line.add_point(loc2)
 	line.default_color = BLACK
-	get_parent().call_deferred("add_child", line)
+	call_deferred("add_child", line)
 
 # Callback to give points to neighbors
 func node_give_points(node):
