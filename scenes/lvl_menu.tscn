@@ -3,14 +3,13 @@
 [ext_resource path="res://scripts/level_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/back_btn.png" type="Texture" id=2]
 
-[node name="base" type="Control"]
+[node name="base" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 300 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -18,15 +17,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="background" type="ColorRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 600.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -34,18 +32,18 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.847059, 0.847059, 0.847059, 1 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="back_btn" type="TextureButton" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 24.0
 margin_top = 24.0
-margin_right = 536.0
-margin_bottom = 536.0
+margin_right = -64.0
+margin_bottom = -64.0
 rect_scale = Vector2( 0.12, 0.12 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -59,18 +57,18 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Textures" ]
 
 [node name="lvl_list" type="ItemList" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 150.0
 margin_top = 45.0
-margin_right = 450.0
-margin_bottom = 555.0
+margin_right = -150.0
+margin_bottom = -45.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
