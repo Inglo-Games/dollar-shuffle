@@ -24,8 +24,9 @@ func populate_list():
 func open_level(num):
 	# Save level number to global var
 	global_vars.current_level = num+1
-	# Move to scene for level selected
-	get_tree().change_scene("res://scenes/game.tscn")
+	# Load instance of game scene
+	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
+	get_tree().get_root().add_child(level_scene.instance())
 	
 func close_menu():
 	# Return to main menu

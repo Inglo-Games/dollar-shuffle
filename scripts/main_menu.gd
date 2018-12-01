@@ -20,7 +20,8 @@ func _ready():
 
 # Return to last unsolved puzzle
 func return_level():
-	get_tree().change_scene("res://scenes/game.tscn")
+	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
+	get_tree().get_root().add_child(level_scene.instance())
 
 # Choose level number from list
 func choose_level():
