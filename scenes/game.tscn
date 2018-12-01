@@ -35,7 +35,9 @@ size_flags_vertical = 1
 color = Color( 0.847656, 0.847656, 0.847656, 1 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="score" type="Label" parent="." index="1"]
+[node name="node_ui_container" type="Node2D" parent="." index="1"]
+
+[node name="score" type="Label" parent="." index="2"]
 
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
@@ -58,7 +60,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 
-[node name="timer" type="Label" parent="." index="2"]
+[node name="timer" type="Label" parent="." index="3"]
 
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
@@ -81,7 +83,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="undo_btn" type="TextureButton" parent="." index="3"]
+[node name="undo_btn" type="TextureButton" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,7 +108,7 @@ group = null
 texture_normal = ExtResource( 2 )
 _sections_unfolded = [ "Anchor", "Margin", "Pause", "Rect", "Textures", "Transform", "Visibility", "Z Index" ]
 
-[node name="pause_btn" type="TextureButton" parent="." index="4"]
+[node name="pause_btn" type="TextureButton" parent="." index="5"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -132,7 +134,7 @@ group = null
 texture_normal = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Margin", "Pause", "Rect", "Textures", "Transform" ]
 
-[node name="pause_background" type="ColorRect" parent="." index="5"]
+[node name="pause_background" type="ColorRect" parent="." index="6"]
 
 visible = false
 anchor_left = 0.0

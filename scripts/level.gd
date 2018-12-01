@@ -5,6 +5,7 @@ onready var timer = get_node("timer")
 onready var score = get_node("score")
 onready var undo_btn = get_node("undo_btn")
 onready var pause_btn = get_node("pause_btn")
+onready var node_cont = get_node("node_ui_container")
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
@@ -80,7 +81,7 @@ func draw_node(num):
 	game_node.initialize(num, radius)
 	game_node.position = location
 	# Add node as child once loading is finished
-	call_deferred("add_child", game_node)
+	node_cont.call_deferred("add_child", game_node)
 	# Add node to group
 	game_node.add_to_group("ui_nodes")
 
@@ -97,7 +98,7 @@ func draw_conn_line(n1, n2):
 	line.add_point(loc1)
 	line.add_point(loc2)
 	line.default_color = BLACK
-	call_deferred("add_child", line)
+	node_cont.call_deferred("add_child", line)
 
 # Callback to give points to neighbors
 func node_give_points(node):
