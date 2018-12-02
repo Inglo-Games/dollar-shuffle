@@ -5,6 +5,7 @@ func _ready():
 	set_process_input(true)
 	# Add a 'resume' and 'quit' item
 	add_item("resume", 0)
+	add_separator()
 	add_item("quit", 1)
 	# Connect 'pressed' signal to handler function
 	connect("index_pressed", self, "handle_input")

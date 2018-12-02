@@ -170,5 +170,5 @@ func toggle_pause():
 	# Create and show pause menu
 	var popup = PausePopup.new()
 	add_child(popup)
-	popup.popup_centered_minsize(Vector2(100,150))
+	popup.popup_centered_minsize(Vector2(100,50))
 	get_tree().set_pause(true)
