@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 
-[node name="base" type="Control" index="0"]
+[node name="base" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -31,7 +31,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.847059, 0.847059, 0.847059, 1 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Material", "Rect", "Visibility" ]
 
 [node name="menu_container" type="VBoxContainer" parent="." index="1"]
 
