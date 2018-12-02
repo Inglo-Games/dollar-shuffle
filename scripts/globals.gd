@@ -1,10 +1,35 @@
 extends Node
 
+# File operations
+const FileIO = preload("res://scripts/file_io.gd")
+
+# Constant file paths
+const opts_filepath = "user://opts.dat"
+const user_filepath = "user://user.dat"
+
 # Global variables
 var current_level = 1
 var number_of_levels = -1
+var pers_opts;
+
+# Initialization
+func _ready():
+	# Load options data from file (if it exists)
+	if File.new().file_exists(globals.opts_filepath):
+		pers_opts = FileIO.read_json_file(globals.opts_filepath)
+	else:
+		pers_opts = get_options_defaults()
+	pass
+	# Load user data from file
+	if File.new().file_exists(globals.user_filepath):
+		var user_data = FileIO.read_json_file(globals.user_filepath)
+		current_level = user_data["last_played"]
 
 # Global functions
+
+# Return options defalts
+func get_options_defaults():
+	return { "difficulty":0, "darkmode":false }
 
 # Change current puzzle to next puzzle
 func open_next_puzzle(scene):
