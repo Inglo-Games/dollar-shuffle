@@ -10,7 +10,7 @@ var graph_data = {}
 # Constructor function, takes number corresponding to current puzzle
 func _init():
 	# Get number of level to load
-	var lvl_num = global_vars.current_level
+	var lvl_num = globals.current_level
 	# Open the file describing the level
 	var filepath = "res://levels/%03d.json" % lvl_num
 	graph_data = FileIO.read_json_file(filepath)

@@ -139,7 +139,7 @@ func check_win_condition():
 			return false
 	# If the function hasn't returned yet, all nodes passed check
 	record_win()
-	global_vars.open_next_puzzle(self)
+	globals.open_next_puzzle(self)
 
 # Check if current win beats previous best, and save it if so
 func record_win():

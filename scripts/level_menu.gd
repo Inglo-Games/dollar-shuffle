@@ -18,12 +18,12 @@ func _ready():
 
 func populate_list():
 	# Create an item in the list for each one
-	for index in range(global_vars.number_of_levels):
+	for index in range(globals.number_of_levels):
 		lvl_list.add_item(str(index+1))
 
 func open_level(num):
 	# Save level number to global var
-	global_vars.current_level = num+1
+	globals.current_level = num+1
 	# Load instance of game scene
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())
