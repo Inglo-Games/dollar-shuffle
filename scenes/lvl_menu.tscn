@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/level_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/back_btn.png" type="Texture" id=2]
 
-[node name="base" type="Control" index="0"]
+[node name="base" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -79,6 +79,7 @@ size_flags_vertical = 1
 items = [  ]
 select_mode = 0
 allow_reselect = false
+max_columns = 6
 same_column_width = true
 icon_mode = 1
 fixed_icon_size = Vector2( 0, 0 )
