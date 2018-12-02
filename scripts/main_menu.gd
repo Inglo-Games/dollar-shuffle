@@ -15,8 +15,6 @@ func _ready():
 	level_btn.connect("pressed", self, "choose_level", [])
 	opt_btn.connect("pressed", self, "open_options", [])
 	quit_btn.connect("pressed", self, "quit_game", [])
-	# Get number of levels in res://levels directory
-	globals.number_of_levels = FileIO.read_json_file("res://levels/count.json")["count"]
 
 # Return to last unsolved puzzle
 func return_level():

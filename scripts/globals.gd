@@ -24,6 +24,8 @@ func _ready():
 	if File.new().file_exists(globals.user_filepath):
 		var user_data = FileIO.read_json_file(globals.user_filepath)
 		current_level = user_data["last_played"]
+	# Get number of levels in res://levels directory
+	number_of_levels = FileIO.read_json_file("res://levels/count.json")["count"]
 
 # Global functions
 
