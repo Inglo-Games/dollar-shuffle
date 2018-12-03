@@ -15,14 +15,14 @@ var pers_opts;
 # Initialization
 func _ready():
 	# Load options data from file (if it exists)
-	if File.new().file_exists(globals.opts_filepath):
-		pers_opts = FileIO.read_json_file(globals.opts_filepath)
+	if File.new().file_exists(opts_filepath):
+		pers_opts = FileIO.read_json_file(opts_filepath)
 	else:
 		pers_opts = get_options_defaults()
 	pass
 	# Load user data from file
-	if File.new().file_exists(globals.user_filepath):
-		var user_data = FileIO.read_json_file(globals.user_filepath)
+	if File.new().file_exists(user_filepath):
+		var user_data = FileIO.read_json_file(user_filepath)
 		current_level = user_data["last_played"]
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
@@ -32,6 +32,12 @@ func _ready():
 # Return options defalts
 func get_options_defaults():
 	return { "difficulty":0, "darkmode":false }
+
+# Update the last played level saved to userdata file
+func update_last_level(num):
+	# Update variable and write to file
+	current_level = num
+	FileIO.write_json_file(user_filepath, {"last_played":current_level})
 
 # Change current puzzle to next puzzle
 func open_next_puzzle(scene):
@@ -43,6 +49,7 @@ func open_next_puzzle(scene):
 		return
 	# Else, increment level num and load new game scene
 	current_level += 1
+	update_last_level(current_level)
 	scene.queue_free()
 	scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(scene.instance())
