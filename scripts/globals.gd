@@ -25,7 +25,7 @@ func _ready():
 		var user_data = FileIO.read_json_file(globals.user_filepath)
 		current_level = user_data["last_played"]
 	# Get number of levels in res://levels directory
-	number_of_levels = FileIO.read_json_file("res://levels/count.json")["count"]
+	number_of_levels = count_files("res://levels")
 
 # Global functions
 
@@ -46,3 +46,19 @@ func open_next_puzzle(scene):
 	scene.queue_free()
 	scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(scene.instance())
+
+# Count the number of files in a given directory
+func count_files(path):
+	var count = 0
+	# Open given directory
+	var dir = Directory.new()
+	dir.open(path)
+	# Cycle through files
+	dir.list_dir_begin()
+	var file = dir.get_next()
+	while(file != ""):
+		# Only count non-directory files
+		if !file.begins_with("."):
+			count += 1
+		file = dir.get_next()
+	return count
