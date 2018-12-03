@@ -8,7 +8,7 @@ func _ready():
 	add_separator()
 	add_item("quit", 1)
 	# Connect 'pressed' signal to handler function
-	connect("index_pressed", self, "handle_input")
+	connect("id_pressed", self, "handle_input")
 	# Make sure this doesn't pause when parent does
 	set_pause_mode(PAUSE_MODE_PROCESS)
 	# Dont disappear if clicked outside
@@ -24,10 +24,8 @@ func handle_input(id):
 	if id == 0:
 		# Make the obscuring background disappear
 		get_parent().get_node("pause_background").visible = false
-		pass
 	# If pressed quit...
 	elif id == 1:
 		# Go back to main menu
 		get_parent().queue_free()
 		get_tree().change_scene("res://scenes/main_menu.tscn")
-		return
