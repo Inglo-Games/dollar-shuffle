@@ -27,8 +27,9 @@ const BLACK = Color("#FF000000")
 # Size for node UI
 var radius = 100.0
 
-# Time elapsed in milliseconds
+# Time elapsed in milliseconds and active boolean
 var secs = 0.0
+var timer_active = true
 
 # List of moves as Vector2s, where x is the node tapped and y is whether it gave or took
 # 1 means gave points, -1 means took points
@@ -49,9 +50,10 @@ func _ready():
 
 # Called every frame
 func _process(delta):
-	# Update timer
-	secs += delta
-	timer.text = str("%.3f" % secs)
+	# Update timer, if active
+	if timer_active:
+		secs += delta
+		timer.text = str("%.3f" % secs)
 
 # Set node radii sizes based on number of nodes
 func calc_radius():
@@ -68,13 +70,14 @@ func transition_graph(num):
 	graph = GameGraph.new()
 	# Display new graph
 	display_graph()
+	# Fade display back in
+	animation.play("fadein")
+	yield(animation, "animation_finished")
 	# Reset score and timer
 	moves = []
 	score.text = "0"
 	secs = 0.0
-	# Fade display back in
-	animation.play("fadein")
-	yield(animation, "animation_finished")
+	timer_active = true
 
 # Draw entire graph on screen
 func display_graph():
@@ -158,6 +161,7 @@ func check_win_condition():
 	# If the function hasn't returned yet, all nodes passed check
 	record_win()
 	open_next_puzzle()
+	timer_active = false
 
 # Check if current win beats previous best, and save it if so
 func record_win():
