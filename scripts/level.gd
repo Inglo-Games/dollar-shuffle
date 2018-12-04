@@ -6,6 +6,7 @@ onready var score = get_node("score")
 onready var undo_btn = get_node("undo_btn")
 onready var pause_btn = get_node("pause_btn")
 onready var node_cont = get_node("node_ui_container")
+onready var animation = get_node("anim")
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
@@ -35,7 +36,6 @@ var moves = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Entering level._ready function...")
 	# Load in level from file
 	graph = GameGraph.new()
 	# Set size of nodes on screen
@@ -57,6 +57,24 @@ func _process(delta):
 func calc_radius():
 	# Calculate outer_radius
 	radius = 80.0 / log(len(graph.graph_data))
+
+# Clear the old graph and load a new one
+func transition_graph(num):
+	# First, clear out old graph
+	animation.play("fadeout")
+	yield(animation, "animation_finished")
+	for ui in node_cont.get_children():
+		ui.queue_free()
+	graph = GameGraph.new()
+	# Display new graph
+	display_graph()
+	# Reset score and timer
+	moves = []
+	score.text = "0"
+	secs = 0.0
+	# Fade display back in
+	animation.play("fadein")
+	yield(animation, "animation_finished")
 
 # Draw entire graph on screen
 func display_graph():
@@ -139,12 +157,24 @@ func check_win_condition():
 			return false
 	# If the function hasn't returned yet, all nodes passed check
 	record_win()
-	globals.open_next_puzzle(self)
+	open_next_puzzle()
 
 # Check if current win beats previous best, and save it if so
 func record_win():
 	# TODO: Implement score and time records
 	pass
+
+# Change current puzzle to next puzzle
+func open_next_puzzle():
+	# Make sure that puzzle exists
+	if globals.current_level + 1 > globals.number_of_levels:
+		# Return to main menu
+		self.queue_free()
+		get_tree().change_scene("res://scenes/main_menu.tscn")
+		return
+	# Else, increment level num and load new game scene
+	globals.update_last_level(globals.current_level + 1)
+	transition_graph(globals.current_level)
 
 # Undo last move
 func undo():
