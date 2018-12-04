@@ -68,15 +68,17 @@ func transition_graph(num):
 	for ui in node_cont.get_children():
 		ui.queue_free()
 	graph = GameGraph.new()
+	# Reset score and timer
+	moves = []
+	score.text = "0"
+	secs = 0.0
+	timer.text = str("%.3f" % secs)
 	# Display new graph
 	display_graph()
 	# Fade display back in
 	animation.play("fadein")
 	yield(animation, "animation_finished")
-	# Reset score and timer
-	moves = []
-	score.text = "0"
-	secs = 0.0
+	# Restart timer
 	timer_active = true
 
 # Draw entire graph on screen
