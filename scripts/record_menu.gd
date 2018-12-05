@@ -1,0 +1,35 @@
+extends Node
+
+# UI Elements
+onready var back_btn = get_node("back_btn")
+onready var rec_list_ui = get_node("scroll_list/v_cont")
+
+# List entry layout
+var record_container
+
+# Called on load
+func _ready():
+	# Load the container that holds each record's scores and times
+	record_container = ResourceLoader.load("res://scenes/record_container.tscn")
+	populate_list()
+	# Connect back button to close function
+	back_btn.connect("pressed", self, "close_menu")
+
+# Populates the list of records
+func populate_list():
+	# Iterate through list of records
+	for record in globals.user_data.keys():
+		# Skip current_level entry
+		if record != "last_played":
+			# Create a new container for this record
+			var new_cont = record_container.instance()
+			# Fill in labels
+			var recs = globals.user_data[record]
+			new_cont.get_node("level_id").text = record
+			new_cont.get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs.values()
+			# Add new container to view
+			rec_list_ui.add_child(new_cont)
+
+func close_menu():
+	# Return to main menu
+	get_tree().change_scene("res://scenes/main_menu.tscn")
