@@ -161,14 +161,9 @@ func check_win_condition():
 		if graph.graph_data[node]["value"] < 0:
 			return false
 	# If the function hasn't returned yet, all nodes passed check
-	record_win()
-	open_next_puzzle()
 	timer_active = false
-
-# Check if current win beats previous best, and save it if so
-func record_win():
-	# TODO: Implement score and time records
-	pass
+	globals.record_win(len(moves), secs)
+	open_next_puzzle()
 
 # Change current puzzle to next puzzle
 func open_next_puzzle():
