@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://assets/undo_btn.png" type="Texture" id=2]
-[ext_resource path="res://assets/pause_btn.png" type="Texture" id=3]
-[ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=4]
+[ext_resource path="res://assets/undo_btn_disabled.png" type="Texture" id=3]
+[ext_resource path="res://assets/pause_btn.png" type="Texture" id=4]
+[ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -195,6 +196,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Margin", "Pause", "Rect", "Textures", "Transform", "Visibility", "Z Index" ]
 
 [node name="pause_btn" type="TextureButton" parent="." index="5"]
@@ -220,13 +222,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Anchor", "Margin", "Pause", "Rect", "Textures", "Transform" ]
 
 [node name="pause_background" type="ColorRect" parent="." index="6"]
 
 visible = false
-material = ExtResource( 4 )
+material = ExtResource( 5 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0

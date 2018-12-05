@@ -31,6 +31,9 @@ var radius = 100.0
 var secs = 0.0
 var timer_active = true
 
+# Number of undos left
+var undos_remaining = INF
+
 # List of moves as Vector2s, where x is the node tapped and y is whether it gave or took
 # 1 means gave points, -1 means took points
 var moves = []
@@ -44,6 +47,8 @@ func _ready():
 	# Draw everything on screen
 	display_graph()
 	score.text = "0"
+	# Setup number of undos
+	reset_undos()
 	# Connect buttons to functions
 	undo_btn.connect("pressed", self, "undo")
 	pause_btn.connect("pressed", self, "toggle_pause")
@@ -68,11 +73,12 @@ func transition_graph(num):
 	for ui in node_cont.get_children():
 		ui.queue_free()
 	graph = GameGraph.new()
-	# Reset score and timer
+	# Reset score, timer, and undos
 	moves = []
 	score.text = "0"
 	secs = 0.0
 	timer.text = str("%.3f" % secs)
+	reset_undos()
 	# Display new graph
 	display_graph()
 	# Fade display back in
@@ -80,6 +86,19 @@ func transition_graph(num):
 	yield(animation, "animation_finished")
 	# Restart timer
 	timer_active = true
+
+# Set the number of undos remaining based on difficulty
+func reset_undos():
+	match globals.pers_opts["difficulty"]:
+		0:
+			undos_remaining = INF
+			undo_btn.disabled = false
+		1:
+			undos_remaining = 3
+			undo_btn.disabled = false
+		2:
+			undos_remaining = 0
+			undo_btn.disabled = true
 
 # Draw entire graph on screen
 func display_graph():
@@ -179,8 +198,8 @@ func open_next_puzzle():
 
 # Undo last move
 func undo():
-	# Only do if moves have been done
-	if len(moves) > 0:
+	# Only do if moves have been done and user has undos left
+	if len(moves) > 0 and undos_remaining > 0:
 		# Take last move from list
 		var move = moves[-1]
 		# Do opposite of last move to same node
@@ -193,6 +212,11 @@ func undo():
 		moves.remove(len(moves)-1)
 		# Update score label
 		score.text = str(len(moves))
+		# Remove one from undos_remaining
+		undos_remaining -= 1
+		# If no undos remain, disable undo button
+		if undos_remaining == 0:
+			undo_btn.disabled = true
 
 # Pause game
 func toggle_pause():
