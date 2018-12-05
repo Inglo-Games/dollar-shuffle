@@ -26,7 +26,12 @@ func populate_list():
 			# Fill in labels
 			var recs = globals.user_data[record]
 			new_cont.get_node("level_id").text = record
-			new_cont.get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs.values()
+			if(recs.has("0")):
+				new_cont.get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs["0"].values()
+			if(recs.has("1")):
+				new_cont.get_node("nums/med_rec").text = "Medium: %d (%.3f)" % recs["1"].values()
+			if(recs.has("2")):
+				new_cont.get_node("nums/hard_rec").text = "Hard:         %d (%.3f)" % recs["2"].values()
 			# Add new container to view
 			rec_list_ui.add_child(new_cont)
 

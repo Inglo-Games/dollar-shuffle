@@ -22,11 +22,12 @@ func _ready():
 		pers_opts = FileIO.read_json_file(opts_filepath)
 	else:
 		pers_opts = get_options_defaults()
-	pass
 	# Load user data from file
 	if File.new().file_exists(user_filepath):
 		user_data = FileIO.read_json_file(user_filepath)
 		current_level = user_data["last_played"]
+	else:
+		user_data = {}
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
 
@@ -45,18 +46,25 @@ func update_last_level(num):
 
 # Check if current win beats previous best, and save it if so
 func record_win(score, time):
+	# Get current difficulty level
+	var diff = pers_opts["difficulty"]
 	# If no previous best exists, write a new one
 	if !user_data.has(str(current_level)):
-		user_data[str(current_level)] = {"score":score,"time":time}
+		user_data[str(current_level)] = {}
+		user_data[str(current_level)][diff] = {"score":score,"time":time}
+		FileIO.write_json_file(user_filepath, user_data)
+	# If no previous record exists for current difficulty, write one
+	elif !user_data[str(current_level)].has(diff):
+		user_data[str(current_level)][diff] = {"score":score,"time":time}
 		FileIO.write_json_file(user_filepath, user_data)
 	# If score beats record best, overwrite it
-	elif score < user_data[str(current_level)]["score"]:
-		user_data[str(current_level)]["score"] = score
-		user_data[str(current_level)]["time"] = time
+	elif score < user_data[str(current_level)][diff]["score"]:
+		user_data[str(current_level)][diff]["score"] = score
+		user_data[str(current_level)][diff]["time"] = time
 		FileIO.write_json_file(user_filepath, user_data)
 	# If score ties and time beats record best, overwrite it
-	elif score == user_data[str(current_level)]["score"] and time < user_data[str(current_level)]["time"]:
-		user_data[str(current_level)]["time"] = time
+	elif score == user_data[str(current_level)][diff]["score"] and time < user_data[str(current_level)][diff]["time"]:
+		user_data[str(current_level)][diff]["time"] = time
 		FileIO.write_json_file(user_filepath, user_data)
 
 # Count the number of files in a given directory
