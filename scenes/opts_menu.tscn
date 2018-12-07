@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/opts_menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/back_btn.png" type="Texture" id=2]
+[ext_resource path="res://assets/back_light.png" type="Texture" id=2]
 
-[node name="base" type="Control" index="0"]
+[node name="base" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
