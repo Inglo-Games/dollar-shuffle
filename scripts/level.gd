@@ -1,10 +1,10 @@
 extends Control
 
 # UI Elements
-onready var timer = get_node("timer")
-onready var score = get_node("score")
-onready var undo_btn = get_node("undo_btn")
-onready var pause_btn = get_node("pause_btn")
+onready var timer = get_node("label_container/timer")
+onready var score = get_node("label_container/score")
+onready var undo_btn = get_node("btn_container/undo_btn")
+onready var pause_btn = get_node("btn_container/pause_btn")
 onready var node_cont = get_node("node_ui_container")
 onready var animation = get_node("anim")
 

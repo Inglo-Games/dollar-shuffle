@@ -20,8 +20,12 @@ globals="*res://scripts/globals.gd"
 
 [display]
 
-window/size/width=600
+window/size/width=1920
+window/size/height=1080
 window/dpi/allow_hidpi=true
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/shrink="1"
 
 [input]
 
@@ -32,4 +36,6 @@ take_action=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"reso
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_environment="res://default_env.tres"
