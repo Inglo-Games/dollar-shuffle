@@ -121,7 +121,7 @@ func draw_node(num):
 	# Create GameNode object to add to screen
 	var game_node = GameNode.new()
 	game_node.initialize(num, radius)
-	game_node.position = location
+	game_node.rect_position = location
 	# Add node as child once loading is finished
 	node_cont.call_deferred("add_child", game_node)
 	# Add node to group
