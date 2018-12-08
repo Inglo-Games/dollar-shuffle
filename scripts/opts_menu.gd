@@ -8,6 +8,7 @@ onready var back_btn = get_node("back_btn")
 onready var diff_sel = get_node("opts_menu_container/difficulty_selector")
 onready var darkm_check = get_node("opts_menu_container/darkmode_check")
 onready var reset_btn = get_node("opts_menu_container/reset")
+onready var attrib_btn = get_node("opts_menu_container/attribs")
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]
@@ -26,6 +27,7 @@ func _ready():
 	diff_sel.connect("item_selected", self, "on_diff_selected")
 	darkm_check.connect("pressed", self, "on_darkm_selected")
 	reset_btn.connect("pressed", self, "set_defaults")
+	attrib_btn.connect("pressed", self, "show_attributions")
 
 func close_menu():
 	# Save options
@@ -47,6 +49,10 @@ func on_diff_selected(item):
 func on_darkm_selected():
 	# Save selected boolean to pers_opts
 	globals.pers_opts["darkmode"] = darkm_check.is_pressed()
+
+func show_credits():
+	# Todo: Add attributions page
+	pass
 
 func set_defaults():
 	# Write default values to options file
