@@ -9,12 +9,21 @@ var node_num = -1
 # UI elements
 var sprite
 var label
+var pos_node_img
+var neg_node_img
 
 func _ready():
 	# Add sprite to show node image
 	sprite = Sprite.new()
 	call_deferred("add_child", sprite)
 	sprite.set_texture(load("res://assets/dot_red_light.png"))
+	# Set node images depending on dark mode
+	if globals.pers_opts["darkmode"]:
+		pos_node_img = load("res://assets/dot_green_dark.png")
+		neg_node_img = load("res://assets/dot_red_dark.png")
+	else:
+		pos_node_img = load("res://assets/dot_green_light.png")
+		neg_node_img = load("res://assets/dot_red_light.png")
 	# Set scale of texture based on given size
 	var scale_ratio = scale_val / 100.0
 	sprite.scale = Vector2(scale_ratio, scale_ratio)
@@ -32,9 +41,9 @@ func _draw():
 	# Determine image to use based on value
 	var value = get_parent().get_parent().graph.graph_data[str(node_num)]["value"]
 	if value < 0:
-		sprite.set_texture(load("res://assets/dot_red_light.png"))
+		sprite.set_texture(neg_node_img)
 	else:
-		sprite.set_texture(load("res://assets/dot_green_light.png"))
+		sprite.set_texture(pos_node_img)
 	# Set text of label to value
 	label.text = "$%d" % value
 	label.align = Label.ALIGN_CENTER

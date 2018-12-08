@@ -9,6 +9,10 @@ onready var back_btn = get_node("back_btn")
 onready var lvl_list = get_node("lvl_list")
 
 func _ready():
+	# Set background color and back button if dark mode
+	if globals.pers_opts["darkmode"]:
+		get_node("background").color = globals.BACK_DARK
+		back_btn.texture_normal = load("res://assets/back_dark.png")
 	# Populate the list with levels
 	populate_list()
 	# Connect list to function that opens levels

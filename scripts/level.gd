@@ -1,6 +1,7 @@
 extends Control
 
 # UI Elements
+onready var backg = get_node("background")
 onready var timer = get_node("label_container/timer")
 onready var score = get_node("label_container/score")
 onready var undo_btn = get_node("btn_container/undo_btn")
@@ -18,12 +19,6 @@ const PausePopup = preload("res://scripts/pause_popup.gd")
 # GameGraph object for this level
 onready var graph
 
-# Colors for node UI
-const LIGHT_GREEN = Color("#F000FF00")
-const LIGHT_RED = Color("#F0FF0000")
-const LIGHT_GREY = Color("#F0A0A0A0")
-const BLACK = Color("#FF000000")
-
 # Size for node UI
 var radius = 100.0
 
@@ -40,6 +35,12 @@ var moves = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Set background color and buttons if dark mode
+	if globals.pers_opts["darkmode"]:
+		backg.color = globals.BACK_DARK
+		undo_btn.texture_normal = load("res://assets/undo_dark.png")
+		undo_btn.texture_disabled = load("res://assets/undo_disabled_dark.png")
+		pause_btn.texture_normal = load("res://assets/pause_dark.png")
 	# Load in level from file
 	graph = GameGraph.new()
 	# Set size of nodes on screen
@@ -139,7 +140,10 @@ func draw_conn_line(n1, n2):
 	var line = Line2D.new()
 	line.add_point(loc1)
 	line.add_point(loc2)
-	line.default_color = BLACK
+	if globals.pers_opts["darkmode"]:
+		line.default_color = globals.LIGHT_GREY
+	else:
+		line.default_color = globals.BLACK
 	node_cont.call_deferred("add_child", line)
 
 # Callback to give points to neighbors

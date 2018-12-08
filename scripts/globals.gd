@@ -7,6 +7,14 @@ const FileIO = preload("res://scripts/file_io.gd")
 const opts_filepath = "user://opts.dat"
 const user_filepath = "user://user.dat"
 
+# Colors for UI
+const LIGHT_GREEN = Color("#F000FF00")
+const LIGHT_RED = Color("#F0FF0000")
+const LIGHT_GREY = Color("#F0A0A0A0")
+const BLACK = Color("#FF000000")
+const BACK_LIGHT = Color("#FFD8D8D8")
+const BACK_DARK = Color("#FF5B5B5B")
+
 # Global variables
 var current_level = 1
 var number_of_levels = -1

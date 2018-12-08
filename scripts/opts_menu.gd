@@ -13,6 +13,10 @@ onready var reset_btn = get_node("opts_menu_container/reset")
 var diff_array = ["Easy", "Medium", "Hard"]
 
 func _ready():
+	# Set background color and back button if dark mode
+	if globals.pers_opts["darkmode"]:
+		get_node("background").color = globals.BACK_DARK
+		back_btn.texture_normal = load("res://assets/back_dark.png")
 	# Connect back button to close function
 	back_btn.connect("pressed", self, "close_menu")
 	# Setup option UIs
