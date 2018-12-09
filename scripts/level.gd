@@ -38,9 +38,9 @@ func _ready():
 	# Set background color and buttons if dark mode
 	if globals.pers_opts["darkmode"]:
 		backg.color = globals.BACK_DARK
-		undo_btn.texture_normal = load("res://assets/undo_dark.png")
-		undo_btn.texture_disabled = load("res://assets/undo_disabled_dark.png")
-		pause_btn.texture_normal = load("res://assets/pause_dark.png")
+		undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
+		undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_dark.png")
+		pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
 	# Load in level from file
 	graph = GameGraph.new()
 	# Set size of nodes on screen

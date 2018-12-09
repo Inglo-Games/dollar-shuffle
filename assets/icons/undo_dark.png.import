@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/back_btn.png-f7ee1e78f20ad7dce012ab5f93cbb1c8.stex"
+path="res://.import/undo_dark.png-680865074178f8509a6a4c6d30b908be.stex"
 
 [deps]
 
-source_file="res://assets/back_btn.png"
-dest_files=[ "res://.import/back_btn.png-f7ee1e78f20ad7dce012ab5f93cbb1c8.stex" ]
+source_file="res://assets/icons/undo_dark.png"
+dest_files=[ "res://.import/undo_dark.png-680865074178f8509a6a4c6d30b908be.stex" ]
 
 [params]
 

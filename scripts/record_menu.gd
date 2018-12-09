@@ -12,7 +12,7 @@ func _ready():
 	# Set background color and back button if dark mode
 	if globals.pers_opts["darkmode"]:
 		get_node("background").color = globals.BACK_DARK
-		back_btn.texture_normal = load("res://assets/back_dark.png")
+		back_btn.texture_normal = load("res://assets/icons/back_dark.png")
 	# Load the container that holds each record's scores and times
 	record_container = ResourceLoader.load("res://scenes/record_container.tscn")
 	populate_list()
@@ -33,7 +33,7 @@ func populate_list():
 			if(recs.has("0")):
 				new_cont.get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs["0"].values()
 			if(recs.has("1")):
-				new_cont.get_node("nums/med_rec").text = "Medium: %d (%.3f)" % recs["1"].values()
+				new_cont.get_node("nums/med_rec").text = "Medium:  %d (%.3f)" % recs["1"].values()
 			if(recs.has("2")):
 				new_cont.get_node("nums/hard_rec").text = "Hard:         %d (%.3f)" % recs["2"].values()
 			# Add new container to view
