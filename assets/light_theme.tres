@@ -1,8 +1,8 @@
-[gd_resource type="Theme" load_steps=633 format=2]
+[gd_resource type="Theme" load_steps=620 format=2]
 
 [ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=1]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=608]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -55,7 +55,7 @@ lossy_quality = 0.7
 flags = 0
 size = Vector2( 16, 16 )
 
-[sub_resource type="ImageTexture" id=5]
+[sub_resource type="ImageTexture" id=609]
 
 flags = 0
 storage = 0
@@ -63,7 +63,7 @@ lossy_quality = 0.7
 flags = 0
 size = Vector2( 16, 16 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=610]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -100,7 +100,7 @@ lossy_quality = 0.7
 flags = 0
 size = Vector2( 42, 26 )
 
-[sub_resource type="ImageTexture" id=8]
+[sub_resource type="ImageTexture" id=611]
 
 flags = 0
 storage = 0
@@ -110,16 +110,16 @@ size = Vector2( 42, 26 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 
-content_margin_left = 6.0
-content_margin_right = 6.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
-draw_center = false
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
 border_blend = false
 corner_radius_top_left = 0
@@ -129,38 +129,14 @@ corner_radius_bottom_left = 0
 corner_detail = 8
 expand_margin_left = 0.0
 expand_margin_right = 0.0
-expand_margin_top = 0.0
+expand_margin_top = 24.0
 expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="ImageTexture" id=10]
-
-flags = 0
-storage = 0
-lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
-
-[sub_resource type="ImageTexture" id=11]
-
-flags = 0
-storage = 0
-lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
-
-[sub_resource type="ImageTexture" id=12]
-
-flags = 0
-storage = 0
-lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
-
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=615]
 
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -210,7 +186,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=17]
 
@@ -276,6 +252,14 @@ lossy_quality = 0.7
 flags = 0
 size = Vector2( 16, 16 )
 
+[sub_resource type="ImageTexture" id=612]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
 [sub_resource type="ImageTexture" id=25]
 
 flags = 0
@@ -322,7 +306,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=31]
 
@@ -346,7 +330,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=34]
 
@@ -450,7 +434,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 16 )
 
 [sub_resource type="ImageTexture" id=47]
 
@@ -474,7 +458,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 16 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=50]
 
@@ -490,7 +474,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=52]
 
@@ -514,7 +498,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=55]
 
@@ -554,7 +538,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 32, 128 )
 
 [sub_resource type="ImageTexture" id=60]
 
@@ -562,7 +546,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 128 )
 
 [sub_resource type="ImageTexture" id=61]
 
@@ -570,7 +554,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 128 )
 
 [sub_resource type="ImageTexture" id=62]
 
@@ -578,7 +562,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 32, 128 )
+size = Vector2( 16, 128 )
 
 [sub_resource type="ImageTexture" id=63]
 
@@ -586,7 +570,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 128 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=64]
 
@@ -594,7 +578,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 128 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=65]
 
@@ -602,7 +586,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 128 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=66]
 
@@ -714,7 +698,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 64, 64 )
 
 [sub_resource type="ImageTexture" id=80]
 
@@ -738,7 +722,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 64, 64 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=83]
 
@@ -794,7 +778,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=90]
 
@@ -818,7 +802,15 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=614]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=93]
 
@@ -1122,7 +1114,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 12, 12 )
 
 [sub_resource type="ImageTexture" id=131]
 
@@ -1138,7 +1130,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 12, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=133]
 
@@ -1162,7 +1154,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 12, 12 )
 
 [sub_resource type="ImageTexture" id=136]
 
@@ -1170,7 +1162,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 12, 12 )
 
 [sub_resource type="ImageTexture" id=137]
 
@@ -1202,7 +1194,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 12, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=141]
 
@@ -1210,7 +1202,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 12, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=142]
 
@@ -1258,7 +1250,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 64, 64 )
 
 [sub_resource type="ImageTexture" id=148]
 
@@ -1266,7 +1258,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=149]
 
@@ -1274,7 +1266,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 64, 64 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=150]
 
@@ -1282,7 +1274,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=151]
 
@@ -1338,7 +1330,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=158]
 
@@ -1354,7 +1346,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=160]
 
@@ -1362,7 +1354,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 10, 10 )
 
 [sub_resource type="ImageTexture" id=161]
 
@@ -1370,7 +1362,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 10, 10 )
 
 [sub_resource type="ImageTexture" id=162]
 
@@ -1378,7 +1370,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 10, 10 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=163]
 
@@ -1386,7 +1378,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 10, 10 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=164]
 
@@ -1394,7 +1386,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=165]
 
@@ -1410,7 +1402,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=167]
 
@@ -1418,7 +1410,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 32, 32 )
 
 [sub_resource type="ImageTexture" id=168]
 
@@ -1426,7 +1418,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=169]
 
@@ -1434,15 +1426,15 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 32, 32 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=170]
 
-flags = 0
+flags = 7
 storage = 0
 lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
+flags = 7
+size = Vector2( 64, 64 )
 
 [sub_resource type="ImageTexture" id=171]
 
@@ -1482,15 +1474,15 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 32, 32 )
 
 [sub_resource type="ImageTexture" id=176]
 
-flags = 7
+flags = 0
 storage = 0
 lossy_quality = 0.7
-flags = 7
-size = Vector2( 64, 64 )
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=177]
 
@@ -1498,7 +1490,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 32, 32 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=178]
 
@@ -1506,7 +1498,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 32, 32 )
 
 [sub_resource type="ImageTexture" id=179]
 
@@ -1522,7 +1514,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 32, 32 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=181]
 
@@ -1550,11 +1542,11 @@ size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=184]
 
-flags = 0
+flags = 7
 storage = 0
 lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
+flags = 7
+size = Vector2( 64, 64 )
 
 [sub_resource type="ImageTexture" id=185]
 
@@ -1562,15 +1554,15 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 32, 32 )
 
 [sub_resource type="ImageTexture" id=186]
 
-flags = 7
+flags = 0
 storage = 0
 lossy_quality = 0.7
-flags = 7
-size = Vector2( 64, 64 )
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=187]
 
@@ -1578,7 +1570,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 32, 32 )
+size = Vector2( 8, 16 )
 
 [sub_resource type="ImageTexture" id=188]
 
@@ -1594,7 +1586,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 16 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=190]
 
@@ -1622,19 +1614,19 @@ size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=193]
 
-flags = 0
+flags = 7
 storage = 0
 lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
+flags = 7
+size = Vector2( 128, 128 )
 
 [sub_resource type="ImageTexture" id=194]
 
-flags = 0
+flags = 7
 storage = 0
 lossy_quality = 0.7
-flags = 0
-size = Vector2( 16, 16 )
+flags = 7
+size = Vector2( 128, 128 )
 
 [sub_resource type="ImageTexture" id=195]
 
@@ -1710,19 +1702,19 @@ size = Vector2( 128, 128 )
 
 [sub_resource type="ImageTexture" id=204]
 
-flags = 7
+flags = 0
 storage = 0
 lossy_quality = 0.7
-flags = 7
-size = Vector2( 128, 128 )
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=205]
 
-flags = 7
+flags = 0
 storage = 0
 lossy_quality = 0.7
-flags = 7
-size = Vector2( 128, 128 )
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=206]
 
@@ -1834,7 +1826,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 14, 14 )
 
 [sub_resource type="ImageTexture" id=220]
 
@@ -1842,7 +1834,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 14, 8 )
 
 [sub_resource type="ImageTexture" id=221]
 
@@ -1850,7 +1842,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 14, 14 )
+size = Vector2( 10, 10 )
 
 [sub_resource type="ImageTexture" id=222]
 
@@ -1858,7 +1850,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 14, 8 )
+size = Vector2( 4, 16 )
 
 [sub_resource type="ImageTexture" id=223]
 
@@ -1866,7 +1858,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 10, 10 )
+size = Vector2( 8, 64 )
 
 [sub_resource type="ImageTexture" id=224]
 
@@ -1874,7 +1866,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 4, 16 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=225]
 
@@ -1882,7 +1874,15 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 64 )
+size = Vector2( 6, 16 )
+
+[sub_resource type="ImageTexture" id=613]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=226]
 
@@ -1890,7 +1890,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 6, 16 )
+size = Vector2( 0, 0 )
 
 [sub_resource type="ImageTexture" id=227]
 
@@ -1898,7 +1898,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 0, 0 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=228]
 
@@ -1938,7 +1938,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 12, 12 )
 
 [sub_resource type="ImageTexture" id=233]
 
@@ -1970,7 +1970,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 12, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=237]
 
@@ -1994,7 +1994,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=240]
 
@@ -2002,7 +2002,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=241]
 
@@ -2010,7 +2010,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 12, 12 )
 
 [sub_resource type="ImageTexture" id=242]
 
@@ -2026,7 +2026,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 12, 12 )
+size = Vector2( 14, 14 )
 
 [sub_resource type="ImageTexture" id=244]
 
@@ -2042,7 +2042,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 14, 14 )
+size = Vector2( 16, 4 )
 
 [sub_resource type="ImageTexture" id=246]
 
@@ -2050,7 +2050,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 4 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=247]
 
@@ -2074,7 +2074,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=250]
 
@@ -2082,7 +2082,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 64, 8 )
 
 [sub_resource type="ImageTexture" id=251]
 
@@ -2090,7 +2090,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 64, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=252]
 
@@ -2242,7 +2242,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 8 )
 
 [sub_resource type="ImageTexture" id=271]
 
@@ -2282,7 +2282,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=276]
 
@@ -2338,7 +2338,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=283]
 
@@ -2354,7 +2354,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=285]
 
@@ -2386,7 +2386,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=289]
 
@@ -2410,7 +2410,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=292]
 
@@ -2538,7 +2538,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 187, 69 )
 
 [sub_resource type="ImageTexture" id=308]
 
@@ -2546,7 +2546,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 187, 69 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=309]
 
@@ -2730,7 +2730,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=332]
 
@@ -2738,7 +2738,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=333]
 
@@ -2882,7 +2882,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=351]
 
@@ -2890,7 +2890,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=352]
 
@@ -2914,7 +2914,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=355]
 
@@ -2922,7 +2922,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=356]
 
@@ -3194,7 +3194,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=390]
 
@@ -3202,7 +3202,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=391]
 
@@ -3290,7 +3290,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=402]
 
@@ -3346,7 +3346,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=409]
 
@@ -3522,7 +3522,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=431]
 
@@ -3538,7 +3538,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=433]
 
@@ -3578,7 +3578,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=438]
 
@@ -3586,7 +3586,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=439]
 
@@ -3626,7 +3626,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 14, 14 )
 
 [sub_resource type="ImageTexture" id=444]
 
@@ -3634,7 +3634,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 14, 14 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=445]
 
@@ -4050,7 +4050,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=497]
 
@@ -4058,7 +4058,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=498]
 
@@ -4146,7 +4146,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 64, 64 )
 
 [sub_resource type="ImageTexture" id=509]
 
@@ -4154,7 +4154,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 64, 64 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=510]
 
@@ -4242,7 +4242,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=521]
 
@@ -4258,7 +4258,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 8 )
 
 [sub_resource type="ImageTexture" id=523]
 
@@ -4282,7 +4282,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 8 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=526]
 
@@ -4298,7 +4298,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=528]
 
@@ -4402,7 +4402,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=541]
 
@@ -4426,7 +4426,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 12 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=544]
 
@@ -4530,7 +4530,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 10, 10 )
 
 [sub_resource type="ImageTexture" id=557]
 
@@ -4538,7 +4538,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 10, 10 )
+size = Vector2( 8, 8 )
 
 [sub_resource type="ImageTexture" id=558]
 
@@ -4546,7 +4546,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 8, 8 )
+size = Vector2( 16, 16 )
 
 [sub_resource type="ImageTexture" id=559]
 
@@ -4618,7 +4618,7 @@ flags = 0
 storage = 0
 lossy_quality = 0.7
 flags = 0
-size = Vector2( 16, 16 )
+size = Vector2( 16, 12 )
 
 [sub_resource type="ImageTexture" id=568]
 
@@ -4636,7 +4636,7 @@ lossy_quality = 0.7
 flags = 0
 size = Vector2( 16, 12 )
 
-[sub_resource type="ImageTexture" id=570]
+[sub_resource type="ImageTexture" id=616]
 
 flags = 0
 storage = 0
@@ -4645,34 +4645,6 @@ flags = 0
 size = Vector2( 16, 12 )
 
 [sub_resource type="StyleBoxFlat" id=571]
-
-content_margin_left = 4.0
-content_margin_right = 4.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color( 0.122549, 0.144608, 0.193627, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=572]
 
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -4700,7 +4672,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=573]
+[sub_resource type="StyleBoxFlat" id=572]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -4728,7 +4700,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=574]
+[sub_resource type="StyleBoxFlat" id=573]
 
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -4756,7 +4728,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=575]
+[sub_resource type="StyleBoxFlat" id=574]
 
 content_margin_left = 10.0
 content_margin_right = 10.0
@@ -4784,7 +4756,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=576]
+[sub_resource type="StyleBoxFlat" id=575]
 
 content_margin_left = 10.0
 content_margin_right = 10.0
@@ -4812,7 +4784,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=577]
+[sub_resource type="StyleBoxFlat" id=576]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -4840,7 +4812,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=578]
+[sub_resource type="StyleBoxFlat" id=577]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -4868,7 +4840,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=579]
+[sub_resource type="StyleBoxFlat" id=578]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -4896,28 +4868,39 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxEmpty" id=580]
+[sub_resource type="StyleBoxEmpty" id=579]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
 content_margin_top = 4.0
 content_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxEmpty" id=581]
+[sub_resource type="StyleBoxEmpty" id=580]
 
 content_margin_left = 0.0
 content_margin_right = 0.0
 content_margin_top = 0.0
 content_margin_bottom = 0.0
 
-[sub_resource type="StyleBoxEmpty" id=582]
+[sub_resource type="StyleBoxEmpty" id=581]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
 content_margin_top = 0.0
 content_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id=583]
+[sub_resource type="StyleBoxLine" id=582]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 1.0
+thickness = 1
+vertical = false
+
+[sub_resource type="StyleBoxFlat" id=617]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -4947,400 +4930,6 @@ anti_aliasing_size = 1
 
 [sub_resource type="StyleBoxFlat" id=584]
 
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.9 )
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.988235, 1.06024, 0.327529, 1.2 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0.988235, 1.06024, 0.327529, 0.12 )
-shadow_size = 8
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=585]
-
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.3 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.9 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=586]
-
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.4 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.9 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=587]
-
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.7 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.9 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=588]
-
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.9 )
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 1.5, 0.208, 0.309333, 1.7 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 1.5, 0.208, 0.309333, 0.34 )
-shadow_size = 8
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=589]
-
-content_margin_left = 28.0
-content_margin_right = 28.0
-content_margin_top = 24.0
-content_margin_bottom = 5.0
-bg_color = Color( 0, 0, 0, 0.9 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.411765, 0.611765, 0.909804, 0.9 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.3 )
-shadow_size = 8
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="ImageTexture" id=590]
-
-flags = 7
-storage = 0
-lossy_quality = 0.7
-flags = 7
-size = Vector2( 0, 0 )
-
-[sub_resource type="StyleBoxTexture" id=591]
-
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = SubResource( 234 )
-region_rect = Rect2( 0, 0, 12, 12 )
-margin_left = 6.0
-margin_right = 6.0
-margin_top = 6.0
-margin_bottom = 6.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=592]
-
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = SubResource( 235 )
-region_rect = Rect2( 0, 0, 12, 12 )
-margin_left = 5.0
-margin_right = 5.0
-margin_top = 5.0
-margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=593]
-
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-texture = SubResource( 236 )
-region_rect = Rect2( 0, 0, 12, 12 )
-margin_left = 6.0
-margin_right = 6.0
-margin_top = 6.0
-margin_bottom = 6.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=594]
-
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-texture = SubResource( 233 )
-region_rect = Rect2( 0, 0, 12, 12 )
-margin_left = 5.0
-margin_right = 5.0
-margin_top = 5.0
-margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=595]
-
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-texture = SubResource( 233 )
-region_rect = Rect2( 0, 0, 12, 12 )
-margin_left = 5.0
-margin_right = 5.0
-margin_top = 5.0
-margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxLine" id=596]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-color = Color( 1, 1, 1, 0.1 )
-grow = 1.0
-thickness = 1
-vertical = false
-
-[sub_resource type="StyleBoxFlat" id=597]
-
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-bg_color = Color( 0.397059, 0.423529, 0.482353, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=598]
-
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-bg_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="ImageTexture" id=599]
-
-flags = 4
-storage = 0
-lossy_quality = 0.7
-flags = 4
-size = Vector2( 32, 32 )
-
-[sub_resource type="StyleBoxTexture" id=600]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-texture = SubResource( 599 )
-region_rect = Rect2( 0, 0, 32, 32 )
-margin_left = 1.0
-margin_right = 1.0
-margin_top = 1.0
-margin_bottom = 1.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxFlat" id=601]
-
-content_margin_left = 12.0
-content_margin_right = 12.0
-content_margin_top = 12.0
-content_margin_bottom = 12.0
-bg_color = Color( 0.65625, 0.65625, 0.65625, 0.368902 )
-draw_center = true
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Content Margin", "Corner Radius", "Expand Margin", "Resource", "Shadow" ]
-
-[sub_resource type="StyleBoxFlat" id=602]
-
 content_margin_left = 4.0
 content_margin_right = 4.0
 content_margin_top = 4.0
@@ -5367,7 +4956,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=603]
+[sub_resource type="StyleBoxFlat" id=585]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -5395,7 +4984,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=604]
+[sub_resource type="StyleBoxFlat" id=586]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -5423,63 +5012,36 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=605]
+[sub_resource type="StyleBoxFlat" id=587]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
 content_margin_top = 4.0
 content_margin_bottom = 4.0
-bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+bg_color = Color( 0, 0.508941, 0, 1 )
 draw_center = true
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.411765, 0.611765, 0.909804, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_color = Color( 0, 0, 0, 0.729255 )
 shadow_size = 0
 anti_aliasing = true
-anti_aliasing_size = 1
+anti_aliasing_size = 2
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
 
-[sub_resource type="StyleBoxFlat" id=606]
-
-content_margin_left = 6.0
-content_margin_right = 6.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color( 0.444122, 0.492983, 0.601562, 1 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=607]
+[sub_resource type="StyleBoxFlat" id=588]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -5507,7 +5069,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=608]
+[sub_resource type="StyleBoxFlat" id=589]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -5535,36 +5097,15 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=609]
+[sub_resource type="ImageTexture" id=618]
 
-content_margin_left = 8.0
-content_margin_right = 8.0
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-bg_color = Color( 0, 0.68302, 0, 0.564471 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.3 )
-shadow_size = 4
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Border", "Corner Radius", "Expand Margin" ]
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 0, 0 )
 
-[sub_resource type="StyleBoxLine" id=610]
+[sub_resource type="StyleBoxLine" id=591]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -5575,52 +5116,7 @@ grow = 7.0
 thickness = 1
 vertical = false
 
-[sub_resource type="StyleBoxTexture" id=611]
-
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-texture = SubResource( 228 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 4.0
-margin_right = 4.0
-margin_top = 4.0
-margin_bottom = 4.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=612]
-
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_top = 1.0
-content_margin_bottom = 1.0
-texture = SubResource( 229 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 6.0
-margin_right = 6.0
-margin_top = 6.0
-margin_bottom = 6.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxEmpty" id=613]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
-[sub_resource type="StyleBoxFlat" id=614]
+[sub_resource type="StyleBoxFlat" id=592]
 
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -5648,35 +5144,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=615]
-
-content_margin_left = 6.0
-content_margin_right = 6.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
-draw_center = true
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.397059, 0.423529, 0.482353, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=616]
+[sub_resource type="StyleBoxFlat" id=593]
 
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -5704,7 +5172,35 @@ shadow_size = 4
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=617]
+[sub_resource type="StyleBoxFlat" id=594]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=595]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -5732,7 +5228,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=618]
+[sub_resource type="StyleBoxFlat" id=596]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -5760,21 +5256,42 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxEmpty" id=619]
+[sub_resource type="StyleBoxEmpty" id=597]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[sub_resource type="StyleBoxEmpty" id=620]
+[sub_resource type="StyleBoxFlat" id=598]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.444122, 0.492983, 0.601562, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=621]
+[sub_resource type="StyleBoxFlat" id=600]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -5802,7 +5319,230 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxTexture" id=622]
+[sub_resource type="StyleBoxLine" id=601]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 0.0
+thickness = 1
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id=602]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 24.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=603]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0.65, 0, 0.364667 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 3
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius" ]
+
+[sub_resource type="StyleBoxFlat" id=604]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0.784314, 0, 1 )
+draw_center = true
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=607]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0.254902, 0, 1 )
+draw_center = true
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 1 )
+border_blend = false
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxFlat" id=619]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0.332031, 0, 1 )
+draw_center = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxFlat" id=620]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0, 0.68302, 0, 0.564471 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Expand Margin" ]
+
+[sub_resource type="StyleBoxLine" id=621]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 7.0
+thickness = 1
+vertical = false
+
+[sub_resource type="StyleBoxFlat" id=627]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 0.9 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxTexture" id=633]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -5821,7 +5561,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=623]
+[sub_resource type="StyleBoxTexture" id=634]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -5840,7 +5580,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=624]
+[sub_resource type="StyleBoxTexture" id=635]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -5859,7 +5599,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=625]
+[sub_resource type="StyleBoxTexture" id=636]
 
 content_margin_left = 0.0
 content_margin_right = 0.0
@@ -5878,7 +5618,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=626]
+[sub_resource type="StyleBoxTexture" id=637]
 
 content_margin_left = 0.0
 content_margin_right = 0.0
@@ -5897,7 +5637,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxLine" id=627]
+[sub_resource type="StyleBoxLine" id=638]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -5908,7 +5648,7 @@ grow = 0.0
 thickness = 1
 vertical = true
 
-[sub_resource type="StyleBoxFlat" id=628]
+[sub_resource type="StyleBoxFlat" id=639]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -5936,7 +5676,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=629]
+[sub_resource type="StyleBoxFlat" id=640]
 
 content_margin_left = 2.0
 content_margin_right = 2.0
@@ -5964,7 +5704,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxTexture" id=630]
+[sub_resource type="StyleBoxTexture" id=641]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -5983,7 +5723,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxFlat" id=631]
+[sub_resource type="StyleBoxFlat" id=642]
 
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -6021,11 +5761,11 @@ Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 Button/colors/icon_color_pressed = Color( 0.473529, 0.703529, 1.04627, 1 )
-Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 1 )
-Button/styles/normal = SubResource( 1 )
-Button/styles/pressed = SubResource( 1 )
+Button/styles/disabled = SubResource( 608 )
+Button/styles/focus = SubResource( 608 )
+Button/styles/hover = SubResource( 608 )
+Button/styles/normal = SubResource( 608 )
+Button/styles/pressed = SubResource( 608 )
 CheckBox/colors/font_color = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_disabled = Color( 0.558594, 0.558594, 0.558594, 1 )
 CheckBox/colors/font_color_hover = Color( 0.25, 0.25, 0.25, 1 )
@@ -6036,11 +5776,11 @@ CheckBox/constants/hseparation = 4
 CheckBox/icons/checked = SubResource( 2 )
 CheckBox/icons/radio_checked = SubResource( 3 )
 CheckBox/icons/radio_unchecked = SubResource( 4 )
-CheckBox/icons/unchecked = SubResource( 5 )
-CheckBox/styles/disabled = SubResource( 6 )
-CheckBox/styles/hover = SubResource( 6 )
-CheckBox/styles/normal = SubResource( 6 )
-CheckBox/styles/pressed = SubResource( 6 )
+CheckBox/icons/unchecked = SubResource( 609 )
+CheckBox/styles/disabled = SubResource( 610 )
+CheckBox/styles/hover = SubResource( 610 )
+CheckBox/styles/normal = SubResource( 610 )
+CheckBox/styles/pressed = SubResource( 610 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0.515625, 0.50354, 0.50354, 1 )
 CheckButton/colors/font_color_hover = Color( 0.226562, 0.226562, 0.226562, 1 )
@@ -6049,20 +5789,11 @@ CheckButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/icons/off = SubResource( 7 )
-CheckButton/icons/on = SubResource( 8 )
+CheckButton/icons/on = SubResource( 611 )
 CheckButton/styles/disabled = SubResource( 9 )
 CheckButton/styles/hover = SubResource( 9 )
 CheckButton/styles/normal = SubResource( 9 )
 CheckButton/styles/pressed = SubResource( 9 )
-ColorPicker/constants/h_width = 30
-ColorPicker/constants/label_width = 10
-ColorPicker/constants/margin = 8
-ColorPicker/constants/sv_height = 256
-ColorPicker/constants/sv_width = 256
-ColorPicker/icons/add_preset = SubResource( 10 )
-ColorPicker/icons/preset_bg = SubResource( 11 )
-ColorPicker/icons/screen_picker = SubResource( 12 )
-ColorPickerButton/icons/bg = SubResource( 11 )
 Editor/colors/accent_color = Color( 0.411765, 0.611765, 0.909804, 1 )
 Editor/colors/base_color = Color( 0.196078, 0.231373, 0.309804, 1 )
 Editor/colors/contrast_color_1 = Color( 0.397059, 0.423529, 0.482353, 1 )
@@ -6086,7 +5817,7 @@ Editor/colors/warning_color = Color( 0.988235, 1.06024, 0.327529, 1.2 )
 Editor/constants/dark_theme = 1
 Editor/constants/scale = 1
 Editor/constants/thumb_size = 64
-EditorAbout/styles/panel = SubResource( 13 )
+EditorAbout/styles/panel = SubResource( 615 )
 EditorFonts/fonts/doc = null
 EditorFonts/fonts/doc_source = null
 EditorFonts/fonts/doc_title = null
@@ -6107,7 +5838,7 @@ EditorIcons/icons/AcceptDialog = SubResource( 21 )
 EditorIcons/icons/ActionCopy = SubResource( 22 )
 EditorIcons/icons/ActionCut = SubResource( 23 )
 EditorIcons/icons/ActionPaste = SubResource( 24 )
-EditorIcons/icons/Add = SubResource( 10 )
+EditorIcons/icons/Add = SubResource( 612 )
 EditorIcons/icons/Anchor = SubResource( 25 )
 EditorIcons/icons/AnimatedSprite = SubResource( 26 )
 EditorIcons/icons/AnimatedSprite3D = SubResource( 27 )
@@ -6176,7 +5907,7 @@ EditorIcons/icons/CollisionPolygon2D = SubResource( 89 )
 EditorIcons/icons/CollisionShape = SubResource( 90 )
 EditorIcons/icons/CollisionShape2D = SubResource( 91 )
 EditorIcons/icons/Color = SubResource( 92 )
-EditorIcons/icons/ColorPick = SubResource( 12 )
+EditorIcons/icons/ColorPick = SubResource( 614 )
 EditorIcons/icons/ColorPicker = SubResource( 93 )
 EditorIcons/icons/ColorPickerButton = SubResource( 94 )
 EditorIcons/icons/ColorRamp = SubResource( 95 )
@@ -6311,7 +6042,7 @@ EditorIcons/icons/GuiEllipsis = SubResource( 222 )
 EditorIcons/icons/GuiGraphNodePort = SubResource( 223 )
 EditorIcons/icons/GuiHTick = SubResource( 224 )
 EditorIcons/icons/GuiHsplitter = SubResource( 225 )
-EditorIcons/icons/GuiMiniCheckerboard = SubResource( 11 )
+EditorIcons/icons/GuiMiniCheckerboard = SubResource( 613 )
 EditorIcons/icons/GuiMiniTabMenu = SubResource( 226 )
 EditorIcons/icons/GuiOptionArrow = SubResource( 227 )
 EditorIcons/icons/GuiProgressBar = SubResource( 228 )
@@ -6331,12 +6062,12 @@ EditorIcons/icons/GuiSpinboxUpdown = SubResource( 239 )
 EditorIcons/icons/GuiTab = SubResource( 240 )
 EditorIcons/icons/GuiTabMenu = SubResource( 241 )
 EditorIcons/icons/GuiToggleOff = SubResource( 7 )
-EditorIcons/icons/GuiToggleOn = SubResource( 8 )
+EditorIcons/icons/GuiToggleOn = SubResource( 611 )
 EditorIcons/icons/GuiTreeArrowDown = SubResource( 242 )
 EditorIcons/icons/GuiTreeArrowRight = SubResource( 243 )
 EditorIcons/icons/GuiTreeOption = SubResource( 244 )
 EditorIcons/icons/GuiTreeUpdown = SubResource( 245 )
-EditorIcons/icons/GuiUnchecked = SubResource( 5 )
+EditorIcons/icons/GuiUnchecked = SubResource( 609 )
 EditorIcons/icons/GuiVTick = SubResource( 246 )
 EditorIcons/icons/GuiVisibilityHidden = SubResource( 247 )
 EditorIcons/icons/GuiVisibilityVisible = SubResource( 248 )
@@ -6661,8 +6392,8 @@ EditorIcons/icons/ZoomMore = SubResource( 566 )
 EditorIcons/icons/ZoomReset = SubResource( 567 )
 EditorIcons/icons/bool = SubResource( 568 )
 EditorIcons/icons/float = SubResource( 569 )
-EditorIcons/icons/int = SubResource( 570 )
-EditorSettingsDialog/styles/panel = SubResource( 13 )
+EditorIcons/icons/int = SubResource( 616 )
+EditorSettingsDialog/styles/panel = SubResource( 615 )
 EditorStyles/styles/Background = SubResource( 571 )
 EditorStyles/styles/BottomPanelDebuggerOverride = SubResource( 572 )
 EditorStyles/styles/Content = SubResource( 573 )
@@ -6688,7 +6419,7 @@ GraphEdit/icons/minus = SubResource( 565 )
 GraphEdit/icons/more = SubResource( 566 )
 GraphEdit/icons/reset = SubResource( 567 )
 GraphEdit/icons/snap = SubResource( 479 )
-GraphEdit/styles/bg = SubResource( 583 )
+GraphEdit/styles/bg = SubResource( 617 )
 GraphNode/colors/close_color = Color( 1, 1, 1, 0.7 )
 GraphNode/colors/title_color = Color( 1, 1, 1, 1 )
 GraphNode/constants/close_h_offset = 20
@@ -6708,10 +6439,10 @@ GridContainer/constants/hseparation = 4
 GridContainer/constants/vseparation = 4
 GridContainer/constants/vseperation = 4
 HBoxContainer/constants/separation = 4
-HScrollBar/icons/decrement = SubResource( 590 )
-HScrollBar/icons/decrement_highlight = SubResource( 590 )
-HScrollBar/icons/increment = SubResource( 590 )
-HScrollBar/icons/increment_highlight = SubResource( 590 )
+HScrollBar/icons/decrement = SubResource( 618 )
+HScrollBar/icons/decrement_highlight = SubResource( 618 )
+HScrollBar/icons/increment = SubResource( 618 )
+HScrollBar/icons/increment_highlight = SubResource( 618 )
 HScrollBar/styles/grabber = SubResource( 591 )
 HScrollBar/styles/grabber_highlight = SubResource( 592 )
 HScrollBar/styles/grabber_pressed = SubResource( 593 )
@@ -6727,11 +6458,11 @@ HSplitContainer/icons/grabber = SubResource( 225 )
 HSplitContainer/styles/bg = SubResource( 600 )
 ItemList/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
-ItemList/colors/guide_color = Color( 1, 1, 1, 0.05 )
-ItemList/constants/hseparation = 2
+ItemList/colors/guide_color = Color( 0, 0, 0, 0.0497255 )
+ItemList/constants/hseparation = 14
 ItemList/constants/icon_margin = 4
-ItemList/constants/line_separation = 2
-ItemList/constants/vseparation = 2
+ItemList/constants/line_separation = 4
+ItemList/constants/vseparation = 8
 ItemList/styles/bg = SubResource( 601 )
 ItemList/styles/bg_focus = SubResource( 577 )
 ItemList/styles/cursor = SubResource( 602 )
@@ -6745,13 +6476,7 @@ Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/styles/normal = SubResource( 580 )
-LineEdit/colors/cursor_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-LineEdit/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
 LineEdit/colors/read_only = Color( 1, 1, 1, 0.3 )
-LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-LineEdit/styles/focus = SubResource( 605 )
-LineEdit/styles/normal = SubResource( 606 )
-LineEdit/styles/read_only = SubResource( 1 )
 LinkButton/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
 LinkButton/styles/focus = SubResource( 580 )
 MarginContainer/constants/margin_bottom = 0
@@ -6760,11 +6485,11 @@ MarginContainer/constants/margin_right = 0
 MarginContainer/constants/margin_top = 0
 MenuButton/colors/font_color = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_hover = Color( 0.296875, 0.296875, 0.296875, 1 )
-MenuButton/styles/disabled = SubResource( 1 )
-MenuButton/styles/focus = SubResource( 1 )
-MenuButton/styles/hover = SubResource( 1 )
-MenuButton/styles/normal = SubResource( 1 )
-MenuButton/styles/pressed = SubResource( 1 )
+MenuButton/styles/disabled = SubResource( 608 )
+MenuButton/styles/focus = SubResource( 608 )
+MenuButton/styles/hover = SubResource( 608 )
+MenuButton/styles/normal = SubResource( 608 )
+MenuButton/styles/pressed = SubResource( 608 )
 OptionButton/colors/font_color = Color( 0, 0, 0, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.367188, 0.367188, 0.367188, 1 )
 OptionButton/colors/font_color_hover = Color( 0.203125, 0.203125, 0.203125, 1 )
@@ -6773,11 +6498,11 @@ OptionButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 OptionButton/constants/arrow_margin = 4
 OptionButton/constants/modulate_arrow = 1
 OptionButton/icons/arrow = SubResource( 227 )
-OptionButton/styles/disabled = SubResource( 1 )
-OptionButton/styles/focus = SubResource( 1 )
-OptionButton/styles/hover = SubResource( 1 )
-OptionButton/styles/normal = SubResource( 1 )
-OptionButton/styles/pressed = SubResource( 1 )
+OptionButton/styles/disabled = SubResource( 608 )
+OptionButton/styles/focus = SubResource( 608 )
+OptionButton/styles/hover = SubResource( 608 )
+OptionButton/styles/normal = SubResource( 608 )
+OptionButton/styles/pressed = SubResource( 608 )
 Panel/styles/panel = SubResource( 607 )
 PanelContainer/styles/panel = SubResource( 9 )
 PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
@@ -6789,57 +6514,20 @@ PopupMenu/icons/checked = SubResource( 2 )
 PopupMenu/icons/radio_checked = SubResource( 3 )
 PopupMenu/icons/radio_unchecked = SubResource( 4 )
 PopupMenu/icons/submenu = SubResource( 36 )
-PopupMenu/icons/unchecked = SubResource( 5 )
+PopupMenu/icons/unchecked = SubResource( 609 )
 PopupMenu/icons/visibility_hidden = SubResource( 247 )
 PopupMenu/icons/visibility_visible = SubResource( 248 )
 PopupMenu/icons/visibility_xray = SubResource( 249 )
 PopupMenu/styles/disabled = SubResource( 9 )
 PopupMenu/styles/focus = SubResource( 9 )
-PopupMenu/styles/hover = SubResource( 608 )
+PopupMenu/styles/hover = SubResource( 619 )
 PopupMenu/styles/normal = SubResource( 9 )
-PopupMenu/styles/panel = SubResource( 609 )
+PopupMenu/styles/panel = SubResource( 620 )
 PopupMenu/styles/pressed = SubResource( 9 )
-PopupMenu/styles/separator = SubResource( 610 )
-PopupPanel/styles/panel = SubResource( 609 )
-ProgressBar/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-ProgressBar/styles/bg = SubResource( 611 )
-ProgressBar/styles/fg = SubResource( 612 )
-ProjectSettingsEditor/styles/panel = SubResource( 13 )
-RichTextLabel/colors/default_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-RichTextLabel/styles/focus = SubResource( 613 )
-RichTextLabel/styles/normal = SubResource( 583 )
-SpinBox/icons/updown = SubResource( 239 )
-TabContainer/colors/font_color_bg = Color( 1, 1, 1, 0.3 )
-TabContainer/colors/font_color_fg = Color( 0.79902, 0.807843, 0.827451, 1 )
-TabContainer/constants/side_margin = 0
-TabContainer/icons/decrement = SubResource( 231 )
-TabContainer/icons/decrement_highlight = SubResource( 231 )
-TabContainer/icons/increment = SubResource( 232 )
-TabContainer/icons/increment_highlight = SubResource( 232 )
-TabContainer/icons/menu = SubResource( 241 )
+PopupMenu/styles/separator = SubResource( 621 )
+PopupPanel/styles/panel = SubResource( 620 )
+ProjectSettingsEditor/styles/panel = SubResource( 615 )
 TabContainer/icons/menu_hl = SubResource( 241 )
-TabContainer/styles/panel = SubResource( 614 )
-TabContainer/styles/tab_bg = SubResource( 575 )
-TabContainer/styles/tab_fg = SubResource( 576 )
-Tabs/colors/font_color_bg = Color( 1, 1, 1, 0.3 )
-Tabs/colors/font_color_fg = Color( 0.79902, 0.807843, 0.827451, 1 )
-Tabs/constants/hseparation = 4
-Tabs/icons/close = SubResource( 219 )
-Tabs/icons/decrement = SubResource( 231 )
-Tabs/icons/decrement_highlight = SubResource( 231 )
-Tabs/icons/increment = SubResource( 232 )
-Tabs/icons/increment_highlight = SubResource( 232 )
-Tabs/styles/button = SubResource( 9 )
-Tabs/styles/button_pressed = SubResource( 9 )
-Tabs/styles/tab_bg = SubResource( 575 )
-Tabs/styles/tab_fg = SubResource( 576 )
-TextEdit/colors/caret_color = Color( 1, 1, 1, 0.2 )
-TextEdit/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-TextEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-TextEdit/icons/tab = SubResource( 240 )
-TextEdit/styles/focus = SubResource( 615 )
-TextEdit/styles/normal = SubResource( 606 )
-TextEdit/styles/read_only = SubResource( 1 )
 ToolButton/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
 ToolButton/colors/font_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 ToolButton/colors/font_color_pressed = Color( 0.411765, 0.611765, 0.909804, 1 )
@@ -6850,59 +6538,26 @@ ToolButton/styles/normal = SubResource( 9 )
 ToolButton/styles/pressed = SubResource( 9 )
 TooltipLabel/colors/font_color = Color( 0.20098, 0.192157, 0.172549, 1 )
 TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 0.1 )
-TooltipPanel/styles/panel = SubResource( 616 )
-Tree/colors/custom_button_font_highlight = Color( 0.879412, 0.884706, 0.896471, 1 )
-Tree/colors/drop_position_color = Color( 0.411765, 0.611765, 0.909804, 1 )
-Tree/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-Tree/colors/font_color_selected = Color( 1, 1, 1, 1 )
-Tree/colors/guide_color = Color( 1, 1, 1, 0.05 )
-Tree/colors/title_button_color = Color( 0.79902, 0.807843, 0.827451, 1 )
-Tree/constants/button_margin = 4
-Tree/constants/draw_relationship_lines = 0
-Tree/constants/guide_width = 1
-Tree/constants/hseparation = 4
-Tree/constants/item_margin = 12
-Tree/constants/scroll_border = 4
-Tree/constants/scroll_speed = 12
-Tree/constants/vseparation = 4
-Tree/icons/arrow = SubResource( 242 )
-Tree/icons/arrow_collapsed = SubResource( 243 )
-Tree/icons/checked = SubResource( 2 )
-Tree/icons/select_arrow = SubResource( 221 )
+TooltipPanel/styles/panel = SubResource( 627 )
 Tree/icons/select_option = SubResource( 244 )
-Tree/icons/unchecked = SubResource( 5 )
-Tree/icons/updown = SubResource( 245 )
-Tree/styles/bg = SubResource( 583 )
-Tree/styles/bg_focus = SubResource( 577 )
-Tree/styles/button_pressed = SubResource( 617 )
-Tree/styles/cursor = SubResource( 618 )
-Tree/styles/cursor_unfocused = SubResource( 618 )
-Tree/styles/custom_button = SubResource( 619 )
-Tree/styles/custom_button_hover = SubResource( 606 )
-Tree/styles/custom_button_pressed = SubResource( 620 )
-Tree/styles/selected = SubResource( 603 )
-Tree/styles/selected_focus = SubResource( 604 )
-Tree/styles/title_button_hover = SubResource( 621 )
-Tree/styles/title_button_normal = SubResource( 621 )
-Tree/styles/title_button_pressed = SubResource( 621 )
 VBoxContainer/constants/separation = 20
-VScrollBar/icons/decrement = SubResource( 590 )
-VScrollBar/icons/decrement_highlight = SubResource( 590 )
-VScrollBar/icons/increment = SubResource( 590 )
-VScrollBar/icons/increment_highlight = SubResource( 590 )
-VScrollBar/styles/grabber = SubResource( 622 )
-VScrollBar/styles/grabber_highlight = SubResource( 623 )
-VScrollBar/styles/grabber_pressed = SubResource( 624 )
-VScrollBar/styles/scroll = SubResource( 625 )
-VScrollBar/styles/scroll_focus = SubResource( 626 )
-VSeparator/styles/separator = SubResource( 627 )
+VScrollBar/icons/decrement = SubResource( 618 )
+VScrollBar/icons/decrement_highlight = SubResource( 618 )
+VScrollBar/icons/increment = SubResource( 618 )
+VScrollBar/icons/increment_highlight = SubResource( 618 )
+VScrollBar/styles/grabber = SubResource( 633 )
+VScrollBar/styles/grabber_highlight = SubResource( 634 )
+VScrollBar/styles/grabber_pressed = SubResource( 635 )
+VScrollBar/styles/scroll = SubResource( 636 )
+VScrollBar/styles/scroll_focus = SubResource( 637 )
+VSeparator/styles/separator = SubResource( 638 )
 VSlider/icons/grabber = SubResource( 237 )
 VSlider/icons/grabber_highlight = SubResource( 238 )
-VSlider/styles/grabber_area = SubResource( 628 )
-VSlider/styles/slider = SubResource( 629 )
+VSlider/styles/grabber_area = SubResource( 639 )
+VSlider/styles/slider = SubResource( 640 )
 VSplitContainer/constants/separation = 8
 VSplitContainer/icons/grabber = SubResource( 251 )
-VSplitContainer/styles/bg = SubResource( 630 )
+VSplitContainer/styles/bg = SubResource( 641 )
 WindowDialog/colors/title_color = Color( 0.79902, 0.807843, 0.827451, 1 )
 WindowDialog/constants/close_h_ofs = 22
 WindowDialog/constants/close_v_ofs = 20
@@ -6910,6 +6565,6 @@ WindowDialog/constants/title_height = 24
 WindowDialog/fonts/title_font = null
 WindowDialog/icons/close = SubResource( 219 )
 WindowDialog/icons/close_highlight = SubResource( 219 )
-WindowDialog/styles/panel = SubResource( 631 )
-_sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "ItemList/colors", "ItemList/constants", "ItemList/styles", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton", "OptionButton/colors", "OptionButton/icons", "OptionButton/styles", "PopupMenu", "PopupPanel", "PopupPanel/styles", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants" ]
+WindowDialog/styles/panel = SubResource( 642 )
+_sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "ItemList/constants", "ItemList/styles", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/icons", "OptionButton/styles", "PopupMenu/colors", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "WindowDialog", "WindowDialog/styles" ]
 
