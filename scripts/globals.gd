@@ -43,7 +43,7 @@ func _ready():
 
 # Return options defalts
 func get_options_defaults():
-	return { "difficulty":0, "darkmode":false }
+	return { "difficulty":0, "skin":0 }
 
 # Update the last played level saved to userdata file
 func update_last_level(num):

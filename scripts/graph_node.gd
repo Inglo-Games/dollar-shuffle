@@ -18,12 +18,16 @@ func _ready():
 	call_deferred("add_child", sprite)
 	sprite.set_texture(load("res://assets/icons/dot_red_light.png"))
 	# Set node images depending on dark mode
-	if globals.pers_opts["darkmode"]:
-		pos_node_img = load("res://assets/icons/dot_green_dark.png")
-		neg_node_img = load("res://assets/icons/dot_red_dark.png")
-	else:
-		pos_node_img = load("res://assets/icons/dot_green_light.png")
-		neg_node_img = load("res://assets/icons/dot_red_light.png")
+	match int(globals.pers_opts["skin"]):
+		0:
+			pos_node_img = load("res://assets/icons/dot_green_light.png")
+			neg_node_img = load("res://assets/icons/dot_red_light.png")
+		1:
+			pos_node_img = load("res://assets/icons/dot_green_dark.png")
+			neg_node_img = load("res://assets/icons/dot_red_dark.png")
+		_:
+			pos_node_img = load("res://assets/icons/dot_green_light.png")
+			neg_node_img = load("res://assets/icons/dot_red_light.png")
 	# Set scale of texture based on given size
 	var scale_ratio = scale_val / 100.0
 	sprite.scale = Vector2(scale_ratio, scale_ratio)

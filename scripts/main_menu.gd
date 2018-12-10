@@ -12,8 +12,11 @@ onready var quit_btn = get_node("menu_container/quit_button")
 
 func _ready():
 	# Set background color if dark mode
-	if globals.pers_opts["darkmode"]:
-		get_node("background").color = globals.BACK_DARK
+	match int(globals.pers_opts["skin"]):
+		1:
+			get_node("background").color = globals.BACK_DARK
+		_:
+			get_node("background").color = globals.BACK_LIGHT
 	# Connect buttons to respective functions
 	cont_btn.connect("pressed", self, "return_level")
 	level_btn.connect("pressed", self, "choose_level")

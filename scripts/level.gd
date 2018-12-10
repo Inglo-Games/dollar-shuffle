@@ -35,12 +35,18 @@ var moves = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Set background color and buttons if dark mode
-	if globals.pers_opts["darkmode"]:
-		backg.color = globals.BACK_DARK
-		undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
-		undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_dark.png")
-		pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
+	# Set background color and buttons if
+	match int(globals.pers_opts["skin"]):
+		1:
+			backg.color = globals.BACK_DARK
+			undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
+			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_dark.png")
+			pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
+		_:
+			backg.color = globals.BACK_LIGHT
+			undo_btn.texture_normal = load("res://assets/icons/undo_light.png")
+			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_light.png")
+			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Load in level from file
 	graph = GameGraph.new()
 	# Set size of nodes on screen
@@ -90,7 +96,7 @@ func transition_graph(num):
 
 # Set the number of undos remaining based on difficulty
 func reset_undos():
-	match globals.pers_opts["difficulty"]:
+	match int(globals.pers_opts["difficulty"]):
 		0:
 			undos_remaining = INF
 			undo_btn.disabled = false
@@ -140,10 +146,11 @@ func draw_conn_line(n1, n2):
 	var line = Line2D.new()
 	line.add_point(loc1)
 	line.add_point(loc2)
-	if globals.pers_opts["darkmode"]:
-		line.default_color = globals.LIGHT_GREY
-	else:
-		line.default_color = globals.BLACK
+	match int(globals.pers_opts["skin"]):
+		1:
+			line.default_color = globals.LIGHT_GREY
+		_:
+			line.default_color = globals.BLACK
 	node_cont.call_deferred("add_child", line)
 
 # Callback to give points to neighbors
