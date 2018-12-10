@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/opts_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/icons/back_light.png" type="Texture" id=2]
 
-
 [node name="base" type="Control" index="0"]
 
 anchor_left = 0.0
@@ -87,9 +86,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 370.0
+margin_top = 380.0
 margin_right = 1620.0
-margin_bottom = 390.0
+margin_bottom = 400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -107,15 +106,15 @@ align = 1
 items = [  ]
 selected = -1
 
-[node name="darkmode_check" type="CheckButton" parent="opts_menu_container" index="1"]
+[node name="skin_selector" type="OptionButton" parent="opts_menu_container" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 440.0
+margin_top = 450.0
 margin_right = 1620.0
-margin_bottom = 480.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -123,14 +122,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-toggle_mode = true
+toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Dark Mode"
 flat = false
-align = 0
+align = 1
+items = [  ]
+selected = -1
 
 [node name="reset" type="Button" parent="opts_menu_container" index="2"]
 
@@ -138,9 +138,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 530.0
+margin_top = 520.0
 margin_right = 1620.0
-margin_bottom = 550.0
+margin_bottom = 540.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -162,9 +162,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 600.0
+margin_top = 590.0
 margin_right = 1620.0
-margin_bottom = 620.0
+margin_bottom = 610.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
