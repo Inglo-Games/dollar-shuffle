@@ -2,6 +2,7 @@ extends Control
 
 # Sizes for node UI, initialized to large values
 var scale_val = 100.0
+var scaled_size = Vector2(100.0, 100.0)
 
 # Node number this instance represents
 var node_num = -1
@@ -30,9 +31,13 @@ func _ready():
 			neg_node_img = load("res://assets/icons/dot_red_light.png")
 	# Set scale of texture based on given size
 	var scale_ratio = scale_val / 100.0
+	scaled_size = sprite.texture.get_size() * scale_ratio
 	sprite.scale = Vector2(scale_ratio, scale_ratio)
-	# Set control node's size and position to match texture
-	self.rect_size = sprite.texture.get_size()
+	sprite.offset = scaled_size
+	# Set control node's size to match texture
+	self.rect_size = scaled_size
+	# Center control node over current origin
+	self.rect_global_position -= scaled_size / 2.0
 	# Add label showing current value
 	label = Label.new()
 	call_deferred("add_child", label)
@@ -53,7 +58,7 @@ func _draw():
 	label.align = Label.ALIGN_CENTER
 	# Position label in center of circle
 	var label_size = label.get_minimum_size()
-	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0)
+	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0) + scaled_size/2.0
 	# Draw a translucent back for debugging
 	if globals.debug:
 		var debug_back = ColorRect.new()
