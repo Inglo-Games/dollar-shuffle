@@ -1,5 +1,8 @@
 extends Node
 
+# Debug mode
+const debug = true
+
 # File operations
 const FileIO = preload("res://scripts/file_io.gd")
 

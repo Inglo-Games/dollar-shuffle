@@ -54,6 +54,15 @@ func _draw():
 	# Position label in center of circle
 	var label_size = label.get_minimum_size()
 	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0)
+	# Draw a translucent back for debugging
+	if globals.debug:
+		var debug_back = ColorRect.new()
+		debug_back.rect_position = Vector2(0, 0)
+		debug_back.anchor_right = 1.0
+		debug_back.anchor_bottom = 1.0
+		debug_back.color = Color(1.0, 0.0, 1.0, 0.2)
+		debug_back.visible = true
+		call_deferred("add_child", debug_back)
 
 # Handle inputs
 func handle_node_click(event):
