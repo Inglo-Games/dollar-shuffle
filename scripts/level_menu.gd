@@ -6,7 +6,8 @@ const LevelClass = preload("res://scripts/level.gd")
 
 # GUI objects
 onready var back_btn = get_node("back_btn")
-onready var lvl_list = get_node("lvl_list")
+onready var lvl_list = get_node("vbox/lvl_list")
+onready var tuts_btn = get_node("vbox/tuts_button")
 
 func _ready():
 	# Set background color and back button if dark mode
@@ -20,9 +21,11 @@ func _ready():
 	# Populate the list with levels
 	populate_list()
 	# Connect list to function that opens levels
-	lvl_list.connect("item_selected", self, "open_level", []) 
+	lvl_list.connect("item_selected", self, "open_level")
+	# Connect tuts button to open_tutorials function
+	tuts_btn.connect("pressed", self, "open_tutorials")
 	# Connect back button to return function
-	back_btn.connect("pressed", self, "close_menu", [])
+	back_btn.connect("pressed", self, "close_menu")
 
 func populate_list():
 	# Create an item in the list for each one
@@ -35,7 +38,11 @@ func open_level(num):
 	# Load instance of game scene
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())
-	
+
+func open_tutorials():
+	# Load the tutorial scene
+	get_tree().change_scene("res://scenes/tutorial.tscn")
+
 func close_menu():
 	# Return to main menu
 	get_tree().change_scene("res://scenes/main_menu.tscn")

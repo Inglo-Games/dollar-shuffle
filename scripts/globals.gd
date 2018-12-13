@@ -89,7 +89,7 @@ func count_files(path):
 	var file = dir.get_next()
 	while(file != ""):
 		# Only count non-directory files
-		if !file.begins_with("."):
+		if file.ends_with(".json"):
 			count += 1
 		file = dir.get_next()
 	return count

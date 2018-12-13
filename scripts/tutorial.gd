@@ -2,9 +2,6 @@ extends Control
 
 # UI Elements
 onready var backg = get_node("background")
-onready var timer = get_node("label_container/timer")
-onready var score = get_node("label_container/score")
-onready var undo_btn = get_node("btn_container/undo_btn")
 onready var pause_btn = get_node("btn_container/pause_btn")
 onready var node_cont = get_node("node_ui_container")
 onready var animation = get_node("anim")
@@ -20,94 +17,51 @@ const PausePopup = preload("res://scripts/pause_popup.gd")
 onready var graph
 
 # Size for node UI
-var radius = 100.0
+var radius = 60.0
 
-# Time elapsed in milliseconds and active boolean
-var secs = 0.0
-var timer_active = true
-
-# Number of undos left
-var undos_remaining = INF
-
-# List of moves as Vector2s, where x is the node tapped and y is whether it gave or took
-# 1 means gave points, -1 means took points
-var moves = []
+# Current tutorial level number
+var tut_num = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Set background color and buttons if
+	# Set background color and buttons based on skin option
 	match int(globals.pers_opts["skin"]):
 		1:
 			backg.color = globals.BACK_DARK
-			undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
-			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_dark.png")
 			pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
 		_:
 			backg.color = globals.BACK_LIGHT
-			undo_btn.texture_normal = load("res://assets/icons/undo_light.png")
-			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_light.png")
 			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Load in level from file
 	graph = GameGraph.new()
-	graph.load_puzzle(globals.current_level)
-	# Set size of nodes on screen
-	calc_radius()
+	graph.load_puzzle('tut1')
 	# Draw everything on screen
 	display_graph()
-	score.text = "0"
-	# Setup number of undos
-	reset_undos()
-	# Connect buttons to functions
-	undo_btn.connect("pressed", self, "undo")
+	# Connect pause button to function
 	pause_btn.connect("pressed", self, "toggle_pause")
 
-# Called every frame
-func _process(delta):
-	# Update timer, if active
-	if timer_active:
-		secs += delta
-		timer.text = str("%.3f" % secs)
-
-# Set node radii sizes based on number of nodes
-func calc_radius():
-	# Calculate outer_radius
-	radius = 80.0 / log(len(graph.graph_data))
-
-# Clear the old graph and load a new one
-func transition_graph(num):
+# Clear the graph and load next tutorial
+func transition_graph():
 	# First, clear out old graph
 	animation.play("fadeout")
 	yield(animation, "animation_finished")
 	for ui in node_cont.get_children():
 		ui.queue_free()
-	graph = GameGraph.new()
-	graph.load_puzzle(globals.current_level)
-	# Reset score, timer, and undos
-	moves = []
-	score.text = "0"
-	secs = 0.0
-	timer.text = str("%.3f" % secs)
-	reset_undos()
+	# Transition depends on current puzzle
+	match tut_num:
+		1:
+			# Load next tutorial
+			tut_num = 2
+			graph.load_puzzle('tut2')
+		2:
+			# Go to main menu
+			queue_free()
+			get_tree().change_scene("res://scenes/main_menu.tscn")
 	# Display new graph
 	display_graph()
 	# Fade display back in
 	animation.play("fadein")
 	yield(animation, "animation_finished")
-	# Restart timer
-	timer_active = true
-
-# Set the number of undos remaining based on difficulty
-func reset_undos():
-	match int(globals.pers_opts["difficulty"]):
-		0:
-			undos_remaining = INF
-			undo_btn.disabled = false
-		1:
-			undos_remaining = 3
-			undo_btn.disabled = false
-		2:
-			undos_remaining = 0
-			undo_btn.disabled = true
 
 # Draw entire graph on screen
 func display_graph():
@@ -159,8 +113,6 @@ func draw_conn_line(n1, n2):
 func node_give_points(node):
 	# Give points to all neighbors
 	graph.give_points(node)
-	# Record move
-	moves.append(Vector2(node, 1))
 	# Update nodes UI
 	update_nodes_and_score()
 	# Check if player has solved puzzle
@@ -170,8 +122,6 @@ func node_give_points(node):
 func node_take_points(node):
 	# Take points from all neighbors
 	graph.take_points(node)
-	# Record move
-	moves.append(Vector2(node, -1))
 	# Update nodes UI
 	update_nodes_and_score()
 	# Check if player has solved puzzle
@@ -179,8 +129,6 @@ func node_take_points(node):
 
 # Function to update all nodes' labels, colors, and score
 func update_nodes_and_score():
-	# Update the moves label
-	score.text = str(len(moves))
 	# Force redraw of all node's UI
 	var ui_nodes = get_tree().get_nodes_in_group("ui_nodes")
 	for ui in ui_nodes:
@@ -193,43 +141,7 @@ func check_win_condition():
 		if graph.graph_data[node]["value"] < 0:
 			return false
 	# If the function hasn't returned yet, all nodes passed check
-	timer_active = false
-	globals.record_win(len(moves), secs)
-	open_next_puzzle()
-
-# Change current puzzle to next puzzle
-func open_next_puzzle():
-	# Make sure that puzzle exists
-	if globals.current_level + 1 > globals.number_of_levels:
-		# Return to main menu
-		self.queue_free()
-		get_tree().change_scene("res://scenes/main_menu.tscn")
-		return
-	# Else, increment level num and load new game scene
-	globals.update_last_level(globals.current_level + 1)
-	transition_graph(globals.current_level)
-
-# Undo last move
-func undo():
-	# Only do if moves have been done and user has undos left
-	if len(moves) > 0 and undos_remaining > 0:
-		# Take last move from list
-		var move = moves[-1]
-		# Do opposite of last move to same node
-		if (move.y == -1):
-			node_give_points(move.x)
-		else:
-			node_take_points(move.x)
-		# Remove last 2 moves (since we just added another one)
-		moves.remove(len(moves)-1)
-		moves.remove(len(moves)-1)
-		# Update score label
-		score.text = str(len(moves))
-		# Remove one from undos_remaining
-		undos_remaining -= 1
-		# If no undos remain, disable undo button
-		if undos_remaining == 0:
-			undo_btn.disabled = true
+	transition_graph()
 
 # Pause game
 func toggle_pause():
