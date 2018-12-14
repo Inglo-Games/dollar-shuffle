@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/tutorial.gd" type="Script" id=1]
-[ext_resource path="res://assets/icons/mouse_leftclick.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/mouse.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/pause_light.png" type="Texture" id=3]
 [ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=4]
-[ext_resource path="res://assets/icons/mouse.png" type="Texture" id=5]
-[ext_resource path="res://assets/icons/mouse_rightclick.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/mouse_leftclick.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -52,7 +51,7 @@ length = 1.5
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("click_img:texture")
+tracks/0/path = NodePath("node_ui_container/click_img:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -61,26 +60,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 2 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-
-resource_name = "rightclick"
-length = 1.5
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("click_img:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.75 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ) ]
 }
 
 [node name="base" type="Control" index="0"]
@@ -105,10 +85,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -6.0
-margin_top = -3.0
-margin_right = -6.0
-margin_bottom = -3.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -118,31 +94,18 @@ size_flags_vertical = 1
 color = Color( 0.859375, 0.859375, 0.859375, 1 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="click_img" type="TextureRect" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 293.0
-margin_top = 637.0
-margin_right = 793.0
-margin_bottom = 1137.0
-rect_scale = Vector2( 0.4, 0.4 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 2 )
-stretch_mode = 0
-
-[node name="node_ui_container" type="Node2D" parent="." index="2"]
+[node name="node_ui_container" type="Node2D" parent="." index="1"]
 
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="btn_container" type="HBoxContainer" parent="." index="3"]
+[node name="click_img" type="Sprite" parent="node_ui_container" index="0"]
+
+position = Vector2( 430, 685 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="btn_container" type="HBoxContainer" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -189,7 +152,7 @@ group = null
 texture_normal = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect", "Textures", "Transform" ]
 
-[node name="pause_background" type="ColorRect" parent="." index="4"]
+[node name="pause_background" type="ColorRect" parent="." index="3"]
 
 visible = false
 material = ExtResource( 4 )
@@ -206,7 +169,7 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 0 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="anim" type="AnimationPlayer" parent="." index="5"]
+[node name="anim" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -216,7 +179,6 @@ playback_speed = 1.0
 anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
 anims/leftclick = SubResource( 3 )
-anims/rightclick = SubResource( 4 )
 blend_times = [  ]
 
 

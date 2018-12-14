@@ -2,6 +2,7 @@ extends Control
 
 # UI Elements
 onready var backg = get_node("background")
+onready var click = get_node("node_ui_container/click_img")
 onready var pause_btn = get_node("btn_container/pause_btn")
 onready var node_cont = get_node("node_ui_container")
 onready var animation = get_node("anim")
@@ -37,22 +38,28 @@ func _ready():
 	graph.load_puzzle('tut1')
 	# Draw everything on screen
 	display_graph()
+	# Play mouse clicking animation
+	animation.play("leftclick")
 	# Connect pause button to function
 	pause_btn.connect("pressed", self, "toggle_pause")
 
 # Clear the graph and load next tutorial
 func transition_graph():
 	# First, clear out old graph
+	animation.stop()
 	animation.play("fadeout")
 	yield(animation, "animation_finished")
-	for ui in node_cont.get_children():
-		ui.queue_free()
+	get_tree().call_group("ui_nodes", "queue_free")
+	get_tree().call_group("ui_lines", "queue_free")
 	# Transition depends on current puzzle
 	match tut_num:
 		1:
 			# Load next tutorial
 			tut_num = 2
 			graph.load_puzzle('tut2')
+			# Move and mirror clicking animation
+			click.position = Vector2(1180,140)
+			click.set_flip_h(true)
 		2:
 			# Go to main menu
 			queue_free()
@@ -62,6 +69,8 @@ func transition_graph():
 	# Fade display back in
 	animation.play("fadein")
 	yield(animation, "animation_finished")
+	# Restart clicking animation
+	animation.play("leftclick")
 
 # Draw entire graph on screen
 func display_graph():
@@ -108,13 +117,14 @@ func draw_conn_line(n1, n2):
 		_:
 			line.default_color = globals.BLACK
 	node_cont.call_deferred("add_child", line)
+	line.add_to_group("ui_lines")
 
 # Callback to give points to neighbors
 func node_give_points(node):
 	# Give points to all neighbors
 	graph.give_points(node)
 	# Update nodes UI
-	update_nodes_and_score()
+	get_tree().call_group("ui_nodes", "update")
 	# Check if player has solved puzzle
 	check_win_condition()
 
@@ -123,16 +133,9 @@ func node_take_points(node):
 	# Take points from all neighbors
 	graph.take_points(node)
 	# Update nodes UI
-	update_nodes_and_score()
+	get_tree().call_group("ui_nodes", "update")
 	# Check if player has solved puzzle
 	check_win_condition()
-
-# Function to update all nodes' labels, colors, and score
-func update_nodes_and_score():
-	# Force redraw of all node's UI
-	var ui_nodes = get_tree().get_nodes_in_group("ui_nodes")
-	for ui in ui_nodes:
-		ui.update()
 
 # Check whether the player has solved the puzzle
 func check_win_condition():
