@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/tutorial.gd" type="Script" id=1]
 [ext_resource path="res://assets/icons/mouse.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/pause_light.png" type="Texture" id=3]
 [ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=4]
 [ext_resource path="res://assets/icons/mouse_leftclick.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -180,5 +181,14 @@ anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
 anims/leftclick = SubResource( 3 )
 blend_times = [  ]
+
+[node name="audio" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = -16.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

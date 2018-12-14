@@ -6,6 +6,7 @@ onready var click = get_node("node_ui_container/click_img")
 onready var pause_btn = get_node("btn_container/pause_btn")
 onready var node_cont = get_node("node_ui_container")
 onready var animation = get_node("anim")
+onready var audio = get_node("audio")
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
@@ -45,10 +46,13 @@ func _ready():
 
 # Clear the graph and load next tutorial
 func transition_graph():
-	# First, clear out old graph
+	# Play the victory audio track
+	audio.play()
+	# Play the fade-out animation to hide transition
 	animation.stop()
 	animation.play("fadeout")
 	yield(animation, "animation_finished")
+	# Clear out old graph
 	get_tree().call_group("ui_nodes", "queue_free")
 	get_tree().call_group("ui_lines", "queue_free")
 	# Transition depends on current puzzle
