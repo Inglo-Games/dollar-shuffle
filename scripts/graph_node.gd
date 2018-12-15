@@ -1,9 +1,5 @@
 extends Control
 
-# Sizes for node UI, initialized to large values
-var scale_val = 100.0
-var scaled_size = Vector2(100.0, 100.0)
-
 # Node number this instance represents
 var node_num = -1
 
@@ -29,17 +25,9 @@ func _ready():
 		_:
 			pos_node_img = load("res://assets/icons/dot_green_light.png")
 			neg_node_img = load("res://assets/icons/dot_red_light.png")
-	# Set scale of texture based on given size
-	var scale_ratio = scale_val / 100.0
-	scaled_size = sprite.texture.get_size() * scale_ratio
-	sprite.scale = Vector2(scale_ratio, scale_ratio)
-	sprite.offset = scaled_size
-	# Set control node's size to match texture
-	self.rect_size = scaled_size
-	# Center control node over current origin
-	self.rect_global_position -= scaled_size / 2.0
 	# Add label showing current value
 	label = Label.new()
+	label.rect_scale = Vector2(2, 2)
 	call_deferred("add_child", label)
 	# Allow input
 	set_process_input(true)
@@ -48,7 +36,7 @@ func _ready():
 # Custom draw function
 func _draw():
 	# Determine image to use based on value
-	var value = get_parent().get_parent().graph.graph_data[str(node_num)]["value"]
+	var value = get_parent().graph_data[str(node_num)]["value"]
 	if value < 0:
 		sprite.set_texture(neg_node_img)
 	else:
@@ -58,7 +46,7 @@ func _draw():
 	label.align = Label.ALIGN_CENTER
 	# Position label in center of circle
 	var label_size = label.get_minimum_size()
-	label.rect_position = Vector2(-label_size.x/2.0, -label_size.y/2.0) + scaled_size/2.0
+	label.rect_position -= label.get_minimum_size() / 2.0
 	# Draw a translucent back for debugging
 	if globals.debug:
 		var debug_back = ColorRect.new()
@@ -75,13 +63,11 @@ func handle_node_click(event):
 	accept_event()
 	# Only inputs are give action and take action
 	if event.is_action_released("give_action"):
-		get_parent().get_parent().node_give_points(node_num)
+		get_parent().give_points(node_num)
 	elif event.is_action_released("take_action"):
-		get_parent().get_parent().node_take_points(node_num)
+		get_parent().take_points(node_num)
 
 # Custom init function
-func initialize(num, size):
+func initialize(num):
 	# Save node number being represented
 	node_num = num
-	# Set scale size
-	scale_val = size
