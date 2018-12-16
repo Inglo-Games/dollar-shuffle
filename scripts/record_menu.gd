@@ -2,7 +2,7 @@ extends Node
 
 # UI Elements
 onready var back_btn = get_node("back_btn")
-onready var rec_list_ui = get_node("scroll_list/v_cont")
+onready var rec_list_ui = get_node("scroll_list/vbox")
 
 # List entry layout
 var record_container

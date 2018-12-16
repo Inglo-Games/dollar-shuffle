@@ -6,16 +6,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -250.0
-margin_bottom = -540.0
 rect_min_size = Vector2( 350, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect", "Visibility" ]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect", "Size Flags", "Visibility" ]
 
 [node name="background" type="ColorRect" parent="." index="0"]
 
@@ -27,32 +25,33 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 1
 color = Color( 0.421875, 0.421875, 0.421875, 1 )
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
 [node name="level_id" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
+anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_right = -460.0
+margin_right = 360.0
+rect_min_size = Vector2( 40, 100 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
+size_flags_vertical = 1
 text = "<ID>"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags" ]
 
 [node name="nums" type="VBoxContainer" parent="." index="2"]
 
@@ -60,15 +59,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 175.0
+margin_left = 350.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
-_sections_unfolded = [ "Anchor", "Hint", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Hint", "Margin", "Rect", "Size Flags" ]
 
 [node name="easy_rec" type="Label" parent="nums" index="0"]
 
@@ -76,9 +75,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 245.0
-margin_right = 1495.0
-margin_bottom = 259.0
+margin_top = 466.0
+margin_right = 1570.0
+margin_bottom = 502.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -89,6 +88,7 @@ text = "Easy:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
 
 [node name="med_rec" type="Label" parent="nums" index="1"]
 
@@ -96,9 +96,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 263.0
-margin_right = 1495.0
-margin_bottom = 277.0
+margin_top = 522.0
+margin_right = 1570.0
+margin_bottom = 558.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -116,9 +116,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 281.0
-margin_right = 1495.0
-margin_bottom = 295.0
+margin_top = 578.0
+margin_right = 1570.0
+margin_bottom = 614.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
