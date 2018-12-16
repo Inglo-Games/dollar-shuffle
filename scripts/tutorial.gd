@@ -42,6 +42,7 @@ func transition_graph():
 	audio.play()
 	# Play the fade-out animation to hide transition
 	animation.stop()
+	animation.seek(0.0, true)
 	animation.play("fadeout")
 	yield(animation, "animation_finished")
 	# Clear out old graph
@@ -54,7 +55,7 @@ func transition_graph():
 			tut_num = 2
 			graph.load_puzzle('tut2')
 			# Move and mirror clicking animation
-			click.position = Vector2(1180,140)
+			click.position = Vector2(1200,120)
 			click.set_flip_h(true)
 		2:
 			# Go to main menu

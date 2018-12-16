@@ -103,10 +103,10 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="click_img" type="Sprite" parent="node_ui_container" index="0"]
 
-position = Vector2( 430, 685 )
+position = Vector2( 415, 710 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="btn_container" type="HBoxContainer" parent="." index="2"]
 
