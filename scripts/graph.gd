@@ -74,10 +74,10 @@ func draw_node(num):
 	# Size control node equal to the node image
 	game_node.rect_size = Vector2(512,512)
 	# Scale down node according to how many there are
-	var node_scale = 2.0 / len(graph_data)
+	var node_scale = 2.0 / (len(graph_data)+1)
 	game_node.rect_scale = Vector2(node_scale, node_scale)
 	# Center Control node over location
-	location -= (game_node.rect_size * node_scale * 0.5)
+	location -= (Vector2(512,512) * node_scale * 0.5)
 	game_node.rect_position = location
 	# Add node as child once loading is finished
 	call_deferred("add_child", game_node)

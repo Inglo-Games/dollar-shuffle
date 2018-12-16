@@ -41,12 +41,13 @@ func _draw():
 		sprite.set_texture(neg_node_img)
 	else:
 		sprite.set_texture(pos_node_img)
+	# Don't center the image on it's position
+	sprite.centered = false
 	# Set text of label to value
 	label.text = "$%d" % value
 	label.align = Label.ALIGN_CENTER
 	# Position label in center of circle
-	var label_size = label.get_minimum_size()
-	label.rect_position -= label.get_minimum_size() / 2.0
+	label.rect_position = -label.get_minimum_size() + sprite.texture.get_size() / 2.0
 	# Draw a translucent back for debugging
 	if globals.debug:
 		var debug_back = ColorRect.new()
