@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/level_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/icons/back_light.png" type="Texture" id=2]
 
-[node name="base" type="Control"]
+[node name="base" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -83,15 +83,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 528.0
+margin_top = 408.0
 margin_right = 1360.0
-margin_bottom = 528.0
+margin_bottom = 608.0
+rect_min_size = Vector2( 600, 200 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 3
 size_flags_vertical = 1
 items = [  ]
 select_mode = 0
@@ -99,9 +100,9 @@ allow_reselect = false
 auto_height = true
 max_columns = 6
 same_column_width = true
-icon_mode = 1
+icon_mode = 0
 fixed_icon_size = Vector2( 0, 0 )
-_sections_unfolded = [ "Anchor", "Columns", "Icon", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Columns", "Icon", "Margin", "Rect", "Theme" ]
 
 [node name="tuts_button" type="Button" parent="vbox" index="1"]
 
@@ -109,9 +110,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 532.0
+margin_top = 628.0
 margin_right = 1360.0
-margin_bottom = 552.0
+margin_bottom = 672.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -126,5 +127,6 @@ group = null
 text = "Tutorials"
 flat = false
 align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 
