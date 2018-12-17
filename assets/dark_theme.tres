@@ -1,0 +1,6559 @@
+[gd_resource type="Theme" load_steps=619 format=2]
+
+[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0.242431, 0, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.729255 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 2
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="ImageTexture" id=2]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=3]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=4]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=5]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.757812, 0.757812, 0.757812, 1 )
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 4
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.795569 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Content Margin", "Resource", "Shadow" ]
+
+[sub_resource type="ImageTexture" id=7]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 42, 26 )
+
+[sub_resource type="ImageTexture" id=8]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 42, 26 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 24.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=10]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 24.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="ImageTexture" id=11]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=12]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=13]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=14]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=15]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=16]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=17]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=18]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=19]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=20]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=21]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=22]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=23]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=24]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=25]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=26]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=27]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=28]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=29]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=30]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=31]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=32]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=33]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=34]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=35]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=36]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=37]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=38]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=39]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=40]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=41]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=42]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=43]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=44]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 16 )
+
+[sub_resource type="ImageTexture" id=45]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=46]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=47]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=48]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=49]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=50]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=51]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=52]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=53]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=54]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=55]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=56]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=57]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 32, 128 )
+
+[sub_resource type="ImageTexture" id=58]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 128 )
+
+[sub_resource type="ImageTexture" id=59]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 128 )
+
+[sub_resource type="ImageTexture" id=60]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 128 )
+
+[sub_resource type="ImageTexture" id=61]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=62]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=63]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=64]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=65]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=66]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=67]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=68]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=69]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=70]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=71]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=72]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=73]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=74]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=75]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=76]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=77]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=78]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=79]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=80]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=81]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=82]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=83]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=84]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=85]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=86]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=87]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=88]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=89]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=90]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=91]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=92]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=93]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=94]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=95]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=96]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=97]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=98]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=99]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=100]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=101]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=102]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=103]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=104]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=105]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=106]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=107]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=108]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=109]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=110]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=111]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=112]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=113]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=114]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=115]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=116]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=117]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=118]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=119]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=120]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=121]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=122]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=123]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=124]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=125]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=126]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=127]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=128]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=129]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=130]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=131]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=132]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=133]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=134]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=135]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=136]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=137]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=138]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=139]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=140]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=141]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=142]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=143]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=144]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=145]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=146]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=147]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=148]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=149]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=150]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=151]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=152]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=153]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=154]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=155]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=156]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=157]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=158]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=159]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 10, 10 )
+
+[sub_resource type="ImageTexture" id=160]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 10, 10 )
+
+[sub_resource type="ImageTexture" id=161]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=162]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=163]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=164]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=165]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=166]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 32, 32 )
+
+[sub_resource type="ImageTexture" id=167]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=168]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=169]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=170]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=171]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=172]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=173]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=174]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 32, 32 )
+
+[sub_resource type="ImageTexture" id=175]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=176]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=177]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 32, 32 )
+
+[sub_resource type="ImageTexture" id=178]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=179]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=180]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=181]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=182]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=183]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=184]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 32, 32 )
+
+[sub_resource type="ImageTexture" id=185]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=186]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 16 )
+
+[sub_resource type="ImageTexture" id=187]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=188]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=189]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=190]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=191]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=192]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=193]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=194]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=195]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=196]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=197]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=198]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=199]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=200]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=201]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=202]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 128, 128 )
+
+[sub_resource type="ImageTexture" id=203]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=204]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=205]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=206]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=207]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=208]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=209]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=210]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=211]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=212]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=213]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=214]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=215]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=216]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=217]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=218]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 14, 14 )
+
+[sub_resource type="ImageTexture" id=219]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 14, 8 )
+
+[sub_resource type="ImageTexture" id=220]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 10, 10 )
+
+[sub_resource type="ImageTexture" id=221]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 4, 16 )
+
+[sub_resource type="ImageTexture" id=222]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 64 )
+
+[sub_resource type="ImageTexture" id=223]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=224]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 6, 16 )
+
+[sub_resource type="ImageTexture" id=225]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=226]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 0, 0 )
+
+[sub_resource type="ImageTexture" id=227]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=228]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=229]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=230]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=231]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=232]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=233]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=234]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=235]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=236]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=237]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=238]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=239]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=240]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=241]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=242]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 12, 12 )
+
+[sub_resource type="ImageTexture" id=243]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 14, 14 )
+
+[sub_resource type="ImageTexture" id=244]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 14, 14 )
+
+[sub_resource type="ImageTexture" id=245]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 4 )
+
+[sub_resource type="ImageTexture" id=246]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=247]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=248]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=249]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=250]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 64, 8 )
+
+[sub_resource type="ImageTexture" id=251]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=252]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=253]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=254]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=255]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=256]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=257]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=258]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=259]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=260]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=261]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=262]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=263]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=264]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=265]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=266]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=267]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=268]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=269]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=270]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=271]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=272]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=273]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=274]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=275]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=276]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=277]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=278]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=279]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=280]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=281]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=282]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=283]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=284]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=285]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=286]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=287]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=288]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=289]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=290]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=291]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=292]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=293]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=294]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=295]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=296]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=297]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=298]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=299]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=300]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=301]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=302]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=303]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=304]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=305]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=306]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=307]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 187, 69 )
+
+[sub_resource type="ImageTexture" id=308]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=309]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=310]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=311]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=312]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=313]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=314]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=315]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=316]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=317]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=318]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=319]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=320]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=321]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=322]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=323]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=324]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=325]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=326]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=327]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=328]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=329]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=330]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=331]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=332]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=333]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=334]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=335]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=336]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=337]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=338]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=339]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=340]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=341]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=342]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=343]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=344]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=345]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=346]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=347]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=348]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=349]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=350]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=351]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=352]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=353]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=354]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=355]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=356]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=357]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=358]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=359]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=360]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=361]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=362]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=363]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=364]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=365]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=366]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=367]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=368]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=369]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=370]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=371]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=372]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=373]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=374]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=375]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=376]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=377]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=378]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=379]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=380]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=381]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=382]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=383]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=384]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=385]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=386]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=387]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=388]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=389]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=390]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=391]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=392]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=393]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=394]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=395]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=396]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=397]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=398]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=399]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=400]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=401]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=402]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=403]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=404]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=405]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=406]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=407]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=408]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=409]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=410]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=411]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=412]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=413]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=414]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=415]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=416]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=417]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=418]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=419]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=420]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=421]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=422]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=423]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=424]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=425]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=426]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=427]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=428]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=429]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=430]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=431]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=432]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=433]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=434]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=435]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=436]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=437]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=438]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=439]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=440]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=441]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=442]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=443]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 14, 14 )
+
+[sub_resource type="ImageTexture" id=444]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=445]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=446]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=447]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=448]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=449]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=450]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=451]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=452]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=453]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=454]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=455]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=456]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=457]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=458]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=459]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=460]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=461]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=462]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=463]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=464]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=465]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=466]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=467]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=468]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=469]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=470]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=471]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=472]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=473]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=474]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=475]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=476]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=477]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=478]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=479]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=480]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=481]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=482]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=483]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=484]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=485]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=486]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=487]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=488]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=489]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=490]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=491]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=492]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=493]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=494]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=495]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=496]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=497]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=498]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=499]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=500]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=501]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=502]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=503]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=504]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=505]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=506]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=507]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=508]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 64, 64 )
+
+[sub_resource type="ImageTexture" id=509]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=510]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=511]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=512]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=513]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=514]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=515]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=516]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=517]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=518]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=519]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=520]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=521]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=522]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=523]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=524]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 8 )
+
+[sub_resource type="ImageTexture" id=525]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=526]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=527]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=528]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=529]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=530]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=531]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=532]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=533]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=534]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=535]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=536]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=537]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=538]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=539]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=540]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=541]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=542]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=543]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=544]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=545]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=546]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=547]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=548]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=549]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=550]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=551]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=552]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=553]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=554]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=555]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=556]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 10, 10 )
+
+[sub_resource type="ImageTexture" id=557]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 8, 8 )
+
+[sub_resource type="ImageTexture" id=558]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=559]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=560]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=561]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=562]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=563]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=564]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=565]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=566]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 16 )
+
+[sub_resource type="ImageTexture" id=567]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=568]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=569]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="ImageTexture" id=570]
+
+flags = 0
+storage = 0
+lossy_quality = 0.7
+flags = 0
+size = Vector2( 16, 12 )
+
+[sub_resource type="StyleBoxFlat" id=571]
+
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = -33.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=572]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 4.0
+content_margin_bottom = 2.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=573]
+
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 0
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=574]
+
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 1.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=575]
+
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 0
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 1.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=576]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.497549, 0.519608, 0.568627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=577]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 0.5 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=578]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 1
+border_color = Color( 0.411765, 0.611765, 0.909804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxEmpty" id=579]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id=580]
+
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id=581]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 0.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxLine" id=582]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 1.0
+thickness = 1
+vertical = false
+
+[sub_resource type="StyleBoxFlat" id=583]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=584]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0.2 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=585]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 1, 1, 1, 0.2 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=586]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 1, 1, 1, 0.2 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=587]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0.508941, 0, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.729255 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 2
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=588]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=589]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="ImageTexture" id=590]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 0, 0 )
+
+[sub_resource type="StyleBoxLine" id=591]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 7.0
+thickness = 1
+vertical = false
+
+[sub_resource type="StyleBoxFlat" id=592]
+
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=593]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 0.9 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=594]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.147059, 0.173529, 0.232353, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=595]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.397059, 0.423529, 0.482353, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=596]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.397059, 0.423529, 0.482353, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxEmpty" id=597]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="StyleBoxFlat" id=598]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.444122, 0.492983, 0.601562, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=599]
+
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=600]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 24.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=601]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0.65, 0, 0.364667 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 3
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius" ]
+
+[sub_resource type="StyleBoxFlat" id=602]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0.784314, 0, 1 )
+draw_center = true
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 24
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=603]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0, 0, 0, 0 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 3
+border_width_bottom = 0
+border_color = Color( 0, 0, 0, 0 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 4
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxFlat" id=604]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0.332031, 0, 1 )
+draw_center = true
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.122549, 0.144608, 0.193627, 1 )
+border_blend = false
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxFlat" id=605]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0, 0.242431, 0, 0.6 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxLine" id=606]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 7.0
+thickness = 1
+vertical = false
+
+[sub_resource type="StyleBoxFlat" id=607]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 0.9 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxTexture" id=608]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 234 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=609]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 235 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=610]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+texture = SubResource( 236 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=611]
+
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 233 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=612]
+
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = SubResource( 233 )
+region_rect = Rect2( 0, 0, 12, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxLine" id=613]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+color = Color( 1, 1, 1, 0.1 )
+grow = 0.0
+thickness = 1
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id=614]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.397059, 0.423529, 0.482353, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=615]
+
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.0980392, 0.115686, 0.154902, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxTexture" id=616]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = SubResource( 250 )
+region_rect = Rect2( 0, 0, 8, 8 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxFlat" id=617]
+
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 24
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 24.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.3 )
+shadow_size = 4
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[resource]
+
+default_font = ExtResource( 1 )
+BoxContainer/constants/separation = 36
+Button/colors/font_color = Color( 0.78, 0.777765, 0.767686, 1 )
+Button/colors/font_color_disabled = Color( 0.464844, 0.464844, 0.464844, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+Button/colors/icon_color_pressed = Color( 0.473529, 0.703529, 1.04627, 1 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 1 )
+CheckBox/colors/font_color = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.558594, 0.558594, 0.558594, 1 )
+CheckBox/colors/font_color_hover = Color( 0.25, 0.25, 0.25, 1 )
+CheckBox/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckBox/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/icons/checked = SubResource( 2 )
+CheckBox/icons/radio_checked = SubResource( 3 )
+CheckBox/icons/radio_unchecked = SubResource( 4 )
+CheckBox/icons/unchecked = SubResource( 5 )
+CheckBox/styles/disabled = SubResource( 6 )
+CheckBox/styles/hover = SubResource( 6 )
+CheckBox/styles/normal = SubResource( 6 )
+CheckBox/styles/pressed = SubResource( 6 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.515625, 0.50354, 0.50354, 1 )
+CheckButton/colors/font_color_hover = Color( 0.226562, 0.226562, 0.226562, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/icons/off = SubResource( 7 )
+CheckButton/icons/on = SubResource( 8 )
+CheckButton/styles/disabled = SubResource( 9 )
+CheckButton/styles/hover = SubResource( 9 )
+CheckButton/styles/normal = SubResource( 9 )
+CheckButton/styles/pressed = SubResource( 9 )
+Editor/colors/accent_color = Color( 0.411765, 0.611765, 0.909804, 1 )
+Editor/colors/base_color = Color( 0.196078, 0.231373, 0.309804, 1 )
+Editor/colors/contrast_color_1 = Color( 0.397059, 0.423529, 0.482353, 1 )
+Editor/colors/contrast_color_2 = Color( 0.497549, 0.519608, 0.568627, 1 )
+Editor/colors/dark_color_1 = Color( 0.147059, 0.173529, 0.232353, 1 )
+Editor/colors/dark_color_2 = Color( 0.122549, 0.144608, 0.193627, 1 )
+Editor/colors/dark_color_3 = Color( 0.0980392, 0.115686, 0.154902, 1 )
+Editor/colors/disabled_font_color = Color( 1, 1, 1, 0.3 )
+Editor/colors/error_color = Color( 1.5, 0.208, 0.309333, 1.7 )
+Editor/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
+Editor/colors/grid_major_color = Color( 1, 1, 1, 0.15 )
+Editor/colors/grid_minor_color = Color( 1, 1, 1, 0.07 )
+Editor/colors/highlight_color = Color( 1, 1, 1, 0.2 )
+Editor/colors/highlighted_font_color = Color( 0.879412, 0.884706, 0.896471, 1 )
+Editor/colors/mono_color = Color( 1, 1, 1, 1 )
+Editor/colors/prop_category = Color( 0.249412, 0.272706, 0.324471, 1 )
+Editor/colors/prop_section = Color( 0.223824, 0.247912, 0.301441, 1 )
+Editor/colors/prop_subsection = Color( 0.198235, 0.223118, 0.278412, 1 )
+Editor/colors/success_color = Color( 0.341647, 1.01365, 0.580706, 1.2 )
+Editor/colors/warning_color = Color( 0.988235, 1.06024, 0.327529, 1.2 )
+Editor/constants/dark_theme = 1
+Editor/constants/scale = 1
+Editor/constants/thumb_size = 64
+EditorAbout/styles/panel = SubResource( 10 )
+EditorFonts/fonts/doc = null
+EditorFonts/fonts/doc_source = null
+EditorFonts/fonts/doc_title = null
+EditorFonts/fonts/output_source = null
+EditorFonts/fonts/rulers = null
+EditorFonts/fonts/source = null
+EditorFonts/fonts/status_source = null
+EditorFonts/fonts/title = null
+EditorHelp/colors/headline_color = Color( 1, 1, 1, 1 )
+EditorIcons/icons/2D = SubResource( 11 )
+EditorIcons/icons/3D = SubResource( 12 )
+EditorIcons/icons/AABB = SubResource( 13 )
+EditorIcons/icons/ARVRAnchor = SubResource( 14 )
+EditorIcons/icons/ARVRCamera = SubResource( 15 )
+EditorIcons/icons/ARVRController = SubResource( 16 )
+EditorIcons/icons/ARVROrigin = SubResource( 17 )
+EditorIcons/icons/AcceptDialog = SubResource( 18 )
+EditorIcons/icons/ActionCopy = SubResource( 19 )
+EditorIcons/icons/ActionCut = SubResource( 20 )
+EditorIcons/icons/ActionPaste = SubResource( 21 )
+EditorIcons/icons/Add = SubResource( 22 )
+EditorIcons/icons/Anchor = SubResource( 23 )
+EditorIcons/icons/AnimatedSprite = SubResource( 24 )
+EditorIcons/icons/AnimatedSprite3D = SubResource( 25 )
+EditorIcons/icons/Animation = SubResource( 26 )
+EditorIcons/icons/AnimationPlayer = SubResource( 27 )
+EditorIcons/icons/AnimationTreePlayer = SubResource( 28 )
+EditorIcons/icons/Area = SubResource( 29 )
+EditorIcons/icons/Area2D = SubResource( 30 )
+EditorIcons/icons/Array = SubResource( 31 )
+EditorIcons/icons/ArrayMesh = SubResource( 32 )
+EditorIcons/icons/ArrowLeft = SubResource( 33 )
+EditorIcons/icons/ArrowRight = SubResource( 34 )
+EditorIcons/icons/ArrowUp = SubResource( 35 )
+EditorIcons/icons/AssetLib = SubResource( 36 )
+EditorIcons/icons/AtlasTexture = SubResource( 37 )
+EditorIcons/icons/AudioBusBypass = SubResource( 38 )
+EditorIcons/icons/AudioBusLayout = SubResource( 39 )
+EditorIcons/icons/AudioBusMute = SubResource( 40 )
+EditorIcons/icons/AudioBusSolo = SubResource( 41 )
+EditorIcons/icons/AudioStreamPlayer = SubResource( 42 )
+EditorIcons/icons/AudioStreamPlayer2D = SubResource( 43 )
+EditorIcons/icons/AudioStreamPlayer3D = SubResource( 44 )
+EditorIcons/icons/AudioStreamSample = SubResource( 45 )
+EditorIcons/icons/AutoPlay = SubResource( 46 )
+EditorIcons/icons/Back = SubResource( 47 )
+EditorIcons/icons/BackBufferCopy = SubResource( 48 )
+EditorIcons/icons/Bake = SubResource( 49 )
+EditorIcons/icons/BakedLightmap = SubResource( 50 )
+EditorIcons/icons/BakedLightmapData = SubResource( 51 )
+EditorIcons/icons/Basis = SubResource( 52 )
+EditorIcons/icons/BitMap = SubResource( 53 )
+EditorIcons/icons/BitmapFont = SubResource( 54 )
+EditorIcons/icons/Blend = SubResource( 55 )
+EditorIcons/icons/Bone = SubResource( 56 )
+EditorIcons/icons/BoneAttachment = SubResource( 57 )
+EditorIcons/icons/BoneTrack = SubResource( 58 )
+EditorIcons/icons/BoxShape = SubResource( 59 )
+EditorIcons/icons/BusVuDb = SubResource( 60 )
+EditorIcons/icons/BusVuEmpty = SubResource( 61 )
+EditorIcons/icons/BusVuFrozen = SubResource( 62 )
+EditorIcons/icons/BusVuFull = SubResource( 63 )
+EditorIcons/icons/Button = SubResource( 64 )
+EditorIcons/icons/ButtonGroup = SubResource( 65 )
+EditorIcons/icons/Camera = SubResource( 66 )
+EditorIcons/icons/Camera2D = SubResource( 67 )
+EditorIcons/icons/CanvasItem = SubResource( 68 )
+EditorIcons/icons/CanvasItemMaterial = SubResource( 69 )
+EditorIcons/icons/CanvasItemShader = SubResource( 70 )
+EditorIcons/icons/CanvasItemShaderGraph = SubResource( 71 )
+EditorIcons/icons/CanvasLayer = SubResource( 72 )
+EditorIcons/icons/CanvasModulate = SubResource( 73 )
+EditorIcons/icons/CapsuleMesh = SubResource( 74 )
+EditorIcons/icons/CapsuleShape = SubResource( 75 )
+EditorIcons/icons/CapsuleShape2D = SubResource( 76 )
+EditorIcons/icons/CenterContainer = SubResource( 77 )
+EditorIcons/icons/CheckBox = SubResource( 78 )
+EditorIcons/icons/CheckButton = SubResource( 79 )
+EditorIcons/icons/Checkerboard = SubResource( 80 )
+EditorIcons/icons/CircleShape2D = SubResource( 81 )
+EditorIcons/icons/ClassList = SubResource( 82 )
+EditorIcons/icons/Clear = SubResource( 83 )
+EditorIcons/icons/Close = SubResource( 84 )
+EditorIcons/icons/Collapse = SubResource( 85 )
+EditorIcons/icons/CollisionPolygon = SubResource( 86 )
+EditorIcons/icons/CollisionPolygon2D = SubResource( 87 )
+EditorIcons/icons/CollisionShape = SubResource( 88 )
+EditorIcons/icons/CollisionShape2D = SubResource( 89 )
+EditorIcons/icons/Color = SubResource( 90 )
+EditorIcons/icons/ColorPick = SubResource( 91 )
+EditorIcons/icons/ColorPicker = SubResource( 92 )
+EditorIcons/icons/ColorPickerButton = SubResource( 93 )
+EditorIcons/icons/ColorRamp = SubResource( 94 )
+EditorIcons/icons/ColorRect = SubResource( 95 )
+EditorIcons/icons/ConcavePolygonShape = SubResource( 96 )
+EditorIcons/icons/ConcavePolygonShape2D = SubResource( 97 )
+EditorIcons/icons/ConeTwistJoint = SubResource( 98 )
+EditorIcons/icons/ConfirmationDialog = SubResource( 99 )
+EditorIcons/icons/Container = SubResource( 100 )
+EditorIcons/icons/Control = SubResource( 101 )
+EditorIcons/icons/ControlAlignBottomCenter = SubResource( 102 )
+EditorIcons/icons/ControlAlignBottomLeft = SubResource( 103 )
+EditorIcons/icons/ControlAlignBottomRight = SubResource( 104 )
+EditorIcons/icons/ControlAlignBottomWide = SubResource( 105 )
+EditorIcons/icons/ControlAlignCenter = SubResource( 106 )
+EditorIcons/icons/ControlAlignCenterLeft = SubResource( 107 )
+EditorIcons/icons/ControlAlignCenterRight = SubResource( 108 )
+EditorIcons/icons/ControlAlignLeftCenter = SubResource( 109 )
+EditorIcons/icons/ControlAlignLeftWide = SubResource( 110 )
+EditorIcons/icons/ControlAlignRightCenter = SubResource( 111 )
+EditorIcons/icons/ControlAlignRightWide = SubResource( 112 )
+EditorIcons/icons/ControlAlignTopCenter = SubResource( 113 )
+EditorIcons/icons/ControlAlignTopLeft = SubResource( 114 )
+EditorIcons/icons/ControlAlignTopRight = SubResource( 115 )
+EditorIcons/icons/ControlAlignTopWide = SubResource( 116 )
+EditorIcons/icons/ControlAlignWide = SubResource( 117 )
+EditorIcons/icons/ControlHcenterWide = SubResource( 118 )
+EditorIcons/icons/ControlLayout = SubResource( 119 )
+EditorIcons/icons/ControlVcenterWide = SubResource( 120 )
+EditorIcons/icons/ConvexPolygonShape = SubResource( 121 )
+EditorIcons/icons/ConvexPolygonShape2D = SubResource( 122 )
+EditorIcons/icons/CopyNodePath = SubResource( 123 )
+EditorIcons/icons/CreateNewSceneFrom = SubResource( 124 )
+EditorIcons/icons/CubeMap = SubResource( 125 )
+EditorIcons/icons/CubeMesh = SubResource( 126 )
+EditorIcons/icons/Curve = SubResource( 127 )
+EditorIcons/icons/Curve2D = SubResource( 128 )
+EditorIcons/icons/Curve3D = SubResource( 129 )
+EditorIcons/icons/CurveClose = SubResource( 130 )
+EditorIcons/icons/CurveConstant = SubResource( 131 )
+EditorIcons/icons/CurveCreate = SubResource( 132 )
+EditorIcons/icons/CurveCurve = SubResource( 133 )
+EditorIcons/icons/CurveDelete = SubResource( 134 )
+EditorIcons/icons/CurveEdit = SubResource( 135 )
+EditorIcons/icons/CurveIn = SubResource( 136 )
+EditorIcons/icons/CurveInOut = SubResource( 137 )
+EditorIcons/icons/CurveLinear = SubResource( 138 )
+EditorIcons/icons/CurveOut = SubResource( 139 )
+EditorIcons/icons/CurveOutIn = SubResource( 140 )
+EditorIcons/icons/CurveTexture = SubResource( 141 )
+EditorIcons/icons/CylinderMesh = SubResource( 142 )
+EditorIcons/icons/DampedSpringJoint2D = SubResource( 143 )
+EditorIcons/icons/Debug = SubResource( 144 )
+EditorIcons/icons/DebugContinue = SubResource( 145 )
+EditorIcons/icons/DebugNext = SubResource( 146 )
+EditorIcons/icons/DebugStep = SubResource( 147 )
+EditorIcons/icons/DefaultProjectIcon = SubResource( 148 )
+EditorIcons/icons/Dictionary = SubResource( 149 )
+EditorIcons/icons/DirectionalLight = SubResource( 150 )
+EditorIcons/icons/DistractionFree = SubResource( 151 )
+EditorIcons/icons/Duplicate = SubResource( 152 )
+EditorIcons/icons/DynamicFont = SubResource( 153 )
+EditorIcons/icons/DynamicFontData = SubResource( 154 )
+EditorIcons/icons/Edit = SubResource( 155 )
+EditorIcons/icons/EditKey = SubResource( 156 )
+EditorIcons/icons/EditPivot = SubResource( 157 )
+EditorIcons/icons/EditResource = SubResource( 158 )
+EditorIcons/icons/Editor3DHandle = SubResource( 159 )
+EditorIcons/icons/EditorControlAnchor = SubResource( 160 )
+EditorIcons/icons/EditorHandle = SubResource( 161 )
+EditorIcons/icons/EditorHandleAdd = SubResource( 162 )
+EditorIcons/icons/EditorPivot = SubResource( 163 )
+EditorIcons/icons/EditorPlugin = SubResource( 164 )
+EditorIcons/icons/Enum = SubResource( 165 )
+EditorIcons/icons/Environment = SubResource( 166 )
+EditorIcons/icons/Error = SubResource( 167 )
+EditorIcons/icons/ErrorSign = SubResource( 168 )
+EditorIcons/icons/Favorites = SubResource( 169 )
+EditorIcons/icons/File = SubResource( 170 )
+EditorIcons/icons/FileBigThumb = SubResource( 171 )
+EditorIcons/icons/FileBroken = SubResource( 172 )
+EditorIcons/icons/FileBrokenBigThumb = SubResource( 173 )
+EditorIcons/icons/FileDead = SubResource( 174 )
+EditorIcons/icons/FileDeadBigThumb = SubResource( 175 )
+EditorIcons/icons/FileDeadMediumThumb = SubResource( 176 )
+EditorIcons/icons/FileDialog = SubResource( 177 )
+EditorIcons/icons/FileList = SubResource( 178 )
+EditorIcons/icons/FileMediumThumb = SubResource( 179 )
+EditorIcons/icons/FileThumbnail = SubResource( 180 )
+EditorIcons/icons/Filesystem = SubResource( 181 )
+EditorIcons/icons/FixedMaterial = SubResource( 182 )
+EditorIcons/icons/FixedSpatialMaterial = SubResource( 183 )
+EditorIcons/icons/Folder = SubResource( 184 )
+EditorIcons/icons/FolderBigThumb = SubResource( 185 )
+EditorIcons/icons/FolderMediumThumb = SubResource( 186 )
+EditorIcons/icons/Font = SubResource( 187 )
+EditorIcons/icons/Forward = SubResource( 188 )
+EditorIcons/icons/GDNativeLibrary = SubResource( 189 )
+EditorIcons/icons/GDScript = SubResource( 190 )
+EditorIcons/icons/GIProbe = SubResource( 191 )
+EditorIcons/icons/GIProbeData = SubResource( 192 )
+EditorIcons/icons/Generic6DOFJoint = SubResource( 193 )
+EditorIcons/icons/GizmoBakedLightmap = SubResource( 194 )
+EditorIcons/icons/GizmoCamera = SubResource( 195 )
+EditorIcons/icons/GizmoDirectionalLight = SubResource( 196 )
+EditorIcons/icons/GizmoGIProbe = SubResource( 197 )
+EditorIcons/icons/GizmoLight = SubResource( 198 )
+EditorIcons/icons/GizmoListener = SubResource( 199 )
+EditorIcons/icons/GizmoParticles = SubResource( 200 )
+EditorIcons/icons/GizmoReflectionProbe = SubResource( 201 )
+EditorIcons/icons/GizmoSpatialSamplePlayer = SubResource( 202 )
+EditorIcons/icons/GizmoSpatialStreamPlayer = SubResource( 203 )
+EditorIcons/icons/GizmoSpotLight = SubResource( 204 )
+EditorIcons/icons/Godot = SubResource( 205 )
+EditorIcons/icons/GodotDocs = SubResource( 206 )
+EditorIcons/icons/Gradient = SubResource( 207 )
+EditorIcons/icons/GradientTexture = SubResource( 208 )
+EditorIcons/icons/GraphEdit = SubResource( 209 )
+EditorIcons/icons/GraphNode = SubResource( 210 )
+EditorIcons/icons/Grid = SubResource( 211 )
+EditorIcons/icons/GridContainer = SubResource( 212 )
+EditorIcons/icons/GridMap = SubResource( 213 )
+EditorIcons/icons/GrooveJoint2D = SubResource( 214 )
+EditorIcons/icons/Group = SubResource( 215 )
+EditorIcons/icons/GroupViewport = SubResource( 216 )
+EditorIcons/icons/Groups = SubResource( 217 )
+EditorIcons/icons/GuiChecked = SubResource( 2 )
+EditorIcons/icons/GuiClose = SubResource( 218 )
+EditorIcons/icons/GuiCloseCustomizable = SubResource( 219 )
+EditorIcons/icons/GuiDropdown = SubResource( 220 )
+EditorIcons/icons/GuiEllipsis = SubResource( 221 )
+EditorIcons/icons/GuiGraphNodePort = SubResource( 222 )
+EditorIcons/icons/GuiHTick = SubResource( 223 )
+EditorIcons/icons/GuiHsplitter = SubResource( 224 )
+EditorIcons/icons/GuiMiniCheckerboard = SubResource( 225 )
+EditorIcons/icons/GuiMiniTabMenu = SubResource( 226 )
+EditorIcons/icons/GuiOptionArrow = SubResource( 227 )
+EditorIcons/icons/GuiProgressBar = SubResource( 228 )
+EditorIcons/icons/GuiProgressFill = SubResource( 229 )
+EditorIcons/icons/GuiRadioChecked = SubResource( 3 )
+EditorIcons/icons/GuiRadioUnchecked = SubResource( 4 )
+EditorIcons/icons/GuiResizer = SubResource( 230 )
+EditorIcons/icons/GuiScrollArrowLeft = SubResource( 231 )
+EditorIcons/icons/GuiScrollArrowRight = SubResource( 232 )
+EditorIcons/icons/GuiScrollBg = SubResource( 233 )
+EditorIcons/icons/GuiScrollGrabber = SubResource( 234 )
+EditorIcons/icons/GuiScrollGrabberHl = SubResource( 235 )
+EditorIcons/icons/GuiScrollGrabberPressed = SubResource( 236 )
+EditorIcons/icons/GuiSliderGrabber = SubResource( 237 )
+EditorIcons/icons/GuiSliderGrabberHl = SubResource( 238 )
+EditorIcons/icons/GuiSpinboxUpdown = SubResource( 239 )
+EditorIcons/icons/GuiTab = SubResource( 240 )
+EditorIcons/icons/GuiTabMenu = SubResource( 241 )
+EditorIcons/icons/GuiToggleOff = SubResource( 7 )
+EditorIcons/icons/GuiToggleOn = SubResource( 8 )
+EditorIcons/icons/GuiTreeArrowDown = SubResource( 242 )
+EditorIcons/icons/GuiTreeArrowRight = SubResource( 243 )
+EditorIcons/icons/GuiTreeOption = SubResource( 244 )
+EditorIcons/icons/GuiTreeUpdown = SubResource( 245 )
+EditorIcons/icons/GuiUnchecked = SubResource( 5 )
+EditorIcons/icons/GuiVTick = SubResource( 246 )
+EditorIcons/icons/GuiVisibilityHidden = SubResource( 247 )
+EditorIcons/icons/GuiVisibilityVisible = SubResource( 248 )
+EditorIcons/icons/GuiVisibilityXray = SubResource( 249 )
+EditorIcons/icons/GuiVsplitBg = SubResource( 250 )
+EditorIcons/icons/GuiVsplitter = SubResource( 251 )
+EditorIcons/icons/HBoxContainer = SubResource( 252 )
+EditorIcons/icons/HScrollBar = SubResource( 253 )
+EditorIcons/icons/HSeparator = SubResource( 254 )
+EditorIcons/icons/HSlider = SubResource( 255 )
+EditorIcons/icons/HSplitContainer = SubResource( 256 )
+EditorIcons/icons/HTTPRequest = SubResource( 257 )
+EditorIcons/icons/Headphones = SubResource( 258 )
+EditorIcons/icons/Help = SubResource( 259 )
+EditorIcons/icons/HelpSearch = SubResource( 260 )
+EditorIcons/icons/HingeJoint = SubResource( 261 )
+EditorIcons/icons/History = SubResource( 262 )
+EditorIcons/icons/Hsize = SubResource( 263 )
+EditorIcons/icons/Image = SubResource( 264 )
+EditorIcons/icons/ImageTexture = SubResource( 265 )
+EditorIcons/icons/ImmediateGeometry = SubResource( 266 )
+EditorIcons/icons/ImportCheck = SubResource( 267 )
+EditorIcons/icons/ImportFail = SubResource( 268 )
+EditorIcons/icons/Instance = SubResource( 269 )
+EditorIcons/icons/InstanceOptions = SubResource( 270 )
+EditorIcons/icons/InterpCubic = SubResource( 271 )
+EditorIcons/icons/InterpLinear = SubResource( 272 )
+EditorIcons/icons/InterpRaw = SubResource( 273 )
+EditorIcons/icons/InterpWrapClamp = SubResource( 274 )
+EditorIcons/icons/InterpWrapLoop = SubResource( 275 )
+EditorIcons/icons/InterpolatedCamera = SubResource( 276 )
+EditorIcons/icons/InverseKinematics = SubResource( 277 )
+EditorIcons/icons/ItemList = SubResource( 278 )
+EditorIcons/icons/JoyAxis = SubResource( 279 )
+EditorIcons/icons/JoyButton = SubResource( 280 )
+EditorIcons/icons/Joypad = SubResource( 281 )
+EditorIcons/icons/Key = SubResource( 282 )
+EditorIcons/icons/KeyCall = SubResource( 283 )
+EditorIcons/icons/KeyInvalid = SubResource( 284 )
+EditorIcons/icons/KeyNext = SubResource( 285 )
+EditorIcons/icons/KeyPosition = SubResource( 286 )
+EditorIcons/icons/KeyRotation = SubResource( 287 )
+EditorIcons/icons/KeyScale = SubResource( 288 )
+EditorIcons/icons/KeyValid = SubResource( 289 )
+EditorIcons/icons/KeyValue = SubResource( 290 )
+EditorIcons/icons/KeyXform = SubResource( 291 )
+EditorIcons/icons/Keyboard = SubResource( 292 )
+EditorIcons/icons/KinematicBody = SubResource( 293 )
+EditorIcons/icons/KinematicBody2D = SubResource( 294 )
+EditorIcons/icons/Label = SubResource( 295 )
+EditorIcons/icons/LargeTexture = SubResource( 296 )
+EditorIcons/icons/Light2D = SubResource( 297 )
+EditorIcons/icons/LightOccluder2D = SubResource( 298 )
+EditorIcons/icons/Line2D = SubResource( 299 )
+EditorIcons/icons/LineEdit = SubResource( 300 )
+EditorIcons/icons/LineShape2D = SubResource( 301 )
+EditorIcons/icons/LinkButton = SubResource( 302 )
+EditorIcons/icons/ListSelect = SubResource( 303 )
+EditorIcons/icons/Listener = SubResource( 304 )
+EditorIcons/icons/Load = SubResource( 305 )
+EditorIcons/icons/Lock = SubResource( 306 )
+EditorIcons/icons/LockViewport = SubResource( 307 )
+EditorIcons/icons/Logo = SubResource( 308 )
+EditorIcons/icons/Loop = SubResource( 309 )
+EditorIcons/icons/LoopInterpolation = SubResource( 310 )
+EditorIcons/icons/MainPlay = SubResource( 311 )
+EditorIcons/icons/MarginContainer = SubResource( 312 )
+EditorIcons/icons/MatchCase = SubResource( 313 )
+EditorIcons/icons/MaterialPreviewCube = SubResource( 314 )
+EditorIcons/icons/MaterialPreviewCubeOff = SubResource( 315 )
+EditorIcons/icons/MaterialPreviewLight1 = SubResource( 316 )
+EditorIcons/icons/MaterialPreviewLight1Off = SubResource( 317 )
+EditorIcons/icons/MaterialPreviewLight2 = SubResource( 318 )
+EditorIcons/icons/MaterialPreviewLight2Off = SubResource( 319 )
+EditorIcons/icons/MaterialPreviewSphere = SubResource( 320 )
+EditorIcons/icons/MaterialPreviewSphereOff = SubResource( 321 )
+EditorIcons/icons/MemberConstant = SubResource( 322 )
+EditorIcons/icons/MemberMethod = SubResource( 323 )
+EditorIcons/icons/MemberProperty = SubResource( 324 )
+EditorIcons/icons/MemberSignal = SubResource( 325 )
+EditorIcons/icons/MemberTheme = SubResource( 326 )
+EditorIcons/icons/MenuButton = SubResource( 327 )
+EditorIcons/icons/Mesh = SubResource( 328 )
+EditorIcons/icons/MeshInstance = SubResource( 329 )
+EditorIcons/icons/MeshInstance2D = SubResource( 330 )
+EditorIcons/icons/MeshLibrary = SubResource( 331 )
+EditorIcons/icons/MiniObject = SubResource( 332 )
+EditorIcons/icons/MirrorX = SubResource( 333 )
+EditorIcons/icons/MirrorY = SubResource( 334 )
+EditorIcons/icons/Mouse = SubResource( 335 )
+EditorIcons/icons/MoveDown = SubResource( 336 )
+EditorIcons/icons/MovePoint = SubResource( 337 )
+EditorIcons/icons/MoveUp = SubResource( 338 )
+EditorIcons/icons/MultiEdit = SubResource( 339 )
+EditorIcons/icons/MultiLine = SubResource( 340 )
+EditorIcons/icons/MultiMesh = SubResource( 341 )
+EditorIcons/icons/MultiMeshInstance = SubResource( 342 )
+EditorIcons/icons/NativeScript = SubResource( 343 )
+EditorIcons/icons/Navigation = SubResource( 344 )
+EditorIcons/icons/Navigation2D = SubResource( 345 )
+EditorIcons/icons/NavigationMesh = SubResource( 346 )
+EditorIcons/icons/NavigationMeshInstance = SubResource( 347 )
+EditorIcons/icons/NavigationPolygon = SubResource( 348 )
+EditorIcons/icons/NavigationPolygonInstance = SubResource( 349 )
+EditorIcons/icons/New = SubResource( 350 )
+EditorIcons/icons/Nil = SubResource( 351 )
+EditorIcons/icons/NinePatchRect = SubResource( 352 )
+EditorIcons/icons/Node = SubResource( 353 )
+EditorIcons/icons/Node2D = SubResource( 354 )
+EditorIcons/icons/NodePath = SubResource( 355 )
+EditorIcons/icons/NodeWarning = SubResource( 356 )
+EditorIcons/icons/NonFavorite = SubResource( 357 )
+EditorIcons/icons/Object = SubResource( 358 )
+EditorIcons/icons/OccluderPolygon2D = SubResource( 359 )
+EditorIcons/icons/OmniLight = SubResource( 360 )
+EditorIcons/icons/Onion = SubResource( 361 )
+EditorIcons/icons/OptionButton = SubResource( 362 )
+EditorIcons/icons/Override = SubResource( 363 )
+EditorIcons/icons/PackedDataContainer = SubResource( 364 )
+EditorIcons/icons/PackedScene = SubResource( 365 )
+EditorIcons/icons/Panel = SubResource( 366 )
+EditorIcons/icons/PanelContainer = SubResource( 367 )
+EditorIcons/icons/Panels1 = SubResource( 368 )
+EditorIcons/icons/Panels2 = SubResource( 369 )
+EditorIcons/icons/Panels2Alt = SubResource( 370 )
+EditorIcons/icons/Panels3 = SubResource( 371 )
+EditorIcons/icons/Panels3Alt = SubResource( 372 )
+EditorIcons/icons/Panels4 = SubResource( 373 )
+EditorIcons/icons/PanoramaSky = SubResource( 374 )
+EditorIcons/icons/ParallaxBackground = SubResource( 375 )
+EditorIcons/icons/ParallaxLayer = SubResource( 376 )
+EditorIcons/icons/ParticleAttractor2D = SubResource( 377 )
+EditorIcons/icons/Particles = SubResource( 378 )
+EditorIcons/icons/Particles2D = SubResource( 379 )
+EditorIcons/icons/ParticlesMaterial = SubResource( 380 )
+EditorIcons/icons/Path = SubResource( 381 )
+EditorIcons/icons/Path2D = SubResource( 382 )
+EditorIcons/icons/PathFollow = SubResource( 383 )
+EditorIcons/icons/PathFollow2D = SubResource( 384 )
+EditorIcons/icons/Pause = SubResource( 385 )
+EditorIcons/icons/Pin = SubResource( 386 )
+EditorIcons/icons/PinJoint = SubResource( 387 )
+EditorIcons/icons/PinJoint2D = SubResource( 388 )
+EditorIcons/icons/PinPressed = SubResource( 389 )
+EditorIcons/icons/Plane = SubResource( 390 )
+EditorIcons/icons/PlaneMesh = SubResource( 391 )
+EditorIcons/icons/PlaneShape = SubResource( 392 )
+EditorIcons/icons/Play = SubResource( 393 )
+EditorIcons/icons/PlayBackwards = SubResource( 394 )
+EditorIcons/icons/PlayCustom = SubResource( 395 )
+EditorIcons/icons/PlayScene = SubResource( 396 )
+EditorIcons/icons/PlayStart = SubResource( 397 )
+EditorIcons/icons/PlayStartBackwards = SubResource( 398 )
+EditorIcons/icons/PluginScript = SubResource( 399 )
+EditorIcons/icons/Polygon2D = SubResource( 400 )
+EditorIcons/icons/PolygonPathFinder = SubResource( 401 )
+EditorIcons/icons/PoolByteArray = SubResource( 402 )
+EditorIcons/icons/PoolColorArray = SubResource( 403 )
+EditorIcons/icons/PoolIntArray = SubResource( 404 )
+EditorIcons/icons/PoolRealArray = SubResource( 405 )
+EditorIcons/icons/PoolStringArray = SubResource( 406 )
+EditorIcons/icons/PoolVector2Array = SubResource( 407 )
+EditorIcons/icons/PoolVector3Array = SubResource( 408 )
+EditorIcons/icons/Popup = SubResource( 409 )
+EditorIcons/icons/PopupDialog = SubResource( 410 )
+EditorIcons/icons/PopupMenu = SubResource( 411 )
+EditorIcons/icons/PopupPanel = SubResource( 412 )
+EditorIcons/icons/Portal = SubResource( 413 )
+EditorIcons/icons/Position2D = SubResource( 414 )
+EditorIcons/icons/Position3D = SubResource( 415 )
+EditorIcons/icons/PrismMesh = SubResource( 416 )
+EditorIcons/icons/ProceduralSky = SubResource( 417 )
+EditorIcons/icons/Progress1 = SubResource( 418 )
+EditorIcons/icons/Progress2 = SubResource( 419 )
+EditorIcons/icons/Progress3 = SubResource( 420 )
+EditorIcons/icons/Progress4 = SubResource( 421 )
+EditorIcons/icons/Progress5 = SubResource( 422 )
+EditorIcons/icons/Progress6 = SubResource( 423 )
+EditorIcons/icons/Progress7 = SubResource( 424 )
+EditorIcons/icons/Progress8 = SubResource( 425 )
+EditorIcons/icons/ProgressBar = SubResource( 426 )
+EditorIcons/icons/ProximityGroup = SubResource( 427 )
+EditorIcons/icons/ProxyTexture = SubResource( 428 )
+EditorIcons/icons/Quad = SubResource( 429 )
+EditorIcons/icons/QuadMesh = SubResource( 430 )
+EditorIcons/icons/Quat = SubResource( 431 )
+EditorIcons/icons/RID = SubResource( 432 )
+EditorIcons/icons/RayCast = SubResource( 433 )
+EditorIcons/icons/RayCast2D = SubResource( 434 )
+EditorIcons/icons/RayShape = SubResource( 435 )
+EditorIcons/icons/RayShape2D = SubResource( 436 )
+EditorIcons/icons/Rayito = SubResource( 437 )
+EditorIcons/icons/Rect2 = SubResource( 438 )
+EditorIcons/icons/RectangleShape2D = SubResource( 439 )
+EditorIcons/icons/ReferenceRect = SubResource( 440 )
+EditorIcons/icons/ReflectionProbe = SubResource( 441 )
+EditorIcons/icons/RegionEdit = SubResource( 442 )
+EditorIcons/icons/Reload = SubResource( 443 )
+EditorIcons/icons/ReloadSmall = SubResource( 444 )
+EditorIcons/icons/RemoteTransform = SubResource( 445 )
+EditorIcons/icons/RemoteTransform2D = SubResource( 446 )
+EditorIcons/icons/Remove = SubResource( 447 )
+EditorIcons/icons/Rename = SubResource( 448 )
+EditorIcons/icons/Reparent = SubResource( 449 )
+EditorIcons/icons/ResourcePreloader = SubResource( 450 )
+EditorIcons/icons/RichTextLabel = SubResource( 451 )
+EditorIcons/icons/RigidBody = SubResource( 452 )
+EditorIcons/icons/RigidBody2D = SubResource( 453 )
+EditorIcons/icons/Room = SubResource( 454 )
+EditorIcons/icons/RoomBounds = SubResource( 455 )
+EditorIcons/icons/Rotate0 = SubResource( 456 )
+EditorIcons/icons/Rotate180 = SubResource( 457 )
+EditorIcons/icons/Rotate270 = SubResource( 458 )
+EditorIcons/icons/Rotate90 = SubResource( 459 )
+EditorIcons/icons/SampleLibrary = SubResource( 460 )
+EditorIcons/icons/Save = SubResource( 461 )
+EditorIcons/icons/Script = SubResource( 462 )
+EditorIcons/icons/ScriptCreate = SubResource( 463 )
+EditorIcons/icons/ScriptRemove = SubResource( 464 )
+EditorIcons/icons/ScrollContainer = SubResource( 465 )
+EditorIcons/icons/Search = SubResource( 466 )
+EditorIcons/icons/SegmentShape2D = SubResource( 467 )
+EditorIcons/icons/Shader = SubResource( 468 )
+EditorIcons/icons/ShaderMaterial = SubResource( 469 )
+EditorIcons/icons/ShortCut = SubResource( 470 )
+EditorIcons/icons/Signal = SubResource( 471 )
+EditorIcons/icons/Signals = SubResource( 472 )
+EditorIcons/icons/SignalsAndGroups = SubResource( 473 )
+EditorIcons/icons/Skeleton = SubResource( 474 )
+EditorIcons/icons/Skeleton2D = SubResource( 475 )
+EditorIcons/icons/SliderJoint = SubResource( 476 )
+EditorIcons/icons/Slot = SubResource( 477 )
+EditorIcons/icons/Snap = SubResource( 478 )
+EditorIcons/icons/SnapGrid = SubResource( 479 )
+EditorIcons/icons/Sort = SubResource( 480 )
+EditorIcons/icons/Spatial = SubResource( 481 )
+EditorIcons/icons/SpatialMaterial = SubResource( 482 )
+EditorIcons/icons/SphereMesh = SubResource( 483 )
+EditorIcons/icons/SphereShape = SubResource( 484 )
+EditorIcons/icons/SpinBox = SubResource( 485 )
+EditorIcons/icons/SpotLight = SubResource( 486 )
+EditorIcons/icons/Sprite = SubResource( 487 )
+EditorIcons/icons/Sprite3D = SubResource( 488 )
+EditorIcons/icons/SpriteFrames = SubResource( 489 )
+EditorIcons/icons/StaticBody = SubResource( 490 )
+EditorIcons/icons/StaticBody2D = SubResource( 491 )
+EditorIcons/icons/StatusError = SubResource( 492 )
+EditorIcons/icons/StatusSuccess = SubResource( 493 )
+EditorIcons/icons/StatusWarning = SubResource( 494 )
+EditorIcons/icons/Stop = SubResource( 495 )
+EditorIcons/icons/StreamTexture = SubResource( 496 )
+EditorIcons/icons/String = SubResource( 497 )
+EditorIcons/icons/StyleBoxEmpty = SubResource( 498 )
+EditorIcons/icons/StyleBoxFlat = SubResource( 499 )
+EditorIcons/icons/StyleBoxTexture = SubResource( 500 )
+EditorIcons/icons/TabContainer = SubResource( 501 )
+EditorIcons/icons/Tabs = SubResource( 502 )
+EditorIcons/icons/TestCube = SubResource( 503 )
+EditorIcons/icons/TextEdit = SubResource( 504 )
+EditorIcons/icons/TextureButton = SubResource( 505 )
+EditorIcons/icons/TextureProgress = SubResource( 506 )
+EditorIcons/icons/TextureRect = SubResource( 507 )
+EditorIcons/icons/Theme = SubResource( 508 )
+EditorIcons/icons/ThumbnailWait = SubResource( 509 )
+EditorIcons/icons/TileMap = SubResource( 510 )
+EditorIcons/icons/TileSet = SubResource( 511 )
+EditorIcons/icons/Timer = SubResource( 512 )
+EditorIcons/icons/ToolButton = SubResource( 513 )
+EditorIcons/icons/ToolMove = SubResource( 514 )
+EditorIcons/icons/ToolPan = SubResource( 515 )
+EditorIcons/icons/ToolRotate = SubResource( 516 )
+EditorIcons/icons/ToolScale = SubResource( 517 )
+EditorIcons/icons/ToolSelect = SubResource( 518 )
+EditorIcons/icons/Tools = SubResource( 519 )
+EditorIcons/icons/TouchScreenButton = SubResource( 520 )
+EditorIcons/icons/TrackAddKey = SubResource( 521 )
+EditorIcons/icons/TrackAddKeyHl = SubResource( 522 )
+EditorIcons/icons/TrackContinuous = SubResource( 523 )
+EditorIcons/icons/TrackDiscrete = SubResource( 524 )
+EditorIcons/icons/TrackTrigger = SubResource( 525 )
+EditorIcons/icons/Transform = SubResource( 526 )
+EditorIcons/icons/Transform2D = SubResource( 527 )
+EditorIcons/icons/Translation = SubResource( 528 )
+EditorIcons/icons/Transpose = SubResource( 529 )
+EditorIcons/icons/Tree = SubResource( 530 )
+EditorIcons/icons/Tween = SubResource( 531 )
+EditorIcons/icons/Unbone = SubResource( 532 )
+EditorIcons/icons/Ungroup = SubResource( 533 )
+EditorIcons/icons/Unlock = SubResource( 534 )
+EditorIcons/icons/Uv = SubResource( 535 )
+EditorIcons/icons/VBoxContainer = SubResource( 536 )
+EditorIcons/icons/VScrollBar = SubResource( 537 )
+EditorIcons/icons/VSeparator = SubResource( 538 )
+EditorIcons/icons/VSlider = SubResource( 539 )
+EditorIcons/icons/VSplitContainer = SubResource( 540 )
+EditorIcons/icons/Variant = SubResource( 541 )
+EditorIcons/icons/Vector2 = SubResource( 542 )
+EditorIcons/icons/Vector3 = SubResource( 543 )
+EditorIcons/icons/VehicleBody = SubResource( 544 )
+EditorIcons/icons/VehicleWheel = SubResource( 545 )
+EditorIcons/icons/VideoPlayer = SubResource( 546 )
+EditorIcons/icons/Viewport = SubResource( 547 )
+EditorIcons/icons/ViewportContainer = SubResource( 548 )
+EditorIcons/icons/ViewportSpeed = SubResource( 549 )
+EditorIcons/icons/ViewportTexture = SubResource( 550 )
+EditorIcons/icons/ViewportZoom = SubResource( 551 )
+EditorIcons/icons/VisibilityEnabler = SubResource( 552 )
+EditorIcons/icons/VisibilityEnabler2D = SubResource( 553 )
+EditorIcons/icons/VisibilityNotifier = SubResource( 554 )
+EditorIcons/icons/VisibilityNotifier2D = SubResource( 555 )
+EditorIcons/icons/VisualScript = SubResource( 556 )
+EditorIcons/icons/VisualShaderPort = SubResource( 557 )
+EditorIcons/icons/Warning = SubResource( 558 )
+EditorIcons/icons/WindowDialog = SubResource( 559 )
+EditorIcons/icons/World = SubResource( 560 )
+EditorIcons/icons/World2D = SubResource( 561 )
+EditorIcons/icons/WorldEnvironment = SubResource( 562 )
+EditorIcons/icons/YSort = SubResource( 563 )
+EditorIcons/icons/Zoom = SubResource( 564 )
+EditorIcons/icons/ZoomLess = SubResource( 565 )
+EditorIcons/icons/ZoomMore = SubResource( 566 )
+EditorIcons/icons/ZoomReset = SubResource( 567 )
+EditorIcons/icons/bool = SubResource( 568 )
+EditorIcons/icons/float = SubResource( 569 )
+EditorIcons/icons/int = SubResource( 570 )
+EditorSettingsDialog/styles/panel = SubResource( 10 )
+EditorStyles/styles/Background = SubResource( 571 )
+EditorStyles/styles/BottomPanelDebuggerOverride = SubResource( 572 )
+EditorStyles/styles/Content = SubResource( 573 )
+EditorStyles/styles/DebuggerPanel = SubResource( 574 )
+EditorStyles/styles/DebuggerTabBG = SubResource( 575 )
+EditorStyles/styles/DebuggerTabFG = SubResource( 576 )
+EditorStyles/styles/Focus = SubResource( 577 )
+EditorStyles/styles/Information3dViewport = SubResource( 578 )
+EditorStyles/styles/MenuHover = SubResource( 579 )
+EditorStyles/styles/MenuPanel = SubResource( 9 )
+EditorStyles/styles/PlayButtonPanel = SubResource( 580 )
+EditorStyles/styles/SceneTabBG = SubResource( 575 )
+EditorStyles/styles/SceneTabFG = SubResource( 576 )
+EditorStyles/styles/ScriptEditor = SubResource( 581 )
+EditorStyles/styles/ScriptEditorPanel = SubResource( 582 )
+FileDialog/colors/files_disabled = Color( 1, 1, 1, 0.3 )
+FileDialog/icons/folder = SubResource( 184 )
+GraphEdit/colors/grid_major = Color( 1, 1, 1, 0.15 )
+GraphEdit/colors/grid_minor = Color( 1, 1, 1, 0.07 )
+GraphEdit/constants/bezier_len_neg = 160
+GraphEdit/constants/bezier_len_pos = 80
+GraphEdit/icons/minus = SubResource( 565 )
+GraphEdit/icons/more = SubResource( 566 )
+GraphEdit/icons/reset = SubResource( 567 )
+GraphEdit/icons/snap = SubResource( 479 )
+GraphEdit/styles/bg = SubResource( 583 )
+GraphNode/colors/close_color = Color( 1, 1, 1, 0.7 )
+GraphNode/colors/title_color = Color( 1, 1, 1, 1 )
+GraphNode/constants/close_h_offset = 20
+GraphNode/constants/close_offset = 20
+GraphNode/constants/port_offset = 14
+GraphNode/constants/title_h_offset = -16
+GraphNode/icons/close = SubResource( 219 )
+GraphNode/icons/port = SubResource( 222 )
+GraphNode/icons/resizer = SubResource( 230 )
+GraphNode/styles/breakpoint = SubResource( 584 )
+GraphNode/styles/comment = SubResource( 585 )
+GraphNode/styles/commentfocus = SubResource( 586 )
+GraphNode/styles/frame = SubResource( 587 )
+GraphNode/styles/position = SubResource( 588 )
+GraphNode/styles/selectedframe = SubResource( 589 )
+GridContainer/constants/hseparation = 4
+GridContainer/constants/vseparation = 4
+GridContainer/constants/vseperation = 4
+HBoxContainer/constants/separation = 4
+HScrollBar/icons/decrement = SubResource( 590 )
+HScrollBar/icons/decrement_highlight = SubResource( 590 )
+HScrollBar/icons/increment = SubResource( 590 )
+HScrollBar/icons/increment_highlight = SubResource( 590 )
+HScrollBar/styles/grabber = SubResource( 591 )
+HScrollBar/styles/grabber_highlight = SubResource( 592 )
+HScrollBar/styles/grabber_pressed = SubResource( 593 )
+HScrollBar/styles/scroll = SubResource( 594 )
+HScrollBar/styles/scroll_focus = SubResource( 595 )
+HSeparator/styles/separator = SubResource( 596 )
+HSlider/icons/grabber = SubResource( 237 )
+HSlider/icons/grabber_highlight = SubResource( 238 )
+HSlider/styles/grabber_area = SubResource( 597 )
+HSlider/styles/slider = SubResource( 598 )
+HSplitContainer/constants/separation = 8
+HSplitContainer/icons/grabber = SubResource( 224 )
+HSplitContainer/styles/bg = SubResource( 599 )
+ItemList/colors/font_color = Color( 0.780392, 0.780392, 0.768627, 1 )
+ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 0.0497255 )
+ItemList/constants/hseparation = 32
+ItemList/constants/icon_margin = 4
+ItemList/constants/line_separation = 4
+ItemList/constants/vseparation = 8
+ItemList/styles/bg = SubResource( 1 )
+ItemList/styles/bg_focus = SubResource( 1 )
+ItemList/styles/cursor = SubResource( 600 )
+ItemList/styles/cursor_unfocused = SubResource( 600 )
+ItemList/styles/selected = SubResource( 601 )
+ItemList/styles/selected_focus = SubResource( 602 )
+Label/colors/font_color = Color( 0.780392, 0.780392, 0.768627, 1 )
+Label/colors/font_color_shadow = Color( 0.570312, 0.568085, 0.568085, 0 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/styles/normal = SubResource( 580 )
+LineEdit/colors/read_only = Color( 1, 1, 1, 0.3 )
+LinkButton/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
+LinkButton/styles/focus = SubResource( 580 )
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0
+MenuButton/colors/font_color = Color( 0.780392, 0.780392, 0.768627, 1 )
+MenuButton/colors/font_color_hover = Color( 0.296875, 0.296875, 0.296875, 1 )
+MenuButton/styles/disabled = SubResource( 1 )
+MenuButton/styles/focus = SubResource( 1 )
+MenuButton/styles/hover = SubResource( 1 )
+MenuButton/styles/normal = SubResource( 1 )
+MenuButton/styles/pressed = SubResource( 1 )
+OptionButton/colors/font_color = Color( 0.780392, 0.780392, 0.768627, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.367188, 0.367188, 0.367188, 1 )
+OptionButton/colors/font_color_hover = Color( 0.203125, 0.203125, 0.203125, 1 )
+OptionButton/colors/font_color_pressed = Color( 0.585938, 0.585938, 0.585938, 1 )
+OptionButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+OptionButton/constants/arrow_margin = 4
+OptionButton/constants/modulate_arrow = 1
+OptionButton/icons/arrow = SubResource( 227 )
+OptionButton/styles/disabled = SubResource( 1 )
+OptionButton/styles/focus = SubResource( 1 )
+OptionButton/styles/hover = SubResource( 1 )
+OptionButton/styles/normal = SubResource( 1 )
+OptionButton/styles/pressed = SubResource( 1 )
+Panel/styles/panel = SubResource( 603 )
+PanelContainer/styles/panel = SubResource( 9 )
+PopupMenu/colors/font_color = Color( 0.780392, 0.780392, 0.768627, 1 )
+PopupMenu/colors/font_color_accel = Color( 1, 1, 1, 0.3 )
+PopupMenu/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
+PopupMenu/colors/font_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+PopupMenu/constants/vseparation = 4
+PopupMenu/icons/checked = SubResource( 2 )
+PopupMenu/icons/radio_checked = SubResource( 3 )
+PopupMenu/icons/radio_unchecked = SubResource( 4 )
+PopupMenu/icons/submenu = SubResource( 34 )
+PopupMenu/icons/unchecked = SubResource( 5 )
+PopupMenu/icons/visibility_hidden = SubResource( 247 )
+PopupMenu/icons/visibility_visible = SubResource( 248 )
+PopupMenu/icons/visibility_xray = SubResource( 249 )
+PopupMenu/styles/disabled = SubResource( 9 )
+PopupMenu/styles/focus = SubResource( 9 )
+PopupMenu/styles/hover = SubResource( 604 )
+PopupMenu/styles/normal = SubResource( 9 )
+PopupMenu/styles/panel = SubResource( 605 )
+PopupMenu/styles/pressed = SubResource( 9 )
+PopupMenu/styles/separator = SubResource( 606 )
+PopupPanel/styles/panel = SubResource( 605 )
+ProjectSettingsEditor/styles/panel = SubResource( 10 )
+TabContainer/icons/menu_hl = SubResource( 241 )
+ToolButton/colors/font_color = Color( 0.79902, 0.807843, 0.827451, 1 )
+ToolButton/colors/font_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
+ToolButton/colors/font_color_pressed = Color( 0.411765, 0.611765, 0.909804, 1 )
+ToolButton/styles/disabled = SubResource( 9 )
+ToolButton/styles/focus = SubResource( 9 )
+ToolButton/styles/hover = SubResource( 9 )
+ToolButton/styles/normal = SubResource( 9 )
+ToolButton/styles/pressed = SubResource( 9 )
+TooltipLabel/colors/font_color = Color( 0.20098, 0.192157, 0.172549, 1 )
+TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 0.1 )
+TooltipPanel/styles/panel = SubResource( 607 )
+Tree/icons/select_option = SubResource( 244 )
+VBoxContainer/constants/separation = 20
+VScrollBar/icons/decrement = SubResource( 590 )
+VScrollBar/icons/decrement_highlight = SubResource( 590 )
+VScrollBar/icons/increment = SubResource( 590 )
+VScrollBar/icons/increment_highlight = SubResource( 590 )
+VScrollBar/styles/grabber = SubResource( 608 )
+VScrollBar/styles/grabber_highlight = SubResource( 609 )
+VScrollBar/styles/grabber_pressed = SubResource( 610 )
+VScrollBar/styles/scroll = SubResource( 611 )
+VScrollBar/styles/scroll_focus = SubResource( 612 )
+VSeparator/styles/separator = SubResource( 613 )
+VSlider/icons/grabber = SubResource( 237 )
+VSlider/icons/grabber_highlight = SubResource( 238 )
+VSlider/styles/grabber_area = SubResource( 614 )
+VSlider/styles/slider = SubResource( 615 )
+VSplitContainer/constants/separation = 8
+VSplitContainer/icons/grabber = SubResource( 251 )
+VSplitContainer/styles/bg = SubResource( 616 )
+WindowDialog/colors/title_color = Color( 0.79902, 0.807843, 0.827451, 1 )
+WindowDialog/constants/close_h_ofs = 22
+WindowDialog/constants/close_v_ofs = 20
+WindowDialog/constants/title_height = 24
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = SubResource( 218 )
+WindowDialog/icons/close_highlight = SubResource( 218 )
+WindowDialog/styles/panel = SubResource( 617 )
+_sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "ItemList", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/colors", "OptionButton/icons", "OptionButton/styles", "Panel/styles", "PopupMenu", "PopupMenu/colors", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "WindowDialog", "WindowDialog/styles" ]
+
