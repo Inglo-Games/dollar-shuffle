@@ -33,12 +33,14 @@ func _ready():
 		pers_opts = FileIO.read_json_file(opts_filepath)
 	else:
 		pers_opts = get_options_defaults()
+		FileIO.write_json_file(opts_filepath, pers_opts)
 	# Load user data from file
 	if File.new().file_exists(user_filepath):
 		user_data = FileIO.read_json_file(user_filepath)
 		current_level = user_data["last_played"]
 	else:
-		user_data = {}
+		user_data = {"last_played":0}
+		FileIO.write_json_file(user_filepath, user_data)
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
 
