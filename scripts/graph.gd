@@ -28,6 +28,8 @@ func take_points(node):
 		graph_data[str(neighbor)]["value"] -= 1
 	# Add that many to node
 	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
+	# Update move list
+	get_parent().moves.append(Vector2(node,-1))
 	# Force redraw of all node's UI
 	get_tree().call_group("ui_nodes", "update")
 	# Update the score label
@@ -42,6 +44,8 @@ func give_points(node):
 	# Add one to each neighbor
 	for neighbor in graph_data[str(node)]["conns"]:
 		graph_data[str(neighbor)]["value"] += 1
+	# Update move list
+	get_parent().moves.append(Vector2(node,1))
 	# Force redraw of all node's UI
 	get_tree().call_group("ui_nodes", "update")
 	# Update the score label

@@ -121,9 +121,9 @@ func undo():
 		var move = moves[-1]
 		# Do opposite of last move to same node
 		if (move.y == -1):
-			node_give_points(move.x)
+			graph.give_points(move.x)
 		else:
-			node_take_points(move.x)
+			graph.take_points(move.x)
 		# Remove last 2 moves (since we just added another one)
 		moves.remove(len(moves)-1)
 		moves.remove(len(moves)-1)
