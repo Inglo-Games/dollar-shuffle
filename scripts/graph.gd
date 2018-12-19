@@ -4,11 +4,20 @@ extends Node
 # Load the GameNode class
 const GameNode = preload("res://scripts/graph_node.gd")
 
+# Load the point animation class
+const PointAnimation = preload("res://scripts/point_anim.gd")
+
 # Get file IO functions
 const FileIO = preload("res://scripts/file_io.gd")
 
 # Dictionary containing all graph data
 var graph_data = {}
+
+# List of node UI objects
+var node_list = []
+
+# Scale to use for all UI elements
+var ui_scale = Vector2(1.0, 1.0)
 
 func load_puzzle(input):
 	# If it's an int, load that level number
@@ -20,12 +29,19 @@ func load_puzzle(input):
 		graph_data = FileIO.read_json_file("res://levels/tuts/1.json")
 	elif str(input).matchn('tut2'):
 		graph_data = FileIO.read_json_file("res://levels/tuts/2.json")
+	# Set the scale value
+	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
 
 # Take one point from each neighbor of a given node and add that many to it
 func take_points(node):
 	# Take one from each neighbor
 	for neighbor in graph_data[str(node)]["conns"]:
 		graph_data[str(neighbor)]["value"] -= 1
+		# Create an animation to show point moving
+		var anim = PointAnimation.new()
+		anim.init(node_list[neighbor], node_list[node])
+		anim.scale = ui_scale
+		call_deferred("add_child", anim)
 	# Add that many to node
 	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
 	# Update move list
@@ -44,6 +60,11 @@ func give_points(node):
 	# Add one to each neighbor
 	for neighbor in graph_data[str(node)]["conns"]:
 		graph_data[str(neighbor)]["value"] += 1
+		# Create an animation to show point moving
+		var anim = PointAnimation.new()
+		anim.init(node_list[node], node_list[neighbor])
+		anim.scale = ui_scale
+		call_deferred("add_child", anim)
 	# Update move list
 	get_parent().moves.append(Vector2(node,1))
 	# Force redraw of all node's UI
@@ -78,15 +99,15 @@ func draw_node(num):
 	# Size control node equal to the node image
 	game_node.rect_size = Vector2(512,512)
 	# Scale down node according to how many there are
-	var node_scale = 2.0 / (len(graph_data)+1)
-	game_node.rect_scale = Vector2(node_scale, node_scale)
+	game_node.rect_scale = ui_scale
 	# Center Control node over location
-	location -= (Vector2(512,512) * node_scale * 0.5)
+	location -= (Vector2(512,512) * ui_scale * 0.5)
 	game_node.rect_position = location
 	# Add node as child once loading is finished
 	call_deferred("add_child", game_node)
-	# Add node to group
+	# Add node to group and list
 	game_node.add_to_group("ui_nodes")
+	node_list.append(game_node)
 
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
