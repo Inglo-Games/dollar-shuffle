@@ -20,6 +20,8 @@ var node_list = []
 var ui_scale = Vector2(1.0, 1.0)
 
 func load_puzzle(input):
+	# Clear out old node list
+	node_list = []
 	# If it's an int, load that level number
 	if typeof(input) == TYPE_INT:
 		var filepath = "res://levels/%03d.json" % input
