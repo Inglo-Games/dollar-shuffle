@@ -44,6 +44,8 @@ func take_points(node):
 		anim.init(node_list[neighbor], node_list[node])
 		anim.scale = ui_scale
 		call_deferred("add_child", anim)
+	# Wait for animations to play out
+	yield(get_tree().create_timer(0.6),"timeout")
 	# Add that many to node
 	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
 	# Update move list
@@ -67,6 +69,8 @@ func give_points(node):
 		anim.init(node_list[node], node_list[neighbor])
 		anim.scale = ui_scale
 		call_deferred("add_child", anim)
+	# Wait for animations to play out
+	yield(get_tree().create_timer(0.6),"timeout")
 	# Update move list
 	get_parent().moves.append(Vector2(node,1))
 	# Force redraw of all node's UI
