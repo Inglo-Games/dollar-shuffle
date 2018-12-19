@@ -17,6 +17,9 @@ const PausePopup = preload("res://scripts/pause_popup.gd")
 # Current tutorial level number
 var tut_num = 1
 
+# Moves list isn't used in tutorial, but is called in graph.gd
+var moves = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set background color and buttons based on skin option
