@@ -93,7 +93,7 @@ tracks/2/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[node name="base" type="Control"]
+[node name="base" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -115,10 +115,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -6.0
-margin_top = -3.0
-margin_right = -6.0
-margin_bottom = -3.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -139,7 +135,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 38.0
+margin_left = 58.0
 margin_top = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -147,8 +143,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 36
 alignment = 0
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="score" type="Label" parent="label_container" index="0"]
 
@@ -179,8 +176,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 28.0
-margin_right = 52.0
+margin_left = 60.0
+margin_right = 84.0
 margin_bottom = 36.0
 rect_min_size = Vector2( 24, 36 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -202,7 +199,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
 margin_left = 1600.0
-margin_top = 14.0
+margin_top = 28.0
 margin_right = 708.0
 margin_bottom = 526.0
 grow_horizontal = 0
