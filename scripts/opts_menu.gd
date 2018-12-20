@@ -61,6 +61,10 @@ func on_diff_selected(item):
 func on_skin_selected(item):
 	# Save selected boolean to pers_opts
 	globals.pers_opts["skin"] = item
+	# Set global theme to selected one
+	match item:
+		0:
+			get_tree()
 
 func show_credits():
 	# Todo: Add attributions page

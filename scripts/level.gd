@@ -41,7 +41,7 @@ func _ready():
 			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_light.png")
 			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Load in level from file
-	graph.load_puzzle(globals.current_level)
+	graph.load_puzzle(int(globals.current_level))
 	# Draw everything on screen
 	graph.display_graph()
 	score.text = "0"
@@ -65,7 +65,7 @@ func transition_graph(num):
 	yield(animation, "animation_finished")
 	for ui in graph.get_children():
 		ui.queue_free()
-	graph.load_puzzle(globals.current_level)
+	graph.load_puzzle(num)
 	# Reset score, timer, and undos
 	moves = []
 	score.text = "0"

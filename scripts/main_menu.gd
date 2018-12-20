@@ -1,7 +1,7 @@
 extends Node
 
-# Load file operations class
-const FileIO = preload("res://scripts/file_io.gd")
+# Make sure the globals file is loaded
+var glob = preload("res://scripts/globals.gd")
 
 # Button objects
 onready var cont_btn = get_node("menu_container/cont_button")
@@ -26,6 +26,7 @@ func _ready():
 
 # Return to last unsolved puzzle
 func return_level():
+	# Load instance of game scene
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())
 

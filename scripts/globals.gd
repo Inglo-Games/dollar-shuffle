@@ -39,7 +39,7 @@ func _ready():
 		user_data = FileIO.read_json_file(user_filepath)
 		current_level = user_data["last_played"]
 	else:
-		user_data = {"last_played":0}
+		user_data = {"last_played":1}
 		FileIO.write_json_file(user_filepath, user_data)
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
@@ -53,7 +53,7 @@ func get_options_defaults():
 # Update the last played level saved to userdata file
 func update_last_level(num):
 	# Update variable and write to file
-	current_level = num
+	current_level = int(num)
 	user_data["last_played"] = num
 	FileIO.write_json_file(user_filepath, user_data)
 
