@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=619 format=2]
+[gd_resource type="Theme" load_steps=621 format=2]
 
-[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/icons/radio_on.png" type="Texture" id=1]
+[ext_resource path="res://assets/icons/radio_off.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -5742,7 +5744,7 @@ anti_aliasing_size = 1
 
 [resource]
 
-default_font = ExtResource( 1 )
+default_font = ExtResource( 3 )
 BoxContainer/constants/separation = 36
 Button/colors/font_color = Color( 0.78, 0.777765, 0.767686, 1 )
 Button/colors/font_color_disabled = Color( 0.464844, 0.464844, 0.464844, 1 )
@@ -6486,7 +6488,7 @@ OptionButton/colors/font_color_pressed = Color( 0.585938, 0.585938, 0.585938, 1 
 OptionButton/colors/icon_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 OptionButton/constants/arrow_margin = 4
 OptionButton/constants/modulate_arrow = 1
-OptionButton/icons/arrow = SubResource( 227 )
+OptionButton/icons/arrow = null
 OptionButton/styles/disabled = SubResource( 1 )
 OptionButton/styles/focus = SubResource( 1 )
 OptionButton/styles/hover = SubResource( 1 )
@@ -6499,14 +6501,14 @@ PopupMenu/colors/font_color_accel = Color( 1, 1, 1, 0.3 )
 PopupMenu/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
 PopupMenu/colors/font_color_hover = Color( 0.879412, 0.884706, 0.896471, 1 )
 PopupMenu/constants/vseparation = 4
-PopupMenu/icons/checked = SubResource( 2 )
-PopupMenu/icons/radio_checked = SubResource( 3 )
-PopupMenu/icons/radio_unchecked = SubResource( 4 )
-PopupMenu/icons/submenu = SubResource( 34 )
-PopupMenu/icons/unchecked = SubResource( 5 )
-PopupMenu/icons/visibility_hidden = SubResource( 247 )
-PopupMenu/icons/visibility_visible = SubResource( 248 )
-PopupMenu/icons/visibility_xray = SubResource( 249 )
+PopupMenu/icons/checked = null
+PopupMenu/icons/radio_checked = ExtResource( 1 )
+PopupMenu/icons/radio_unchecked = ExtResource( 2 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = null
+PopupMenu/icons/visibility_hidden = null
+PopupMenu/icons/visibility_visible = null
+PopupMenu/icons/visibility_xray = null
 PopupMenu/styles/disabled = SubResource( 9 )
 PopupMenu/styles/focus = SubResource( 9 )
 PopupMenu/styles/hover = SubResource( 604 )
@@ -6555,5 +6557,5 @@ WindowDialog/fonts/title_font = null
 WindowDialog/icons/close = SubResource( 218 )
 WindowDialog/icons/close_highlight = SubResource( 218 )
 WindowDialog/styles/panel = SubResource( 617 )
-_sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "ItemList", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/colors", "OptionButton/icons", "OptionButton/styles", "Panel/styles", "PopupMenu", "PopupMenu/colors", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "WindowDialog", "WindowDialog/styles" ]
+_sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton", "OptionButton/colors", "OptionButton/icons", "OptionButton/styles", "Panel/styles", "PopupMenu", "PopupMenu/colors", "PopupMenu/icons", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "WindowDialog/styles" ]
 
