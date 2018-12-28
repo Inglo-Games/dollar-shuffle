@@ -66,9 +66,9 @@ func on_skin_selected(item):
 		0:
 			get_tree()
 
-func show_credits():
-	# Todo: Add attributions page
-	pass
+func show_attributions():
+	# Show attributions page
+	get_tree().change_scene("res://scenes/credits_menu.tscn")
 
 func set_defaults():
 	# Write default values to options file
