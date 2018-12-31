@@ -1,12 +1,12 @@
 [gd_scene format=2]
 
-[node name="record_cont" type="Control"]
+[node name="record_cont" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 350, 60 )
+rect_min_size = Vector2( 320, 160 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -60,6 +60,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 350.0
+rect_min_size = Vector2( 100, 160 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -67,7 +68,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
-_sections_unfolded = [ "Anchor", "Hint", "Margin", "Rect", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Hint", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
 [node name="easy_rec" type="Label" parent="nums" index="0"]
 
@@ -88,7 +89,7 @@ text = "Easy:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags" ]
 
 [node name="med_rec" type="Label" parent="nums" index="1"]
 
