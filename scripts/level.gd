@@ -124,6 +124,10 @@ func undo():
 			graph.give_points(move.x)
 		else:
 			graph.take_points(move.x)
+		# Wait for point moving animations to play out
+		undo_btn.disabled = true
+		yield(get_tree().create_timer(0.6),"timeout")
+		undo_btn.disabled = false
 		# Remove last 2 moves (since we just added another one)
 		moves.remove(len(moves)-1)
 		moves.remove(len(moves)-1)
