@@ -8,6 +8,7 @@ const LevelClass = preload("res://scripts/level.gd")
 onready var back_btn = get_node("back_btn")
 onready var lvl_list = get_node("vbox/lvl_list")
 onready var tuts_btn = get_node("vbox/tuts_button")
+onready var rand_btn = get_node("vbox/rand_button")
 
 func _ready():
 	# Set background color and back button if dark mode
@@ -24,6 +25,8 @@ func _ready():
 	lvl_list.connect("item_selected", self, "open_level")
 	# Connect tuts button to open_tutorials function
 	tuts_btn.connect("pressed", self, "open_tutorials")
+	# Connect random button to function that generates a random level
+	rand_btn.connect("pressed", self, "random_level")
 	# Connect back button to return function
 	back_btn.connect("pressed", self, "close_menu")
 
@@ -42,6 +45,10 @@ func open_level(num):
 func open_tutorials():
 	# Load the tutorial scene
 	get_tree().change_scene("res://scenes/tutorial.tscn")
+
+func random_level():
+	# TODO: Implement randomization classes
+	pass
 
 func close_menu():
 	# Return to main menu
