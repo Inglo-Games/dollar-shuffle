@@ -7,7 +7,7 @@ static func generate_graph_data():
 	# Create a dictionary with that many nodes
 	var data = {}
 	for index in range(num_nodes):
-		data[index] = {"conns":[],"loc":[0.0,0.0],"value":0}
+		data[index] = {"conns":[],"loc":[0.5,0.5],"value":-2}
 	# Generate a spanning tree to ensure that the graph is connected
 	data = generate_tree(data)
 	# Add additional connections
@@ -49,12 +49,13 @@ static func generate_tree(graph_data):
 
 # Adds a new, random connection to a given graph
 static func add_conn(graph_data):
+	var n = len(graph_data)
 	# Pick 2 random nodes
-	var num1 = randi() % num_nodes
-	var num2 = randi() % num_nodes
+	var num1 = randi() % n
+	var num2 = randi() % n
 	# Make sure they're different
 	while num1 == num2:
-		num2 = randi() % num_nodes
+		num2 = randi() % n
 	# Check if that connection already exists
 	if graph_data[num1]["conns"].has(num2):
 		# Try again
@@ -64,10 +65,3 @@ static func add_conn(graph_data):
 		graph_data[num1]["conns"].append(num2)
 		graph_data[num2]["conns"].append(num1)
 	return graph_data
-
-# Distribute the nodes evenly around the board
-static func organize_nodes(graph_data):
-	# For each node in the graph...
-	for node in graph_data.keys():
-		# TODO: Implement this function
-		pass
