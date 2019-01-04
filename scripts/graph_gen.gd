@@ -13,13 +13,8 @@ static func generate_graph_data():
 	# Add additional connections
 	for index in range(randi() % num_nodes):
 		data = add_conn(data)
-	# Calculate the min number of points needed based on genus
-	var conns = 0
-	for node in data.keys():
-		conns += data[node].size()
-	conns /= 2
-	var points = conns - data.size() + 1
-	# TODO: Distribute points
+	# Distribute points at random
+	data = distribute_points(data)
 	# Setup node layout
 	data = organize_nodes(data)
 	return data
@@ -75,3 +70,20 @@ static func organize_nodes(graph_data):
 		var rot = 2 * PI * node / n
 		graph_data[node]["loc"] = [cos(rot), sin(rot)]
 		print("Node %d location: %.3f, %.3f" % [node, cos(rot), sin(rot)])
+
+# Distribute points randomly until graph is solvable
+static func distribute_points(graph_data):
+	var n = graph_data.size()
+	# Calculate the minimum number of points needed based on genus
+	var conns = 0
+	for node in graph_data.keys():
+		conns += graph_data[node].size()
+	conns /= 2
+	var min_points = conns - n + 1
+	# Start with current total value, noting each node is initialized with -2 val
+	var total = n * -2
+	# Add points at random until total equals min_points
+	while min_points < total:
+		graph_data[randi()%n]["value"] += 1
+		total += 1
+	return graph_data
