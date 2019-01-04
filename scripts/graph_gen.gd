@@ -65,3 +65,13 @@ static func add_conn(graph_data):
 		graph_data[num1]["conns"].append(num2)
 		graph_data[num2]["conns"].append(num1)
 	return graph_data
+
+# Distribute the nodes evenly around the board
+static func organize_nodes(graph_data):
+	var n = len(graph_data)
+	# For each node in the graph...
+	for node in graph_data.keys():
+		# Easy solution: circle around center
+		var rot = 2 * PI * node / n
+		graph_data[node]["loc"] = [cos(rot), sin(rot)]
+		print("Node %d location: %.3f, %.3f" % [node, cos(rot), sin(rot)])
