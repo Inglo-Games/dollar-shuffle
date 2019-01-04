@@ -17,6 +17,8 @@ static func generate_graph_data():
 	data = distribute_points(data)
 	# Setup node layout
 	data = organize_nodes(data)
+	# Debug print
+	print("New graph: %s" % str(data))
 	return data
 
 # Assign edges to an empty graph so that it has a spanning tree
@@ -70,6 +72,7 @@ static func organize_nodes(graph_data):
 		var rot = 2 * PI * node / n
 		graph_data[node]["loc"] = [cos(rot), sin(rot)]
 		print("Node %d location: %.3f, %.3f" % [node, cos(rot), sin(rot)])
+	return graph_data
 
 # Distribute points randomly until graph is solvable
 static func distribute_points(graph_data):
