@@ -3,7 +3,7 @@ extends Node
 # Generate a random graph
 static func generate_graph_data():
 	# Generate a number of nodes between 5 and 12, inclusive
-	var num_nodes = 5 + (randi() % 7)
+	var num_nodes = 5 + (randi() % 8)
 	# Create a dictionary with that many nodes
 	var data = {}
 	for index in range(num_nodes):
@@ -11,8 +11,18 @@ static func generate_graph_data():
 	# Generate a spanning tree to ensure that the graph is connected
 	data = generate_tree(data)
 	# Add additional connections
-	for index in range(randi()%num_nodes):
+	for index in range(randi() % num_nodes):
 		data = add_conn(data)
+	# Calculate the min number of points needed based on genus
+	var conns = 0
+	for node in data.keys():
+		conns += data[node].size()
+	conns /= 2
+	var points = conns - data.size() + 1
+	# TODO: Distribute points
+	# Setup node layout
+	data = organize_nodes(data)
+	return data
 
 # Assign edges to an empty graph so that it has a spanning tree
 static func generate_tree(graph_data):
@@ -54,3 +64,10 @@ static func add_conn(graph_data):
 		graph_data[num1]["conns"].append(num2)
 		graph_data[num2]["conns"].append(num1)
 	return graph_data
+
+# Distribute the nodes evenly around the board
+static func organize_nodes(graph_data):
+	# For each node in the graph...
+	for node in graph_data.keys():
+		# TODO: Implement this function
+		pass
