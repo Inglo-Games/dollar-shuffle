@@ -1,14 +1,10 @@
 extends Node
 
-# Hash the input and make it the seed for the internal RNG
-static func setup_seed(input):
-	seed(input.hash())
-
 # Generate a new UUID, with input seed if given
 static func gen_uuid(input):
 	# If input isn't null, make it the seed
 	if input != null:
-		setup_seed(input)
+		seed(input.hash())
 	# Otherwise generate a new random seed
 	else:
 		randomize()
