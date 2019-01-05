@@ -70,8 +70,10 @@ static func organize_nodes(graph_data):
 	for node in graph_data.keys():
 		# Easy solution: circle around center
 		var rot = 2 * PI * float(node) / n
-		graph_data[str(node)]["loc"] = [cos(rot), sin(rot)]
-		print("Node %d location: %.3f, %.3f" % [int(node), cos(rot), sin(rot)])
+		# Scale down circle coords and center on [0.5,0.5]
+		var x = cos(rot) * 0.35 + 0.5
+		var y = sin(rot) * 0.35 + 0.5
+		graph_data[str(node)]["loc"] = [x, y]
 	return graph_data
 
 # Distribute points randomly until graph is solvable
