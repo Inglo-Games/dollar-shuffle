@@ -86,7 +86,7 @@ static func distribute_points(graph_data):
 	# Start with current total value, noting each node is initialized with -2 val
 	var total = n * -2
 	# Add points at random until total equals min_points
-	while min_points < total:
+	while min_points > total:
 		graph_data[randi()%n]["value"] += 1
 		total += 1
 	return graph_data
