@@ -33,7 +33,7 @@ func populate_list():
 			var new_cont = record_container.instance()
 			# Fill in labels
 			var recs = globals.user_data[record]
-			new_cont.get_node("level_id").text = "%03d" % int(record)
+			new_cont.get_node("level_id").text = "%s" % record
 			if(recs.has("0")):
 				new_cont.get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs["0"].values()
 			if(recs.has("1")):
