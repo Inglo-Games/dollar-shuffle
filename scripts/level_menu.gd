@@ -3,7 +3,7 @@ extends Node
 # Get referenced classes
 const FileIO = preload("res://scripts/file_io.gd")
 const LevelClass = preload("res://scripts/level.gd")
-const UUID = preload("res://scripts/uuid.gd")
+const RNG = preload("res://scripts/rng_seed.gd")
 
 # GUI objects
 onready var back_btn = get_node("back_btn")
@@ -49,7 +49,7 @@ func open_tutorials():
 
 func random_level():
 	# Set the current level global var to a random string
-	globals.current_level = UUID.gen_uuid(null)
+	globals.current_level = RNG.gen_seed()
 	# Load instance of game scene
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())

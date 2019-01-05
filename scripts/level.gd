@@ -13,7 +13,7 @@ onready var animation = get_node("anim")
 const GameGraph = preload("res://scripts/graph.gd")
 
 # Load utility classes
-const UUID = preload("res://scripts/uuid.gd")
+const RNG = preload("res://scripts/rng_seed.gd")
 
 # Load pause menu
 const PausePopup = preload("res://scripts/pause_popup.gd")
@@ -108,7 +108,7 @@ func open_next_puzzle():
 	globals.record_win(len(moves), secs)
 	# If this is a randomly generated level...
 	if typeof(globals.current_level) == TYPE_STRING:
-		globals.current_level = UUID.gen_uuid(randi())
+		globals.current_level = RNG.gen_seed()
 		transition_graph()
 	# If this is a pre-made level...
 	elif typeof(globals.current_level) == TYPE_INT:
