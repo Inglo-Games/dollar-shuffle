@@ -118,7 +118,7 @@ func open_next_puzzle():
 			self.queue_free()
 			get_tree().change_scene("res://scenes/main_menu.tscn")
 			return
-		# Increment level num and load new game scene
+		# Increment level num and load new level
 		globals.current_level += 1
 		globals.update_last_level()
 		transition_graph()
