@@ -4,7 +4,7 @@ extends Node
 static func gen_uuid(input):
 	# If input isn't null, make it the seed
 	if input != null:
-		seed(input.hash())
+		seed(str(input).hash())
 	# Otherwise generate a new random seed
 	else:
 		randomize()
