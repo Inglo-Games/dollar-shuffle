@@ -12,6 +12,9 @@ onready var animation = get_node("anim")
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
 
+# Load utility classes
+const UUID = preload("res://scripts/uuid.gd")
+
 # Load pause menu
 const PausePopup = preload("res://scripts/pause_popup.gd")
 
@@ -59,13 +62,13 @@ func _process(delta):
 		timer.text = str("%.3f" % secs)
 
 # Clear the old graph and load a new one
-func transition_graph(num):
+func transition_graph():
 	# First, clear out old graph
 	animation.play("fadeout")
 	yield(animation, "animation_finished")
 	for ui in graph.get_children():
 		ui.queue_free()
-	graph.load_puzzle(num)
+	graph.load_puzzle(globals.current_level)
 	# Reset score, timer, and undos
 	moves = []
 	score.text = "0"
@@ -103,15 +106,21 @@ func open_next_puzzle():
 	# Record the win and stop the timer
 	timer_active = false
 	globals.record_win(len(moves), secs)
-	# Make sure that puzzle exists
-	if globals.current_level + 1 > globals.number_of_levels:
-		# Return to main menu if it doesn't
-		self.queue_free()
-		get_tree().change_scene("res://scenes/main_menu.tscn")
-		return
-	# Increment level num and load new game scene
-	globals.update_last_level(globals.current_level + 1)
-	transition_graph(globals.current_level)
+	# If this is a randomly generated level...
+	if typeof(globals.current_level) == TYPE_STRING:
+		globals.current_level = UUID.gen_uuid(randi())
+		transition_graph()
+	# If this is a pre-made level...
+	elif typeof(globals.current_level) == TYPE_INT:
+		# Make sure the next level exists
+		if globals.current_level + 1 > globals.number_of_levels:
+			# Return to main menu if it doesn't
+			self.queue_free()
+			get_tree().change_scene("res://scenes/main_menu.tscn")
+			return
+		# Increment level num and load new game scene
+		globals.update_last_level(globals.current_level + 1)
+		transition_graph()
 
 # Undo last move
 func undo():
