@@ -37,8 +37,8 @@ func populate_list():
 		lvl_list.add_item(str(index+1))
 
 func open_level(num):
-	# Save level number to global var
-	globals.update_last_level(num+1)
+	# Set level to selected
+	globals.current_level = num+1
 	# Load instance of game scene
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())

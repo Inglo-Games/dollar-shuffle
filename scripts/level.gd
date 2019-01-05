@@ -119,7 +119,8 @@ func open_next_puzzle():
 			get_tree().change_scene("res://scenes/main_menu.tscn")
 			return
 		# Increment level num and load new game scene
-		globals.update_last_level(globals.current_level + 1)
+		globals.current_level += 1
+		globals.update_last_level()
 		transition_graph()
 
 # Undo last move

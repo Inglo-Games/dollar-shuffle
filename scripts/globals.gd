@@ -51,10 +51,9 @@ func get_options_defaults():
 	return { "difficulty":0, "skin":0 }
 
 # Update the last played level saved to userdata file
-func update_last_level(level):
+func update_last_level():
 	# Update variable and write to file
-	current_level = level
-	user_data["last_played"] = level
+	user_data["last_played"] = current_level
 	FileIO.write_json_file(user_filepath, user_data)
 
 # Check if current win beats previous best, and save it if so
