@@ -7,7 +7,7 @@ static func generate_graph_data():
 	# Create a dictionary with that many nodes
 	var data = {}
 	for index in range(num_nodes):
-		data[index] = {"conns":[],"loc":[0.5,0.5],"value":-2}
+		data[str(index)] = {"conns":[],"loc":[0.5,0.5],"value":-2}
 	# Generate a spanning tree to ensure that the graph is connected
 	data = generate_tree(data)
 	# Add additional connections
@@ -39,8 +39,8 @@ static func generate_tree(graph_data):
 			# Remove the node from the list
 			list.remove(val2)
 			# And add that connection to graph_data
-			graph_data[val1]["conns"].append(node)
-			graph_data[node]["conns"].append(val1)
+			graph_data[str(val1)]["conns"].append(node)
+			graph_data[str(node)]["conns"].append(val1)
 	# Return the graph
 	return graph_data
 
@@ -54,13 +54,13 @@ static func add_conn(graph_data):
 	while num1 == num2:
 		num2 = randi() % n
 	# Check if that connection already exists
-	if graph_data[num1]["conns"].has(num2):
+	if graph_data[str(num1)]["conns"].has(num2):
 		# Try again
 		graph_data = add_conn(graph_data)
 	else:
 		# Add that connection
-		graph_data[num1]["conns"].append(num2)
-		graph_data[num2]["conns"].append(num1)
+		graph_data[str(num1)]["conns"].append(num2)
+		graph_data[str(num2)]["conns"].append(num1)
 	return graph_data
 
 # Distribute the nodes evenly around the board
@@ -69,9 +69,9 @@ static func organize_nodes(graph_data):
 	# For each node in the graph...
 	for node in graph_data.keys():
 		# Easy solution: circle around center
-		var rot = 2 * PI * node / n
-		graph_data[node]["loc"] = [cos(rot), sin(rot)]
-		print("Node %d location: %.3f, %.3f" % [node, cos(rot), sin(rot)])
+		var rot = 2 * PI * float(node) / n
+		graph_data[str(node)]["loc"] = [cos(rot), sin(rot)]
+		print("Node %d location: %.3f, %.3f" % [int(node), cos(rot), sin(rot)])
 	return graph_data
 
 # Distribute points randomly until graph is solvable
@@ -87,6 +87,6 @@ static func distribute_points(graph_data):
 	var total = n * -2
 	# Add points at random until total equals min_points
 	while min_points > total:
-		graph_data[randi()%n]["value"] += 1
+		graph_data[str(randi()%n)]["value"] += 1
 		total += 1
 	return graph_data
