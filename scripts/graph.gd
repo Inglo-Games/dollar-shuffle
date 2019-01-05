@@ -1,8 +1,9 @@
 # This represents the graph (nodes and connections) for each puzzle
 extends Node
 
-# Load the GameNode class
+# Load the GameNode classes
 const GameNode = preload("res://scripts/graph_node.gd")
+const GameGen = preload("res://scripts/graph_gen.gd")
 
 # Load the point animation class
 const PointAnimation = preload("res://scripts/point_anim.gd")
@@ -31,6 +32,9 @@ func load_puzzle(input):
 		graph_data = FileIO.read_json_file("res://levels/tuts/1.json")
 	elif str(input).matchn('tut2'):
 		graph_data = FileIO.read_json_file("res://levels/tuts/2.json")
+	# If it's another string, load a random graph
+	elif typeof(input) == TYPE_STRING:
+		graph_data = GameGen.generate_graph_data()
 	# Set the scale value
 	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
 
