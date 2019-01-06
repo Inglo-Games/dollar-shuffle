@@ -31,17 +31,16 @@ static func generate_tree(graph_data):
 	# Create a connection for each
 	while list.size() > 0:
 		# Pick a node at random
-		var val1 = randi() % len(graph_data)
+		var node1 = randi() % len(graph_data)
 		# Pick a second node from the list
-		var val2 = randi() % list.size()
-		var node = list[val2]
+		var node2 = list[randi() % list.size()]
 		# If the numbers are different...
-		if val1 != node:
+		if node1 != node:
 			# Remove the node from the list
-			list.remove(val2)
+			list.erase(val2)
 			# And add that connection to graph_data
-			graph_data[str(val1)]["conns"].append(node)
-			graph_data[str(node)]["conns"].append(val1)
+			graph_data[str(node1)]["conns"].append(node2)
+			graph_data[str(node2)]["conns"].append(node1)
 	# Return the graph
 	return graph_data
 
