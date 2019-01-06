@@ -22,25 +22,29 @@ static func generate_graph_data():
 	print("New graph: %s" % str(data))
 	return data
 
-# Assign edges to an empty graph so that it has a spanning tree
+# Assign edges to an empty graph so that it has a spanning tree without any
+# duplicate edges
 static func generate_tree(graph_data):
 	# Start with a list of nodes that haven't been connected to yet
-	var list = []
-	for index in range(len(graph_data)):
-		list.append(index)
-	# Create a connection for each
-	while list.size() > 0:
-		# Pick a node at random
-		var node1 = randi() % len(graph_data)
-		# Pick a second node from the list
-		var node2 = list[randi() % list.size()]
-		# If the numbers are different...
-		if node1 != node:
-			# Remove the node from the list
-			list.erase(val2)
-			# And add that connection to graph_data
-			graph_data[str(node1)]["conns"].append(node2)
-			graph_data[str(node2)]["conns"].append(node1)
+	# containing all nodes except one
+	var out_list = []
+	for index in range(len(graph_data)-1):
+		out_list.append(index)
+	# Also create a list of nodes that *have* been connected,
+	# containing the one node left out of the other list
+	var in_list = [len(graph_data)-1]
+	# Create a connection for each unconnected node
+	while out_list.size() > 0:
+		# Pick a node at random from connected nodes
+		var node1 = in_list[randi() % in_list.size()]
+		# Pick another node at random from the unconnected nodes
+		var node2 = out_list[randi() % out_list.size()]
+		# Remove node2 from the out_list and add it to the in_list
+		out_list.erase(node2)
+		in_list.append(node2)
+		# And add that connection to graph_data
+		graph_data[str(node1)]["conns"].append(node2)
+		graph_data[str(node2)]["conns"].append(node1)
 	# Return the graph
 	return graph_data
 
