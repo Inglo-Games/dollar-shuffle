@@ -18,6 +18,7 @@ static func generate_graph_data():
 	# Setup node layout
 	data = organize_nodes(data)
 	# Debug print
+	print("Graph seed: %s" % globals.current_level)
 	print("New graph: %s" % str(data))
 	return data
 
@@ -82,13 +83,17 @@ static func distribute_points(graph_data):
 	# Calculate the minimum number of points needed based on genus
 	var conns = 0
 	for node in graph_data.keys():
-		conns += graph_data[node].size()
-	conns /= 2
-	var min_points = conns - n + 1
+		conns += graph_data[node].size() * 0.5
+	var min_points = max(conns - n + 1, 0)
 	# Start with current total value, noting each node is initialized with -2 val
 	var total = n * -2
 	# Add points at random until total equals min_points
-	while max(min_points, 0) > total:
-		graph_data[str(randi()%n)]["value"] += 1
-		total += 1
+	while min_points > total:
+		# Either add 1 or subtract 1 from a random node, with a 
+		# 40% chance of subtracting
+		var point = 1
+		if randf() <= 0.4:
+			point = -1
+		graph_data[str(randi()%n)]["value"] += point
+		total += point
 	return graph_data
