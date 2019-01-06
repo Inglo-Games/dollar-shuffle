@@ -1,9 +1,11 @@
 extends Node
 
-# Get referenced classes
+# Utility classes
 const FileIO = preload("res://scripts/file_io.gd")
-const LevelClass = preload("res://scripts/level.gd")
 const RNG = preload("res://scripts/rng_seed.gd")
+
+# Subscenes
+const RandPopup = preload("res://scenes/rand_popup.tscn")
 
 # GUI objects
 onready var back_btn = get_node("back_btn")
@@ -48,11 +50,10 @@ func open_tutorials():
 	get_tree().change_scene("res://scenes/tutorial.tscn")
 
 func random_level():
-	# Set the current level global var to a random string
-	globals.current_level = RNG.gen_seed()
-	# Load instance of game scene
-	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
-	get_tree().get_root().add_child(level_scene.instance())
+	# Create a popup to let user enter seed or not
+	var popup = RandPopup.instance()
+	add_child(popup)
+	popup.popup_centered_ratio(0.45)
 
 func close_menu():
 	# Return to main menu
