@@ -64,7 +64,9 @@ func on_skin_selected(item):
 	# Set global theme to selected one
 	match item:
 		0:
-			get_tree()
+			ProjectSettings.set_setting("gui/theme/custom","res://assets/light_theme.tres")
+		1:
+			ProjectSettings.set_setting("gui/theme/custom","res://assets/dark_theme.tres")
 
 func show_attributions():
 	# Show attributions page
