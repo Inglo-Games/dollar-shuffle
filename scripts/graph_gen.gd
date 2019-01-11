@@ -87,7 +87,7 @@ static func distribute_points(graph_data):
 	var conns = 0
 	for node in graph_data.keys():
 		conns += graph_data[node]["conns"].size() * 0.5
-	var min_points = max(conns - n + 1, 0)
+	var min_points = conns - n + 1
 	# Start with current total value, noting each node is initialized with -2 val
 	var total = n * -2
 	# Add points at random until total equals min_points
