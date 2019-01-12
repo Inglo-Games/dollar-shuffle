@@ -7,7 +7,6 @@ const debug = false
 const FileIO = preload("res://scripts/file_io.gd")
 
 # Constant file paths
-const opts_filepath = "user://opts.dat"
 const user_filepath = "user://user.dat"
 
 # Colors for UI
@@ -18,8 +17,7 @@ const BLACK = Color("#FF000000")
 const BACK_LIGHT = Color("#FFD8D8D8")
 const BACK_DARK = Color("#FF5B5B5B")
 
-# Global variables
-var current_level = 1
+# Global variable
 var number_of_levels = -1
 
 # User data file to hold high scores and times
@@ -65,8 +63,6 @@ func _ready():
 		ProjectSettings.set("game/tutorial_played", false)
 		ProjectSettings.add_property_info(info)
 	ProjectSettings.save()
-	# Set current level
-	current_level = ProjectSettings.get_setting("game/last_played")
 	# Load user data from file
 	if File.new().file_exists(user_filepath):
 		user_data = FileIO.read_json_file(user_filepath)
@@ -79,32 +75,33 @@ func _ready():
 # Global functions
 
 # Update the last played level saved to userdata file
-func update_last_level():
+func update_last_level(level):
 	# Update variable and write to file
-	ProjectSettings.set("game/last_played", current_level)
+	ProjectSettings.set("game/last_played", level)
 	ProjectSettings.save()
 
 # Check if current win beats previous best, and save it if so
 func record_win(score, time):
-	# Get current difficulty level
+	# Get last played level and current difficulty level
+	var level = ProjectSettings.get_setting("game/last_played")
 	var diff = ProjectSettings.get_setting("game/difficulty")
 	# If no previous best exists, write a new one
-	if !user_data.has(globals.current_level):
-		user_data[globals.current_level] = {}
-		user_data[globals.current_level][diff] = {"score":score,"time":time}
+	if !user_data.has(level):
+		user_data[level] = {}
+		user_data[level][diff] = {"score":score,"time":time}
 		FileIO.write_json_file(user_filepath, user_data)
 	# If no previous record exists for current difficulty, write one
-	elif !user_data[globals.current_level].has(diff):
-		user_data[globals.current_level][diff] = {"score":score,"time":time}
+	elif !user_data[level].has(diff):
+		user_data[level][diff] = {"score":score,"time":time}
 		FileIO.write_json_file(user_filepath, user_data)
 	# If score beats record best, overwrite it
-	elif score < user_data[globals.current_level][diff]["score"]:
-		user_data[globals.current_level][diff]["score"] = score
-		user_data[globals.current_level][diff]["time"] = time
+	elif score < user_data[level][diff]["score"]:
+		user_data[level][diff]["score"] = score
+		user_data[level][diff]["time"] = time
 		FileIO.write_json_file(user_filepath, user_data)
 	# If score ties and time beats record best, overwrite it
-	elif score == user_data[globals.current_level][diff]["score"] and time < user_data[globals.current_level][diff]["time"]:
-		user_data[globals.current_level][diff]["time"] = time
+	elif score == user_data[level][diff]["score"] and time < user_data[level][diff]["time"]:
+		user_data[level][diff]["time"] = time
 		FileIO.write_json_file(user_filepath, user_data)
 
 # Count the number of files in a given directory

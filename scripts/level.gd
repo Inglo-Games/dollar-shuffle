@@ -103,24 +103,24 @@ func update_score():
 
 # Change current puzzle to next puzzle
 func open_next_puzzle():
+	var level = ProjectSettings.get_setting("game/last_played")
 	# Record the win and stop the timer
 	timer_active = false
 	globals.record_win(len(moves), secs)
 	# If this is a randomly generated level...
-	if typeof(globals.current_level) == TYPE_STRING:
-		globals.current_level = RNG.gen_seed()
+	if typeof(level) == TYPE_STRING:
+		globals.update_last_level(RNG.gen_seed())
 		transition_graph()
 	# If this is a pre-made level...
-	elif typeof(globals.current_level) == TYPE_INT:
+	elif typeof(level) == TYPE_INT:
 		# Make sure the next level exists
-		if globals.current_level + 1 > globals.number_of_levels:
+		if level+1 > globals.number_of_levels:
 			# Return to main menu if it doesn't
 			self.queue_free()
 			get_tree().change_scene("res://scenes/main_menu.tscn")
 			return
 		# Increment level num and load new level
-		globals.current_level += 1
-		globals.update_last_level()
+		globals.update_last_level(level+1)
 		transition_graph()
 
 # Undo last move

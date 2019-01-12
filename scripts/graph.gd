@@ -37,8 +37,6 @@ func load_puzzle(input):
 		graph_data = GameGen.generate_graph_data()
 	# Set the scale value
 	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
-	# Update last_played user data
-	globals.update_last_level()
 
 # Take one point from each neighbor of a given node and add that many to it
 func take_points(node):
