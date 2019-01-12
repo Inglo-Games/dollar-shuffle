@@ -17,6 +17,13 @@ func _ready():
 			get_node("background").color = globals.BACK_DARK
 		_:
 			get_node("background").color = globals.BACK_LIGHT
+	# Check if user has completed tutorials
+	if !globals.user_data.has("tutorials"):
+		# If not, add a var to the file and write it
+		globals.user_data["tutorials"] = true
+		globals.update_last_level()
+		# Show the tutorials popup
+		tut_popup()
 	# Connect buttons to respective functions
 	cont_btn.connect("pressed", self, "return_level")
 	level_btn.connect("pressed", self, "choose_level")
@@ -42,6 +49,22 @@ func open_records():
 func open_options():
 	get_tree().change_scene("res://scenes/opts_menu.tscn")
 
+# Open the tutorial levels
+func open_tutorials():
+	self.queue_free()
+	get_tree().change_scene("res://scenes/tutorial.tscn")
+
 # Close the game
 func quit_game():
 	get_tree().quit()
+
+# Create a popup for new users
+func tut_popup():
+	# Create a popup asking if user wants to play the tutorial
+	var popup = ConfirmationDialog.new()
+	popup.get_label().set_text("It looks like this is your first time.  Play the tutorial?")
+	# Set the affirmative button to open the tutorials
+	popup.get_ok().connect("pressed", self, "open_tutorials")
+	# Show popup
+	add_child(popup)
+	popup.popup_centered_minsize()
