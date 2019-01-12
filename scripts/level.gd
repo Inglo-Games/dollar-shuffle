@@ -32,7 +32,7 @@ var moves = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set background color and buttons if
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			backg.color = globals.BACK_DARK
 			undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
@@ -44,7 +44,7 @@ func _ready():
 			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_light.png")
 			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Load in level from file
-	graph.load_puzzle(globals.current_level)
+	graph.load_puzzle(ProjectSettings.get_setting("game/last_played"))
 	# Draw everything on screen
 	graph.display_graph()
 	score.text = "0"
@@ -68,7 +68,7 @@ func transition_graph():
 	yield(animation, "animation_finished")
 	for ui in graph.get_children():
 		ui.queue_free()
-	graph.load_puzzle(globals.current_level)
+	graph.load_puzzle(ProjectSettings.get_setting("game/last_played"))
 	# Reset score, timer, and undos
 	moves = []
 	score.text = "0"
@@ -85,7 +85,7 @@ func transition_graph():
 
 # Set the number of undos remaining based on difficulty
 func reset_undos():
-	match int(globals.pers_opts["difficulty"]):
+	match int(ProjectSettings.get_setting("game/difficulty")):
 		0:
 			undos_remaining = INF
 			undo_btn.disabled = false

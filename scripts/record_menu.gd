@@ -10,7 +10,7 @@ var record_container
 # Called on load
 func _ready():
 	# Set background color and back button if dark mode
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			get_node("background").color = globals.BACK_DARK
 			back_btn.texture_normal = load("res://assets/icons/back_dark.png")

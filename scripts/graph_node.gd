@@ -15,7 +15,7 @@ func _ready():
 	call_deferred("add_child", sprite)
 	sprite.set_texture(load("res://assets/icons/dot_red_light.png"))
 	# Set node images depending on dark mode
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		0:
 			pos_node_img = load("res://assets/icons/dot_green_light.png")
 			neg_node_img = load("res://assets/icons/dot_red_light.png")

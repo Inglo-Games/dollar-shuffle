@@ -12,16 +12,16 @@ onready var quit_btn = get_node("menu_container/quit_button")
 
 func _ready():
 	# Set background color if dark mode
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			get_node("background").color = globals.BACK_DARK
 		_:
 			get_node("background").color = globals.BACK_LIGHT
 	# Check if user has completed tutorials
-	if !globals.user_data.has("tutorials"):
+	if !ProjectSettings.get_setting("game/tutorial_played"):
 		# If not, add a var to the file and write it
-		globals.user_data["tutorials"] = true
-		globals.update_last_level()
+		ProjectSettings.set("game/tutorial_played",true)
+		ProjectSettings.save()
 		# Show the tutorials popup
 		tut_popup()
 	# Connect buttons to respective functions

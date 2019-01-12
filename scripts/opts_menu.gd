@@ -16,7 +16,7 @@ var skin_array = ["Light", "Dark"]
 
 func _ready():
 	# Set background color and back button if dark mode
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			get_node("background").color = globals.BACK_DARK
 			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
@@ -35,8 +35,6 @@ func _ready():
 	attrib_btn.connect("pressed", self, "show_attributions")
 
 func close_menu():
-	# Save options
-	FileIO.write_json_file(globals.opts_filepath, globals.pers_opts)
 	# Return to main menu
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
@@ -45,28 +43,31 @@ func setup_diff_picker():
 	for item in diff_array:
 		diff_sel.add_item(item)
 	# Select saved option
-	diff_sel.select(globals.pers_opts["difficulty"])
+	diff_sel.select(ProjectSettings.get_setting("game/difficulty"))
 
 func setup_skin_picker():
-	# Add each difficulty to the dropdown
+	# Add each skin name to the dropdown
 	for item in skin_array:
 		skin_sel.add_item(item)
 	# Select saved option
-	skin_sel.select(globals.pers_opts["skin"])
+	skin_sel.select(ProjectSettings.get_setting("gui/theme/skin"))
 
 func on_diff_selected(item):
-	# Save selected difficulty to pers_opts
-	globals.pers_opts["difficulty"] = item
+	# Save selected difficulty to project config
+	ProjectSettings.set("game/difficulty", item)
+	ProjectSettings.save()
 
 func on_skin_selected(item):
-	# Save selected boolean to pers_opts
-	globals.pers_opts["skin"] = item
+	# Save selected option to project config
+	ProjectSettings.set("gui/theme/skin", item)
 	# Set global theme to selected one
 	match item:
 		0:
 			ProjectSettings.set_setting("gui/theme/custom","res://assets/light_theme.tres")
 		1:
 			ProjectSettings.set_setting("gui/theme/custom","res://assets/dark_theme.tres")
+	# Save the result to settings file
+	ProjectSettings.save()
 
 func show_attributions():
 	# Show attributions page
@@ -74,8 +75,8 @@ func show_attributions():
 
 func set_defaults():
 	# Write default values to options file
-	globals.pers_opts = globals.get_options_defaults()
-	FileIO.write_json_file(globals.opts_filepath, globals.pers_opts)
+	ProjectSettings.set("game/difficulty", 0)
+	ProjectSettings.set("gui/theme/skin", 0)
 	# Change UI elements to defaults
-	diff_sel.select(globals.pers_opts["difficulty"])
-	skin_sel.select(globals.pers_opts["skin"])
+	diff_sel.select(ProjectSettings.get_setting("game/difficulty"))
+	skin_sel.select(ProjectSettings.get_setting("gui/theme/skin"))

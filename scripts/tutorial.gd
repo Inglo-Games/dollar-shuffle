@@ -23,7 +23,7 @@ var moves = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set background color and buttons based on skin option
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			backg.color = globals.BACK_DARK
 			pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")

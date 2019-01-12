@@ -134,7 +134,7 @@ func draw_conn_line(n1, n2):
 	var line = Line2D.new()
 	line.add_point(loc1)
 	line.add_point(loc2)
-	match int(globals.pers_opts["skin"]):
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			line.default_color = globals.LIGHT_GREY
 		_:
