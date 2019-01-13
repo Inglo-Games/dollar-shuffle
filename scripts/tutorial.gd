@@ -61,6 +61,20 @@ func transition_graph():
 			click.position = Vector2(1200,120)
 			click.set_flip_h(true)
 		2:
+			# Load next tutorial
+			tut_num = 3
+			graph.load_puzzle('tut3')
+			# Move and mirror clicking animation
+			click.position = Vector2(380,260)
+			click.set_flip_h(false)
+		3:
+			# Load next tutorial
+			tut_num = 4
+			graph.load_puzzle('tut4')
+			# Move and mirror clicking animation
+			click.position = Vector2(780,180)
+			click.set_flip_h(true)
+		4:
 			# Go to main menu
 			queue_free()
 			get_tree().change_scene("res://scenes/main_menu.tscn")

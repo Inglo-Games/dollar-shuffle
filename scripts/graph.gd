@@ -32,6 +32,10 @@ func load_puzzle(input):
 		graph_data = FileIO.read_json_file("res://levels/tuts/1.json")
 	elif str(input).matchn('tut2'):
 		graph_data = FileIO.read_json_file("res://levels/tuts/2.json")
+	elif str(input).matchn('tut3'):
+		graph_data = FileIO.read_json_file("res://levels/tuts/3.json")
+	elif str(input).matchn('tut4'):
+		graph_data = FileIO.read_json_file("res://levels/tuts/4.json")
 	# If it's another string, load a random graph
 	elif typeof(input) == TYPE_STRING:
 		graph_data = GameGen.generate_graph_data()
