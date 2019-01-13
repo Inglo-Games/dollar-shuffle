@@ -18,7 +18,7 @@ static func generate_graph_data():
 	# Setup node layout
 	data = organize_nodes(data)
 	# Debug print
-	print("Graph seed: %s" % globals.current_level)
+	print("Graph seed: %s" % ProjectSettings.get_setting("game/last_played"))
 	print("New graph: %s" % str(data))
 	return data
 
@@ -90,13 +90,23 @@ static func distribute_points(graph_data):
 	var min_points = conns - n + 1
 	# Start with current total value, noting each node is initialized with -2 val
 	var total = n * -2
+	# Create a list of nodes to add to
+	var whitelist = []
+	for index in range(n):
+		whitelist.append(index)
+	# Remove 2-4 nodes from that list at random
+	# This guarantees some negative nodes
+	for index in range((randi()%2)+2):
+		whitelist.remove(randi()%whitelist.size())
 	# Add points at random until total equals min_points
 	while min_points > total:
 		# Either add 1 or subtract 1 from a random node, with a 
-		# 40% chance of subtracting
+		# 25% chance of subtracting
 		var point = 1
-		if randf() <= 0.4:
+		if randf() <= 0.25:
 			point = -1
-		graph_data[str(randi()%n)]["value"] += point
+		# Pick the node to add to/sub from
+		var target = str(whitelist[randi()%whitelist.size()])
+		graph_data[target]["value"] += point
 		total += point
 	return graph_data
