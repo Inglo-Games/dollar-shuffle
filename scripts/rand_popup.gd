@@ -15,10 +15,10 @@ func _ready():
 func open_level():
 	# If edit is not blank, use contents as RNG seed
 	if edit.text != "":
-		globals.current_level = edit.text
+		ProjectSettings.set("game/last_played", edit.text)
 		RNG.set_seed(edit.text)
 	else:
-		globals.current_level = RNG.gen_seed()
+		ProjectSettings.set("game/last_played", RNG.gen_seed())
 	# Free this popup from memory
 	self.queue_free()
 	# Load instance of game scene
