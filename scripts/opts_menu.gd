@@ -12,7 +12,7 @@ onready var attrib_btn = get_node("opts_menu_container/attribs")
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]
-var skin_array = ["Light", "Dark"]
+var skin_array = ["Light", "Dark", "Red-Green Colorblind"]
 
 func _ready():
 	# Set background color and back button if dark mode
@@ -62,10 +62,12 @@ func on_skin_selected(item):
 	ProjectSettings.set("gui/theme/skin", item)
 	# Set global theme to selected one
 	match item:
-		0:
-			ProjectSettings.set_setting("gui/theme/custom","res://assets/light_theme.tres")
+		# Dark mode
 		1:
 			ProjectSettings.set_setting("gui/theme/custom","res://assets/dark_theme.tres")
+		# Light and colorblind mode
+		_:
+			ProjectSettings.set_setting("gui/theme/custom","res://assets/light_theme.tres")
 	# Save the result to settings file
 	ProjectSettings.save()
 

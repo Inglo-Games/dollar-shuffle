@@ -16,12 +16,15 @@ func _ready():
 	sprite.set_texture(load("res://assets/icons/dot_red_light.png"))
 	# Set node images depending on dark mode
 	match int(ProjectSettings.get_setting("gui/theme/skin")):
-		0:
-			pos_node_img = load("res://assets/icons/dot_green_light.png")
-			neg_node_img = load("res://assets/icons/dot_red_light.png")
+		# Dark mode
 		1:
 			pos_node_img = load("res://assets/icons/dot_green_dark.png")
 			neg_node_img = load("res://assets/icons/dot_red_dark.png")
+		# Colorblind (Deuteranopia) mode
+		2:
+			pos_node_img = load("res://assets/icons/dot_blue_deut.png")
+			neg_node_img = load("res://assets/icons/dot_orng_deut.png")
+		# Everything else, including light mode
 		_:
 			pos_node_img = load("res://assets/icons/dot_green_light.png")
 			neg_node_img = load("res://assets/icons/dot_red_light.png")
