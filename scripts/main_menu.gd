@@ -1,29 +1,18 @@
 extends Node
 
-# Make sure the globals file is loaded
-var glob = preload("res://scripts/globals.gd")
+# Preload all menus accessable from this one
+const lvl_menu = preload("res://scenes/lvl_menu.tscn")
+const opts_menu = preload("res://scenes/opts_menu.tscn")
+const recs_menu = preload("res://scenes/records_menu.tscn")
 
 # Button objects
-onready var cont_btn = get_node("menu_container/cont_button")
-onready var level_btn = get_node("menu_container/level_button")
-onready var recs_btn = get_node("menu_container/records_button")
-onready var opt_btn = get_node("menu_container/opt_button")
-onready var quit_btn = get_node("menu_container/quit_button")
+onready var cont_btn = get_node("cont_button")
+onready var level_btn = get_node("level_button")
+onready var recs_btn = get_node("records_button")
+onready var opt_btn = get_node("opt_button")
+onready var quit_btn = get_node("quit_button")
 
 func _ready():
-	# Set background color if dark mode
-	match int(ProjectSettings.get_setting("gui/theme/skin")):
-		1:
-			get_node("background").color = globals.BACK_DARK
-		_:
-			get_node("background").color = globals.BACK_LIGHT
-	# Check if user has completed tutorials
-	if !ProjectSettings.get_setting("game/tutorial_played"):
-		# If not, add a var to the file and write it
-		ProjectSettings.set("game/tutorial_played",true)
-		ProjectSettings.save()
-		# Show the tutorials popup
-		tut_popup()
 	# Connect buttons to respective functions
 	cont_btn.connect("pressed", self, "return_level")
 	level_btn.connect("pressed", self, "choose_level")
@@ -39,15 +28,15 @@ func return_level():
 
 # Choose level number from list
 func choose_level():
-	get_tree().change_scene("res://scenes/lvl_menu.tscn")
+	get_parent().get_parent().stack_menu(lvl_menu)
 
 # Open the records list
 func open_records():
-	get_tree().change_scene("res://scenes/records_menu.tscn")
+	get_parent().get_parent().stack_menu(recs_menu)
 
 # Open the options menu
 func open_options():
-	get_tree().change_scene("res://scenes/opts_menu.tscn")
+	get_parent().get_parent().stack_menu(opts_menu)
 
 # Open the tutorial levels
 func open_tutorials():
@@ -57,14 +46,3 @@ func open_tutorials():
 # Close the game
 func quit_game():
 	get_tree().quit()
-
-# Create a popup for new users
-func tut_popup():
-	# Create a popup asking if user wants to play the tutorial
-	var popup = ConfirmationDialog.new()
-	popup.get_label().set_text("It looks like this is your first time.  Play the tutorial?")
-	# Set the affirmative button to open the tutorials
-	popup.get_ok().connect("pressed", self, "open_tutorials")
-	# Show popup
-	add_child(popup)
-	popup.popup_centered_minsize()

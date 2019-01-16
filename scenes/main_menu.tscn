@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 
-[node name="base" type="Control"]
+[node name="base" type="VBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -11,56 +11,23 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 300, 300 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
-
-[node name="background" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 0.847059, 0.847059, 0.847059, 1 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Material", "Rect", "Visibility" ]
-
-[node name="menu_container" type="VBoxContainer" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 150.0
-margin_top = 45.0
-margin_right = -150.0
-margin_bottom = -45.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Rect", "custom_constants" ]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
-[node name="cont_button" type="Button" parent="menu_container" index="0"]
+[node name="cont_button" type="Button" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 437.0
-margin_right = 1620.0
-margin_bottom = 457.0
+margin_top = 345.0
+margin_right = 1920.0
+margin_bottom = 407.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -77,15 +44,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="level_button" type="Button" parent="menu_container" index="1"]
+[node name="level_button" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 461.0
-margin_right = 1620.0
-margin_bottom = 481.0
+margin_top = 427.0
+margin_right = 1920.0
+margin_bottom = 489.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -102,15 +69,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="records_button" type="Button" parent="menu_container" index="2"]
+[node name="records_button" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 485.0
-margin_right = 1620.0
-margin_bottom = 505.0
+margin_top = 509.0
+margin_right = 1920.0
+margin_bottom = 571.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -127,15 +94,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="opt_button" type="Button" parent="menu_container" index="3"]
+[node name="opt_button" type="Button" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 509.0
-margin_right = 1620.0
-margin_bottom = 529.0
+margin_top = 591.0
+margin_right = 1920.0
+margin_bottom = 653.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -152,15 +119,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="quit_button" type="Button" parent="menu_container" index="4"]
+[node name="quit_button" type="Button" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 533.0
-margin_right = 1620.0
-margin_bottom = 553.0
+margin_top = 673.0
+margin_right = 1920.0
+margin_bottom = 735.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

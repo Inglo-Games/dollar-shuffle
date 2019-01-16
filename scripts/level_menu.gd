@@ -8,20 +8,11 @@ const RNG = preload("res://scripts/rng_seed.gd")
 const RandPopup = preload("res://scenes/rand_popup.tscn")
 
 # GUI objects
-onready var back_btn = get_node("back_btn")
-onready var lvl_list = get_node("vbox/lvl_list")
-onready var tuts_btn = get_node("vbox/tuts_button")
-onready var rand_btn = get_node("vbox/rand_button")
+onready var lvl_list = get_node("lvl_list")
+onready var tuts_btn = get_node("tuts_button")
+onready var rand_btn = get_node("rand_button")
 
 func _ready():
-	# Set background color and back button if dark mode
-	match int(ProjectSettings.get_setting("gui/theme/skin")):
-		1:
-			get_node("background").color = globals.BACK_DARK
-			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
-		_:
-			get_node("background").color = globals.BACK_LIGHT
-			back_btn.texture_normal = load("res://assets/icons/back_light.png")
 	# Populate the list with levels
 	populate_list()
 	# Connect list to function that opens levels
@@ -30,8 +21,6 @@ func _ready():
 	tuts_btn.connect("pressed", self, "open_tutorials")
 	# Connect random button to function that generates a random level
 	rand_btn.connect("pressed", self, "random_level")
-	# Connect back button to return function
-	back_btn.connect("pressed", self, "close_menu")
 
 func populate_list():
 	# Create an item in the list for each one
@@ -54,7 +43,3 @@ func random_level():
 	var popup = RandPopup.instance()
 	add_child(popup)
 	popup.popup_centered_ratio(0.45)
-
-func close_menu():
-	# Return to main menu
-	get_tree().change_scene("res://scenes/main_menu.tscn")

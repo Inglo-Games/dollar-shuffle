@@ -3,28 +3,20 @@ extends Node
 # Get file IO functions
 const FileIO = preload("res://scripts/file_io.gd")
 
+# Preload the credits menu to be passed back to menu frame
+const cred_menu = preload("res://scenes/credits_menu.tscn")
+
 # GUI objects
-onready var back_btn = get_node("back_btn")
-onready var diff_sel = get_node("opts_menu_container/difficulty_selector")
-onready var skin_sel = get_node("opts_menu_container/skin_selector")
-onready var reset_btn = get_node("opts_menu_container/reset")
-onready var attrib_btn = get_node("opts_menu_container/attribs")
+onready var diff_sel = get_node("difficulty_selector")
+onready var skin_sel = get_node("skin_selector")
+onready var reset_btn = get_node("reset")
+onready var attrib_btn = get_node("attribs")
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]
 var skin_array = ["Light", "Dark", "Red-Green Colorblind"]
 
 func _ready():
-	# Set background color and back button if dark mode
-	match int(ProjectSettings.get_setting("gui/theme/skin")):
-		1:
-			get_node("background").color = globals.BACK_DARK
-			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
-		_:
-			get_node("background").color = globals.BACK_LIGHT
-			back_btn.texture_normal = load("res://assets/icons/back_light.png")
-	# Connect back button to close function
-	back_btn.connect("pressed", self, "close_menu")
 	# Setup option UIs
 	setup_diff_picker()
 	setup_skin_picker()
@@ -33,10 +25,6 @@ func _ready():
 	skin_sel.connect("item_selected", self, "on_skin_selected")
 	reset_btn.connect("pressed", self, "set_defaults")
 	attrib_btn.connect("pressed", self, "show_attributions")
-
-func close_menu():
-	# Return to main menu
-	get_tree().change_scene("res://scenes/main_menu.tscn")
 
 func setup_diff_picker():
 	# Add each difficulty to the dropdown
@@ -73,7 +61,7 @@ func on_skin_selected(item):
 
 func show_attributions():
 	# Show attributions page
-	get_tree().change_scene("res://scenes/credits_menu.tscn")
+	get_parent().get_parent().stack_menu(cred_menu)
 
 func set_defaults():
 	# Write default values to options file
