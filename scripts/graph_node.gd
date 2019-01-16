@@ -39,7 +39,7 @@ func _ready():
 # Custom draw function
 func _draw():
 	# Determine image to use based on value
-	var value = get_parent().graph_data[str(node_num)]["value"]
+	var value = get_parent().get_parent().graph_data[str(node_num)]["value"]
 	if value < 0:
 		sprite.set_texture(neg_node_img)
 	else:
@@ -67,9 +67,9 @@ func handle_node_click(event):
 	accept_event()
 	# Only inputs are give action and take action
 	if event.is_action_released("give_action"):
-		get_parent().give_points(node_num)
+		get_parent().get_parent().give_points(node_num)
 	elif event.is_action_released("take_action"):
-		get_parent().take_points(node_num)
+		get_parent().get_parent().take_points(node_num)
 
 # Custom init function
 func initialize(num):

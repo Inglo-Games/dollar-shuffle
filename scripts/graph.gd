@@ -17,6 +17,11 @@ var graph_data = {}
 # List of node UI objects
 var node_list = []
 
+# Containers for lines, animations, and nodes
+var line_cont
+var anim_cont
+var node_cont
+
 # Scale to use for all UI elements
 var ui_scale = Vector2(1.0, 1.0)
 
@@ -41,6 +46,13 @@ func load_puzzle(input):
 		graph_data = GameGen.generate_graph_data()
 	# Set the scale value
 	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
+	# Create containers for graph elements
+	line_cont = Node2D.new()
+	call_deferred("add_child", line_cont)
+	anim_cont = Node2D.new()
+	call_deferred("add_child", anim_cont)
+	node_cont = Node2D.new()
+	call_deferred("add_child", node_cont)
 
 # Take one point from each neighbor of a given node and add that many to it
 func take_points(node):
@@ -51,7 +63,7 @@ func take_points(node):
 		var anim = PointAnimation.new()
 		anim.init(node_list[neighbor], node_list[node])
 		anim.scale = ui_scale
-		call_deferred("add_child", anim)
+		anim_cont.add_child(anim)
 	# Wait for animations to play out
 	yield(get_tree().create_timer(0.6),"timeout")
 	# Add that many to node
@@ -76,7 +88,7 @@ func give_points(node):
 		var anim = PointAnimation.new()
 		anim.init(node_list[node], node_list[neighbor])
 		anim.scale = ui_scale
-		call_deferred("add_child", anim)
+		anim_cont.add_child(anim)
 	# Wait for animations to play out
 	yield(get_tree().create_timer(0.6),"timeout")
 	# Update move list
@@ -117,8 +129,9 @@ func draw_node(num):
 	# Center Control node over location
 	location -= (Vector2(512,512) * ui_scale * 0.5)
 	game_node.rect_position = location
-	# Add node as child once loading is finished
-	call_deferred("add_child", game_node)
+	# Add node as child of container once loading is finished
+	node_cont.add_child(game_node)
+	#call_deferred("add_child", game_node)
 	# Add node to group and list
 	game_node.add_to_group("ui_nodes")
 	node_list.append(game_node)
@@ -141,8 +154,11 @@ func draw_conn_line(n1, n2):
 			line.default_color = globals.LIGHT_GREY
 		_:
 			line.default_color = globals.BLACK
+	# Lower line's z-index so it shows behind point animations
+	line.set_z_index(0)
 	# Add line to scene and lines group
-	call_deferred("add_child", line)
+	line_cont.add_child(line)
+	#call_deferred("add_child", line)
 	line.add_to_group("ui_lines")
 
 # Check whether the player has solved the puzzle
