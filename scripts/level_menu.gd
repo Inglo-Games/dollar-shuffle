@@ -1,9 +1,5 @@
 extends Node
 
-# Utility classes
-const FileIO = preload("res://scripts/file_io.gd")
-const RNG = preload("res://scripts/rng_seed.gd")
-
 # Subscenes
 const RandPopup = preload("res://scenes/rand_popup.tscn")
 
@@ -31,8 +27,7 @@ func open_level(num):
 	# Set level to selected
 	globals.update_last_level(num+1)
 	# Load instance of game scene
-	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
-	get_tree().get_root().add_child(level_scene.instance())
+	get_tree().change_scene("res://scenes/game.tscn")
 
 func open_tutorials():
 	# Load the tutorial scene
