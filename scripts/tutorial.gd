@@ -77,7 +77,7 @@ func transition_graph():
 		4:
 			# Go to main menu
 			queue_free()
-			get_tree().change_scene("res://scenes/main_menu.tscn")
+			get_tree().change_scene("res://scenes/menu_frame.tscn")
 	# Display new graph
 	graph.display_graph()
 	# Fade display back in

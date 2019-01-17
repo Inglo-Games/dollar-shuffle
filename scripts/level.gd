@@ -117,7 +117,7 @@ func open_next_puzzle():
 		if level+1 > globals.number_of_levels:
 			# Return to main menu if it doesn't
 			self.queue_free()
-			get_tree().change_scene("res://scenes/main_menu.tscn")
+			get_tree().change_scene("res://scenes/menu_frame.tscn")
 			return
 		# Increment level num and load new level
 		globals.update_last_level(level+1)
