@@ -8,6 +8,10 @@ onready var background = get_node("background")
 onready var back_btn = get_node("back_btn")
 onready var menu_cont = get_node("menu")
 
+# Animation players
+onready var btn_anim = get_node("btn_anim")
+onready var menu_anim = get_node("menu_anim")
+
 # Stack of menu scenes
 var menu_stack = []
 
@@ -33,6 +37,8 @@ func _ready():
 	back_btn.connect("pressed", self, "pop_menu")
 
 func stack_menu(scene):
+	# Fade out the old scene to hide switch
+	fade_out()
 	# Clear the menu container
 	for node in menu_cont.get_children():
 		node.queue_free()
@@ -41,10 +47,11 @@ func stack_menu(scene):
 	menu_stack.append(scene)
 	# Display the scene on top
 	menu_cont.add_child(menu_stack.back().instance())
-	# Show the back button if the scene isn't the root menu
-	back_btn.visible = (scene.resource_path != main_menu.resource_path)
+	fade_in()
 
 func pop_menu():
+	# Fade out the old scene to hide switch
+	fade_out()
 	# Clear the menu container
 	for node in menu_cont.get_children():
 		node.queue_free()
@@ -53,8 +60,24 @@ func pop_menu():
 	menu_stack.pop_back()
 	# Display the new top scene
 	menu_cont.add_child(menu_stack.back().instance())
+	fade_in()
+
+# Fade out menu and back button
+func fade_out():
+	# Fade out the old scene to hide switch
+	menu_anim.play("menu_fade_out")
+	btn_anim.play("btn_fade_out")
+	# Make back button invisible to prevent phantom clicks
+	back_btn.visible = false
+
+# Fade in menu and, if appropriate, back button
+func fade_in():
+	# Fade menu back in
+	menu_anim.play("menu_fade_in")
 	# Show the back button if the scene isn't the root menu
-	back_btn.visible = (menu_stack.back().resource_path != main_menu.resource_path)
+	if menu_stack.back().resource_path != main_menu.resource_path:
+		back_btn.visible = true
+		btn_anim.play("btn_fade_in")
 
 # Create a popup for new users
 func tut_popup():
