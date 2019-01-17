@@ -11,8 +11,8 @@ onready var audio = get_node("audio")
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
 
-# Load pause menu
-const PausePopup = preload("res://scripts/pause_popup.gd")
+# Preload pause menu
+const PausePopup = preload("res://scenes/pause_popup.tscn")
 
 # Current tutorial level number
 var tut_num = 1
@@ -101,7 +101,7 @@ func toggle_pause():
 	# Make the obscuring background layer visible
 	get_node("pause_background").visible = true
 	# Create and show pause menu
-	var popup = PausePopup.new()
+	var popup = PausePopup.instance()
 	add_child(popup)
-	popup.popup_centered_minsize(Vector2(100,50))
+	popup.popup_centered()
 	get_tree().set_pause(true)

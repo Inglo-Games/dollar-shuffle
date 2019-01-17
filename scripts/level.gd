@@ -15,8 +15,8 @@ const GameGraph = preload("res://scripts/graph.gd")
 # Load utility classes
 const RNG = preload("res://scripts/rng_seed.gd")
 
-# Load pause menu
-const PausePopup = preload("res://scripts/pause_popup.gd")
+# Preload pause menu
+const PausePopup = preload("res://scenes/pause_popup.tscn")
 
 # Time elapsed in milliseconds and active boolean
 var secs = 0.0
@@ -154,7 +154,7 @@ func toggle_pause():
 	# Make the obscuring background layer visible
 	get_node("pause_background").visible = true
 	# Create and show pause menu
-	var popup = PausePopup.new()
+	var popup = PausePopup.instance()
 	add_child(popup)
-	popup.popup_centered_minsize(Vector2(100,50))
+	popup.popup_centered()
 	get_tree().set_pause(true)
