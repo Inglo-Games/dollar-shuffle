@@ -42,4 +42,4 @@ func random_level():
 	# Create a popup to let user enter seed or not
 	var popup = RandPopup.instance()
 	add_child(popup)
-	popup.popup_centered_ratio(0.45)
+	popup.popup_centered_ratio(0.25)
