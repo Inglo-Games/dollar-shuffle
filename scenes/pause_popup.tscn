@@ -2,16 +2,16 @@
 
 [ext_resource path="res://scripts/pause_popup.gd" type="Script" id=1]
 
-[node name="base" type="PopupPanel"]
+[node name="base" type="PopupPanel" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 440.0
+margin_right = 520.0
 margin_bottom = 280.0
-rect_min_size = Vector2( 360, 280 )
+rect_min_size = Vector2( 520, 280 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -48,7 +48,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 15.0
-margin_right = 408.0
+margin_right = 488.0
 margin_bottom = 69.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -71,7 +71,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 89.0
-margin_right = 408.0
+margin_right = 488.0
 margin_bottom = 151.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -96,7 +96,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 171.0
-margin_right = 408.0
+margin_right = 488.0
 margin_bottom = 233.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

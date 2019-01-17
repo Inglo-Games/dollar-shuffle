@@ -32,6 +32,7 @@ func _ready():
 			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Load in level from file
 	graph.load_puzzle('tut1')
+	globals.update_last_level('TUTORIALS')
 	# Draw everything on screen
 	graph.display_graph()
 	# Play mouse clicking animation
