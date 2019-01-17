@@ -20,8 +20,10 @@ func _ready():
 	match int(ProjectSettings.get_setting("gui/theme/skin")):
 		1:
 			background.color = globals.BACK_DARK
+			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
 		_:
 			background.color = globals.BACK_LIGHT
+			back_btn.texture_normal = load("res://assets/icons/back_light.png")
 	# Check if user has completed tutorials
 	if !ProjectSettings.get_setting("game/tutorial_played"):
 		# If not, add a var to the file and write it

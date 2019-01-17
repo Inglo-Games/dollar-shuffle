@@ -134,9 +134,6 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures", "Visibility" ]
 
 [node name="menu" type="Control" parent="." index="2"]
