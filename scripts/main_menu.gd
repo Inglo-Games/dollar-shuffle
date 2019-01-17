@@ -19,6 +19,9 @@ func _ready():
 	recs_btn.connect("pressed", self, "open_records")
 	opt_btn.connect("pressed", self, "open_options")
 	quit_btn.connect("pressed", self, "quit_game")
+	# Only show continue button if there is a previous game
+	if str(ProjectSettings.get_setting("game/last_played")) == "1":
+		cont_btn.visible = false
 
 # Return to last unsolved puzzle
 func return_level():
