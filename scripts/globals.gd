@@ -51,7 +51,7 @@ func _ready():
 			"hint":PROPERTY_HINT_NONE,
 			"hint_string":""
 		}
-		ProjectSettings.set("game/last_played", 1)
+		ProjectSettings.set("game/last_played", 0)
 		ProjectSettings.add_property_info(info)
 	if !ProjectSettings.has_setting("game/tutorial_played"):
 		var info = {
