@@ -25,20 +25,28 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/size/borderless=true
-window/size/fullscreen=true
+window/size/test_width=1920
+window/size/test_height=1080
 window/dpi/allow_hidpi=true
-window/handheld/orientation="sensor_portrait"
+window/handheld/orientation="sensor_landscape"
 window/stretch/shrink="1"
+
+[game]
+
+difficulty=0
+last_played=4
+tutorial_played=true
 
 [gui]
 
 theme/custom="res://assets/light_theme.tres"
+theme/skin=0
 
 [input]
 
-give_action=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+leftclick_action=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
-take_action=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+rightclick_action=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 
 [rendering]

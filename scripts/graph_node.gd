@@ -1,7 +1,13 @@
 extends Control
 
+# Time separating long and short press in seconds
+const press_threshold = 0.6
+
 # Node number this instance represents
 var node_num = -1
+
+# Keep track of how long a button press is
+var press_time = 0
 
 # UI elements
 var sprite
@@ -61,14 +67,28 @@ func _draw():
 		debug_back.visible = true
 		call_deferred("add_child", debug_back)
 
+# Automatic process function
+func _process(delta):
+	# Check if node is being long pressed and add to time var
+	if Input.is_action_pressed("leftclick_action"):
+		press_time += delta
+
 # Handle inputs
 func handle_node_click(event):
-	# Consider it handled
-	accept_event()
-	# Only inputs are give action and take action
-	if event.is_action_released("give_action"):
-		get_parent().get_parent().give_points(node_num)
-	elif event.is_action_released("take_action"):
+	# Handle left clicks/touchscreen touches
+	if event.is_action_released("leftclick_action"):
+		print("Press time: %s" % str(press_time))
+		# Result depends on length of click
+		if press_time < press_threshold:
+			# Short press means give points
+			get_parent().get_parent().give_points(node_num)
+		else:
+			# Long press means take points
+			get_parent().get_parent().take_points(node_num)
+		# Reset press time either way
+		press_time = 0
+	# Handle right clicks
+	elif event.is_action_released("rightclick_action"):
 		get_parent().get_parent().take_points(node_num)
 
 # Custom init function
