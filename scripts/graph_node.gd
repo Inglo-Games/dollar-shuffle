@@ -72,6 +72,8 @@ func _process(delta):
 	# Check if node is being long pressed and add to time var
 	if Input.is_action_pressed("leftclick_action"):
 		press_time += delta
+	else:
+		press_time = 0
 
 # Handle inputs
 func handle_node_click(event):
