@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=21 format=2]
 
 [ext_resource path="res://assets/icons/radio_on.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/radio_off.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/icons/quit_dark.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -340,6 +341,64 @@ anti_aliasing_size = 1
 
 [sub_resource type="StyleBoxFlat" id=14]
 
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.729255 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 2
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=15]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.227451, 0.227451, 0.227451, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.360784 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 4
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.729255 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 2
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=16]
+
 content_margin_left = 8.0
 content_margin_right = 8.0
 content_margin_top = 8.0
@@ -369,7 +428,7 @@ _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius
 
 [resource]
 
-default_font = ExtResource( 3 )
+default_font = ExtResource( 4 )
 BoxContainer/constants/separation = 36
 Button/colors/font_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 Button/colors/font_color_disabled = Color( 0.333333, 0.333333, 0.333333, 1 )
@@ -453,14 +512,23 @@ PopupMenu/styles/separator = SubResource( 12 )
 PopupPanel/styles/panel = SubResource( 11 )
 TooltipPanel/styles/panel = SubResource( 13 )
 VBoxContainer/constants/separation = 20
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 14 )
+VScrollBar/styles/grabber_highlight = SubResource( 14 )
+VScrollBar/styles/grabber_pressed = SubResource( 14 )
+VScrollBar/styles/scroll = SubResource( 15 )
+VScrollBar/styles/scroll_focus = SubResource( 15 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 0 )
 WindowDialog/constants/close_h_ofs = 18
 WindowDialog/constants/close_v_ofs = 18
 WindowDialog/constants/scaleborder_size = 4
 WindowDialog/constants/title_height = 0
 WindowDialog/fonts/title_font = null
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = SubResource( 14 )
+WindowDialog/icons/close = ExtResource( 3 )
+WindowDialog/icons/close_highlight = ExtResource( 3 )
+WindowDialog/styles/panel = SubResource( 16 )
 _sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "GridContainer/constants", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "LineEdit/colors", "LineEdit/styles", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/colors", "OptionButton/styles", "Panel/styles", "PanelContainer/styles", "PopupMenu/colors", "PopupMenu/icons", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "VScrollBar", "VScrollBar/icons", "VScrollBar/styles", "WindowDialog", "WindowDialog/colors", "WindowDialog/constants", "WindowDialog/fonts", "WindowDialog/icons", "WindowDialog/styles" ]
 
