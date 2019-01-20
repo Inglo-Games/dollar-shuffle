@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/rand_popup.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/accept_dark.png" type="Texture" id=2]
 
-[node name="base" type="PopupPanel"]
+[node name="base" type="PopupPanel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -45,17 +46,18 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 30.0
-margin_bottom = -113.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 59.0
+margin_right = 445.0
+margin_bottom = 227.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Enter a seed or leave blank for a completely random level:"
+text = "Enter a seed or leave blank for a random level:"
 align = 1
 valign = 1
 autowrap = true
@@ -68,10 +70,12 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 275.0
-margin_bottom = -31.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 247.0
+margin_right = 445.0
+margin_bottom = 309.0
+rect_min_size = Vector2( 432, 62 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -85,10 +89,12 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme", "c
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -45.0
-rect_min_size = Vector2( 400, 44 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_right = 374.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 370, 44 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -106,15 +112,16 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Anchor", "Caret", "Focus", "Hint", "Margin", "Material", "Placeholder", "Rect", "Theme", "Visibility" ]
 
-[node name="confirm_btn" type="Button" parent="vbox/hbox" index="1"]
+[node name="confirm_btn" type="TextureButton" parent="vbox/hbox" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 404.0
-margin_right = 445.0
+margin_left = 378.0
+margin_right = 440.0
 margin_bottom = 62.0
+rect_min_size = Vector2( 62, 62 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -126,9 +133,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "X"
-flat = false
-align = 1
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
 
 

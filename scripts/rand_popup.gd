@@ -9,6 +9,12 @@ onready var conf_btn = get_node("vbox/hbox/confirm_btn")
 
 func _ready():
 	set_process_input(true)
+	# Set button texture based on theme
+	match int(ProjectSettings.get_setting("gui/theme/skin")):
+		1:
+			conf_btn.texture_normal = load("res://assets/icons/accept_dark.png")
+		_:
+			conf_btn.texture_normal = load("res://assets/icons/accept_light.png")
 	# Connect button to its function
 	conf_btn.connect("pressed", self, "open_level")
 
