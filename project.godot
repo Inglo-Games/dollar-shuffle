@@ -12,7 +12,7 @@ config_version=3
 
 config/name="Dollar Shuffle"
 run/main_scene="res://scenes/menu_frame.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icons/icon.png"
 
 [autoload]
 
@@ -31,16 +31,9 @@ window/dpi/allow_hidpi=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/shrink="1"
 
-[game]
-
-difficulty=0
-last_played=4
-tutorial_played=true
-
 [gui]
 
 theme/custom="res://assets/light_theme.tres"
-theme/skin=0
 
 [input]
 
