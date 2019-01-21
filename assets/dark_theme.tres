@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=22 format=2]
+[gd_resource type="Theme" load_steps=23 format=2]
 
 [ext_resource path="res://assets/icons/radio_on.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/radio_off.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/up_dark_small.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/down_dark_small.png" type="Texture" id=4]
-[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/icons/transparent.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -429,7 +430,7 @@ _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius
 
 [resource]
 
-default_font = ExtResource( 5 )
+default_font = ExtResource( 6 )
 BoxContainer/constants/separation = 36
 Button/colors/font_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 Button/colors/font_color_disabled = Color( 0.333333, 0.333333, 0.333333, 1 )
@@ -528,8 +529,8 @@ WindowDialog/constants/close_v_ofs = 18
 WindowDialog/constants/scaleborder_size = 4
 WindowDialog/constants/title_height = 12
 WindowDialog/fonts/title_font = null
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
+WindowDialog/icons/close = ExtResource( 5 )
+WindowDialog/icons/close_highlight = ExtResource( 5 )
 WindowDialog/styles/panel = SubResource( 16 )
 _sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "GridContainer/constants", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "LineEdit/colors", "LineEdit/styles", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/colors", "OptionButton/styles", "Panel/styles", "PanelContainer/styles", "PopupMenu/colors", "PopupMenu/icons", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "VScrollBar", "VScrollBar/icons", "VScrollBar/styles", "WindowDialog", "WindowDialog/colors", "WindowDialog/constants", "WindowDialog/fonts", "WindowDialog/icons", "WindowDialog/styles" ]
 
