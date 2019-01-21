@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=21 format=2]
+[gd_resource type="Theme" load_steps=22 format=2]
 
 [ext_resource path="res://assets/icons/radio_on.png" type="Texture" id=1]
 [ext_resource path="res://assets/icons/radio_off.png" type="Texture" id=2]
-[ext_resource path="res://assets/icons/quit_dark.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/icons/up_dark_small.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/down_dark_small.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/roundedelegance.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -428,7 +429,7 @@ _sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius
 
 [resource]
 
-default_font = ExtResource( 4 )
+default_font = ExtResource( 5 )
 BoxContainer/constants/separation = 36
 Button/colors/font_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 Button/colors/font_color_disabled = Color( 0.333333, 0.333333, 0.333333, 1 )
@@ -512,10 +513,10 @@ PopupMenu/styles/separator = SubResource( 12 )
 PopupPanel/styles/panel = SubResource( 11 )
 TooltipPanel/styles/panel = SubResource( 13 )
 VBoxContainer/constants/separation = 20
-VScrollBar/icons/decrement = null
-VScrollBar/icons/decrement_highlight = null
-VScrollBar/icons/increment = null
-VScrollBar/icons/increment_highlight = null
+VScrollBar/icons/decrement = ExtResource( 3 )
+VScrollBar/icons/decrement_highlight = ExtResource( 3 )
+VScrollBar/icons/increment = ExtResource( 4 )
+VScrollBar/icons/increment_highlight = ExtResource( 4 )
 VScrollBar/styles/grabber = SubResource( 14 )
 VScrollBar/styles/grabber_highlight = SubResource( 14 )
 VScrollBar/styles/grabber_pressed = SubResource( 14 )
@@ -525,10 +526,10 @@ WindowDialog/colors/title_color = Color( 0, 0, 0, 0 )
 WindowDialog/constants/close_h_ofs = 18
 WindowDialog/constants/close_v_ofs = 18
 WindowDialog/constants/scaleborder_size = 4
-WindowDialog/constants/title_height = 0
+WindowDialog/constants/title_height = 12
 WindowDialog/fonts/title_font = null
-WindowDialog/icons/close = ExtResource( 3 )
-WindowDialog/icons/close_highlight = ExtResource( 3 )
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = SubResource( 16 )
 _sections_unfolded = [ "Anti Aliasing", "Border", "BoxContainer/constants", "Button/colors", "Button/styles", "CheckBox/colors", "CheckBox/constants", "CheckBox/icons", "CheckBox/styles", "CheckButton/colors", "CheckButton/constants", "CheckButton/icons", "CheckButton/styles", "Corner Radius", "Expand Margin", "GridContainer/constants", "ItemList/colors", "ItemList/constants", "ItemList/styles", "Label/colors", "LineEdit/colors", "LineEdit/styles", "MarginContainer/constants", "MenuButton/colors", "MenuButton/styles", "OptionButton/colors", "OptionButton/styles", "Panel/styles", "PanelContainer/styles", "PopupMenu/colors", "PopupMenu/icons", "PopupMenu/styles", "PopupPanel/styles", "ProgressBar", "Resource", "Shadow", "SpinBox/icons", "VBoxContainer/constants", "VScrollBar", "VScrollBar/icons", "VScrollBar/styles", "WindowDialog", "WindowDialog/colors", "WindowDialog/constants", "WindowDialog/fonts", "WindowDialog/icons", "WindowDialog/styles" ]
 
