@@ -57,15 +57,6 @@ func _draw():
 	label.align = Label.ALIGN_CENTER
 	# Position label in center of circle
 	label.rect_position = -label.get_minimum_size() + sprite.texture.get_size() / 2.0
-	# Draw a translucent back for debugging
-	if globals.debug:
-		var debug_back = ColorRect.new()
-		debug_back.rect_position = Vector2(0, 0)
-		debug_back.anchor_right = 1.0
-		debug_back.anchor_bottom = 1.0
-		debug_back.color = Color(1.0, 0.0, 1.0, 0.2)
-		debug_back.visible = true
-		call_deferred("add_child", debug_back)
 
 # Automatic process function
 func _process(delta):
