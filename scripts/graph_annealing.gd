@@ -25,8 +25,9 @@ const trials = 30
 const d_temp = 0.85
 # The temperature threshold for stopping
 const lim_temp = 0.0002
-# The probability a higher-cost layout replaces the old one
-const prob = 0.05
+# The scaling factor used to ajdust the exponential probability function,
+# represented by k in the paper and Boltzmann's constant in reality
+const prob_const = 1.0
 
 # Functions
 
@@ -56,9 +57,12 @@ static func annealing(graph):
 			loc_new.y = clamp(loc_new.y, 0.1, 0.9)
 			# Save new location in candidate graph
 			graph_new[node]["loc"] = [loc_new.x, loc_new.y]
-			# If the new graph has a lower cost or is lucky, it replaces the old one
+			# Calculate the probability of new layout replacing old one.  If new layout
+			# has lower cost, replacement is guaranteed
 			var cost_new = cost(graph_new)
-			if cost_new < cost_current or randf() < prob:
+			var prob = exp(-(cost_new - cost_current) * prob_const / temp)
+			print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
+			if randf() < prob:
 				graph = graph_new
 				cost_current = cost_new
 		# Reduce temperature at a predefined rate
