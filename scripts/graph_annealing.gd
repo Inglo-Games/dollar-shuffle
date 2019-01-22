@@ -50,7 +50,7 @@ static func annealing(graph):
 			var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
 			# Move that node by picking a random target, finding the difference,
 			# scaling that down to temp size, and adding it to the original location
-			var loc_new = (loc - Vector2(randf(),randf())).clamped(temp) + loc
+			var loc_new = (Vector2(randf(),randf()) - loc).clamped(temp) + loc
 			graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 			# If the new graph has a lower cost or is lucky, it replaces the old one
 			var cost_new = cost(graph_new)
