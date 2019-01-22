@@ -24,9 +24,9 @@ const trials = 30
 # The cooling rate for global temperature
 const d_temp = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.02
+const lim_temp = 0.0002
 # The probability a higher-cost layout replaces the old one
-const prob = 0.15
+const prob = 0.05
 
 # Functions
 
@@ -37,7 +37,7 @@ static func annealing(graph):
 	for node in graph.keys():
 		graph[node]["loc"] = [randf(), randf()]
 	# Define a starting "temperature", which limits how far nodes can move 
-	var temp = 0.5
+	var temp = 0.35
 	# Calculate current cost of whole system
 	var cost_current = cost(graph)
 	# While temp is above stopping threshold...
@@ -48,9 +48,13 @@ static func annealing(graph):
 			var graph_new = graph.duplicate()
 			var node = str(randi()%len(graph))
 			var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-			# Move that node by picking a random target, finding the difference,
-			# scaling that down to temp size, and adding it to the original location
-			var loc_new = (Vector2(randf(),randf()) - loc).clamped(temp) + loc
+			# Move that node by taking a vector with temp length, rotating it around the
+			# origin by a random angle (up to 2Pi), then adding it to the original loc
+			var loc_new = Vector2(0.0, temp).rotated(randf()*2*PI) + loc
+			# Make sure new location is inside bounding box
+			loc_new.x = clamp(loc_new.x, 0.1, 0.9)
+			loc_new.y = clamp(loc_new.y, 0.1, 0.9)
+			# Save new location in candidate graph
 			graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 			# If the new graph has a lower cost or is lucky, it replaces the old one
 			var cost_new = cost(graph_new)
@@ -78,7 +82,10 @@ static func cost(graph):
 			# Add the square inverse of nodes' distance
 			# Small distance means high cost
 			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
-			total += l1 / node_loc.distance_squared_to(pair_loc)
+			if node_loc.distance_squared_to(pair_loc) == 0:
+				total += INF
+			else:
+				total += l1 / node_loc.distance_squared_to(pair_loc)
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
