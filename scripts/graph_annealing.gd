@@ -29,7 +29,7 @@ const d_temp = 0.85
 const lim_temp = 0.05
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const prob_const = 0.01
+const prob_const = 0.00001
 
 # Functions
 
@@ -41,6 +41,8 @@ static func annealing(graph):
 		graph[node]["loc"] = [randf(), randf()]
 	# Define a starting "temperature", which limits how far nodes can move 
 	var temp = 0.4
+	# Create a counter for how often sequential layouts are rejected
+	var rejects = 0
 	# Calculate current cost of whole system
 	var cost_current = cost(graph, false)
 	# While temp is above stopping threshold...
@@ -57,6 +59,14 @@ static func annealing(graph):
 			if randf() < prob:
 				graph = graph_new
 				cost_current = cost_new
+				rejects = 0
+			# Otherwise, increment the rejection counter
+			else:
+				rejects += 1
+				# If rejection counter is too high, break out of this loop
+				if rejects > 10:
+					rejects = 0
+					break
 		# Reduce temperature at a predefined rate
 		temp *= d_temp
 	
