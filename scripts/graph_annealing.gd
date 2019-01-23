@@ -72,7 +72,7 @@ static func annealing(graph):
 # Cost function -- measure of how "good" the current layout is
 static func cost(graph):
 	# Total cost of graph
-	var total = 0
+	var costs = [0, 0, 0, 0]
 	# For each node in the graph...
 	for node in graph.keys():
 		# Get location of current node
@@ -87,11 +87,10 @@ static func cost(graph):
 			# Small distance means high cost
 			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
 			if node_loc.distance_squared_to(pair_loc) == 0:
-				total += INF
+				costs[0] += INF
 				break
 			else:
-				var this_cost = l1 / node_loc.distance_squared_to(pair_loc)
-				total += this_cost
+				costs[0] += l1 / node_loc.distance_squared_to(pair_loc)
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
@@ -101,8 +100,7 @@ static func cost(graph):
 		var r = max(node_loc.distance_squared_to(Vector2(1, node_loc.y)), 0.05)
 		# Add inverses of these vars to total, scaled by l2
 		# Small distances mean high cost
-		var this_cost = l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
-		total += this_cost
+		costs[1] += l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
 		
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
@@ -112,8 +110,7 @@ static func cost(graph):
 			# Large distances mean high cost
 			var conn_loc = Vector2(graph[str(conn)]["loc"][0], graph[str(conn)]["loc"][1])
 			var edge_len = node_loc.distance_squared_to(conn_loc)
-			this_cost = l3 * edge_len
-			total += this_cost
+			costs[2] += l3 * edge_len
 			
 			# NODE-EDGE DISTANCES
 			# For each node other than the two connected...
@@ -127,7 +124,6 @@ static func cost(graph):
 				t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
 				var projection = node_loc + (t * (conn_loc - node_loc))
 				# Add inverse of the squared distance to total, using a set minimum
-				this_cost = l4 / max(projection.distance_squared_to(other_loc), 0.01)
-				total += this_cost
+				costs[3] = l4 / max(projection.distance_squared_to(other_loc), 0.01)
 	
-	return total
+	return costs[0]+costs[1]+costs[2]+costs[3]
