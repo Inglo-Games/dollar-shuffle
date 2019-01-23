@@ -22,7 +22,7 @@ const l4 = 1.0
 # The max number of trials to run before updating global temperature
 const trials = 30
 # The cooling rate for global temperature
-const d_temp = 0.85
+const d_temp = 0.75
 # The temperature threshold for stopping
 const lim_temp = 0.0002
 # The scaling factor used to ajdust the exponential probability function,
@@ -51,7 +51,7 @@ static func annealing(graph):
 			var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
 			# Move that node by taking a vector with temp length, rotating it around the
 			# origin by a random angle (up to 2Pi), then adding it to the original loc
-			var loc_new = Vector2(0.0, temp).rotated(randf()*2*PI) + loc
+			var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
 			# Make sure new location is inside bounding box
 			loc_new.x = clamp(loc_new.x, 0.1, 0.9)
 			loc_new.y = clamp(loc_new.y, 0.1, 0.9)
@@ -88,6 +88,7 @@ static func cost(graph):
 			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
 			if node_loc.distance_squared_to(pair_loc) == 0:
 				total += INF
+				break
 			else:
 				total += l1 / node_loc.distance_squared_to(pair_loc)
 		
@@ -101,14 +102,27 @@ static func cost(graph):
 		# Small distances mean high cost
 		total += l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
 		
-		# EDGE LENGTHS
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
+			
+			# EDGE LENGTHS
 			# Add the square distance between the connected nodes
 			# Large distances mean high cost
 			var conn_loc = Vector2(graph[str(conn)]["loc"][0], graph[str(conn)]["loc"][1])
-			total += l3 * node_loc.distance_squared_to(conn_loc)
-		
-		# NODE-EDGE DISTANCES
-		# TODO: Implement this section
+			var edge_len = node_loc.distance_squared_to(conn_loc)
+			total += l3 * edge_len
+			
+			# NODE-EDGE DISTANCES
+			# For each node other than the two connected...
+			other_nodes.erase(str(conn))
+			for other in other_nodes:
+				# Get location of 'other'
+				var other_loc = Vector2(graph[other]["loc"][0], graph[other]["loc"][1])
+				# Determine where this edge's projection meets a perpendicular projection
+				# through 'other', clamped to keep closest point inside edge
+				t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
+				var projection = node_loc + (t * (conn_loc - node_loc))
+				# Add inverse of the squared distance to total, using a set minimum
+				total += l4 / max(projection.distance_squared_to(other_loc), 0.01)
+	
 	return total
