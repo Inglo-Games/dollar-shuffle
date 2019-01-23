@@ -9,13 +9,13 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const l1 = 200
+const l1 = 0.1
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
 const l2 = 1
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const l3 = 500
+const l3 = 50
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
 const l4 = 50
@@ -27,7 +27,7 @@ const d_temp = 0.85
 const lim_temp = 0.02
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const prob_const = 1.0
+const prob_const = 0.01
 
 # Functions
 
@@ -38,25 +38,25 @@ static func annealing(graph):
 	for node in graph.keys():
 		graph[node]["loc"] = [randf(), randf()]
 	# Define a starting "temperature", which limits how far nodes can move 
-	var temp = 0.65
+	var temp = 0.4
 	# Calculate current cost of whole system
 	var cost_current = cost(graph)
 	# While temp is above stopping threshold...
 	while temp > lim_temp:
 		# For the predefined number of trials...
 		for index in range(trials):
-			# Create a "candidate" graph and pick one random node to modify
+			# Create a "candidate" graph and modify every node randomly
 			var graph_new = graph.duplicate()
-			var node = str(randi()%len(graph))
-			var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-			# Move that node by taking a vector with temp length, rotating it around the
-			# origin by a random angle (up to 2Pi), then adding it to the original loc
-			var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
-			# Make sure new location is inside bounding box
-			loc_new.x = clamp(loc_new.x, 0.1, 0.9)
-			loc_new.y = clamp(loc_new.y, 0.1, 0.9)
-			# Save new location in candidate graph
-			graph_new[node]["loc"] = [loc_new.x, loc_new.y]
+			for node in graph_new.keys():
+				# Move node by taking a vector with temp length, rotating it around the
+				# origin by a random angle (up to 2Pi), then adding it to the original loc
+				var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
+				var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
+				# Make sure new location is inside bounding box
+				loc_new.x = clamp(loc_new.x, 0.1, 0.9)
+				loc_new.y = clamp(loc_new.y, 0.1, 0.9)
+				# Save new location in candidate graph
+				graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 			# Calculate the probability of new layout replacing old one.  If new layout
 			# has lower cost, replacement is guaranteed
 			var cost_new = cost(graph_new)
