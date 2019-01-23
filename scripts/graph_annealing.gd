@@ -21,6 +21,8 @@ const l3 = 50
 const l4 = 50
 # The max number of trials to run before updating global temperature
 const trials = 50
+# The number of loops to run while fine-tuning the graph
+const fine_tuning_loops = 1000
 # The cooling rate for global temperature
 const d_temp = 0.85
 # The temperature threshold for stopping
@@ -40,26 +42,16 @@ static func annealing(graph):
 	# Define a starting "temperature", which limits how far nodes can move 
 	var temp = 0.4
 	# Calculate current cost of whole system
-	var cost_current = cost(graph)
+	var cost_current = cost(graph, false)
 	# While temp is above stopping threshold...
 	while temp > lim_temp:
 		# For the predefined number of trials...
 		for index in range(trials):
-			# Create a "candidate" graph and modify every node randomly
-			var graph_new = graph.duplicate()
-			for node in graph_new.keys():
-				# Move node by taking a vector with temp length, rotating it around the
-				# origin by a random angle (up to 2Pi), then adding it to the original loc
-				var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-				var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
-				# Make sure new location is inside bounding box
-				loc_new.x = clamp(loc_new.x, 0.1, 0.9)
-				loc_new.y = clamp(loc_new.y, 0.1, 0.9)
-				# Save new location in candidate graph
-				graph_new[node]["loc"] = [loc_new.x, loc_new.y]
+			# Create a new "candidate" graph
+			var graph_new = generate_candidate(graph, temp)
 			# Calculate the probability of new layout replacing old one.  If new layout
 			# has lower cost, replacement is guaranteed
-			var cost_new = cost(graph_new)
+			var cost_new = cost(graph_new, false)
 			var prob = exp(-(cost_new - cost_current) * prob_const / temp)
 			print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 			if randf() < prob:
@@ -67,10 +59,41 @@ static func annealing(graph):
 				cost_current = cost_new
 		# Reduce temperature at a predefined rate
 		temp *= d_temp
+	
+	# Once main processing is done, do fine tuning
+	for index in range(fine_tuning_loops):
+		var graph_new = generate_candidate(graph, temp)
+		# Only replace graph if cost is lower
+		var cost_new = cost(graph_new, true)
+		if cost_current < cost_new:
+			graph = graph_new
+			cost_current = cost_new
+	
+	# Return the new graph
 	return graph
 
+# Helper function to generate a new 'candidate' graph
+static func generate_candidate(graph, temp):
+	# Create a "candidate" graph and modify every node randomly
+	var graph_new = graph.duplicate()
+	for node in graph_new.keys():
+		# Move node by taking a vector with temp length, rotating it around the
+		# origin by a random angle (up to 2Pi), then adding it to the original loc
+		var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
+		var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
+		# Make sure new location is inside bounding box
+		loc_new.x = clamp(loc_new.x, 0.1, 0.9)
+		loc_new.y = clamp(loc_new.y, 0.1, 0.9)
+		# Save new location in candidate graph
+		graph_new[node]["loc"] = [loc_new.x, loc_new.y]
+	# Return the new graph
+	return graph_new
+
+
 # Cost function -- measure of how "good" the current layout is
-static func cost(graph):
+# Fine_tuning is a boolean representing whether or not the annealing is in the
+# fine-tuning phase
+static func cost(graph, fine_tuning):
 	# Total cost of graph
 	var costs = [0, 0, 0, 0]
 	# For each node in the graph...
@@ -112,18 +135,19 @@ static func cost(graph):
 			var edge_len = node_loc.distance_squared_to(conn_loc)
 			costs[2] += l3 * edge_len
 			
-			# NODE-EDGE DISTANCES
-			# For each node other than the two connected...
-			other_nodes.erase(str(conn))
-			for other in other_nodes:
-				# Get location of 'other'
-				var other_loc = Vector2(graph[other]["loc"][0], graph[other]["loc"][1])
-				# Determine where this edge's projection meets a perpendicular projection
-				# through 'other', clamped to keep closest point inside edge
-				edge_len = max(edge_len, 0.01)
-				t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
-				var projection = node_loc + (t * (conn_loc - node_loc))
-				# Add inverse of the squared distance to total, using a set minimum
-				costs[3] = l4 / max(projection.distance_squared_to(other_loc), 0.01)
+			if fine_tuning:
+				# NODE-EDGE DISTANCES
+				# For each node other than the two connected...
+				other_nodes.erase(str(conn))
+				for other in other_nodes:
+					# Get location of 'other'
+					var other_loc = Vector2(graph[other]["loc"][0], graph[other]["loc"][1])
+					# Determine where this edge's projection meets a perpendicular projection
+					# through 'other', clamped to keep closest point inside edge
+					edge_len = max(edge_len, 0.01)
+					t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
+					var projection = node_loc + (t * (conn_loc - node_loc))
+					# Add inverse of the squared distance to total, using a set minimum
+					costs[3] = l4 / max(projection.distance_squared_to(other_loc), 0.01)
 	
 	return costs[0]+costs[1]+costs[2]+costs[3]
