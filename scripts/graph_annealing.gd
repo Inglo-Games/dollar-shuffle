@@ -9,22 +9,22 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const l1 = 1.0
+const l1 = 200
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const l2 = 1.0
+const l2 = 1
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const l3 = 1.0
+const l3 = 500
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
-const l4 = 1.0
+const l4 = 50
 # The max number of trials to run before updating global temperature
-const trials = 30
+const trials = 50
 # The cooling rate for global temperature
-const d_temp = 0.75
+const d_temp = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.0002
+const lim_temp = 0.02
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
 const prob_const = 1.0
@@ -38,7 +38,7 @@ static func annealing(graph):
 	for node in graph.keys():
 		graph[node]["loc"] = [randf(), randf()]
 	# Define a starting "temperature", which limits how far nodes can move 
-	var temp = 0.35
+	var temp = 0.65
 	# Calculate current cost of whole system
 	var cost_current = cost(graph)
 	# While temp is above stopping threshold...
@@ -123,6 +123,7 @@ static func cost(graph):
 				var other_loc = Vector2(graph[other]["loc"][0], graph[other]["loc"][1])
 				# Determine where this edge's projection meets a perpendicular projection
 				# through 'other', clamped to keep closest point inside edge
+				edge_len = max(edge_len, 0.01)
 				t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
 				var projection = node_loc + (t * (conn_loc - node_loc))
 				# Add inverse of the squared distance to total, using a set minimum
