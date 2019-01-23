@@ -90,17 +90,19 @@ static func cost(graph):
 				total += INF
 				break
 			else:
-				total += l1 / node_loc.distance_squared_to(pair_loc)
+				var this_cost = l1 / node_loc.distance_squared_to(pair_loc)
+				total += this_cost
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
-		var t = node_loc.distance_squared_to(Vector2(node_loc.x, 0))
-		var b = node_loc.distance_squared_to(Vector2(node_loc.x, 1))
-		var l = node_loc.distance_squared_to(Vector2(0, node_loc.y))
-		var r = node_loc.distance_squared_to(Vector2(1, node_loc.y))
+		var t = max(node_loc.distance_squared_to(Vector2(node_loc.x, 0)), 0.05)
+		var b = max(node_loc.distance_squared_to(Vector2(node_loc.x, 1)), 0.05)
+		var l = max(node_loc.distance_squared_to(Vector2(0, node_loc.y)), 0.05)
+		var r = max(node_loc.distance_squared_to(Vector2(1, node_loc.y)), 0.05)
 		# Add inverses of these vars to total, scaled by l2
 		# Small distances mean high cost
-		total += l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
+		var this_cost = l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
+		total += this_cost
 		
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
@@ -110,7 +112,8 @@ static func cost(graph):
 			# Large distances mean high cost
 			var conn_loc = Vector2(graph[str(conn)]["loc"][0], graph[str(conn)]["loc"][1])
 			var edge_len = node_loc.distance_squared_to(conn_loc)
-			total += l3 * edge_len
+			this_cost = l3 * edge_len
+			total += this_cost
 			
 			# NODE-EDGE DISTANCES
 			# For each node other than the two connected...
@@ -123,6 +126,7 @@ static func cost(graph):
 				t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
 				var projection = node_loc + (t * (conn_loc - node_loc))
 				# Add inverse of the squared distance to total, using a set minimum
-				total += l4 / max(projection.distance_squared_to(other_loc), 0.01)
+				this_cost = l4 / max(projection.distance_squared_to(other_loc), 0.01)
+				total += this_cost
 	
 	return total
