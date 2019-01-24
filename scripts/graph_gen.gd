@@ -1,5 +1,8 @@
 extends Node
 
+# Preload the random layout code
+const Layout = preload("res://scripts/graph_annealing.gd")
+
 # Generate a random graph
 static func generate_graph_data():
 	# Generate a number of nodes between 5 and 12, inclusive
@@ -16,7 +19,7 @@ static func generate_graph_data():
 	# Distribute points at random
 	data = distribute_points(data)
 	# Setup node layout
-	data = organize_nodes(data)
+	data = Layout.annealing(data)
 	# Debug print
 	print("Graph seed: %s" % ProjectSettings.get_setting("game/last_played"))
 	print("New graph: %s" % str(data))
