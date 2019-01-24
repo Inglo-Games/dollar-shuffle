@@ -47,6 +47,7 @@ static func annealing(graph):
 	var rejects = 0
 	# Calculate current cost of whole system
 	var cost_current = cost(graph, false)
+	
 	# While temp is above stopping threshold...
 	while temp > lim_temp:
 		# For the predefined number of trials...
@@ -81,7 +82,8 @@ static func annealing(graph):
 		if cost_current < cost_new:
 			graph = graph_new
 			cost_current = cost_new
-	
+	# Center the graph on the screen
+	graph = center(graph)
 	# Return the new graph
 	return graph
 
@@ -164,3 +166,24 @@ static func cost(graph, fine_tuning):
 					costs[3] = l4 / max(projection.distance_squared_to(other_loc), 0.01)
 	
 	return costs[0]+costs[1]+costs[2]+costs[3]
+
+# Function to center the graph in the viewing window
+static func center(graph):
+	var max_t = 1.0
+	var max_b = 0.0
+	var max_l = 1.0
+	var max_r = 0.0
+	# Cycle through all nodes to find the closest to each edge
+	for node in graph.keys():
+		max_t = min(graph[node]["loc"][1], max_t)
+		max_b = max(graph[node]["loc"][1], max_b)
+		max_l = min(graph[node]["loc"][0], max_l)
+		max_r = max(graph[node]["loc"][0], max_r)
+	# Calculate necessary shifts
+	var shift_h = (1.0 - max_l - max_r) / 2.0
+	var shift_v = (1.2 - max_b - max_t) / 2.0
+	# Add shifts onto each node coordinates
+	for node in graph.keys():
+		graph[node]["loc"][0] += shift_h
+		graph[node]["loc"][1] += shift_v
+	return graph
