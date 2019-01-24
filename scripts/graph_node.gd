@@ -70,7 +70,6 @@ func _process(delta):
 func handle_node_click(event):
 	# Handle left clicks/touchscreen touches
 	if event.is_action_released("leftclick_action"):
-		print("Press time: %s" % str(press_time))
 		# Result depends on length of click
 		if press_time < press_threshold:
 			# Short press means give points
