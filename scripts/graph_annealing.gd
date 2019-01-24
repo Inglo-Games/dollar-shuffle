@@ -9,13 +9,13 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const l1 = 0.5
+const l1 = 5
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const l2 = 0.1
+const l2 = 1
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const l3 = 500
+const l3 = 50
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
 const l4 = 50
@@ -26,10 +26,12 @@ const fine_tuning_loops = 1000
 # The cooling rate for global temperature
 const d_temp = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.05
+const lim_temp = 0.04
+# The rejection threshold for breaking out of loop
+const lim_reject = 50
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const prob_const = 0.00001
+const prob_const = 0.01
 
 # Functions
 
@@ -40,7 +42,7 @@ static func annealing(graph):
 	for node in graph.keys():
 		graph[node]["loc"] = [randf(), randf()]
 	# Define a starting "temperature", which limits how far nodes can move 
-	var temp = 0.4
+	var temp = 0.85
 	# Create a counter for how often sequential layouts are rejected
 	var rejects = 0
 	# Calculate current cost of whole system
@@ -55,8 +57,8 @@ static func annealing(graph):
 			# has lower cost, replacement is guaranteed
 			var cost_new = cost(graph_new, false)
 			var prob = exp(-(cost_new - cost_current) * prob_const / temp)
-			print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 			if randf() < prob:
+				print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 				graph = graph_new
 				cost_current = cost_new
 				rejects = 0
@@ -64,8 +66,9 @@ static func annealing(graph):
 			else:
 				rejects += 1
 				# If rejection counter is too high, break out of this loop
-				if rejects > 10:
+				if rejects >= lim_reject:
 					rejects = 0
+					print("Breaking after %d loops..." % index)
 					break
 		# Reduce temperature at a predefined rate
 		temp *= d_temp
@@ -84,18 +87,18 @@ static func annealing(graph):
 
 # Helper function to generate a new 'candidate' graph
 static func generate_candidate(graph, temp):
-	# Create a "candidate" graph and modify every node randomly
+	# Create a "candidate" graph and modify one node randomly
 	var graph_new = graph.duplicate()
-	for node in graph_new.keys():
-		# Move node by taking a vector with temp length, rotating it around the
-		# origin by a random angle (up to 2Pi), then adding it to the original loc
-		var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-		var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
-		# Make sure new location is inside bounding box
-		loc_new.x = clamp(loc_new.x, 0.1, 0.9)
-		loc_new.y = clamp(loc_new.y, 0.1, 0.9)
-		# Save new location in candidate graph
-		graph_new[node]["loc"] = [loc_new.x, loc_new.y]
+	var node = str(randi() % len(graph))
+	# Move node by taking a vector with temp length, rotating it around the
+	# origin by a random angle (up to 2Pi), then adding it to the original loc
+	var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
+	var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
+	# Make sure new location is inside bounding box
+	loc_new.x = clamp(loc_new.x, 0.05, 0.95)
+	loc_new.y = clamp(loc_new.y, 0.2, 0.95)
+	# Save new location in candidate graph
+	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 	# Return the new graph
 	return graph_new
 
