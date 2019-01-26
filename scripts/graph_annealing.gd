@@ -115,7 +115,6 @@ static func cost(graph, fine_tuning):
 	for node in graph.keys():
 		# Get location of current node
 		var node_loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-
 		# NODE DISTRIBUTION 
 		# For each pair of nodes in graph...
 		var other_nodes = graph.keys()
@@ -142,7 +141,6 @@ static func cost(graph, fine_tuning):
 		
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
-			
 			# EDGE LENGTHS
 			# Add the square distance between the connected nodes
 			# Large distances mean high cost
@@ -150,20 +148,25 @@ static func cost(graph, fine_tuning):
 			var edge_len = node_loc.distance_squared_to(conn_loc)
 			costs[2] += l3 * edge_len
 			
-			if fine_tuning:
-				# NODE-EDGE DISTANCES
-				# For each node other than the two connected...
-				other_nodes.erase(str(conn))
-				for other in other_nodes:
-					# Get location of 'other'
-					var other_loc = Vector2(graph[other]["loc"][0], graph[other]["loc"][1])
+		if fine_tuning:
+			# NODE-EDGE DISTANCES
+			# Adaped from this SA answer: https://stackoverflow.com/questions/849211/
+			# For each connection in the graph...
+			for u in other_nodes:
+				for v in graph[u]["conns"]:
+					# Ignore connection if it includes node
+					if node == str(v):
+						continue
+					# Determine the length of the edge squared (with a preset minimum)
+					var u_loc = Vector2(graph[u]["loc"][0], graph[u]["loc"][1])
+					var v_loc = Vector2(graph[str(v)]["loc"][0], graph[str(v)]["loc"][1])
+					var edge_len2 = max(u_loc.distance_squared_to(v_loc), 0.001)
 					# Determine where this edge's projection meets a perpendicular projection
-					# through 'other', clamped to keep closest point inside edge
-					edge_len = max(edge_len, 0.01)
-					t = clamp((other_loc - node_loc).dot(conn_loc - node_loc) / edge_len, 0, 1)
-					var projection = node_loc + (t * (conn_loc - node_loc))
+					# through node, clamped to keep closest point inside edge
+					t = clamp((node_loc - u_loc).dot(v_loc - u_loc) / edge_len2, 0, 1)
+					var intersect = u_loc + (t * (v_loc - u_loc))
 					# Add inverse of the squared distance to total, using a set minimum
-					costs[3] = l4 / max(projection.distance_squared_to(other_loc), 0.01)
+					costs[3] = l4 / max(intersect.distance_squared_to(node_loc), 0.01)
 	
 	return costs[0]+costs[1]+costs[2]+costs[3]
 
