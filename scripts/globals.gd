@@ -44,6 +44,10 @@ func _ready():
 		FileIO.write_json_file(opts_filepath, opts_data)
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
+	# Increase font size on mobile
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		var font = load("res://assets/fonts/roundedelegance.tres")
+		font.size *= 1.5
 
 # Global functions
 
