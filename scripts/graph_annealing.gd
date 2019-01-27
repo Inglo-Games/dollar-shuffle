@@ -9,29 +9,29 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const l1 = 5
+const l1 = 6
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const l2 = 1
+const l2 = 3
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const l3 = 50
+const l3 = 20
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
-const l4 = 50
+const l4 = 14
 # The max number of trials to run before updating global temperature
 const trials = 250
 # The number of loops to run while fine-tuning the graph
-const fine_tuning_loops = 1000
+const fine_tuning_loops = 500
 # The cooling rate for global temperature
 const d_temp = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.04
+const lim_temp = 0.2
 # The rejection threshold for breaking out of loop
 const lim_reject = 50
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const prob_const = 0.01
+const prob_const = 0.012
 
 # Functions
 
@@ -103,7 +103,6 @@ static func generate_candidate(graph, temp):
 	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 	# Return the new graph
 	return graph_new
-
 
 # Cost function -- measure of how "good" the current layout is
 # Fine_tuning is a boolean representing whether or not the annealing is in the
