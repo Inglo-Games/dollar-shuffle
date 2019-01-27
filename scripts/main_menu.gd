@@ -20,8 +20,8 @@ func _ready():
 	opt_btn.connect("pressed", self, "open_options")
 	quit_btn.connect("pressed", self, "quit_game")
 	# Only show continue button if there is a previous game
-	if str(ProjectSettings.get_setting("game/last_played")) == "0" \
-				or str(ProjectSettings.get_setting("game/last_played")) == "TUTORIALS":
+	if str(globals.opts_data["last"]) == "0" \
+				or str(globals.opts_data["last"]) == "TUTORIALS":
 		cont_btn.visible = false
 	# Don't show useless quit button on HTML version
 	if OS.get_name() == "HTML5":

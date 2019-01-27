@@ -8,6 +8,7 @@ const FileIO = preload("res://scripts/file_io.gd")
 
 # Constant file paths
 const user_filepath = "user://user.dat"
+const opts_filepath = "user://opts.dat"
 
 # Colors for UI
 const LIGHT_GREEN = Color("#F000FF00")
@@ -23,68 +24,39 @@ var number_of_levels = -1
 # User data file to hold high scores and times
 var user_data;
 
+# Options file to keep persistent options
+var opts_data;
+
 # Initialization
 func _ready():
-	# Write game-specific options to project config if they're not already there
-	if !ProjectSettings.has_setting("gui/theme/skin"):
-		var info = {
-			"name":"gui/theme/skin",
-			"type":TYPE_INT,
-			"hint":PROPERTY_HINT_ENUM,
-			"hint_string":"zero,one"
-		}
-		ProjectSettings.set("gui/theme/skin", 0)
-		ProjectSettings.add_property_info(info)
-	if !ProjectSettings.has_setting("game/difficulty"):
-		var info = {
-			"name":"game/difficulty",
-			"type":TYPE_INT,
-			"hint":PROPERTY_HINT_ENUM,
-			"hint_string":"zero,one,two"
-		}
-		ProjectSettings.set("game/difficulty", 0)
-		ProjectSettings.add_property_info(info)
-	if !ProjectSettings.has_setting("game/last_played"):
-		var info = {
-			"name":"game/last_played",
-			"type":TYPE_OBJECT,
-			"hint":PROPERTY_HINT_NONE,
-			"hint_string":""
-		}
-		ProjectSettings.set("game/last_played", 0)
-		ProjectSettings.add_property_info(info)
-	if !ProjectSettings.has_setting("game/tutorial_played"):
-		var info = {
-			"name":"game/tutorial_played",
-			"type":TYPE_BOOL,
-			"hint":PROPERTY_HINT_ENUM,
-			"hint_string":"true,false"
-		}
-		ProjectSettings.set("game/tutorial_played", false)
-		ProjectSettings.add_property_info(info)
-	ProjectSettings.save()
 	# Load user data from file
 	if File.new().file_exists(user_filepath):
 		user_data = FileIO.read_json_file(user_filepath)
 	else:
 		user_data = {}
 		FileIO.write_json_file(user_filepath, user_data)
+	# Load options data from file
+	if File.new().file_exists(opts_filepath):
+		opts_data = FileIO.read_json_file(opts_filepath)
+	else:
+		# Write default values
+		opts_data = {"theme":0, "diff":0, "last":0, "tut":false}
+		FileIO.write_json_file(opts_filepath, opts_data)
 	# Get number of levels in res://levels directory
 	number_of_levels = count_files("res://levels")
 
 # Global functions
 
-# Update the last played level saved to userdata file
+# Update the last played level saved to options file
 func update_last_level(level):
-	# Update variable and write to file
-	ProjectSettings.set("game/last_played", level)
-	ProjectSettings.save()
+	opts_data["last"] = level
+	FileIO.write_json_file(opts_filepath, opts_data)
 
 # Check if current win beats previous best, and save it if so
 func record_win(score, time):
 	# Get last played level and current difficulty level
-	var level = ProjectSettings.get_setting("game/last_played")
-	var diff = ProjectSettings.get_setting("game/difficulty")
+	var level = opts_data["last"]
+	var diff = opts_data["diff"]
 	# If no previous best exists, write a new one
 	if !user_data.has(level):
 		user_data[level] = {}

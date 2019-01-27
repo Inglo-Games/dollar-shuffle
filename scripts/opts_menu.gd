@@ -31,23 +31,23 @@ func setup_diff_picker():
 	for item in diff_array:
 		diff_sel.add_item(item)
 	# Select saved option
-	diff_sel.select(ProjectSettings.get_setting("game/difficulty"))
+	diff_sel.select(globals.opts_data["diff"])
 
 func setup_skin_picker():
 	# Add each skin name to the dropdown
 	for item in skin_array:
 		skin_sel.add_item(item)
 	# Select saved option
-	skin_sel.select(ProjectSettings.get_setting("gui/theme/skin"))
+	skin_sel.select(globals.opts_data["theme"])
 
 func on_diff_selected(item):
 	# Save selected difficulty to project config
-	ProjectSettings.set("game/difficulty", item)
-	ProjectSettings.save()
+	globals.opts_data["diff"] = item
+	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
 
 func on_skin_selected(item):
 	# Save selected option to project config
-	ProjectSettings.set("gui/theme/skin", item)
+	globals.opts_data["theme"] = item
 	# Set global theme to selected one
 	match item:
 		# Dark mode
@@ -65,8 +65,8 @@ func show_attributions():
 
 func set_defaults():
 	# Write default values to options file
-	ProjectSettings.set("game/difficulty", 0)
-	ProjectSettings.set("gui/theme/skin", 0)
+	globals.opts_data["diff"] = 0
+	globals.opts_data["theme"] = 0
 	# Change UI elements to defaults
-	diff_sel.select(ProjectSettings.get_setting("game/difficulty"))
-	skin_sel.select(ProjectSettings.get_setting("gui/theme/skin"))
+	diff_sel.select(globals.opts_data["diff"])
+	skin_sel.select(globals.opts_data["theme"])

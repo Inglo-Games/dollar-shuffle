@@ -21,7 +21,7 @@ static func generate_graph_data():
 	# Setup node layout
 	data = Layout.annealing(data)
 	# Debug print
-	print("Graph seed: %s" % ProjectSettings.get_setting("game/last_played"))
+	print("Graph seed: %s" % globals.opts_data["last"])
 	print("New graph: %s" % str(data))
 	return data
 

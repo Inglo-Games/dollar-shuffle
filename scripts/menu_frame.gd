@@ -17,7 +17,7 @@ var menu_stack = []
 
 func _ready():
 	# Set background color if dark mode
-	match int(ProjectSettings.get_setting("gui/theme/skin")):
+	match int(globals.opts_data["theme"]):
 		1:
 			background.color = globals.BACK_DARK
 			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
@@ -25,10 +25,11 @@ func _ready():
 			background.color = globals.BACK_LIGHT
 			back_btn.texture_normal = load("res://assets/icons/back_light.png")
 	# Check if user has completed tutorials
-	if !ProjectSettings.get_setting("game/tutorial_played"):
+	if !globals.opts_data["tut"]:
 		# If not, add a var to the file and write it
-		ProjectSettings.set("game/tutorial_played", true)
-		ProjectSettings.save()
+		globals.opts_data["tut"] = true
+		var FileIO = load("res://scripts/file_io.gd")
+		FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
 		# Show the tutorials popup
 		tut_popup()
 	# Load the main menu first

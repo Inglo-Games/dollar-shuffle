@@ -10,7 +10,7 @@ onready var conf_btn = get_node("vbox/hbox/confirm_btn")
 func _ready():
 	set_process_input(true)
 	# Set button texture based on theme
-	match int(ProjectSettings.get_setting("gui/theme/skin")):
+	match int(globals.opts_data["theme"]):
 		1:
 			conf_btn.texture_normal = load("res://assets/icons/accept_dark.png")
 		_:
@@ -21,10 +21,10 @@ func _ready():
 func open_level():
 	# If edit is not blank, use contents as RNG seed
 	if edit.text != "":
-		ProjectSettings.set("game/last_played", edit.text)
+		globals.opts_data["last"] = edit.text
 		RNG.set_seed(edit.text)
 	else:
-		ProjectSettings.set("game/last_played", RNG.gen_seed())
+		globals.opts_data["last"] = RNG.gen_seed()
 	# Free this popup from memory
 	self.queue_free()
 	# Load instance of game scene

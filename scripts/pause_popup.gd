@@ -9,7 +9,7 @@ onready var quit_btn = get_node("vbox/quit_button")
 func _ready():
 	set_process_input(true)
 	# Set label to show current level name
-	label.set_text("Puzzle ID: %s" % str(ProjectSettings.get_setting("game/last_played")))
+	label.set_text("Puzzle ID: %s" % str(globals.opts_data["last"]))
 	# Connect buttons to respective functions
 	res_btn.connect("pressed", self, "resume")
 	quit_btn.connect("pressed", self, "quit")
