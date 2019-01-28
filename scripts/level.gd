@@ -85,7 +85,7 @@ func transition_graph():
 
 # Set the number of undos remaining based on difficulty
 func reset_undos():
-	match int(globals.opts_data["last"]):
+	match int(globals.opts_data["diff"]):
 		0:
 			undos_remaining = INF
 			undo_btn.disabled = false
