@@ -11,7 +11,11 @@ func _ready():
 
 func init(record):
 	# Set instance variable so input funcs can access it
-	id = record
+	# Check type to make sure we aren't passing an int as a string
+	if str(record) == str(int(record)):
+		id = int(record)
+	else:
+		id = record
 	# Fill in labels
 	var recs = globals.user_data[record]
 	get_node("level_id").text = "%s" % record
