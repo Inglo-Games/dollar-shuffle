@@ -47,7 +47,7 @@ func _ready():
 	# Increase font size on mobile
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		var font = load("res://assets/fonts/roundedelegance.tres")
-		font.size *= 1.5
+		font.size *= 1.2
 
 # Global functions
 

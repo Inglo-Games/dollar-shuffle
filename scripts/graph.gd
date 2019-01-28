@@ -47,7 +47,7 @@ func load_puzzle(input):
 	# Set the scale value
 	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
-		ui_scale *= 2.0
+		ui_scale *= 1.3
 	# Create containers for graph elements
 	line_cont = Node2D.new()
 	call_deferred("add_child", line_cont)
