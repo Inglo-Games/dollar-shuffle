@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/tutorial.gd" type="Script" id=1]
 [ext_resource path="res://scripts/graph.gd" type="Script" id=2]
-[ext_resource path="res://assets/icons/mouse.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/tap_off.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/pause_light.png" type="Texture" id=4]
 [ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=5]
-[ext_resource path="res://assets/icons/mouse_leftclick.png" type="Texture" id=6]
-[ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/icons/mouse.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/mouse_leftclick.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/tap_on.png" type="Texture" id=8]
+[ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -62,10 +64,48 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 7 ) ]
 }
 
-[node name="base" type="Control"]
+[sub_resource type="Animation" id=5]
+
+resource_name = "long_tap"
+length = 1.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("node_ui_container/click_img:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "short_tap"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("node_ui_container/click_img:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 8 ) ]
+}
+
+[node name="base" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -103,7 +143,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="click_img" type="Sprite" parent="node_ui_container" index="0"]
 
-position = Vector2( 415, 710 )
+position = Vector2( 395, 710 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
@@ -182,11 +222,14 @@ playback_speed = 1.0
 anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
 anims/leftclick = SubResource( 3 )
+anims/long_tap = SubResource( 5 )
+anims/short_tap = SubResource( 4 )
 blend_times = [  ]
+_sections_unfolded = [ "Pause" ]
 
 [node name="audio" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 volume_db = -16.0
 pitch_scale = 1.0
 autoplay = false
