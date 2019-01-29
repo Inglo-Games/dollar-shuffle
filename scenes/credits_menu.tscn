@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/credits.gd" type="Script" id=1]
 
-[node name="base" type="VBoxContainer"]
+[node name="base" type="VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -25,9 +25,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 435.0
+margin_top = 398.0
 margin_right = 1920.0
-margin_bottom = 489.0
+margin_bottom = 452.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -46,9 +46,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 509.0
+margin_top = 472.0
 margin_right = 1920.0
-margin_bottom = 563.0
+margin_bottom = 526.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -61,15 +61,36 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="vid_btn" type="Button" parent="." index="2"]
+[node name="label3" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 583.0
+margin_top = 546.0
 margin_right = 1920.0
-margin_bottom = 645.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Tap icon from freepik.com"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="vid_btn" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 620.0
+margin_right = 1920.0
+margin_bottom = 682.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
