@@ -22,11 +22,11 @@ const l4 = 14
 # The max number of trials to run before updating global temperature
 const trials = 250
 # The number of loops to run while fine-tuning the graph
-const fine_tuning_loops = 500
+const fine_tuning_loops = 750
 # The cooling rate for global temperature
 const d_temp = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.2
+const lim_temp = 0.35
 # The rejection threshold for breaking out of loop
 const lim_reject = 50
 # The scaling factor used to ajdust the exponential probability function,
@@ -98,7 +98,7 @@ static func generate_candidate(graph, temp):
 	var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
 	# Make sure new location is inside bounding box
 	loc_new.x = clamp(loc_new.x, 0.05, 0.95)
-	loc_new.y = clamp(loc_new.y, 0.2, 0.95)
+	loc_new.y = clamp(loc_new.y, 0.2, 0.9)
 	# Save new location in candidate graph
 	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 	# Return the new graph
@@ -183,7 +183,7 @@ static func center(graph):
 		max_r = max(graph[node]["loc"][0], max_r)
 	# Calculate necessary shifts
 	var shift_h = (1.0 - max_l - max_r) / 2.0
-	var shift_v = (1.2 - max_b - max_t) / 2.0
+	var shift_v = (1.1 - max_b - max_t) / 2.0
 	# Add shifts onto each node coordinates
 	for node in graph.keys():
 		graph[node]["loc"][0] += shift_h
