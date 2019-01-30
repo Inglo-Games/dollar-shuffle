@@ -23,10 +23,8 @@ testing="*res://scripts/testing.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/resizable=false
-window/size/borderless=true
-window/size/test_width=1920
-window/size/test_height=1080
+window/size/test_width=1600
+window/size/test_height=900
 window/dpi/allow_hidpi=true
 window/handheld/orientation="sensor_landscape"
 window/stretch/shrink="1"
