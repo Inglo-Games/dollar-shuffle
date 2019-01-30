@@ -16,12 +16,16 @@ onready var menu_anim = get_node("menu_anim")
 var menu_stack = []
 
 func _ready():
-	# Set background color if dark mode
+	# Set background color and back arrow according to theme
 	match int(globals.opts_data["theme"]):
+		# Dark theme
 		1:
+			theme = load("res://assets/dark.theme")
 			background.color = globals.BACK_DARK
 			back_btn.texture_normal = load("res://assets/icons/back_dark.png")
+		# Light and colorblind themes
 		_:
+			theme = load("res://assets/light.theme")
 			background.color = globals.BACK_LIGHT
 			back_btn.texture_normal = load("res://assets/icons/back_light.png")
 	# Check if user has completed tutorials

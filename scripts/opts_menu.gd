@@ -48,16 +48,9 @@ func on_diff_selected(item):
 func on_skin_selected(item):
 	# Save selected option to project config
 	globals.opts_data["theme"] = item
-	# Set global theme to selected one
-	match item:
-		# Dark mode
-		1:
-			ProjectSettings.set_setting("gui/theme/custom","res://assets/dark_theme.tres")
-		# Light and colorblind mode
-		_:
-			ProjectSettings.set_setting("gui/theme/custom","res://assets/light_theme.tres")
-	# Save the result to settings file
-	ProjectSettings.save()
+	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+	# Show theme popup to offer reload
+	theme_popup()
 
 func show_attributions():
 	# Show attributions page
@@ -67,6 +60,18 @@ func set_defaults():
 	# Write default values to options file
 	globals.opts_data["diff"] = 0
 	globals.opts_data["theme"] = 0
+	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
 	# Change UI elements to defaults
 	diff_sel.select(globals.opts_data["diff"])
 	skin_sel.select(globals.opts_data["theme"])
+
+# Create a popup for reloading the game
+func theme_popup():
+	# Create a popup telling user to reload to apply theme
+	var popup = ConfirmationDialog.new()
+	popup.get_label().set_text("Reload game to apply theme?")
+	# Set the affirmative button to open the tutorials
+	popup.get_ok().connect("pressed", get_tree(), "reload_current_scene")
+	# Show popup
+	add_child(popup)
+	popup.popup_centered_minsize()
