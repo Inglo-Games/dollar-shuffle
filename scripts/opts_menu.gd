@@ -57,6 +57,8 @@ func show_attributions():
 	get_parent().get_parent().stack_menu(cred_menu)
 
 func set_defaults():
+	# Record what the old theme was
+	var old_theme = globals.opts_data["theme"]
 	# Write default values to options file
 	globals.opts_data["diff"] = 0
 	globals.opts_data["theme"] = 0
@@ -64,6 +66,9 @@ func set_defaults():
 	# Change UI elements to defaults
 	diff_sel.select(globals.opts_data["diff"])
 	skin_sel.select(globals.opts_data["theme"])
+	# If theme changed, offer reload
+	if old_theme != globals.opts_data["theme"]:
+		theme_popup()
 
 # Create a popup for reloading the game
 func theme_popup():
