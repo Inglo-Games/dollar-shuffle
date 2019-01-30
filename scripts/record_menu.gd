@@ -8,6 +8,8 @@ var record_container
 
 # Called on load
 func _ready():
+	# Reload the user data file to make sure we have the latest scores
+	globals.reload_user_data()
 	# Load the container that holds each record's scores and times
 	record_container = ResourceLoader.load("res://scenes/record_container.tscn")
 	populate_list()

@@ -56,6 +56,11 @@ func update_last_level(level):
 	opts_data["last"] = level
 	FileIO.write_json_file(opts_filepath, opts_data)
 
+# Reload the user and options data from their files
+func reload_user_data():
+	opts_data = FileIO.read_json_file(opts_filepath)
+	user_data = FileIO.read_json_file(user_filepath)
+
 # Check if current win beats previous best, and save it if so
 func record_win(score, time):
 	# Get last played level and current difficulty level
