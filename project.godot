@@ -31,7 +31,7 @@ window/stretch/shrink="1"
 
 [gui]
 
-theme/custom="res://assets/light_theme.tres"
+theme/custom="res://assets/light.theme"
 
 [input]
 
