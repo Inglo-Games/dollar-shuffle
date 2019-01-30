@@ -28,9 +28,11 @@ func _ready():
 	# Set background color and buttons based on skin option
 	match int(globals.opts_data["theme"]):
 		1:
+			theme = load("res://assets/dark.theme")
 			backg.color = globals.BACK_DARK
 			pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
 		_:
+			theme = load("res://assets/light.theme")
 			backg.color = globals.BACK_LIGHT
 			pause_btn.texture_normal = load("res://assets/icons/pause_light.png")
 	# Check for mobile platform

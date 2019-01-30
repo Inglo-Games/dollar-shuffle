@@ -31,14 +31,16 @@ var moves = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Set background color and buttons if
+	# Set background color and buttons based on theme
 	match int(globals.opts_data["theme"]):
 		1:
+			theme = load("res://assets/dark.theme")
 			backg.color = globals.BACK_DARK
 			undo_btn.texture_normal = load("res://assets/icons/undo_dark.png")
 			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_dark.png")
 			pause_btn.texture_normal = load("res://assets/icons/pause_dark.png")
 		_:
+			theme = load("res://assets/light.theme")
 			backg.color = globals.BACK_LIGHT
 			undo_btn.texture_normal = load("res://assets/icons/undo_light.png")
 			undo_btn.texture_disabled = load("res://assets/icons/undo_disabled_light.png")
