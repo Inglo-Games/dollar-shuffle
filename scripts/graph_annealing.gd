@@ -38,20 +38,25 @@ const prob_const = 0.012
 # Simulated annealing function -- randomly move nodes over time to reduce cost
 # function of whole graph
 static func annealing(graph):
+	
 	# Start by randomly distributing all nodes
 	for node in graph.keys():
 		graph[node]["loc"] = [randf(), randf()]
+	
 	# Define a starting "temperature", which limits how far nodes can move 
 	var temp = 0.85
+	
 	# Create a counter for how often sequential layouts are rejected
 	var rejects = 0
-	# Calculate current cost of whole system
+	
 	var cost_current = cost(graph, false)
 	
 	# While temp is above stopping threshold...
 	while temp > lim_temp:
+		
 		# For the predefined number of trials...
 		for index in range(trials):
+			
 			# Create a new "candidate" graph
 			var graph_new = generate_candidate(graph, temp)
 			# Calculate the probability of new layout replacing old one.  If new layout
@@ -63,62 +68,73 @@ static func annealing(graph):
 				graph = graph_new
 				cost_current = cost_new
 				rejects = 0
+			
 			# Otherwise, increment the rejection counter
 			else:
 				rejects += 1
+			
 				# If rejection counter is too high, break out of this loop
 				if rejects >= lim_reject:
 					rejects = 0
 					print("Breaking after %d loops..." % index)
 					break
+		
 		# Reduce temperature at a predefined rate
 		temp *= d_temp
 	
 	# Once main processing is done, do fine tuning
 	for index in range(fine_tuning_loops):
 		var graph_new = generate_candidate(graph, temp)
+		
 		# Only replace graph if cost is lower
 		var cost_new = cost(graph_new, true)
 		if cost_current < cost_new:
 			graph = graph_new
 			cost_current = cost_new
-	# Center the graph on the screen
-	graph = center(graph)
-	# Return the new graph
-	return graph
+	
+	return center(graph)
 
 # Helper function to generate a new 'candidate' graph
 static func generate_candidate(graph, temp):
+	
 	# Create a "candidate" graph and modify one node randomly
 	var graph_new = graph.duplicate()
 	var node = str(randi() % len(graph))
+	
 	# Move node by taking a vector with temp length, rotating it around the
 	# origin by a random angle (up to 2Pi), then adding it to the original loc
 	var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
 	var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
+	
 	# Make sure new location is inside bounding box
 	loc_new.x = clamp(loc_new.x, 0.05, 0.95)
 	loc_new.y = clamp(loc_new.y, 0.2, 0.9)
-	# Save new location in candidate graph
+	
 	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
-	# Return the new graph
+	
 	return graph_new
 
 # Cost function -- measure of how "good" the current layout is
 # Fine_tuning is a boolean representing whether or not the annealing is in the
 # fine-tuning phase
 static func cost(graph, fine_tuning):
-	# Total cost of graph
+	
+	# Total cost of graph -- This could have been one int, but separating them
+	# make debugging easier
 	var costs = [0, 0, 0, 0]
+	
 	# For each node in the graph...
 	for node in graph.keys():
+		
 		# Get location of current node
 		var node_loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
+		
 		# NODE DISTRIBUTION 
 		# For each pair of nodes in graph...
 		var other_nodes = graph.keys()
 		other_nodes.erase(node)
 		for pair in other_nodes:
+			
 			# Add the square inverse of nodes' distance
 			# Small distance means high cost
 			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
@@ -153,17 +169,21 @@ static func cost(graph, fine_tuning):
 			# For each connection in the graph...
 			for u in other_nodes:
 				for v in graph[u]["conns"]:
+					
 					# Ignore connection if it includes node
 					if node == str(v):
 						continue
+					
 					# Determine the length of the edge squared (with a preset minimum)
 					var u_loc = Vector2(graph[u]["loc"][0], graph[u]["loc"][1])
 					var v_loc = Vector2(graph[str(v)]["loc"][0], graph[str(v)]["loc"][1])
 					var edge_len2 = max(u_loc.distance_squared_to(v_loc), 0.001)
+					
 					# Determine where this edge's projection meets a perpendicular projection
 					# through node, clamped to keep closest point inside edge
 					t = clamp((node_loc - u_loc).dot(v_loc - u_loc) / edge_len2, 0, 1)
 					var intersect = u_loc + (t * (v_loc - u_loc))
+					
 					# Add inverse of the squared distance to total, using a set minimum
 					costs[3] = l4 / max(intersect.distance_squared_to(node_loc), 0.01)
 	
@@ -171,21 +191,26 @@ static func cost(graph, fine_tuning):
 
 # Function to center the graph in the viewing window
 static func center(graph):
+	
 	var max_t = 1.0
 	var max_b = 0.0
 	var max_l = 1.0
 	var max_r = 0.0
+	
 	# Cycle through all nodes to find the closest to each edge
 	for node in graph.keys():
 		max_t = min(graph[node]["loc"][1], max_t)
 		max_b = max(graph[node]["loc"][1], max_b)
 		max_l = min(graph[node]["loc"][0], max_l)
 		max_r = max(graph[node]["loc"][0], max_r)
+		
 	# Calculate necessary shifts
 	var shift_h = (1.0 - max_l - max_r) / 2.0
 	var shift_v = (1.1 - max_b - max_t) / 2.0
+	
 	# Add shifts onto each node coordinates
 	for node in graph.keys():
 		graph[node]["loc"][0] += shift_h
 		graph[node]["loc"][1] += shift_v
+	
 	return graph

@@ -13,43 +13,50 @@ onready var opt_btn = get_node("opt_button")
 onready var quit_btn = get_node("quit_button")
 
 func _ready():
-	# Connect buttons to respective functions
+
 	cont_btn.connect("pressed", self, "return_level")
 	level_btn.connect("pressed", self, "choose_level")
 	recs_btn.connect("pressed", self, "open_records")
 	opt_btn.connect("pressed", self, "open_options")
 	quit_btn.connect("pressed", self, "quit_game")
+	
 	# Only show continue button if there is a previous game
 	if str(globals.opts_data["last"]) == "0" \
-				or str(globals.opts_data["last"]) == "TUTORIALS":
+			or str(globals.opts_data["last"]) == "TUTORIALS":
 		cont_btn.visible = false
+	
 	# Don't show useless quit button on HTML version
 	if OS.get_name() == "HTML5":
 		quit_btn.visible = false
 
 # Return to last unsolved puzzle
 func return_level():
-	# Load instance of game scene
+	
 	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
 	get_tree().get_root().add_child(level_scene.instance())
 
 # Choose level number from list
 func choose_level():
+	
 	get_parent().get_parent().stack_menu(lvl_menu)
 
 # Open the records list
 func open_records():
+	
 	get_parent().get_parent().stack_menu(recs_menu)
 
 # Open the options menu
 func open_options():
+	
 	get_parent().get_parent().stack_menu(opts_menu)
 
 # Open the tutorial levels
 func open_tutorials():
-	self.queue_free()
+	
+	queue_free()
 	get_tree().change_scene("res://scenes/tutorial.tscn")
 
 # Close the game
 func quit_game():
+	
 	get_tree().quit()

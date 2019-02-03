@@ -17,31 +17,30 @@ var diff_array = ["Easy", "Medium", "Hard"]
 var skin_array = ["Light", "Dark", "Red-Green Colorblind"]
 
 func _ready():
+	
 	# Setup option UIs
 	setup_diff_picker()
 	setup_skin_picker()
-	# Connect options UIs to respective functions
+	
 	diff_sel.connect("item_selected", self, "on_diff_selected")
 	skin_sel.connect("item_selected", self, "on_skin_selected")
 	reset_btn.connect("pressed", self, "set_defaults")
 	attrib_btn.connect("pressed", self, "show_attributions")
 
 func setup_diff_picker():
-	# Add each difficulty to the dropdown
+	
 	for item in diff_array:
 		diff_sel.add_item(item)
-	# Select saved option
 	diff_sel.select(globals.opts_data["diff"])
 
 func setup_skin_picker():
-	# Add each skin name to the dropdown
+	
 	for item in skin_array:
 		skin_sel.add_item(item)
-	# Select saved option
 	skin_sel.select(globals.opts_data["theme"])
 
 func on_diff_selected(item):
-	# Save selected difficulty to project config
+	
 	globals.opts_data["diff"] = item
 	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
 
@@ -49,7 +48,7 @@ func on_skin_selected(item):
 	# Save selected option to project config
 	globals.opts_data["theme"] = item
 	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
-	# Show theme popup to offer reload
+
 	theme_popup()
 
 func show_attributions():
@@ -57,26 +56,27 @@ func show_attributions():
 	get_parent().get_parent().stack_menu(cred_menu)
 
 func set_defaults():
-	# Record what the old theme was
+	
 	var old_theme = globals.opts_data["theme"]
+	
 	# Write default values to options file
 	globals.opts_data["diff"] = 0
 	globals.opts_data["theme"] = 0
 	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+	
 	# Change UI elements to defaults
 	diff_sel.select(globals.opts_data["diff"])
 	skin_sel.select(globals.opts_data["theme"])
+	
 	# If theme changed, offer reload
 	if old_theme != globals.opts_data["theme"]:
 		theme_popup()
 
 # Create a popup for reloading the game
 func theme_popup():
-	# Create a popup telling user to reload to apply theme
+	
 	var popup = ConfirmationDialog.new()
 	popup.get_label().set_text("Reload game to apply theme?")
-	# Set the affirmative button to open the tutorials
 	popup.get_ok().connect("pressed", get_tree(), "reload_current_scene")
-	# Show popup
 	add_child(popup)
 	popup.popup_centered_minsize()

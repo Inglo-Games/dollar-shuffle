@@ -5,17 +5,21 @@ var id = ""
 
 # Initialization
 func _ready():
+	
 	# Allow input
 	set_process_input(true)
+	
 	connect("gui_input", self, "record_cont_input")
 
 func init(record):
+	
 	# Set instance variable so input funcs can access it
 	# Check type to make sure we aren't passing an int as a string
 	if str(record) == str(int(record)):
 		id = int(record)
 	else:
 		id = record
+		
 	# Fill in labels
 	var recs = globals.user_data[record]
 	get_node("level_id").text = "%s" % record
@@ -28,6 +32,7 @@ func init(record):
 
 # Deal with inputs in the record container
 func record_cont_input(event):
+	
 	if event.is_action_released("leftclick_action"):
 		# Create a popup asking if user wants open that level
 		var popup = ConfirmationDialog.new()
@@ -40,7 +45,6 @@ func record_cont_input(event):
 
 # Open the given level
 func open_level():
-	# Set the "last played" option appropriately
+	
 	globals.opts_data["last"] = id
-	# Load the game scene
 	get_tree().change_scene("res://scenes/game.tscn")

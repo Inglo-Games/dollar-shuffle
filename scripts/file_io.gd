@@ -2,8 +2,9 @@
 extends Node
 
 static func read_json_file(path):
-	# Open the given file
+	
 	var file = File.new()
+	
 	# Error checking -- ensure file exists and can be opened
 	if !file.file_exists(path):
 		# TODO: Implement popup message for nonexistent file
@@ -22,11 +23,10 @@ static func read_json_file(path):
 		print("Could not parse JSON...")
 		return
 	
-	# Return the parsed result
 	return parsed_json.result
 
 static func write_json_file(path, data):
-	# Open the given file
+	
 	var file = File.new()
 	if file.open(path, file.WRITE) != OK:
 		# TODO: Implement popup message for bad open
