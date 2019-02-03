@@ -1,7 +1,7 @@
 extends Control
 
 # Preload main menu scene
-const main_menu = preload("res://scenes/main_menu.tscn")
+const MainMenu = preload("res://scenes/main_menu.tscn")
 
 # Load UI elements
 onready var background = get_node("background")
@@ -40,7 +40,7 @@ func _ready():
 		tut_popup()
 	
 	# Load the main menu first
-	stack_menu(main_menu)
+	stack_menu(MainMenu)
 	
 	back_btn.visible = false
 	back_btn.connect("pressed", self, "pop_menu")
@@ -90,7 +90,7 @@ func fade_in():
 	menu_anim.play("menu_fade_in")
 	
 	# Show the back button if the scene isn't the root menu
-	if menu_stack.back().resource_path != main_menu.resource_path:
+	if menu_stack.back().resource_path != MainMenu.resource_path:
 		back_btn.visible = true
 		btn_anim.play("btn_fade_in")
 

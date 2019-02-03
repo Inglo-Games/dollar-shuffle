@@ -1,7 +1,7 @@
 extends Control
 
 # Time separating long and short press in seconds
-const press_threshold = 0.6
+const PRESS_THRESHOLD = 0.6
 
 # Node number this instance represents
 var node_num = -1
@@ -81,7 +81,7 @@ func handle_node_click(event):
 	if event.is_action_released("leftclick_action"):
 		
 		# Result depends on length of click
-		if press_time < press_threshold:
+		if press_time < PRESS_THRESHOLD:
 			# Short press means give points
 			get_parent().get_parent().give_points(node_num)
 		else:

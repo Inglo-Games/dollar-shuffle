@@ -4,7 +4,7 @@ extends Node
 const FileIO = preload("res://scripts/file_io.gd")
 
 # Preload the credits menu to be passed back to menu frame
-const cred_menu = preload("res://scenes/credits_menu.tscn")
+const CredMenu = preload("res://scenes/credits_menu.tscn")
 
 # GUI objects
 onready var diff_sel = get_node("difficulty_selector")
@@ -42,18 +42,18 @@ func setup_skin_picker():
 func on_diff_selected(item):
 	
 	globals.opts_data["diff"] = item
-	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+	FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
 
 func on_skin_selected(item):
 	# Save selected option to project config
 	globals.opts_data["theme"] = item
-	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+	FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
 
 	theme_popup()
 
 func show_attributions():
 	# Show attributions page
-	get_parent().get_parent().stack_menu(cred_menu)
+	get_parent().get_parent().stack_menu(CredMenu)
 
 func set_defaults():
 	
@@ -62,7 +62,7 @@ func set_defaults():
 	# Write default values to options file
 	globals.opts_data["diff"] = 0
 	globals.opts_data["theme"] = 0
-	FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+	FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
 	
 	# Change UI elements to defaults
 	diff_sel.select(globals.opts_data["diff"])

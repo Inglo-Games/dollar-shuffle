@@ -1,9 +1,9 @@
 extends Node
 
 # Preload all menus accessable from this one
-const lvl_menu = preload("res://scenes/lvl_menu.tscn")
-const opts_menu = preload("res://scenes/opts_menu.tscn")
-const recs_menu = preload("res://scenes/records_menu.tscn")
+const LvlMenu = preload("res://scenes/lvl_menu.tscn")
+const OptsMenu = preload("res://scenes/opts_menu.tscn")
+const RecsMenu = preload("res://scenes/records_menu.tscn")
 
 # Button objects
 onready var cont_btn = get_node("cont_button")
@@ -38,17 +38,17 @@ func return_level():
 # Choose level number from list
 func choose_level():
 	
-	get_parent().get_parent().stack_menu(lvl_menu)
+	get_parent().get_parent().stack_menu(LvlMenu)
 
 # Open the records list
 func open_records():
 	
-	get_parent().get_parent().stack_menu(recs_menu)
+	get_parent().get_parent().stack_menu(RecsMenu)
 
 # Open the options menu
 func open_options():
 	
-	get_parent().get_parent().stack_menu(opts_menu)
+	get_parent().get_parent().stack_menu(OptsMenu)
 
 # Open the tutorial levels
 func open_tutorials():
