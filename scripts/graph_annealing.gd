@@ -9,29 +9,29 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const l1 = 6
+const L1 = 6
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const l2 = 3
+const L2 = 3
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const l3 = 20
+const L3 = 20
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
-const l4 = 14
+const L4 = 14
 # The max number of trials to run before updating global temperature
-const trials = 250
+const TRIALS = 250
 # The number of loops to run while fine-tuning the graph
-const fine_tuning_loops = 750
+const FINE_TUNING_LOOPS = 750
 # The cooling rate for global temperature
-const d_temp = 0.85
+const D_TEMP = 0.85
 # The temperature threshold for stopping
-const lim_temp = 0.35
+const LIM_TEMP = 0.35
 # The rejection threshold for breaking out of loop
-const lim_reject = 50
+const LIM_REJECT = 50
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const prob_const = 0.012
+const PROB_CONST = 0.012
 
 # Functions
 
@@ -52,17 +52,17 @@ static func annealing(graph):
 	var cost_current = cost(graph, false)
 	
 	# While temp is above stopping threshold...
-	while temp > lim_temp:
+	while temp > LIM_TEMP:
 		
 		# For the predefined number of trials...
-		for index in range(trials):
+		for index in range(TRIALS):
 			
 			# Create a new "candidate" graph
 			var graph_new = generate_candidate(graph, temp)
 			# Calculate the probability of new layout replacing old one.  If new layout
 			# has lower cost, replacement is guaranteed
 			var cost_new = cost(graph_new, false)
-			var prob = exp(-(cost_new - cost_current) * prob_const / temp)
+			var prob = exp(-(cost_new - cost_current) * PROB_CONST / temp)
 			if randf() < prob:
 				print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 				graph = graph_new
@@ -74,16 +74,16 @@ static func annealing(graph):
 				rejects += 1
 			
 				# If rejection counter is too high, break out of this loop
-				if rejects >= lim_reject:
+				if rejects >= LIM_REJECT:
 					rejects = 0
 					print("Breaking after %d loops..." % index)
 					break
 		
 		# Reduce temperature at a predefined rate
-		temp *= d_temp
+		temp *= D_TEMP
 	
 	# Once main processing is done, do fine tuning
-	for index in range(fine_tuning_loops):
+	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
 		
 		# Only replace graph if cost is lower
@@ -142,7 +142,7 @@ static func cost(graph, fine_tuning):
 				costs[0] += INF
 				break
 			else:
-				costs[0] += l1 / node_loc.distance_squared_to(pair_loc)
+				costs[0] += L1 / node_loc.distance_squared_to(pair_loc)
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
@@ -152,7 +152,7 @@ static func cost(graph, fine_tuning):
 		var r = max(node_loc.distance_squared_to(Vector2(1, node_loc.y)), 0.05)
 		# Add inverses of these vars to total, scaled by l2
 		# Small distances mean high cost
-		costs[1] += l2 * (1.0 / t + 1.0 / b + 1.0 / l + 1.0 / r)
+		costs[1] += L2 * (1.0 / t + 1.0 / b + 1.0 / l + 1.0 / r)
 		
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
@@ -161,7 +161,7 @@ static func cost(graph, fine_tuning):
 			# Large distances mean high cost
 			var conn_loc = Vector2(graph[str(conn)]["loc"][0], graph[str(conn)]["loc"][1])
 			var edge_len = node_loc.distance_squared_to(conn_loc)
-			costs[2] += l3 * edge_len
+			costs[2] += L3 * edge_len
 			
 		if fine_tuning:
 			# NODE-EDGE DISTANCES
@@ -185,7 +185,7 @@ static func cost(graph, fine_tuning):
 					var intersect = u_loc + (t * (v_loc - u_loc))
 					
 					# Add inverse of the squared distance to total, using a set minimum
-					costs[3] = l4 / max(intersect.distance_squared_to(node_loc), 0.01)
+					costs[3] = L4 / max(intersect.distance_squared_to(node_loc), 0.01)
 	
 	return costs[0] + costs[1] + costs[2] + costs[3]
 

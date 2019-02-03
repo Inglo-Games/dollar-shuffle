@@ -1,10 +1,10 @@
 extends Sprite
 
 # Speed the point should move
-const percent_per_sec = 1.45
+const PERCENT_PER_SEC = 1.45
 
 # Distance to destination before dissapating
-const limit_dist = 128.0
+const LIMIT_DIST = 128.0
 
 # Node locations
 var loc_start = Vector2(0, 0)
@@ -27,13 +27,13 @@ func _process(delta):
 	
 	# Clear node if it reached its end location
 	var dist = loc_end.distance_to(position)
-	if dist < limit_dist * scale.x:
+	if dist < LIMIT_DIST * scale.x:
 		visible = false
 		queue_free()
 	
 	# Else move it closer to destination node
 	else:
-		dist_moved += delta * percent_per_sec
+		dist_moved += delta * PERCENT_PER_SEC
 		position = loc_start.linear_interpolate(loc_end, dist_moved)
 		visible = true
 

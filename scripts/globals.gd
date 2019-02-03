@@ -1,14 +1,14 @@
 extends Node
 
 # Debug mode
-const debug = false
+const DEBUG = false
 
 # File operations
 const FileIO = preload("res://scripts/file_io.gd")
 
 # Constant file paths
-const user_filepath = "user://user.dat"
-const opts_filepath = "user://opts.dat"
+const USER_FILEPATH = "user://user.dat"
+const OPTS_FILEPATH = "user://opts.dat"
 
 # Colors for UI
 const LIGHT_GREEN = Color("#F000FF00")
@@ -31,19 +31,19 @@ var opts_data;
 func _ready():
 	
 	# Load user data from file
-	if File.new().file_exists(user_filepath):
-		user_data = FileIO.read_json_file(user_filepath)
+	if File.new().file_exists(USER_FILEPATH):
+		user_data = FileIO.read_json_file(USER_FILEPATH)
 	else:
 		user_data = {}
-		FileIO.write_json_file(user_filepath, user_data)
+		FileIO.write_json_file(USER_FILEPATH, user_data)
 	
 	# Load options data from file
-	if File.new().file_exists(opts_filepath):
-		opts_data = FileIO.read_json_file(opts_filepath)
+	if File.new().file_exists(OPTS_FILEPATH):
+		opts_data = FileIO.read_json_file(OPTS_FILEPATH)
 	else:
 		# Write default values
 		opts_data = {"theme":0, "diff":0, "last":0, "tut":false}
-		FileIO.write_json_file(opts_filepath, opts_data)
+		FileIO.write_json_file(OPTS_FILEPATH, opts_data)
 	
 	number_of_levels = count_files("res://levels")
 	
@@ -57,12 +57,12 @@ func _ready():
 func update_last_level(level):
 	
 	opts_data["last"] = level
-	FileIO.write_json_file(opts_filepath, opts_data)
+	FileIO.write_json_file(OPTS_FILEPATH, opts_data)
 
 func reload_user_data():
 	
-	opts_data = FileIO.read_json_file(opts_filepath)
-	user_data = FileIO.read_json_file(user_filepath)
+	opts_data = FileIO.read_json_file(OPTS_FILEPATH)
+	user_data = FileIO.read_json_file(USER_FILEPATH)
 
 # Check if current win beats previous best, and save it if so
 func record_win(score, time):
@@ -75,23 +75,23 @@ func record_win(score, time):
 	if !user_data.has(level):
 		user_data[level] = {}
 		user_data[level][diff] = {"score":score, "time":time}
-		FileIO.write_json_file(user_filepath, user_data)
+		FileIO.write_json_file(USER_FILEPATH, user_data)
 	
 	# If no previous record exists for current difficulty, write one
 	elif !user_data[level].has(diff):
 		user_data[level][diff] = {"score":score, "time":time}
-		FileIO.write_json_file(user_filepath, user_data)
+		FileIO.write_json_file(USER_FILEPATH, user_data)
 	
 	# If score beats record best, overwrite it
 	elif score < user_data[level][diff]["score"]:
 		user_data[level][diff]["score"] = score
 		user_data[level][diff]["time"] = time
-		FileIO.write_json_file(user_filepath, user_data)
+		FileIO.write_json_file(USER_FILEPATH, user_data)
 	
 	# If score ties and time beats record best, overwrite it
 	elif score == user_data[level][diff]["score"] and time < user_data[level][diff]["time"]:
 		user_data[level][diff]["time"] = time
-		FileIO.write_json_file(user_filepath, user_data)
+		FileIO.write_json_file(USER_FILEPATH, user_data)
 
 # Count the number of files in a given directory
 func count_files(path):
