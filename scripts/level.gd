@@ -128,14 +128,14 @@ func open_next_puzzle():
 	elif typeof(level) == TYPE_INT:
 	
 		# Make sure the next level exists
-		if level+1 > globals.number_of_levels:
+		if level + 1 > globals.number_of_levels:
 			# Return to main menu if it doesn't
 			self.queue_free()
 			get_tree().change_scene("res://scenes/menu_frame.tscn")
 			return
 		
 		# Increment level num and load new level
-		globals.update_last_level(level+1)
+		globals.update_last_level(level + 1)
 		transition_graph()
 
 # Undo last move
@@ -154,7 +154,7 @@ func undo():
 		
 		# Wait for point moving animations to play out
 		undo_btn.disabled = true
-		yield(get_tree().create_timer(0.6),"timeout")
+		yield(get_tree().create_timer(0.6), "timeout")
 		undo_btn.disabled = false
 		
 		# Remove last 2 moves (since we just added another one)

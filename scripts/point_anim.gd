@@ -7,8 +7,8 @@ const percent_per_sec = 1.45
 const limit_dist = 128.0
 
 # Node locations
-var loc_start = Vector2(0,0)
-var loc_end = Vector2(0,0)
+var loc_start = Vector2(0, 0)
+var loc_end = Vector2(0, 0)
 
 # Percentage moved
 var dist_moved = 0.0

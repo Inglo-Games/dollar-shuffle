@@ -12,7 +12,7 @@ static func generate_graph_data():
 	# Create a dictionary with that many nodes
 	var data = {}
 	for index in range(num_nodes):
-		data[str(index)] = {"conns":[],"loc":[0.5,0.5],"value":-2}
+		data[str(index)] = {"conns":[], "loc":[0.5, 0.5], "value":-2}
 	
 	data = generate_tree(data)
 	
@@ -36,12 +36,12 @@ static func generate_tree(graph_data):
 	# Start with a list of nodes that haven't been connected to yet
 	# containing all nodes except one
 	var out_list = []
-	for index in range(len(graph_data)-1):
+	for index in range(len(graph_data) - 1):
 		out_list.append(index)
 	
 	# Also create a list of nodes that *have* been connected,
 	# containing the one node left out of the other list
-	var in_list = [len(graph_data)-1]
+	var in_list = [len(graph_data) - 1]
 	
 	# Create a connection for each unconnected node
 	while out_list.size() > 0:
@@ -107,8 +107,8 @@ static func distribute_points(graph_data):
 	
 	# Remove 2-4 nodes from that list at random
 	# This guarantees some negative nodes
-	for index in range((randi()%2)+2):
-		whitelist.remove(randi()%whitelist.size())
+	for index in range((randi() % 2) + 2):
+		whitelist.remove(randi() % whitelist.size())
 	
 	# Add points at random until total equals min_points
 	while min_points > total:
@@ -119,7 +119,7 @@ static func distribute_points(graph_data):
 			point = -1
 			
 		# Pick the node to add to/sub from
-		var target = str(whitelist[randi()%whitelist.size()])
+		var target = str(whitelist[randi() % whitelist.size()])
 		graph_data[target]["value"] += point
 		total += point
 	

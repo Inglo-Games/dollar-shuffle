@@ -5,8 +5,8 @@ const FileIO = preload("res://scripts/file_io.gd")
 func _ready():
 	
 	for index in range(globals.number_of_levels):
-		graph_corrupt(index+1)
-		graph_solvable(index+1)
+		graph_corrupt(index + 1)
+		graph_solvable(index + 1)
 
 # Ensure graph connections are legitimate
 func graph_corrupt(num):

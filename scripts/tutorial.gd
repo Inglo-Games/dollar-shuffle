@@ -76,19 +76,19 @@ func transition_graph():
 			graph.load_puzzle('tut2')
 			# Move clicking animation
 			if mobile:
-				click.position = Vector2(1400,120)
+				click.position = Vector2(1400, 120)
 			else:
-				click.position = Vector2(1200,120)
+				click.position = Vector2(1200, 120)
 		2:
 			tut_num = 3
 			graph.load_puzzle('tut3')
 			# Move clicking animation
-			click.position = Vector2(380,260)
+			click.position = Vector2(380, 260)
 		3:
 			tut_num = 4
 			graph.load_puzzle('tut4')
 			# Move clicking animation
-			click.position = Vector2(780,180)
+			click.position = Vector2(780, 180)
 		4:
 			# Go to main menu
 			queue_free()
@@ -108,7 +108,7 @@ func transition_graph():
 			animation.play("long_tap")
 	# Setup clicking animation for non-mobile
 	else:
-		click.set_flip_h(!(tut_num % 2))
+		click.set_flip_h( ! (tut_num % 2))
 		animation.play("leftclick")
 
 # Called from graph.gd
