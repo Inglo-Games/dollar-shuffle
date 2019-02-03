@@ -49,7 +49,7 @@ func load_puzzle(input):
 		graph_data = GameGen.generate_graph_data()
 	
 	# Set the scale value
-	ui_scale = Vector2(2.0 / (len(graph_data)+1), 2.0 / (len(graph_data)+1))
+	ui_scale = Vector2(2.0 / (len(graph_data) + 1), 2.0 / (len(graph_data) + 1))
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		ui_scale *= 1.3
 	

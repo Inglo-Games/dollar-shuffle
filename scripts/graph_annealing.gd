@@ -104,7 +104,7 @@ static func generate_candidate(graph, temp):
 	# Move node by taking a vector with temp length, rotating it around the
 	# origin by a random angle (up to 2Pi), then adding it to the original loc
 	var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-	var loc_new = Vector2(0, temp).rotated(randf()*2*PI) + loc
+	var loc_new = Vector2(0, temp).rotated(randf() * 2 * PI) + loc
 	
 	# Make sure new location is inside bounding box
 	loc_new.x = clamp(loc_new.x, 0.05, 0.95)
@@ -152,7 +152,7 @@ static func cost(graph, fine_tuning):
 		var r = max(node_loc.distance_squared_to(Vector2(1, node_loc.y)), 0.05)
 		# Add inverses of these vars to total, scaled by l2
 		# Small distances mean high cost
-		costs[1] += l2 * (1.0/t + 1.0/b + 1.0/l + 1.0/r)
+		costs[1] += l2 * (1.0 / t + 1.0 / b + 1.0 / l + 1.0 / r)
 		
 		# For each connection that node has...
 		for conn in graph[node]["conns"]:
@@ -187,7 +187,7 @@ static func cost(graph, fine_tuning):
 					# Add inverse of the squared distance to total, using a set minimum
 					costs[3] = l4 / max(intersect.distance_squared_to(node_loc), 0.01)
 	
-	return costs[0]+costs[1]+costs[2]+costs[3]
+	return costs[0] + costs[1] + costs[2] + costs[3]
 
 # Function to center the graph in the viewing window
 static func center(graph):

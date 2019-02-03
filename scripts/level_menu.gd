@@ -20,11 +20,11 @@ func populate_list():
 	
 	# Create an item in the list for each level
 	for index in range(globals.number_of_levels):
-		lvl_list.add_item(str(index+1))
+		lvl_list.add_item(str(index + 1))
 
 func open_level(num):
 	
-	globals.update_last_level(num+1)
+	globals.update_last_level(num + 1)
 	get_tree().change_scene("res://scenes/game.tscn")
 
 func open_tutorials():

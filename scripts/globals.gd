@@ -74,12 +74,12 @@ func record_win(score, time):
 	# If no previous best exists, write a new one
 	if !user_data.has(level):
 		user_data[level] = {}
-		user_data[level][diff] = {"score":score,"time":time}
+		user_data[level][diff] = {"score":score, "time":time}
 		FileIO.write_json_file(user_filepath, user_data)
 	
 	# If no previous record exists for current difficulty, write one
 	elif !user_data[level].has(diff):
-		user_data[level][diff] = {"score":score,"time":time}
+		user_data[level][diff] = {"score":score, "time":time}
 		FileIO.write_json_file(user_filepath, user_data)
 	
 	# If score beats record best, overwrite it

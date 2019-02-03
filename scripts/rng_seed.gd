@@ -17,8 +17,8 @@ static func gen_seed():
 	var new_seed = Marshalls.variant_to_base64(randi())
 	
 	# Cut off the first and last 5 characters, since they're always the same
-	new_seed.erase(0,5)
-	new_seed.erase(6,5)
+	new_seed.erase(0, 5)
+	new_seed.erase(6, 5)
 	
 	seed(hash(new_seed))
 	return new_seed
