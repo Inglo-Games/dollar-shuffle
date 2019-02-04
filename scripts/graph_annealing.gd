@@ -87,6 +87,8 @@ static func annealing(graph):
 		temp *= D_TEMP
 	
 	# Once main processing is done, do fine tuning
+	var tuning_counter = 0
+	temp = 0.08
 	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
 		
@@ -96,6 +98,8 @@ static func annealing(graph):
 			tuning_counter += 1
 			graph = graph_new
 			cost_current = cost_new
+	tuning_counter /= float(FINE_TUNING_LOOPS)
+	print("Fine tuning changes: %.4f" % tuning_counter)
 	
 	return center(graph)
 
