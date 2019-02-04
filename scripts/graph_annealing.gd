@@ -9,16 +9,16 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const L1 = 6
+const L1 = 38
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const L2 = 3
+const L2 = 4
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
 const L3 = 20
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
-const L4 = 14
+const L4 = 10
 # The max number of trials to run before updating global temperature
 const TRIALS = 250
 # The number of loops to run while fine-tuning the graph
@@ -31,7 +31,12 @@ const LIM_TEMP = 0.35
 const LIM_REJECT = 50
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const PROB_CONST = 0.012
+const PROB_CONST = 0.001
+# These establish the borders of the region that nodes can be placed
+const BORDER_L = 0.05
+const BORDER_R = 0.95
+const BORDER_T = 0.2
+const BORDER_B = 0.85
 
 # Functions
 
@@ -57,7 +62,6 @@ static func annealing(graph):
 		# For the predefined number of trials...
 		for index in range(TRIALS):
 			
-			# Create a new "candidate" graph
 			var graph_new = generate_candidate(graph, temp)
 			# Calculate the probability of new layout replacing old one.  If new layout
 			# has lower cost, replacement is guaranteed
@@ -89,6 +93,7 @@ static func annealing(graph):
 		# Only replace graph if cost is lower
 		var cost_new = cost(graph_new, true)
 		if cost_current < cost_new:
+			tuning_counter += 1
 			graph = graph_new
 			cost_current = cost_new
 	
@@ -107,8 +112,8 @@ static func generate_candidate(graph, temp):
 	var loc_new = Vector2(0, temp).rotated(randf() * 2 * PI) + loc
 	
 	# Make sure new location is inside bounding box
-	loc_new.x = clamp(loc_new.x, 0.05, 0.95)
-	loc_new.y = clamp(loc_new.y, 0.2, 0.9)
+	loc_new.x = clamp(loc_new.x, BORDER_L, BORDER_R)
+	loc_new.y = clamp(loc_new.y, BORDER_T, BORDER_B)
 	
 	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
 	
@@ -146,10 +151,10 @@ static func cost(graph, fine_tuning):
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
-		var t = max(node_loc.distance_squared_to(Vector2(node_loc.x, 0)), 0.05)
-		var b = max(node_loc.distance_squared_to(Vector2(node_loc.x, 1)), 0.05)
-		var l = max(node_loc.distance_squared_to(Vector2(0, node_loc.y)), 0.05)
-		var r = max(node_loc.distance_squared_to(Vector2(1, node_loc.y)), 0.05)
+		var t = max(node_loc.distance_squared_to(Vector2(node_loc.y, BORDER_T)), 0.0001)
+		var b = max(node_loc.distance_squared_to(Vector2(node_loc.y, BORDER_B)), 0.0001)
+		var l = max(node_loc.distance_squared_to(Vector2(node_loc.x, BORDER_L)), 0.0001)
+		var r = max(node_loc.distance_squared_to(Vector2(node_loc.x, BORDER_R)), 0.0001)
 		# Add inverses of these vars to total, scaled by l2
 		# Small distances mean high cost
 		costs[1] += L2 * (1.0 / t + 1.0 / b + 1.0 / l + 1.0 / r)
@@ -177,7 +182,7 @@ static func cost(graph, fine_tuning):
 					# Determine the length of the edge squared (with a preset minimum)
 					var u_loc = Vector2(graph[u]["loc"][0], graph[u]["loc"][1])
 					var v_loc = Vector2(graph[str(v)]["loc"][0], graph[str(v)]["loc"][1])
-					var edge_len2 = max(u_loc.distance_squared_to(v_loc), 0.001)
+					var edge_len2 = max(u_loc.distance_squared_to(v_loc), 0.0001)
 					
 					# Determine where this edge's projection meets a perpendicular projection
 					# through node, clamped to keep closest point inside edge
@@ -185,7 +190,7 @@ static func cost(graph, fine_tuning):
 					var intersect = u_loc + (t * (v_loc - u_loc))
 					
 					# Add inverse of the squared distance to total, using a set minimum
-					costs[3] = L4 / max(intersect.distance_squared_to(node_loc), 0.01)
+					costs[3] += L4 / max(intersect.distance_squared_to(node_loc), 0.0001)
 	
 	return costs[0] + costs[1] + costs[2] + costs[3]
 
@@ -206,7 +211,7 @@ static func center(graph):
 		
 	# Calculate necessary shifts
 	var shift_h = (1.0 - max_l - max_r) / 2.0
-	var shift_v = (1.1 - max_b - max_t) / 2.0
+	var shift_v = (1.15 - max_b - max_t) / 2.0
 	
 	# Add shifts onto each node coordinates
 	for node in graph.keys():
