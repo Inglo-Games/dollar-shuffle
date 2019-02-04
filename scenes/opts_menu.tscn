@@ -119,4 +119,12 @@ text = "Credits"
 flat = false
 align = 1
 
+[connection signal="item_selected" from="difficulty_selector" to="." method="on_diff_selected"]
+
+[connection signal="item_selected" from="skin_selector" to="." method="on_skin_selected"]
+
+[connection signal="pressed" from="reset" to="." method="set_defaults"]
+
+[connection signal="pressed" from="attribs" to="." method="show_attributions"]
+
 

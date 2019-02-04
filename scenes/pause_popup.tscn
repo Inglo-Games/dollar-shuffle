@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/pause_popup.gd" type="Script" id=1]
 
-[node name="base" type="PopupPanel" index="0"]
+[node name="base" type="PopupPanel"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -113,5 +113,9 @@ text = "QUIT"
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor" ]
+
+[connection signal="pressed" from="vbox/resume_button" to="." method="resume"]
+
+[connection signal="pressed" from="vbox/quit_button" to="." method="quit"]
 
 

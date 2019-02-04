@@ -96,4 +96,10 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
+[connection signal="item_selected" from="lvl_list" to="." method="open_level"]
+
+[connection signal="pressed" from="tuts_button" to="." method="open_tutorials"]
+
+[connection signal="pressed" from="rand_button" to="." method="random_level"]
+
 

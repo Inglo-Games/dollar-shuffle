@@ -54,9 +54,6 @@ func _ready():
 	score.text = "0"
 	
 	reset_undos()
-	
-	undo_btn.connect("pressed", self, "undo")
-	pause_btn.connect("pressed", self, "toggle_pause")
 
 # Called every frame
 func _process(delta):

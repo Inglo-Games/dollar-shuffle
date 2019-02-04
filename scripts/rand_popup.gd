@@ -17,8 +17,6 @@ func _ready():
 			conf_btn.texture_normal = load("res://assets/icons/accept_dark.png")
 		_:
 			conf_btn.texture_normal = load("res://assets/icons/accept_light.png")
-	
-	conf_btn.connect("pressed", self, "open_level")
 
 func open_level():
 	

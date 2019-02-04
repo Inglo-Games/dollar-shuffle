@@ -9,8 +9,6 @@ const CredMenu = preload("res://scenes/credits_menu.tscn")
 # GUI objects
 onready var diff_sel = get_node("difficulty_selector")
 onready var skin_sel = get_node("skin_selector")
-onready var reset_btn = get_node("reset")
-onready var attrib_btn = get_node("attribs")
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]
@@ -21,11 +19,6 @@ func _ready():
 	# Setup option UIs
 	setup_diff_picker()
 	setup_skin_picker()
-	
-	diff_sel.connect("item_selected", self, "on_diff_selected")
-	skin_sel.connect("item_selected", self, "on_skin_selected")
-	reset_btn.connect("pressed", self, "set_defaults")
-	attrib_btn.connect("pressed", self, "show_attributions")
 
 func setup_diff_picker():
 	

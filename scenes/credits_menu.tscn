@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/credits.gd" type="Script" id=1]
 
-[node name="base" type="VBoxContainer" index="0"]
+[node name="base" type="VBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -105,5 +105,7 @@ group = null
 text = "Watch the Numberphile video \"The Dollar Game\""
 flat = false
 align = 1
+
+[connection signal="pressed" from="vid_btn" to="." method="open_video"]
 
 

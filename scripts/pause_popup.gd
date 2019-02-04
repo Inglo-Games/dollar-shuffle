@@ -2,8 +2,6 @@ extends Popup
 
 # UI Elements
 onready var label = get_node("vbox/level_label")
-onready var res_btn = get_node("vbox/resume_button")
-onready var quit_btn = get_node("vbox/quit_button")
 
 # Called when object is created
 func _ready():
@@ -12,9 +10,6 @@ func _ready():
 	
 	# Set label to show current level name
 	label.set_text("Puzzle ID: %s" % str(globals.opts_data["last"]))
-	
-	res_btn.connect("pressed", self, "resume")
-	quit_btn.connect("pressed", self, "quit")
 
 # Resume the game
 func resume():

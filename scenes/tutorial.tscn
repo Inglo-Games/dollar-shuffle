@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "long_tap"
 length = 1.5
@@ -86,9 +86,8 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "short_tap"
 length = 1.0
 loop = true
 step = 0.1
@@ -222,8 +221,8 @@ playback_speed = 1.0
 anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
 anims/leftclick = SubResource( 3 )
-anims/long_tap = SubResource( 5 )
-anims/short_tap = SubResource( 4 )
+anims/long_tap = SubResource( 4 )
+anims/short_tap = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause" ]
 
@@ -235,5 +234,7 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[connection signal="pressed" from="btn_container/pause_btn" to="." method="toggle_pause"]
 
 

@@ -50,8 +50,6 @@ func _ready():
 		animation.play("short_tap")
 	else:
 		animation.play("leftclick")
-	
-	pause_btn.connect("pressed", self, "toggle_pause")
 
 # Clear the graph and load next tutorial
 func transition_graph():

@@ -144,4 +144,14 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
+[connection signal="pressed" from="cont_button" to="." method="return_level"]
+
+[connection signal="pressed" from="level_button" to="." method="choose_level"]
+
+[connection signal="pressed" from="records_button" to="." method="open_records"]
+
+[connection signal="pressed" from="opt_button" to="." method="open_options"]
+
+[connection signal="pressed" from="quit_button" to="." method="quit_game"]
+
 
