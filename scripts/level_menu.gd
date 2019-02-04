@@ -4,7 +4,7 @@ extends Node
 const RandPopup = preload("res://scenes/rand_popup.tscn")
 
 # GUI objects
-onready var lvl_list = get_node("lvl_list")
+onready var lvl_list = $"lvl_list"
 
 func _ready():
 	

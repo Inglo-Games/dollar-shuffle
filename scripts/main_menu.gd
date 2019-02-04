@@ -6,8 +6,8 @@ const OptsMenu = preload("res://scenes/opts_menu.tscn")
 const RecsMenu = preload("res://scenes/records_menu.tscn")
 
 # Button objects
-onready var cont_btn = get_node("cont_button")
-onready var quit_btn = get_node("quit_button")
+onready var cont_btn = $"cont_button"
+onready var quit_btn = $"quit_button"
 
 func _ready():
 	

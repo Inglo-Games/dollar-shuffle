@@ -4,13 +4,13 @@ extends Control
 const MainMenu = preload("res://scenes/main_menu.tscn")
 
 # Load UI elements
-onready var background = get_node("background")
-onready var back_btn = get_node("back_btn")
-onready var menu_cont = get_node("menu")
+onready var background = $"background"
+onready var back_btn = $"back_btn"
+onready var menu_cont = $"menu"
 
 # Animation players
-onready var btn_anim = get_node("btn_anim")
-onready var menu_anim = get_node("menu_anim")
+onready var btn_anim = $"btn_anim"
+onready var menu_anim = $"menu_anim"
 
 # Stack of menu scenes
 var menu_stack = []

@@ -1,12 +1,12 @@
 extends Control
 
 # UI Elements
-onready var backg = get_node("background")
-onready var graph = get_node("node_ui_container")
-onready var click = get_node("node_ui_container/click_img")
-onready var pause_btn = get_node("btn_container/pause_btn")
-onready var animation = get_node("anim")
-onready var audio = get_node("audio")
+onready var backg = $"background"
+onready var graph = $"node_ui_container"
+onready var click = $"node_ui_container/click_img"
+onready var pause_btn = $"btn_container/pause_btn"
+onready var animation = $"anim"
+onready var audio = $"audio"
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")

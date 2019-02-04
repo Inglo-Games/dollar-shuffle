@@ -4,8 +4,8 @@ extends Popup
 var RNG = preload("res://scripts/rng_seed.gd")
 
 # UI elements
-onready var edit = get_node("vbox/hbox/edit")
-onready var conf_btn = get_node("vbox/hbox/confirm_btn")
+onready var edit = $"vbox/hbox/edit"
+onready var conf_btn = $"vbox/hbox/confirm_btn"
 
 func _ready():
 	

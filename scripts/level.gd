@@ -1,13 +1,13 @@
 extends Control
 
 # UI Elements
-onready var backg = get_node("background")
-onready var graph = get_node("node_ui_container")
-onready var timer = get_node("label_container/timer")
-onready var score = get_node("label_container/score")
-onready var undo_btn = get_node("btn_container/undo_btn")
-onready var pause_btn = get_node("btn_container/pause_btn")
-onready var animation = get_node("anim")
+onready var backg = $"background"
+onready var graph = $"node_ui_container"
+onready var timer = $"label_container/timer"
+onready var score = $"label_container/score"
+onready var undo_btn = $"btn_container/undo_btn"
+onready var pause_btn = $"btn_container/pause_btn"
+onready var animation = $"anim"
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")

@@ -7,8 +7,8 @@ const FileIO = preload("res://scripts/file_io.gd")
 const CredMenu = preload("res://scenes/credits_menu.tscn")
 
 # GUI objects
-onready var diff_sel = get_node("difficulty_selector")
-onready var skin_sel = get_node("skin_selector")
+onready var diff_sel = $"difficulty_selector"
+onready var skin_sel = $"skin_selector"
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]

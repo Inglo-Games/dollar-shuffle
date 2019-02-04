@@ -1,7 +1,7 @@
 extends Node
 
 # UI Elements
-onready var rec_list_ui = get_node("scroll_list/vbox")
+onready var rec_list_ui = $"scroll_list/vbox"
 
 # List entry layout
 var record_container

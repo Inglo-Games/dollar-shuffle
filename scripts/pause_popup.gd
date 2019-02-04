@@ -1,7 +1,7 @@
 extends Popup
 
 # UI Elements
-onready var label = get_node("vbox/level_label")
+onready var label = $"vbox/level_label"
 
 # Called when object is created
 func _ready():
