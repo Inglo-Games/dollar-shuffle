@@ -78,7 +78,6 @@ static func annealing(graph):
 				# If rejection counter is too high, break out of this loop
 				if rejects >= LIM_REJECT:
 					rejects = 0
-					print("Breaking after %d loops..." % index)
 					break
 		
 		# Reduce temperature at a predefined rate
@@ -89,23 +88,16 @@ static func annealing(graph):
 	cost_current = cost(graph, true)
 	# Only allow small changes
 	temp = 0.04
-	
-	var tuning_counter = 0
-	
+
 	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
 		
 		# Only replace graph if new cost is lower
 		var cost_new = cost(graph_new, true)
 		if cost_new < cost_current:
-			tuning_counter += 1
 			graph = graph_new
 			cost_current = cost_new
-	
-	# Calculate how many changes happened during tuning
-	tuning_counter /= float(FINE_TUNING_LOOPS)
-	print("Fine tuning changes: %.4f" % tuning_counter)
-	
+
 	return center(graph)
 
 # Helper function to generate a new 'candidate' graph
