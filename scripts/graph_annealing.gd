@@ -9,16 +9,14 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const L1 = 50
+const L1 = 0.7
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const L2 = 0.1
-# This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
-# the paper.
-const L3 = 35
-# This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
-# the paper.
-const L4 = 100
+const L2 = 1
+# This factor penalizes long edges between nodes.  It's lambda_3 in the paper.
+const L3 = 180
+# This factor penalizes close and crossed edges.  It's lambda_4 in the paper.
+const L4 = 0.05
 # The max number of trials to run before updating global temperature
 const TRIALS = 250
 # The number of loops to run while fine-tuning the graph
@@ -31,7 +29,7 @@ const LIM_TEMP = 0.15
 const LIM_REJECT = 50
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
-const PROB_CONST = 0.001
+const PROB_CONST = 0.0097
 # These establish the borders of the region that nodes can be placed
 const BORDER_L = 0.05
 const BORDER_R = 0.95
@@ -87,17 +85,24 @@ static func annealing(graph):
 		temp *= D_TEMP
 	
 	# Once main processing is done, do fine tuning
+	# Re-calculate cost of graph, now with edge-distance cost
+	cost_current = cost(graph, true)
+	# Only allow small changes
+	temp = 0.04
+	
 	var tuning_counter = 0
-	temp = 0.02
+	
 	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
 		
-		# Only replace graph if cost is lower
+		# Only replace graph if new cost is lower
 		var cost_new = cost(graph_new, true)
-		if cost_current < cost_new:
+		if cost_new < cost_current:
 			tuning_counter += 1
 			graph = graph_new
 			cost_current = cost_new
+	
+	# Calculate how many changes happened during tuning
 	tuning_counter /= float(FINE_TUNING_LOOPS)
 	print("Fine tuning changes: %.4f" % tuning_counter)
 	
