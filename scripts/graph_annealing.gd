@@ -112,7 +112,7 @@ static func annealing(graph):
 static func generate_candidate(graph, temp):
 	
 	# Create a "candidate" graph and modify one node randomly
-	var graph_new = graph.duplicate()
+	var graph_new = str2var(var2str(graph))
 	var node = str(randi() % len(graph))
 	
 	# Move node by taking a vector with temp length, rotating it around the
