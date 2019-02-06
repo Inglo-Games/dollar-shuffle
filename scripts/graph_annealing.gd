@@ -104,7 +104,7 @@ static func annealing(graph):
 static func generate_candidate(graph, temp):
 	
 	# Create a "candidate" graph and modify one node randomly
-	var graph_new = str2var(var2str(graph))
+	var graph_new = deep_copy(graph)
 	var node = str(randi() % len(graph))
 	
 	# Move node by taking a vector with temp length, rotating it around the
@@ -216,3 +216,17 @@ static func center(graph):
 		graph[node]["loc"][1] += shift_v
 	
 	return graph
+
+# Function to make a deep copy of the graph dictionary object
+static func deep_copy(graph):
+	
+	var new_graph = {}
+	# For each node...
+	for node in graph.keys():
+		# Copy each node's attributes
+		new_graph[node] = {}
+		new_graph[node]["conns"] = graph[node]["conns"].duplicate()
+		new_graph[node]["loc"] = graph[node]["loc"].duplicate()
+		new_graph[node]["value"] = graph[node]["value"]
+	
+	return new_graph
