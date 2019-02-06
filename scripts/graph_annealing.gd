@@ -18,15 +18,15 @@ const L3 = 180
 # This factor penalizes close and crossed edges.  It's lambda_4 in the paper.
 const L4 = 0.05
 # The max number of trials to run before updating global temperature
-const TRIALS = 250
+const TRIALS = 75
 # The number of loops to run while fine-tuning the graph
-const FINE_TUNING_LOOPS = 750
+const FINE_TUNING_LOOPS = 300
 # The cooling rate for global temperature
 const D_TEMP = 0.85
 # The temperature threshold for stopping
 const LIM_TEMP = 0.15
 # The rejection threshold for breaking out of loop
-const LIM_REJECT = 50
+const LIM_REJECT = 20
 # The scaling factor used to ajdust the exponential probability function,
 # represented by k in the paper and Boltzmann's constant in reality
 const PROB_CONST = 0.0097
@@ -66,7 +66,6 @@ static func annealing(graph):
 			var cost_new = cost(graph_new, false)
 			var prob = exp((cost_current - cost_new) * PROB_CONST / temp)
 			if randf() < prob:
-				print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 				graph = graph_new
 				cost_current = cost_new
 				rejects = 0
@@ -91,7 +90,6 @@ static func annealing(graph):
 
 	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
-		
 		# Only replace graph if new cost is lower
 		var cost_new = cost(graph_new, true)
 		if cost_new < cost_current:
