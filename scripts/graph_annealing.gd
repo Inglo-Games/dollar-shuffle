@@ -9,16 +9,16 @@ extends Node
 
 # This normalizing factor defines the importance of nodes being clustered 
 # together, reducing distances between them.  It is lambda_1 in the paper.
-const L1 = 38
+const L1 = 50
 # This normalizing factor defines how much nodes are pushed away from the edges
 # of the drawing plane.  It is lambda_2 in the paper.
-const L2 = 4
+const L2 = 0.1
 # This normalzing factor penalizes long edges between nodes.  It's lambda_3 in
 # the paper.
-const L3 = 20
+const L3 = 35
 # This normalizing factor penalizes close and crossed edges.  It's lambda_4 in
 # the paper.
-const L4 = 10
+const L4 = 100
 # The max number of trials to run before updating global temperature
 const TRIALS = 250
 # The number of loops to run while fine-tuning the graph
@@ -26,7 +26,7 @@ const FINE_TUNING_LOOPS = 750
 # The cooling rate for global temperature
 const D_TEMP = 0.85
 # The temperature threshold for stopping
-const LIM_TEMP = 0.35
+const LIM_TEMP = 0.15
 # The rejection threshold for breaking out of loop
 const LIM_REJECT = 50
 # The scaling factor used to ajdust the exponential probability function,
@@ -66,7 +66,7 @@ static func annealing(graph):
 			# Calculate the probability of new layout replacing old one.  If new layout
 			# has lower cost, replacement is guaranteed
 			var cost_new = cost(graph_new, false)
-			var prob = exp(-(cost_new - cost_current) * PROB_CONST / temp)
+			var prob = exp((cost_current - cost_new) * PROB_CONST / temp)
 			if randf() < prob:
 				print("Old, new, prob: %.2f, %.2f, %s" % [cost_current, cost_new, str(prob)])
 				graph = graph_new
@@ -88,7 +88,7 @@ static func annealing(graph):
 	
 	# Once main processing is done, do fine tuning
 	var tuning_counter = 0
-	temp = 0.08
+	temp = 0.02
 	for index in range(FINE_TUNING_LOOPS):
 		var graph_new = generate_candidate(graph, temp)
 		
@@ -147,11 +147,7 @@ static func cost(graph, fine_tuning):
 			# Add the square inverse of nodes' distance
 			# Small distance means high cost
 			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
-			if node_loc.distance_squared_to(pair_loc) == 0:
-				costs[0] += INF
-				break
-			else:
-				costs[0] += L1 / node_loc.distance_squared_to(pair_loc)
+			costs[0] += L1 / max(node_loc.distance_squared_to(pair_loc), 0.0001)
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
