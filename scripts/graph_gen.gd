@@ -3,8 +3,14 @@ extends Node
 # Preload the random layout code
 const Layout = preload("res://scripts/graph_annealing.gd")
 
+# Preload the RNG seeding code
+const RNG = preload("res://scripts/rng_seed.gd")
+
 # Generate a random graph
 static func generate_graph_data():
+	
+	# Reset seed so same graph gets produced every time
+	RNG.set_seed(globals.opts_data["last"])
 	
 	# Generate a number of nodes between 5 and 12, inclusive
 	var num_nodes = 5 + (randi() % 8)
@@ -24,8 +30,8 @@ static func generate_graph_data():
 	data = Layout.annealing(data)
 	
 	# Debug print
-	print("Graph seed: %s" % globals.opts_data["last"])
-	print("New graph: %s" % str(data))
+	#print("Graph seed: %s" % globals.opts_data["last"])
+	#print("New graph: %s" % str(data))
 	
 	return data
 
