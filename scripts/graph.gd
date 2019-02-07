@@ -74,18 +74,18 @@ func take_points(node):
 		anim.scale = ui_scale
 		anim_cont.add_child(anim)
 	
-	# Wait for animations to play out
-	yield(get_tree().create_timer(0.6), "timeout")
-	
 	# Add number of neighbors to node value
 	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
 	
-	# Update move list and node labels
-	get_parent().moves.append(Vector2(node,-1))
-	get_tree().call_group("ui_nodes", "update")
+	# Update move list and score label
+	get_parent().moves.append(Vector2(node, -1))
 	get_parent().update_score()
 	
 	check_win_condition()
+	
+	# Wait for animations to play out before updating node labels
+	yield(get_tree().create_timer(0.6), "timeout")
+	get_tree().call_group("ui_nodes", "update")
 
 # Add one point to each neighbor from given node
 func give_points(node):
@@ -102,16 +102,16 @@ func give_points(node):
 		anim.init(node_list[node], node_list[neighbor])
 		anim.scale = ui_scale
 		anim_cont.add_child(anim)
-		
-	# Wait for animations to play out
-	yield(get_tree().create_timer(0.6),"timeout")
 	
-	# Update move list and node labels
-	get_parent().moves.append(Vector2(node,1))
-	get_tree().call_group("ui_nodes", "update")
+	# Update move list and score label
+	get_parent().moves.append(Vector2(node, 1))
 	get_parent().update_score()
 	
 	check_win_condition()
+	
+	# Wait for animations to play out before updating nodes
+	yield(get_tree().create_timer(0.6), "timeout")
+	get_tree().call_group("ui_nodes", "update")
 
 # Draw entire graph on screen
 func display_graph():
@@ -130,7 +130,7 @@ func display_graph():
 func draw_node(num):
 	
 	# Convert location to pixel coords
-	var location = Vector2(0,0)
+	var location = Vector2(0, 0)
 	location.x = graph_data[str(num)]["loc"][0] * get_viewport().size.x
 	location.y = graph_data[str(num)]["loc"][1] * get_viewport().size.y
 	
@@ -185,4 +185,9 @@ func check_win_condition():
 			return false
 	
 	# If the function hasn't returned yet, all nodes passed check
+	# Once puzzle is solved, stop allowing clicks
+	get_tree().call_group("ui_nodes", "set_process_input", false)
+	
+	# Wait for animations to play out before changing levels
+	yield(get_tree().create_timer(0.6), "timeout")
 	get_parent().open_next_puzzle()
