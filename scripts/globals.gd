@@ -18,6 +18,9 @@ const BLACK = Color("#FF000000")
 const BACK_LIGHT = Color("#FFD8D8D8")
 const BACK_DARK = Color("#FF5B5B5B")
 
+# Signal emitted when player gets a new best score
+signal player_record
+
 # Global variable
 var number_of_levels = -1
 
@@ -68,8 +71,8 @@ func reload_user_data():
 func record_win(score, time):
 	
 	# Get last played level and current difficulty level
-	var level = opts_data["last"]
-	var diff = opts_data["diff"]
+	var level = str(opts_data["last"])
+	var diff = str(opts_data["diff"])
 	
 	# If no previous best exists, write a new one
 	if !user_data.has(level):
@@ -87,11 +90,13 @@ func record_win(score, time):
 		user_data[level][diff]["score"] = score
 		user_data[level][diff]["time"] = time
 		FileIO.write_json_file(USER_FILEPATH, user_data)
+		emit_signal("player_record")
 	
 	# If score ties and time beats record best, overwrite it
 	elif score == user_data[level][diff]["score"] and time < user_data[level][diff]["time"]:
 		user_data[level][diff]["time"] = time
 		FileIO.write_json_file(USER_FILEPATH, user_data)
+		emit_signal("player_record")
 
 # Count the number of files in a given directory
 func count_files(path):

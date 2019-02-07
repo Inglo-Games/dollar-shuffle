@@ -7,6 +7,7 @@ onready var timer = $"label_container/timer"
 onready var score = $"label_container/score"
 onready var undo_btn = $"btn_container/undo_btn"
 onready var pause_btn = $"btn_container/pause_btn"
+onready var record_label = $"record_label"
 onready var animation = $"anim"
 
 # Load the GameGraph classes
@@ -53,6 +54,8 @@ func _ready():
 	graph.display_graph()
 	score.text = "0"
 	
+	globals.connect("player_record", self, "show_record")
+	
 	reset_undos()
 
 # Called every frame
@@ -78,6 +81,7 @@ func transition_graph():
 	score.text = "0"
 	secs = 0.0
 	timer.text = str("%.3f" % secs)
+	record_label.rect_position = Vector2(0, -70)
 	reset_undos()
 	
 	graph.display_graph()
@@ -134,6 +138,14 @@ func open_next_puzzle():
 		# Increment level num and load new level
 		globals.update_last_level(level + 1)
 		transition_graph()
+
+# Show the record prompt and play audio
+func show_record():
+	
+	print("Signal player_record received!")
+	$record_audio.play()
+	animation.play("record_prompt")
+	yield(animation, "animation_finished")
 
 # Undo last move
 func undo():
