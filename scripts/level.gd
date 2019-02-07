@@ -70,7 +70,7 @@ func _process(delta):
 func transition_graph():
 	
 	# First, clear out old graph
-	animation.play("fadeout")
+	animation.queue("fadeout")
 	yield(animation, "animation_finished")
 	for ui in graph.get_children():
 		ui.queue_free()
@@ -139,13 +139,11 @@ func open_next_puzzle():
 		globals.update_last_level(level + 1)
 		transition_graph()
 
-# Show the record prompt and play audio
+# Show the new-record label and play audio
 func show_record():
 	
-	print("Signal player_record received!")
 	$record_audio.play()
 	animation.play("record_prompt")
-	yield(animation, "animation_finished")
 
 # Undo last move
 func undo():
