@@ -18,7 +18,7 @@ static func generate_graph_data():
 	# Create a dictionary with that many nodes
 	var data = {}
 	for index in range(num_nodes):
-		data[str(index)] = {"conns":[], "loc":[0.5, 0.5], "value":-2}
+		data[index] = {"conns":[], "loc":Vector2(0.5, 0.5), "value":-2}
 	
 	data = generate_tree(data)
 	
@@ -61,8 +61,8 @@ static func generate_tree(graph_data):
 		in_list.append(node2)
 		
 		# And add that connection to graph_data
-		graph_data[str(node1)]["conns"].append(node2)
-		graph_data[str(node2)]["conns"].append(node1)
+		graph_data[node1]["conns"].append(node2)
+		graph_data[node2]["conns"].append(node1)
 		
 	return graph_data
 
@@ -80,15 +80,15 @@ static func add_conn(graph_data):
 		num2 = randi() % n
 		
 	# Check if that connection already exists
-	if graph_data[str(num1)]["conns"].has(num2):
+	if graph_data[num1]["conns"].has(num2):
 		# Try again
 		# TODO -- There's got to be a more elegant way to do this...
 		graph_data = add_conn(graph_data)
 		
 	else:
 		# Add that connection
-		graph_data[str(num1)]["conns"].append(num2)
-		graph_data[str(num2)]["conns"].append(num1)
+		graph_data[num1]["conns"].append(num2)
+		graph_data[num2]["conns"].append(num1)
 	
 	return graph_data
 
@@ -125,7 +125,7 @@ static func distribute_points(graph_data):
 			point = -1
 			
 		# Pick the node to add to/sub from
-		var target = str(whitelist[randi() % whitelist.size()])
+		var target = whitelist[randi() % whitelist.size()]
 		graph_data[target]["value"] += point
 		total += point
 	

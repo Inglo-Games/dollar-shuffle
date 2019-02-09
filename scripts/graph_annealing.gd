@@ -44,7 +44,7 @@ static func annealing(graph):
 	
 	# Start by randomly distributing all nodes
 	for node in graph.keys():
-		graph[node]["loc"] = [randf(), randf()]
+		graph[node]["loc"] = Vector2(randf(), randf())
 	
 	# Define a starting "temperature", which limits how far nodes can move 
 	var temp = 0.85
@@ -103,18 +103,17 @@ static func generate_candidate(graph, temp):
 	
 	# Create a "candidate" graph and modify one node randomly
 	var graph_new = deep_copy(graph)
-	var node = str(randi() % len(graph))
+	var node = randi() % len(graph)
 	
 	# Move node by taking a vector with temp length, rotating it around the
 	# origin by a random angle (up to 2Pi), then adding it to the original loc
-	var loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
-	var loc_new = Vector2(0, temp).rotated(randf() * 2 * PI) + loc
+	var loc_new = Vector2(0, temp).rotated(randf() * 2 * PI) + graph[node]["loc"]
 	
 	# Make sure new location is inside bounding box
 	loc_new.x = clamp(loc_new.x, BORDER_L, BORDER_R)
 	loc_new.y = clamp(loc_new.y, BORDER_T, BORDER_B)
 	
-	graph_new[node]["loc"] = [loc_new.x, loc_new.y]
+	graph_new[node]["loc"] = loc_new
 	
 	return graph_new
 
@@ -131,7 +130,7 @@ static func cost(graph, fine_tuning):
 	for node in graph.keys():
 		
 		# Get location of current node
-		var node_loc = Vector2(graph[node]["loc"][0], graph[node]["loc"][1])
+		var node_loc = graph[node]["loc"]
 		
 		# NODE DISTRIBUTION 
 		# For each pair of nodes in graph...
@@ -141,8 +140,7 @@ static func cost(graph, fine_tuning):
 			
 			# Add the square inverse of nodes' distance
 			# Small distance means high cost
-			var pair_loc = Vector2(graph[pair]["loc"][0], graph[pair]["loc"][1])
-			costs[0] += L1 / max(node_loc.distance_squared_to(pair_loc), 0.0001)
+			costs[0] += L1 / max(node_loc.distance_squared_to(graph[pair]["loc"]), 0.0001)
 		
 		# BORDER DISTANCE
 		# Calculate distance squared to top, bottom, left, and right edges
@@ -159,8 +157,7 @@ static func cost(graph, fine_tuning):
 			# EDGE LENGTHS
 			# Add the square distance between the connected nodes
 			# Large distances mean high cost
-			var conn_loc = Vector2(graph[str(conn)]["loc"][0], graph[str(conn)]["loc"][1])
-			var edge_len = node_loc.distance_squared_to(conn_loc)
+			var edge_len = node_loc.distance_squared_to(graph[conn]["loc"])
 			costs[2] += L3 * edge_len
 			
 		if fine_tuning:
@@ -171,12 +168,12 @@ static func cost(graph, fine_tuning):
 				for v in graph[u]["conns"]:
 					
 					# Ignore connection if it includes node
-					if node == str(v):
+					if node == v:
 						continue
 					
 					# Determine the length of the edge squared (with a preset minimum)
-					var u_loc = Vector2(graph[u]["loc"][0], graph[u]["loc"][1])
-					var v_loc = Vector2(graph[str(v)]["loc"][0], graph[str(v)]["loc"][1])
+					var u_loc = graph[u]["loc"]
+					var v_loc = graph[v]["loc"]
 					var edge_len2 = max(u_loc.distance_squared_to(v_loc), 0.0001)
 					
 					# Determine where this edge's projection meets a perpendicular projection
@@ -199,10 +196,10 @@ static func center(graph):
 	
 	# Cycle through all nodes to find the closest to each edge
 	for node in graph.keys():
-		max_t = min(graph[node]["loc"][1], max_t)
-		max_b = max(graph[node]["loc"][1], max_b)
-		max_l = min(graph[node]["loc"][0], max_l)
-		max_r = max(graph[node]["loc"][0], max_r)
+		max_t = min(graph[node]["loc"].y, max_t)
+		max_b = max(graph[node]["loc"].y, max_b)
+		max_l = min(graph[node]["loc"].x, max_l)
+		max_r = max(graph[node]["loc"].x, max_r)
 		
 	# Calculate necessary shifts
 	var shift_h = (1.0 - max_l - max_r) / 2.0
@@ -210,8 +207,8 @@ static func center(graph):
 	
 	# Add shifts onto each node coordinates
 	for node in graph.keys():
-		graph[node]["loc"][0] += shift_h
-		graph[node]["loc"][1] += shift_v
+		graph[node]["loc"].x += shift_h
+		graph[node]["loc"].y += shift_v
 	
 	return graph
 
@@ -224,7 +221,7 @@ static func deep_copy(graph):
 		# Copy each node's attributes
 		new_graph[node] = {}
 		new_graph[node]["conns"] = graph[node]["conns"].duplicate()
-		new_graph[node]["loc"] = graph[node]["loc"].duplicate()
+		new_graph[node]["loc"] = graph[node]["loc"]
 		new_graph[node]["value"] = graph[node]["value"]
 	
 	return new_graph
