@@ -155,9 +155,9 @@ func undo():
 		
 		# Do opposite of last move to same node
 		if (move.y == -1):
-			graph.give_points(move.x)
+			graph.give_points(int(move.x))
 		else:
-			graph.take_points(move.x)
+			graph.take_points(int(move.x))
 		
 		# Wait for point moving animations to play out
 		undo_btn.disabled = true
