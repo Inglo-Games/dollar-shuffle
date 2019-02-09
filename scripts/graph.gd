@@ -36,19 +36,16 @@ func load_puzzle(input):
 		file.open(filepath, file.READ)
 		graph_data = file.get_var()
 		file.close()
-		#var filepath = "res://levels/%03d.json" % input
-		#graph_data = FileIO.read_json_file(filepath)
-		#globals.save_graph_as_file(int(input), graph_data)
 	
 	# If it's the string 'tut', load the tutorials
 	elif str(input).matchn('tut1'):
-		graph_data = FileIO.read_json_file("res://levels/tuts/1.json")
+		load_tutorial(1)
 	elif str(input).matchn('tut2'):
-		graph_data = FileIO.read_json_file("res://levels/tuts/2.json")
+		load_tutorial(2)
 	elif str(input).matchn('tut3'):
-		graph_data = FileIO.read_json_file("res://levels/tuts/3.json")
+		load_tutorial(3)
 	elif str(input).matchn('tut4'):
-		graph_data = FileIO.read_json_file("res://levels/tuts/4.json")
+		load_tutorial(4)
 	
 	# If it's another string, load a random graph
 	elif typeof(input) == TYPE_STRING:
@@ -66,6 +63,14 @@ func load_puzzle(input):
 	call_deferred("add_child", anim_cont)
 	node_cont = Node2D.new()
 	call_deferred("add_child", node_cont)
+
+# Load a tutorial level
+func load_tutorial(num):
+	var filepath = "res://levels/tuts/%d.lvl" % num
+	var file = File.new()
+	file.open(filepath, file.READ)
+	graph_data = file.get_var()
+	file.close()
 
 # Take one point from each neighbor of a given node and add that many to it
 func take_points(node):
