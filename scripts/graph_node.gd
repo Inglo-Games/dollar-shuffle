@@ -50,7 +50,7 @@ func _ready():
 func _draw():
 	
 	# Determine image to use based on value
-	var value = get_parent().get_parent().graph_data[str(node_num)]["value"]
+	var value = get_parent().get_parent().graph_data[node_num]["value"]
 	if value < 0:
 		sprite.set_texture(neg_node_img)
 	else:

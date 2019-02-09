@@ -31,14 +31,14 @@ func load_puzzle(input):
 	
 	# If it's an int, load that level number
 	if typeof(input) == TYPE_INT:
-		#var filepath = "res://levels/%03d.lvl" % input
-		#var file = File.new()
-		#file.open(filepath, file.READ)
-		#graph_data = file.get_var()
-		#file.close()
-		var filepath = "res://levels/%03d.json" % input
-		graph_data = FileIO.read_json_file(filepath)
-		globals.save_graph_as_file(int(input), graph_data)
+		var filepath = "res://levels/%03d.lvl" % input
+		var file = File.new()
+		file.open(filepath, file.READ)
+		graph_data = file.get_var()
+		file.close()
+		#var filepath = "res://levels/%03d.json" % input
+		#graph_data = FileIO.read_json_file(filepath)
+		#globals.save_graph_as_file(int(input), graph_data)
 	
 	# If it's the string 'tut', load the tutorials
 	elif str(input).matchn('tut1'):
@@ -71,8 +71,8 @@ func load_puzzle(input):
 func take_points(node):
 	
 	# Take one from each neighbor
-	for neighbor in graph_data[str(node)]["conns"]:
-		graph_data[str(neighbor)]["value"] -= 1
+	for neighbor in graph_data[node]["conns"]:
+		graph_data[neighbor]["value"] -= 1
 		
 		# Create an animation to show point moving
 		var anim = PointAnimation.new()
@@ -81,7 +81,7 @@ func take_points(node):
 		anim_cont.add_child(anim)
 	
 	# Add number of neighbors to node value
-	graph_data[str(node)]["value"] += len(graph_data[str(node)]["conns"])
+	graph_data[node]["value"] += len(graph_data[node]["conns"])
 	
 	# Update move list and score label
 	get_parent().moves.append(Vector2(node, -1))
@@ -97,11 +97,11 @@ func take_points(node):
 func give_points(node):
 	
 	# Subtract one for each neighbor
-	graph_data[str(node)]["value"] -= len(graph_data[str(node)]["conns"])
+	graph_data[node]["value"] -= len(graph_data[node]["conns"])
 	
 	# Add one to each neighbor
-	for neighbor in graph_data[str(node)]["conns"]:
-		graph_data[str(neighbor)]["value"] += 1
+	for neighbor in graph_data[node]["conns"]:
+		graph_data[neighbor]["value"] += 1
 		
 		# Create an animation to show point moving
 		var anim = PointAnimation.new()
@@ -137,8 +137,8 @@ func draw_node(num):
 	
 	# Convert location to pixel coords
 	var location = Vector2(0, 0)
-	location.x = graph_data[str(num)]["loc"][0] * get_viewport().size.x
-	location.y = graph_data[str(num)]["loc"][1] * get_viewport().size.y
+	location.x = graph_data[num]["loc"].x * get_viewport().size.x
+	location.y = graph_data[num]["loc"].y * get_viewport().size.y
 	
 	# Create GameNode object to add to screen
 	var game_node = GameNode.new()
@@ -159,11 +159,11 @@ func draw_node(num):
 func draw_conn_line(n1, n2):
 	
 	# Determine centerpoints of each node
-	var loc1x = graph_data[str(n1)]["loc"][0] * get_viewport().size.x
-	var loc1y = graph_data[str(n1)]["loc"][1] * get_viewport().size.y
+	var loc1x = graph_data[n1]["loc"].x * get_viewport().size.x
+	var loc1y = graph_data[n1]["loc"].y * get_viewport().size.y
 	var loc1 = Vector2(loc1x, loc1y)
-	var loc2x = graph_data[str(n2)]["loc"][0] * get_viewport().size.x
-	var loc2y = graph_data[str(n2)]["loc"][1] * get_viewport().size.y
+	var loc2x = graph_data[n2]["loc"].x * get_viewport().size.x
+	var loc2y = graph_data[n2]["loc"].y * get_viewport().size.y
 	var loc2 = Vector2(loc2x, loc2y)
 	
 	# Draw line between given nodes
