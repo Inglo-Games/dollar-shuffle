@@ -27,12 +27,18 @@ var ui_scale = Vector2(1.0, 1.0)
 
 func load_puzzle(input):
 	
-	
 	node_list = []
+	
 	# If it's an int, load that level number
 	if typeof(input) == TYPE_INT:
+		#var filepath = "res://levels/%03d.lvl" % input
+		#var file = File.new()
+		#file.open(filepath, file.READ)
+		#graph_data = file.get_var()
+		#file.close()
 		var filepath = "res://levels/%03d.json" % input
 		graph_data = FileIO.read_json_file(filepath)
+		globals.save_graph_as_file(int(input), graph_data)
 	
 	# If it's the string 'tut', load the tutorials
 	elif str(input).matchn('tut1'):
