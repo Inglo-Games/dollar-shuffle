@@ -8,9 +8,6 @@ const GameGen = preload("res://scripts/graph_gen.gd")
 # Load the point animation class
 const PointAnimation = preload("res://scripts/point_anim.gd")
 
-# Get file IO functions
-const FileIO = preload("res://scripts/file_io.gd")
-
 # Dictionary containing all graph data
 var graph_data = {}
 

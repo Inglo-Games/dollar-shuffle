@@ -1,7 +1,5 @@
 extends Node
 
-const FileIO = preload("res://scripts/file_io.gd")
-
 func _ready():
 	
 	for index in range(globals.number_of_levels):
