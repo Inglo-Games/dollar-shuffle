@@ -12,19 +12,24 @@ func _ready():
 func graph_corrupt(num):
 	
 	var corrupt = false
-	var data = FileIO.read_json_file("res://levels/%03d.json" % num)
+	
+	# Load the level file
+	var file = File.new()
+	file.open("res://levels/%03d.lvl" % num, file.READ)
+	var data = file.get_var()
+	file.close()
 	
 	# For each connection to each node...
 	for node in data.keys():
 		for conn in data[node]["conns"]:
 			
 			# Make sure node isn't connected to itself
-			if conn == float(node):
+			if conn == node:
 				print("Graph %d Error: Node %d connects to self" % [num, conn])
 				corrupt = true
 			
 			# Make sure reciprocal connection exists
-			if not (data.has(str(conn)) and data[str(conn)]["conns"].has(float(node))):
+			if not (data.has(conn) and data[conn]["conns"].has(node)):
 				print("Graph %d Error: One way connection %s to %d" % [num, node, conn])
 				corrupt = true
 			
@@ -34,7 +39,11 @@ func graph_corrupt(num):
 # Ensure graph can be solved
 func graph_solvable(num):
 	
-	var data = FileIO.read_json_file("res://levels/%03d.json" % num)
+	# Load the level file
+	var file = File.new()
+	file.open("res://levels/%03d.lvl" % num, file.READ)
+	var data = file.get_var()
+	file.close()
 	
 	# Get number of nodes, edges and total value
 	var edges = 0
