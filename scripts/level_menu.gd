@@ -23,6 +23,7 @@ func open_tutorials():
 
 func random_level():
 	
+	$click.play()
 	# Create a popup to let user enter seed if wanted
 	var popup = RandPopup.instance()
 	add_child(popup)

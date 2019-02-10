@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/credits.gd" type="Script" id=1]
 
-[node name="base" type="VBoxContainer"]
+[node name="base" type="VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

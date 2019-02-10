@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/menu_frame.gd" type="Script" id=1]
 [ext_resource path="res://assets/icons/back_light.png" type="Texture" id=2]
+[ext_resource path="res://assets/audio/click.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -79,7 +80,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="base" type="Control" index="0"]
+[node name="base" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -175,5 +176,14 @@ anims/btn_fade_in = SubResource( 3 )
 anims/btn_fade_out = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="click" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

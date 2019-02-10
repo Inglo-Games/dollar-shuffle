@@ -47,6 +47,10 @@ func _ready():
 
 func stack_menu(scene):
 	
+	# Don't play click on app open
+	if len(menu_stack) != 0:
+		$click.play()
+	
 	# Fade out the old scene to hide switch
 	fade_out()
 	
@@ -62,6 +66,8 @@ func stack_menu(scene):
 
 func pop_menu():
 	
+	$click.play()
+	
 	# Fade out the old scene to hide switch
 	fade_out()
 	
@@ -74,11 +80,6 @@ func pop_menu():
 	menu_cont.add_child(menu_stack.back().instance())
 	
 	fade_in()
-
-# Play the button clicking noise
-func play_click():
-	
-	$click.play()
 
 # Fade out menu and back button
 func fade_out():

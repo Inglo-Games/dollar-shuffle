@@ -9,6 +9,7 @@ const CredMenu = preload("res://scenes/credits_menu.tscn")
 # GUI objects
 onready var diff_sel = $"difficulty_selector"
 onready var skin_sel = $"skin_selector"
+onready var click = $"click"
 
 # Menu text arrays
 var diff_array = ["Easy", "Medium", "Hard"]
@@ -34,21 +35,27 @@ func setup_skin_picker():
 
 func on_diff_selected(item):
 	
+	click.play()
+	
 	globals.opts_data["diff"] = item
 	FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
 
 func on_skin_selected(item):
+	
+	click.play()
 	# Save selected option to project config
 	globals.opts_data["theme"] = item
 	FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
-
 	theme_popup()
 
 func show_attributions():
+	
 	# Show attributions page
 	get_parent().get_parent().stack_menu(CredMenu)
 
 func set_defaults():
+	
+	click.play()
 	
 	var old_theme = globals.opts_data["theme"]
 	

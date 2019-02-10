@@ -9,6 +9,8 @@ const RecsMenu = preload("res://scenes/records_menu.tscn")
 onready var cont_btn = $"cont_button"
 onready var quit_btn = $"quit_button"
 
+onready var click = $"click"
+
 func _ready():
 	
 	# Only show continue button if there is a previous game
@@ -40,12 +42,6 @@ func open_records():
 func open_options():
 	
 	get_parent().get_parent().stack_menu(OptsMenu)
-
-# Open the tutorial levels
-func open_tutorials():
-	
-	queue_free()
-	get_tree().change_scene("res://scenes/tutorial.tscn")
 
 # Close the game
 func quit_game():

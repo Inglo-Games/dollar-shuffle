@@ -42,6 +42,9 @@ func record_cont_input(event):
 		# Show popup
 		get_parent().add_child(popup)
 		popup.popup_centered_minsize()
+		
+		# Play click sound
+		$click.play()
 
 # Open the given level
 func open_level():
