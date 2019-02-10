@@ -75,6 +75,11 @@ func pop_menu():
 	
 	fade_in()
 
+# Play the button clicking noise
+func play_click():
+	
+	$click.play()
+
 # Fade out menu and back button
 func fade_out():
 	
