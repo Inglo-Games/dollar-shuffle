@@ -5,7 +5,8 @@ onready var backg = $"background"
 onready var graph = $"node_ui_container"
 onready var click = $"node_ui_container/click_img"
 onready var pause_btn = $"btn_container/pause_btn"
-onready var animation = $"anim"
+onready var fade_anim = $"fade_anim"
+onready var click_anim = $"click_anim"
 onready var audio = $"audio"
 
 # Load the GameGraph classes
@@ -48,9 +49,9 @@ func _ready():
 	move_click_image()
 	if mobile:
 		click.scale = Vector2(0.75, 0.75)
-		animation.play("short_tap")
+		click_anim.play("short_tap")
 	else:
-		animation.play("leftclick")
+		click_anim.play("leftclick")
 
 # Clear the graph and load next tutorial
 func transition_graph():
@@ -59,10 +60,10 @@ func transition_graph():
 	audio.play()
 	
 	# Play the fade-out animation to hide transition
-	animation.stop()
-	animation.seek(0.0, true)
-	animation.play("fadeout")
-	yield(animation, "animation_finished")
+	fade_anim.stop()
+	fade_anim.seek(0.0, true)
+	fade_anim.play("fadeout")
+	yield(fade_anim, "animation_finished")
 	
 	# Clear out old graph
 	get_tree().call_group("ui_nodes", "queue_free")
@@ -87,20 +88,20 @@ func transition_graph():
 	graph.display_graph()
 	move_click_image()
 	
-	# Fade display back in
-	animation.play("fadein")
-	yield(animation, "animation_finished")
-	
 	# Setup tapping animation for mobile
 	if mobile:
 		if tut_num == 3:
-			animation.play("short_tap")
+			click_anim.play("short_tap")
 		else:
-			animation.play("long_tap")
+			click_anim.play("long_tap")
 	# Setup clicking animation for non-mobile
 	else:
 		click.set_flip_h( ! (tut_num % 2))
-		animation.play("leftclick")
+		click_anim.play("leftclick")
+	
+	# Fade display back in
+	fade_anim.play("fadein")
+	yield(fade_anim, "animation_finished")
 
 # Move the clicking animation to the left of the given node
 func move_click_image():
