@@ -45,6 +45,7 @@ func _ready():
 	graph.display_graph()
 	
 	# Play clicking or tapping animation
+	move_click_image()
 	if mobile:
 		click.scale = Vector2(0.75, 0.75)
 		animation.play("short_tap")
@@ -72,27 +73,19 @@ func transition_graph():
 		1:
 			tut_num = 2
 			graph.load_puzzle('tut2')
-			# Move clicking animation
-			if mobile:
-				click.position = Vector2(1400, 120)
-			else:
-				click.position = Vector2(1200, 120)
 		2:
 			tut_num = 3
 			graph.load_puzzle('tut3')
-			# Move clicking animation
-			click.position = Vector2(380, 260)
 		3:
 			tut_num = 4
 			graph.load_puzzle('tut4')
-			# Move clicking animation
-			click.position = Vector2(780, 180)
 		4:
 			# Go to main menu
 			queue_free()
 			get_tree().change_scene("res://scenes/menu_frame.tscn")
 	
 	graph.display_graph()
+	move_click_image()
 	
 	# Fade display back in
 	animation.play("fadein")
@@ -108,6 +101,17 @@ func transition_graph():
 	else:
 		click.set_flip_h( ! (tut_num % 2))
 		animation.play("leftclick")
+
+# Move the clicking animation to the left of the given node
+func move_click_image():
+	
+	# Get the size and position of the first (zeroth) node
+	var node = graph.node_list[0]
+	var pos = Vector2(node.margin_left, node.margin_top)
+	var radius = graph.ui_scale.x * 256
+	
+	# Move the click image to left of node
+	click.position = Vector2(pos.x - radius / 2.0, pos.y + radius)
 
 # Called from graph.gd
 func update_score():
