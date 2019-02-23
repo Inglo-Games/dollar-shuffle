@@ -9,11 +9,13 @@ const RNG = preload("res://scripts/rng_seed.gd")
 # Generate a random graph
 static func generate_graph_data():
 	
+	var diff = int(globals.opts_data["diff"])
+	
 	# Reset seed so same graph gets produced every time
 	RNG.set_seed(globals.opts_data["last"])
 	
-	# Generate a number of nodes between 5 and 12, inclusive
-	var num_nodes = 5 + (randi() % 8)
+	# Generate a number of nodes, high difficulty means more
+	var num_nodes = 8 + (randi() % 4) * diff
 	
 	# Create a dictionary with that many nodes
 	var data = {}
@@ -23,7 +25,7 @@ static func generate_graph_data():
 	data = generate_tree(data)
 	
 	# Add additional connections
-	for index in range(randi() % num_nodes):
+	for index in range(randi() % (num_nodes * diff) + (num_nodes / 2)):
 		data = add_conn(data)
 		
 	data = distribute_points(data)
@@ -103,6 +105,9 @@ static func distribute_points(graph_data):
 		conns += graph_data[node]["conns"].size() * 0.5
 	var min_points = conns - n + 1
 	
+	# Add more points on easier difficulties
+	min_points += (2 - int(globals.opts_data["diff"])) * (randi() % 2 + 1)
+	
 	# Start with current total value, noting each node is initialized with -2 val
 	var total = n * -2
 	
@@ -113,7 +118,7 @@ static func distribute_points(graph_data):
 	
 	# Remove 2-4 nodes from that list at random
 	# This guarantees some negative nodes
-	for index in range((randi() % 2) + 2):
+	for index in range((randi() % 3) + 3):
 		whitelist.remove(randi() % whitelist.size())
 	
 	# Add points at random until total equals min_points
