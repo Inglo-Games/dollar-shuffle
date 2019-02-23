@@ -49,5 +49,9 @@ func record_cont_input(event):
 # Open the given level
 func open_level():
 	
+	# Convert ID to int if needed
+	if int(id) != 0 and len(id) <= 3:
+		id = int(id)
+	
 	globals.opts_data["last"] = id
 	get_tree().change_scene("res://scenes/game.tscn")
