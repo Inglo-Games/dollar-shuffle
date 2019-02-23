@@ -14,14 +14,14 @@ func _ready():
 func init(record):
 	
 	# Set instance variable so input funcs can access it
-	# Check type to make sure we aren't passing an int as a string
-	if str(record) == str(int(record)):
-		id = int(record)
+	# Remove padding 0s if integer level ID
+	if len(record) == 3:
+		id = str(int(record))
 	else:
 		id = record
-		
+	
 	# Fill in labels
-	var recs = globals.user_data[record]
+	var recs = globals.user_data[id]
 	get_node("level_id").text = "%s" % record
 	if(recs.has("0")):
 		get_node("nums/easy_rec").text = "Easy:         %d (%.3f)" % recs["0"].values()
