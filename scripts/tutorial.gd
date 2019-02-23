@@ -4,7 +4,7 @@ extends Control
 onready var backg = $"background"
 onready var graph = $"node_ui_container"
 onready var click = $"node_ui_container/click_img"
-onready var pause_btn = $"btn_container/pause_btn"
+onready var pause_btn = $"pause_btn"
 onready var fade_anim = $"fade_anim"
 onready var click_anim = $"click_anim"
 onready var audio = $"audio"
