@@ -25,7 +25,7 @@ static func generate_graph_data():
 	data = generate_tree(data)
 	
 	# Add additional connections
-	for index in range(randi() % (num_nodes * diff) + (num_nodes / 2)):
+	for index in range(randi() % (num_nodes * diff + 1) + (num_nodes / 2)):
 		data = add_conn(data)
 		
 	data = distribute_points(data)
