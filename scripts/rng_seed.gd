@@ -6,7 +6,13 @@ extends Node
 # Set the RNG seed to a given value
 static func set_seed(input):
 	
-	seed(hash(input))
+	# Pad input to be 6 chars minimum
+	var seed_str = input
+	while len(seed_str) < 6:
+		seed_str += " "
+	
+	seed(hash(seed_str))
+	return seed_str
 
 # Generate and return a new seed
 static func gen_seed():

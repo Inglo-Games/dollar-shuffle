@@ -22,8 +22,8 @@ func open_level():
 	
 	# If edit is not blank, use contents as RNG seed
 	if edit.text != "":
-		globals.opts_data["last"] = edit.text
-		RNG.set_seed(edit.text)
+		var seed_str = RNG.set_seed(edit.text)
+		globals.opts_data["last"] = seed_str
 	else:
 		globals.opts_data["last"] = RNG.gen_seed()
 	
