@@ -48,12 +48,15 @@ func _ready():
 		opts_data = {"theme":0, "diff":0, "last":0, "tut":false}
 		FileIO.write_json_file(OPTS_FILEPATH, opts_data)
 	
-	number_of_levels = count_files("res://levels")
-	
 	# Increase font size on mobile
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		var font = load("res://assets/fonts/roundedelegance.tres")
 		font.size *= 1.2
+	
+	# Uncomment this to create a new level
+	# load("res://scripts/graph_write.gd")
+	
+	number_of_levels = count_files("res://levels")
 
 # Global functions
 
@@ -114,20 +117,3 @@ func count_files(path):
 			count += 1
 		file = dir.get_next()
 	return count
-
-# Transform a level into a file
-func save_graph_as_file(num, dict):
-	
-	var new_data = {}
-	for key in dict.keys():
-		new_data[int(key)] = {}
-		new_data[int(key)]["conns"] = []
-		for node in dict[key]["conns"]:
-			new_data[int(key)]["conns"].append(int(node))
-		new_data[int(key)]["value"] = dict[key]["value"]
-		new_data[int(key)]["loc"] = Vector2(dict[key]["loc"][0], dict[key]["loc"][1])
-	
-	var file = File.new()
-	file.open("res://levels//%03d.lvl" % num, file.WRITE)
-	file.store_var(new_data)
-	file.close()
