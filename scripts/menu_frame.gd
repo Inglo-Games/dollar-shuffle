@@ -35,7 +35,7 @@ func _ready():
 		# If not, add a var to the file and write it
 		globals.opts_data["tut"] = true
 		var FileIO = load("res://scripts/file_io.gd")
-		FileIO.write_json_file(globals.opts_filepath, globals.opts_data)
+		FileIO.write_json_file(globals.OPTS_FILEPATH, globals.opts_data)
 		# Show the tutorials popup
 		tut_popup()
 	
