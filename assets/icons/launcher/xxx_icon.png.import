@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pause_dark.png-fa49964eef187b319ea85ded0ae2df98.stex"
+path="res://.import/xxx_icon.png-1703ea1ddf44b4543bf6b7960d889802.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/pause_dark.png"
-dest_files=[ "res://.import/pause_dark.png-fa49964eef187b319ea85ded0ae2df98.stex" ]
+source_file="res://assets/icons/launcher/xxx_icon.png"
+dest_files=[ "res://.import/xxx_icon.png-1703ea1ddf44b4543bf6b7960d889802.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
