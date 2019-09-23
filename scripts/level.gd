@@ -1,14 +1,15 @@
 extends Control
 
 # UI Elements
-onready var backg = $"background"
-onready var graph = $"node_ui_container"
-onready var timer = $"label_container/timer"
-onready var score = $"label_container/score"
-onready var undo_btn = $"btn_container/undo_btn"
-onready var pause_btn = $"btn_container/pause_btn"
-onready var record_label = $"record_label"
-onready var animation = $"anim"
+onready var backg = $bg_layer/background
+onready var graph = $node_ui_container
+onready var timer = $ui_layer/label_container/timer
+onready var score = $ui_layer/label_container/score
+onready var undo_btn = $ui_layer/btn_container/undo_btn
+onready var pause_btn = $ui_layer/btn_container/pause_btn
+onready var record_label = $ui_layer/record_label
+onready var pause_bg = $ui_layer/pause_background
+onready var animation = $anim
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
@@ -72,8 +73,9 @@ func transition_graph():
 	# First, clear out old graph
 	animation.queue("fadeout")
 	yield(animation, "animation_finished")
-	for ui in graph.get_children():
-		ui.queue_free()
+	for container in graph.get_children():
+		for ui in container.get_children():
+			ui.queue_free()
 	graph.load_puzzle(globals.opts_data["last"])
 	
 	# Reset score, timer, and undos
@@ -179,10 +181,10 @@ func undo():
 func toggle_pause():
 	
 	# Make the obscuring background layer visible
-	get_node("pause_background").visible = true
+	pause_bg.visible = true
 	
 	# Create and show pause menu
 	var popup = PausePopup.instance()
-	add_child(popup)
+	$ui_layer.add_child(popup)
 	popup.popup_centered()
 	get_tree().set_pause(true)

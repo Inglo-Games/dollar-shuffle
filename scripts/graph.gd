@@ -15,9 +15,9 @@ var graph_data = {}
 var node_list = []
 
 # Containers for lines, animations, and nodes
-var line_cont
-var anim_cont
-var node_cont
+onready var line_cont = $lines_layer
+onready var anim_cont = $points_layer
+onready var node_cont = $nodes_layer
 
 # Scale to use for all UI elements
 var ui_scale = Vector2(1.0, 1.0)
@@ -52,14 +52,6 @@ func load_puzzle(input):
 	ui_scale = Vector2(2.0 / (len(graph_data) + 1), 2.0 / (len(graph_data) + 1))
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		ui_scale *= 1.3
-	
-	# Create containers for graph elements
-	line_cont = Node2D.new()
-	call_deferred("add_child", line_cont)
-	anim_cont = Node2D.new()
-	call_deferred("add_child", anim_cont)
-	node_cont = Node2D.new()
-	call_deferred("add_child", node_cont)
 
 # Load a tutorial level
 func load_tutorial(num):

@@ -5,14 +5,12 @@
 [ext_resource path="res://assets/icons/undo_light.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/undo_disabled_light.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/pause_light.png" type="Texture" id=5]
-[ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=7]
+[ext_resource path="res://assets/pixelation_shader_material.tres" type="Material" id=6]
+[ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "fadein"
 length = 0.75
-loop = false
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("node_ui_container:modulate")
@@ -27,7 +25,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("label_container/score:modulate")
+tracks/1/path = NodePath("ui_layer/label_container/score:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +37,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("label_container/timer:modulate")
+tracks/2/path = NodePath("ui_layer/label_container/timer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +49,7 @@ tracks/2/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("record_label:modulate")
+tracks/3/path = NodePath("ui_layer/record_label:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -64,10 +62,8 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "fadeout"
 length = 0.75
-loop = false
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("node_ui_container:modulate")
@@ -82,7 +78,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("label_container/timer:modulate")
+tracks/1/path = NodePath("ui_layer/label_container/timer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -94,7 +90,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("label_container/score:modulate")
+tracks/2/path = NodePath("ui_layer/label_container/score:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -106,7 +102,7 @@ tracks/2/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("record_label:modulate")
+tracks/3/path = NodePath("ui_layer/record_label:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -119,13 +115,11 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-
 resource_name = "record_prompt"
 length = 0.5
-loop = false
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("record_label:rect_position")
+tracks/0/path = NodePath("ui_layer/record_label:rect_position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -137,238 +131,103 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -72 ), Vector2( 0, 140 ) ]
 }
 
-[node name="base" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="base" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 300, 300 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 
-[node name="background" type="ColorRect" parent="." index="0"]
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -1
 
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="background" type="ColorRect" parent="bg_layer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.859375, 0.859375, 0.859375, 1 )
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="node_ui_container" type="Node2D" parent="." index="1"]
-
+[node name="node_ui_container" type="Node2D" parent="."]
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="label_container" type="HBoxContainer" parent="." index="2"]
+[node name="lines_layer" type="CanvasLayer" parent="node_ui_container"]
+layer = 0
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="points_layer" type="CanvasLayer" parent="node_ui_container"]
+
+[node name="nodes_layer" type="CanvasLayer" parent="node_ui_container"]
+layer = 2
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="label_container" type="HBoxContainer" parent="ui_layer"]
 margin_left = 58.0
 margin_top = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+margin_right = 142.0
+margin_bottom = 78.0
 custom_constants/separation = 36
-alignment = 0
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Size Flags", "custom_constants" ]
 
-[node name="score" type="Label" parent="label_container" index="0"]
-
+[node name="score" type="Label" parent="ui_layer/label_container"]
 modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 24.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 24, 36 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Rect", "Visibility" ]
 
-[node name="timer" type="Label" parent="label_container" index="1"]
-
+[node name="timer" type="Label" parent="ui_layer/label_container"]
 modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 60.0
 margin_right = 84.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 24, 36 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="btn_container" type="HBoxContainer" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="btn_container" type="HBoxContainer" parent="ui_layer"]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_left = 1600.0
 margin_top = 28.0
 margin_right = 708.0
-margin_bottom = 526.0
+margin_bottom = 540.0
 grow_horizontal = 0
 rect_min_size = Vector2( 128, 64 )
 rect_scale = Vector2( 0.3, 0.3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
-[node name="undo_btn" type="TextureButton" parent="btn_container" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="undo_btn" type="TextureButton" parent="ui_layer/btn_container"]
 margin_right = 512.0
 margin_bottom = 512.0
 grow_horizontal = 0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect", "Textures", "Transform", "Visibility", "Z Index" ]
 
-[node name="pause_btn" type="TextureButton" parent="btn_container" index="1"]
-
+[node name="pause_btn" type="TextureButton" parent="ui_layer/btn_container"]
 pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 516.0
 margin_right = 1028.0
 margin_bottom = 512.0
 grow_horizontal = 0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 5 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect", "Textures", "Transform" ]
 
-[node name="record_label" type="Label" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="record_label" type="Label" parent="ui_layer"]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_top = -72.0
 margin_bottom = -18.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "New Record!"
 align = 1
 uppercase = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Material", "Rect", "Visibility" ]
 
-[node name="record_audio" type="AudioStreamPlayer" parent="." index="5"]
-
-stream = ExtResource( 6 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="pause_background" type="ColorRect" parent="." index="6"]
-
+[node name="pause_background" type="ColorRect" parent="ui_layer"]
 visible = false
-material = ExtResource( 7 )
-anchor_left = 0.0
-anchor_top = 0.0
+material = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 1, 1, 1, 0 )
-_sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="anim" type="AnimationPlayer" parent="." index="7"]
+[node name="record_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="anim" type="AnimationPlayer" parent="."]
 anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
 anims/record_prompt = SubResource( 3 )
-blend_times = [  ]
-
-[connection signal="pressed" from="btn_container/undo_btn" to="." method="undo"]
-
-[connection signal="pressed" from="btn_container/pause_btn" to="." method="toggle_pause"]
-
-
+[connection signal="pressed" from="ui_layer/btn_container/undo_btn" to="." method="undo"]
+[connection signal="pressed" from="ui_layer/btn_container/pause_btn" to="." method="toggle_pause"]
