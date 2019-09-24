@@ -1,13 +1,15 @@
 extends Control
 
 # UI Elements
-onready var backg = $"background_layer/background"
-onready var graph = $"node_ui_container"
-onready var click = $"node_ui_container/click_img"
-onready var pause_btn = $"ui_layer/pause_btn"
-onready var fade_anim = $"fade_anim"
-onready var click_anim = $"click_anim"
-onready var audio = $"audio"
+onready var backg = $background_layer/background
+onready var graph = $node_ui_container
+onready var click = $node_ui_container/click_img
+onready var pause_btn = $ui_layer/pause_btn
+onready var fade_anim = $fade_anim
+onready var fade_in = $node_ui_container/fade_in
+onready var fade_out = $node_ui_container/fade_out
+onready var click_anim = $click_anim
+onready var audio = $audio
 
 # Load the GameGraph classes
 const GameGraph = preload("res://scripts/graph.gd")
@@ -44,6 +46,7 @@ func _ready():
 	globals.update_last_level('TUTORIALS')
 	
 	graph.display_graph()
+	graph.connect("load_next_puzzle", self, "open_next_puzzle")
 	
 	# Play clicking or tapping animation
 	move_click_image()
@@ -63,6 +66,7 @@ func transition_graph():
 	fade_anim.stop()
 	fade_anim.seek(0.0, true)
 	fade_anim.play("fadeout")
+	graph.fade_out.start()
 	yield(fade_anim, "animation_finished")
 	
 	# Clear out old graph
