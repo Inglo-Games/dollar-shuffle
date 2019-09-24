@@ -48,6 +48,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("ui_layer/label_container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "fadeout"
@@ -84,6 +96,18 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ui_layer/label_container:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -147,18 +171,18 @@ margin_bottom = 78.0
 custom_constants/separation = 36
 
 [node name="score" type="Label" parent="ui_layer/label_container"]
-modulate = Color( 0, 0, 0, 0 )
-margin_right = 24.0
+margin_right = 27.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 24, 36 )
+text = "0"
 align = 1
 
 [node name="timer" type="Label" parent="ui_layer/label_container"]
-modulate = Color( 0, 0, 0, 0 )
-margin_left = 60.0
-margin_right = 84.0
+margin_left = 63.0
+margin_right = 130.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 24, 36 )
+text = "0.0"
 align = 1
 
 [node name="btn_container" type="HBoxContainer" parent="ui_layer"]
