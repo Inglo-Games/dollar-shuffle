@@ -132,7 +132,7 @@ func open_next_puzzle():
 		transition_graph()
 	
 	# If this is a pre-made level...
-	elif typeof(level) == TYPE_INT:
+	elif typeof(level) == TYPE_INT or typeof(level) == TYPE_REAL:
 	
 		# Make sure the next level exists
 		if level + 1 > globals.number_of_levels:

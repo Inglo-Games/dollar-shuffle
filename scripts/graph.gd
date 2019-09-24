@@ -211,4 +211,3 @@ func check_win_condition():
 	# Wait for animations to play out before changing levels
 	yield(get_tree().create_timer(0.6), "timeout")
 	emit_signal("load_next_puzzle")
-	#get_parent().open_next_puzzle()
