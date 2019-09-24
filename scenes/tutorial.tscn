@@ -11,10 +11,8 @@
 [ext_resource path="res://assets/audio/victory_trumpets_big.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "fadein"
 length = 0.75
-loop = false
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("node_ui_container:modulate")
@@ -30,10 +28,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-
 resource_name = "fadeout"
 length = 0.75
-loop = false
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("node_ui_container:modulate")
@@ -48,8 +44,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-
+[sub_resource type="Animation" id=3]
 resource_name = "leftclick"
 length = 1.5
 loop = true
@@ -67,8 +62,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 6 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-
+[sub_resource type="Animation" id=4]
 resource_name = "long_tap"
 length = 1.5
 loop = true
@@ -86,11 +80,8 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-
-length = 1.0
+[sub_resource type="Animation" id=5]
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("node_ui_container/click_img:texture")
 tracks/0/interp = 1
@@ -104,127 +95,68 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 8 ) ]
 }
 
-[node name="base" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="base" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 300, 300 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 
-[node name="background" type="ColorRect" parent="." index="0"]
+[node name="background_layer" type="CanvasLayer" parent="."]
+layer = -1
 
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="background" type="ColorRect" parent="background_layer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.859375, 0.859375, 0.859375, 1 )
-_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="node_ui_container" type="Node2D" parent="." index="1"]
-
+[node name="node_ui_container" type="Node2D" parent="."]
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="click_img" type="Sprite" parent="node_ui_container" index="0"]
+[node name="lines_layer" type="CanvasLayer" parent="node_ui_container"]
+layer = 0
 
+[node name="points_layer" type="CanvasLayer" parent="node_ui_container"]
+
+[node name="nodes_layer" type="CanvasLayer" parent="node_ui_container"]
+layer = 2
+
+[node name="click_img" type="Sprite" parent="node_ui_container"]
 position = Vector2( 395, 710 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
-[node name="pause_btn" type="TextureButton" parent="." index="2"]
+[node name="ui_layer" type="CanvasLayer" parent="."]
+layer = 3
 
+[node name="pause_btn" type="TextureButton" parent="ui_layer"]
 pause_mode = 2
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_left = -192.0
 margin_top = 36.0
-margin_right = 256.0
+margin_right = 320.0
 margin_bottom = 562.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 0.3, 0.3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Pause", "Rect", "Textures", "Transform" ]
 
-[node name="pause_background" type="ColorRect" parent="." index="3"]
-
+[node name="pause_background" type="ColorRect" parent="ui_layer"]
 visible = false
 material = ExtResource( 5 )
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 1, 1, 1, 0 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Visibility" ]
 
-[node name="fade_anim" type="AnimationPlayer" parent="." index="4"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="fade_anim" type="AnimationPlayer" parent="."]
 anims/fadein = SubResource( 1 )
 anims/fadeout = SubResource( 2 )
-blend_times = [  ]
-_sections_unfolded = [ "Pause" ]
 
-[node name="click_anim" type="AnimationPlayer" parent="." index="5"]
+[node name="click_anim" type="AnimationPlayer" parent="."]
+anims/leftclick = SubResource( 3 )
+anims/long_tap = SubResource( 4 )
+anims/short_tap = SubResource( 5 )
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/leftclick = SubResource( 8 )
-anims/long_tap = SubResource( 9 )
-anims/short_tap = SubResource( 10 )
-blend_times = [  ]
-_sections_unfolded = [ "Pause" ]
-
-[node name="audio" type="AudioStreamPlayer" parent="." index="6"]
-
+[node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -16.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[connection signal="pressed" from="pause_btn" to="." method="toggle_pause"]
-
-
+[connection signal="pressed" from="ui_layer/pause_btn" to="." method="toggle_pause"]

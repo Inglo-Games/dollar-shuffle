@@ -1,10 +1,10 @@
 extends Control
 
 # UI Elements
-onready var backg = $"background"
+onready var backg = $"background_layer/background"
 onready var graph = $"node_ui_container"
 onready var click = $"node_ui_container/click_img"
-onready var pause_btn = $"pause_btn"
+onready var pause_btn = $"ui_layer/pause_btn"
 onready var fade_anim = $"fade_anim"
 onready var click_anim = $"click_anim"
 onready var audio = $"audio"
@@ -130,10 +130,10 @@ func open_next_puzzle():
 func toggle_pause():
 	
 	# Make the obscuring background layer visible
-	get_node("pause_background").visible = true
+	get_node("ui_layer/pause_background").visible = true
 	
 	# Create and show pause menu
 	var popup = PausePopup.instance()
-	add_child(popup)
+	$ui_layer.add_child(popup)
 	popup.popup_centered()
 	get_tree().set_pause(true)

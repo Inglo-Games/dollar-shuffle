@@ -15,7 +15,7 @@ func _ready():
 func resume():
 	
 	get_parent().get_tree().set_pause(false)
-	get_parent().get_node("pause_background").visible = false
+	get_parent().get_node("ui_layer/pause_background").visible = false
 	queue_free()
 
 # Quit back to main menu
