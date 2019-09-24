@@ -22,6 +22,10 @@ onready var node_cont = $nodes_layer
 # Scale to use for all UI elements
 var ui_scale = Vector2(1.0, 1.0)
 
+# Tweens to use for fade-in and fade-out anims
+var fade_in = Tween.new()
+var fade_out = Tween.new()
+
 func load_puzzle(input):
 	
 	node_list = []
@@ -125,6 +129,10 @@ func display_graph():
 	# For each node in the graph...
 	for index in range(len(graph_data)):
 		draw_node(index)
+	
+	fade_in.start()
+	yield(fade_in, "tween_all_completed")
+	fade_in.remove_all()
 
 # Draw a single node on the screen
 func draw_node(num):
@@ -148,6 +156,11 @@ func draw_node(num):
 	node_cont.add_child(game_node)
 	game_node.add_to_group("ui_nodes")
 	node_list.append(game_node)
+	
+	# Add node to tweens
+	#game_node.modulate = Color(1, 1, 1, 0)
+	fade_in.interpolate_property(game_node, "modulate:a", 0, 1, 0.75, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	fade_out.interpolate_property(game_node, "modulate:a", 1, 0, 0.75, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
@@ -175,6 +188,11 @@ func draw_conn_line(n1, n2):
 	# Add line to scene and lines group
 	line_cont.add_child(line)
 	line.add_to_group("ui_lines")
+	
+	# Add line to tweens
+	#line.modulate = Color(1, 1, 1, 0)
+	fade_in.interpolate_property(line, "modulate:a", 0, 1, 0.75, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	fade_out.interpolate_property(line, "modulate:a", 1, 0, 0.75, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 
 # Check whether the player has solved the puzzle
 func check_win_condition():

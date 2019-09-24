@@ -71,11 +71,13 @@ func _process(delta):
 func transition_graph():
 	
 	# First, clear out old graph
+	graph.fade_out.start()
 	animation.queue("fadeout")
 	yield(animation, "animation_finished")
 	for container in graph.get_children():
 		for ui in container.get_children():
 			ui.queue_free()
+	graph.fade_out.remove_all()
 	graph.load_puzzle(globals.opts_data["last"])
 	
 	# Reset score, timer, and undos
