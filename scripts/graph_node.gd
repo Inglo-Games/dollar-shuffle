@@ -1,7 +1,7 @@
 extends Control
 
 # Time separating long and short press in seconds
-const PRESS_THRESHOLD = 0.6
+const PRESS_THRESHOLD = 0.4
 
 # Node number this instance represents
 var node_num = -1
