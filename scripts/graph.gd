@@ -1,6 +1,8 @@
 # This represents the graph (nodes and connections) for each puzzle
 extends Node
 
+signal load_next_puzzle
+
 # Load the GameNode classes
 const GameNode = preload("res://scripts/graph_node.gd")
 const GameGen = preload("res://scripts/graph_gen.gd")
@@ -208,4 +210,5 @@ func check_win_condition():
 	
 	# Wait for animations to play out before changing levels
 	yield(get_tree().create_timer(0.6), "timeout")
-	get_parent().open_next_puzzle()
+	emit_signal("load_next_puzzle")
+	#get_parent().open_next_puzzle()

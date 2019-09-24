@@ -55,7 +55,9 @@ func _ready():
 	graph.display_graph()
 	score.text = "0"
 	
+	# Connect signals
 	globals.connect("player_record", self, "show_record")
+	graph.connect("load_next_puzzle", self, "open_next_puzzle")
 	
 	reset_undos()
 
@@ -179,7 +181,6 @@ func undo():
 		if undos_remaining == 0:
 			undo_btn.disabled = true
 
-# Pause game
 func toggle_pause():
 	
 	# Make the obscuring background layer visible
@@ -189,4 +190,8 @@ func toggle_pause():
 	var popup = PausePopup.instance()
 	$ui_layer.add_child(popup)
 	popup.popup_centered()
+	popup.connect("resume_game", self, "_on_resume_game")
 	get_tree().set_pause(true)
+
+func _on_resume_game():
+	pause_bg.visible = false

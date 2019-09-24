@@ -1,5 +1,7 @@
 extends Popup
 
+signal resume_game
+
 # UI Elements
 onready var label = $"vbox/level_label"
 
@@ -14,13 +16,13 @@ func _ready():
 # Resume the game
 func resume():
 	
-	get_parent().get_tree().set_pause(false)
-	get_parent().get_parent().get_node("ui_layer/pause_background").visible = false
+	get_tree().set_pause(false)
+	emit_signal("resume_game")
 	queue_free()
 
 # Quit back to main menu
 func quit():
 	
-	get_parent().get_tree().set_pause(false)
+	get_tree().set_pause(false)
 	get_parent().queue_free()
 	get_tree().change_scene("res://scenes/menu_frame.tscn")
