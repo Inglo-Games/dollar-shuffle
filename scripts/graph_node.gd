@@ -8,6 +8,7 @@ var node_num = -1
 
 # Keep track of how long a button press is
 var press_time = 0
+var pressed = false
 
 # UI elements
 var sprite
@@ -45,6 +46,7 @@ func _ready():
 	# Allow input
 	set_process_input(true)
 	connect("gui_input", self, "handle_node_click")
+	InputMap.action_add_event("leftclick_action", InputEventScreenTouch.new())
 
 # Custom draw function
 func _draw():
@@ -56,7 +58,7 @@ func _draw():
 	else:
 		sprite.set_texture(pos_node_img)
 	
-	sprite.centered = false	
+	sprite.centered = false
 	
 	# Set text of label to value
 	label.text = "$%d" % value
@@ -69,7 +71,7 @@ func _draw():
 func _process(delta):
 	
 	# Check if node is being long pressed and add to time var
-	if Input.is_action_pressed("leftclick_action"):
+	if Input.is_action_pressed("leftclick_action") or pressed:
 		press_time += delta
 	else:
 		press_time = 0
@@ -77,8 +79,13 @@ func _process(delta):
 # Handle inputs
 func handle_node_click(event):
 	
-	# Handle left clicks/touchscreen touches
-	if event.is_action_released("leftclick_action"):
+	# Start long-press timer
+	if event.is_pressed():
+		pressed = true
+	
+	# Handle left clicks and touchscreen presses
+	elif event.is_action_released("leftclick_action") or \
+			(event is InputEventScreenTouch and not event.is_pressed()):
 		
 		# Result depends on length of click
 		if press_time < PRESS_THRESHOLD:
@@ -90,10 +97,12 @@ func handle_node_click(event):
 		
 		# Reset press time either way
 		press_time = 0
+		pressed = false
 	
 	# Handle right clicks
 	elif event.is_action_released("rightclick_action"):
 		get_parent().get_parent().take_points(node_num)
+
 
 func initialize(num):
 	
