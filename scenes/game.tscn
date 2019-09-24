@@ -132,6 +132,10 @@ layer = 0
 [node name="nodes_layer" type="CanvasLayer" parent="node_ui_container"]
 layer = 2
 
+[node name="fade_in" type="Tween" parent="node_ui_container"]
+
+[node name="fade_out" type="Tween" parent="node_ui_container"]
+
 [node name="ui_layer" type="CanvasLayer" parent="."]
 layer = 3
 

@@ -19,20 +19,20 @@ onready var line_cont = $lines_layer
 onready var anim_cont = $points_layer
 onready var node_cont = $nodes_layer
 
+# Tweens to use for fade-in and fade-out anims
+onready var fade_in = $fade_in
+onready var fade_out = $fade_out
+
 # Scale to use for all UI elements
 var ui_scale = Vector2(1.0, 1.0)
-
-# Tweens to use for fade-in and fade-out anims
-var fade_in = Tween.new()
-var fade_out = Tween.new()
 
 func load_puzzle(input):
 	
 	node_list = []
 	
-	# If it's an int, load that level number
-	if typeof(input) == TYPE_INT:
-		var filepath = "res://levels/%03d.lvl" % input
+	# If it's a number, load that level number
+	if typeof(input) == TYPE_INT or typeof(input) == TYPE_REAL:
+		var filepath = "res://levels/%03d.lvl" % int(input)
 		var file = File.new()
 		file.open(filepath, file.READ)
 		graph_data = file.get_var()
@@ -158,9 +158,9 @@ func draw_node(num):
 	node_list.append(game_node)
 	
 	# Add node to tweens
-	#game_node.modulate = Color(1, 1, 1, 0)
-	fade_in.interpolate_property(game_node, "modulate:a", 0, 1, 0.75, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	fade_out.interpolate_property(game_node, "modulate:a", 1, 0, 0.75, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	game_node.modulate = Color(1, 1, 1, 0)
+	fade_in.interpolate_property(game_node, "modulate:a", 0, 1, 0.7, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	fade_out.interpolate_property(game_node, "modulate:a", 1, 0, 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 # Draw a line connecting 2 nodes
 func draw_conn_line(n1, n2):
@@ -190,9 +190,9 @@ func draw_conn_line(n1, n2):
 	line.add_to_group("ui_lines")
 	
 	# Add line to tweens
-	#line.modulate = Color(1, 1, 1, 0)
-	fade_in.interpolate_property(line, "modulate:a", 0, 1, 0.75, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	fade_out.interpolate_property(line, "modulate:a", 1, 0, 0.75, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	line.modulate = Color(1, 1, 1, 0)
+	fade_in.interpolate_property(line, "modulate:a", 0, 1, 0.7, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	fade_out.interpolate_property(line, "modulate:a", 1, 0, 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 # Check whether the player has solved the puzzle
 func check_win_condition():

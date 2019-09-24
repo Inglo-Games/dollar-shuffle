@@ -46,7 +46,6 @@ func _ready():
 	# Allow input
 	set_process_input(true)
 	connect("gui_input", self, "handle_node_click")
-	InputMap.action_add_event("leftclick_action", InputEventScreenTouch.new())
 
 # Custom draw function
 func _draw():
