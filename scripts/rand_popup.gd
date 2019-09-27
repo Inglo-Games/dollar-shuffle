@@ -27,7 +27,6 @@ func open_level():
 	else:
 		globals.opts_data["last"] = RNG.gen_seed()
 	
-	# Load instance of game scene
+	# Load game scene
 	self.queue_free()
-	var level_scene = ResourceLoader.load("res://scenes/game.tscn")
-	get_tree().get_root().add_child(level_scene.instance())
+	get_tree().change_scene("res://scenes/game.tscn")
